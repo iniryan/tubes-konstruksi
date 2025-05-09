@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using App.Core.Services;
 
 namespace App.Core.Models
 {
@@ -39,7 +40,7 @@ namespace App.Core.Models
             }
             else
             {
-                throw new InvalidOperationException($"Transisi status dari {Status} ke Diproses tidak valid.");
+                throw new InvalidOperationException("Transisi status dari " + Status + " ke Diproses tidak valid.");
             }
         }
 
@@ -51,7 +52,7 @@ namespace App.Core.Models
             }
             else
             {
-                throw new InvalidOperationException($"Transisi status dari {Status} ke Selesai tidak valid.");
+                throw new InvalidOperationException("Transisi status dari " + Status + " ke Selesai tidak valid.");
             }
         }
 
@@ -63,14 +64,21 @@ namespace App.Core.Models
             }
             else
             {
-                throw new InvalidOperationException($"Transisi status dari {Status} ke Ditolak tidak valid.");
+                throw new InvalidOperationException("Transisi status dari " + Status + " ke Ditolak tidak valid.");
             }
         }
 
         // Menampilkan status dalam bentuk string
         public override string ToString()
         {
-            return $"[{Id}] {Status} - Dibuat pada {TanggalDibuat}";
+            var detailInfo = "";
+
+            if (Detail is PengaduanKebersihan kebersihan)
+            {
+                detailInfo = " - Masalah: " + kebersihan.Masalah + ", Lokasi: " + kebersihan.Lokasi;
+            }
+
+            return "[" + Id + "] " + Status + " - Dibuat pada " + TanggalDibuat + detailInfo;
         }
     }
 

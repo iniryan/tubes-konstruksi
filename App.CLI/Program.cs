@@ -44,8 +44,10 @@ class Program
             Console.WriteLine("1. Tambah Pengaduan");
             Console.WriteLine("2. Lihat Semua Pengaduan");
             Console.WriteLine("3. Ubah Status Pengaduan");
-            Console.WriteLine("4. Kembali ke Menu Utama");
-            Console.Write("Pilih menu (1-4): ");
+            Console.WriteLine("4. Cari Pengaduan Berdasarkan ID");
+            Console.WriteLine("5. Hapus Pengaduan");
+            Console.WriteLine("6. Kembali ke Menu Utama");
+            Console.Write("Pilih menu (1-6): ");
             var pilihan = Console.ReadLine();
 
             switch (pilihan)
@@ -55,15 +57,21 @@ class Program
                     var masalah = Console.ReadLine();
                     Console.Write("Masukkan lokasi: ");
                     var lokasi = Console.ReadLine();
+                    
+                    if (string.IsNullOrWhiteSpace(masalah) || string.IsNullOrWhiteSpace(lokasi))
+                    {
+                        Console.WriteLine("Masalah dan lokasi tidak boleh kosong.");
+                        break;
+                    }
 
                     try
                     {
                         var pengaduan = service.TambahPengaduan(masalah, lokasi);
-                        Console.WriteLine($"Pengaduan berhasil ditambahkan dengan ID: {pengaduan.Id}");
+                        Console.WriteLine("Pengaduan berhasil ditambahkan dengan ID: " + pengaduan.Id);
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"Gagal menambah pengaduan: {ex.Message}");
+                        Console.WriteLine("Gagal menambah pengaduan: " + ex.Message);
                     }
                     break;
 
@@ -79,6 +87,12 @@ class Program
                 case "3":
                     Console.Write("\nMasukkan ID pengaduan yang ingin diubah statusnya: ");
                     var idUbah = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(idUbah))
+                    {
+                        Console.WriteLine("ID tidak boleh kosong.");
+                        break;
+                    }
 
                     // Menampilkan status
                     Console.WriteLine("Pilih status baru:");
@@ -103,11 +117,54 @@ class Program
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"Gagal mengubah status: {ex.Message}");
+                        Console.WriteLine("Gagal mengubah status: " + ex.Message);
                     }
                     break;
 
                 case "4":
+                    Console.Write("\nMasukkan ID pengaduan yang ingin dicari: ");
+                    var idCari = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(idCari))
+                    {
+                        Console.WriteLine("ID tidak boleh kosong.");
+                        break;
+                    }
+
+                    var pengaduans = service.AmbilPengaduanById(idCari);
+                    if (pengaduans != null)
+                    {
+                        Console.WriteLine("\nDetail Pengaduan:");
+                        Console.WriteLine(pengaduans.ToString());
+                    }
+                    else
+                    {
+                        Console.WriteLine("Pengaduan tidak ditemukan.");
+                    }
+                    break;
+
+                case "5":
+                    Console.Write("\nMasukkan ID pengaduan yang ingin dihapus: ");
+                    var idHapus = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(idHapus))
+                    {
+                        Console.WriteLine("ID tidak boleh kosong.");
+                        break;
+                    }
+
+                    try
+                    {
+                        service.HapusPengaduan(idHapus);
+                        Console.WriteLine("Pengaduan berhasil dihapus.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Gagal menghapus pengaduan: " + ex.Message);
+                    }
+                    break;
+
+                case "6":
                     Console.WriteLine("\nKembali ke menu utama...");
                     return;
 
