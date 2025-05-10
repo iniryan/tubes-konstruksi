@@ -53,20 +53,41 @@ class Program
             switch (pilihan)
             {
                 case "1":
-                    Console.Write("\nMasukkan masalah: ");
+                    Console.Write("\nMasukkan nama pelapor: ");
+                    var nama = Console.ReadLine();
+                    Console.Write("Masukkan masalah: ");
                     var masalah = Console.ReadLine();
                     Console.Write("Masukkan lokasi: ");
                     var lokasi = Console.ReadLine();
-                    
-                    if (string.IsNullOrWhiteSpace(masalah) || string.IsNullOrWhiteSpace(lokasi))
+                    Console.Write("Masukkan kategori (misalnya: Sampah, Saluran Air, WC Umum): ");
+                    var kategori = Console.ReadLine();
+
+                    Console.WriteLine("Pilih prioritas:");
+                    Console.WriteLine("1. Rendah");
+                    Console.WriteLine("2. Sedang");
+                    Console.WriteLine("3. Tinggi");
+                    Console.Write("Pilih prioritas (1-3): ");
+                    var prioritasInput = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(nama) || string.IsNullOrWhiteSpace(masalah)
+                        || string.IsNullOrWhiteSpace(lokasi) || string.IsNullOrWhiteSpace(kategori)
+                        || string.IsNullOrWhiteSpace(prioritasInput))
                     {
-                        Console.WriteLine("Masalah dan lokasi tidak boleh kosong.");
+                        Console.WriteLine("Semua data harus diisi.");
                         break;
                     }
 
                     try
                     {
-                        var pengaduan = service.TambahPengaduan(masalah, lokasi);
+                        var prioritas = prioritasInput switch
+                        {
+                            "1" => Prioritas.Rendah,
+                            "2" => Prioritas.Sedang,
+                            "3" => Prioritas.Tinggi,
+                            _ => throw new ArgumentException("Prioritas tidak valid.")
+                        };
+
+                        var pengaduan = service.TambahPengaduan(nama, masalah, lokasi, prioritas, kategori);
                         Console.WriteLine("Pengaduan berhasil ditambahkan dengan ID: " + pengaduan.Id);
                     }
                     catch (Exception ex)
@@ -94,7 +115,6 @@ class Program
                         break;
                     }
 
-                    // Menampilkan status
                     Console.WriteLine("Pilih status baru:");
                     Console.WriteLine("1. Diproses");
                     Console.WriteLine("2. Selesai");

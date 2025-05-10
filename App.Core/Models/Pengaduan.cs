@@ -31,7 +31,6 @@ namespace App.Core.Models
             TanggalDibuat = DateTime.Now;
         }
 
-        // Automata: Transisi status
         public void Proses()
         {
             if (Status == StatusPengaduan.Dibuat)
@@ -68,18 +67,22 @@ namespace App.Core.Models
             }
         }
 
-        // Menampilkan status dalam bentuk string
         public override string ToString()
         {
             var detailInfo = "";
 
             if (Detail is PengaduanKebersihan kebersihan)
             {
-                detailInfo = " - Masalah: " + kebersihan.Masalah + ", Lokasi: " + kebersihan.Lokasi;
+                detailInfo = "\n  Masalah    : " + kebersihan.Masalah +
+                             "\n  Lokasi    : " + kebersihan.Lokasi +
+                             "\n  Prioritas : " + kebersihan.PrioritasPengaduan +
+                             "\n  Nama Pelapor : " + kebersihan.NamaPelapor +
+                             "\n  Kategori  : " + kebersihan.Kategori;
             }
 
-            return "[" + Id + "] " + Status + " - Dibuat pada " + TanggalDibuat + detailInfo;
+            return "[" + Id + "] " + Status + " - Dibuat pada " + TanggalDibuat.ToString("dd/MM/yyyy HH:mm:ss") + detailInfo;
         }
+
     }
 
 }

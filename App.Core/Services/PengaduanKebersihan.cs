@@ -1,24 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using App.Core.Models;
 using System.Xml.Linq;
 
 namespace App.Core.Services
 {
+    public enum Prioritas { Rendah, Sedang, Tinggi }
+
     public class PengaduanKebersihan
     {
+        public string NamaPelapor { get; set; }
         public string Masalah { get; set; }
         public string Lokasi { get; set; }
+        public Prioritas PrioritasPengaduan { get; set; }
+        public string Kategori { get; set; } // Misalnya: "Sampah", "Saluran Air", "WC Umum", dll.
 
-        public PengaduanKebersihan(string masalah, string lokasi)
+        public PengaduanKebersihan(string namaPelapor, string masalah, string lokasi, Prioritas prioritas, string kategori)
         {
+            if (string.IsNullOrWhiteSpace(namaPelapor)) throw new ArgumentException("Nama pelapor harus diisi");
             if (string.IsNullOrWhiteSpace(masalah)) throw new ArgumentException("Masalah harus diisi");
             if (string.IsNullOrWhiteSpace(lokasi)) throw new ArgumentException("Lokasi harus diisi");
+            if (string.IsNullOrWhiteSpace(kategori)) throw new ArgumentException("Kategori harus diisi");
+
+            NamaPelapor = namaPelapor;
             Masalah = masalah;
             Lokasi = lokasi;
+            Kategori = kategori;
+            PrioritasPengaduan = prioritas;
         }
     }
 
@@ -27,11 +36,11 @@ namespace App.Core.Services
         private readonly List<Pengaduan<PengaduanKebersihan>> _pengaduanList = new();
 
         // CREATE
-        public Pengaduan<PengaduanKebersihan> TambahPengaduan(string masalah, string lokasi)
+        public Pengaduan<PengaduanKebersihan> TambahPengaduan(string namaPelapor, string masalah, string lokasi, Prioritas prioritas, string kategori)
         {
             var pengaduan = new Pengaduan<PengaduanKebersihan>(
                 id: Guid.NewGuid().ToString(),
-                detail: new PengaduanKebersihan(masalah, lokasi)
+                detail: new PengaduanKebersihan(namaPelapor, masalah, lokasi, prioritas, kategori)
             );
             _pengaduanList.Add(pengaduan);
             return pengaduan;
@@ -79,5 +88,4 @@ namespace App.Core.Services
             _pengaduanList.Remove(pengaduan);
         }
     }
-
 }
