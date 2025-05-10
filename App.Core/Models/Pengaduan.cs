@@ -31,40 +31,12 @@ namespace App.Core.Models
             TanggalDibuat = DateTime.Now;
         }
 
-        public void Proses()
+        public void UbahStatus(StatusPengaduan statusBaru)
         {
-            if (Status == StatusPengaduan.Dibuat)
-            {
-                Status = StatusPengaduan.Diproses;
-            }
-            else
-            {
-                throw new InvalidOperationException("Transisi status dari " + Status + " ke Diproses tidak valid.");
-            }
-        }
+            if (!StatusTransisi.BisaTransisi(this.Status, statusBaru))
+                throw new InvalidOperationException("Transisi dari " + this.Status + " ke " + statusBaru + " tidak valid.");
 
-        public void Selesai()
-        {
-            if (Status == StatusPengaduan.Diproses)
-            {
-                Status = StatusPengaduan.Selesai;
-            }
-            else
-            {
-                throw new InvalidOperationException("Transisi status dari " + Status + " ke Selesai tidak valid.");
-            }
-        }
-
-        public void Tolak()
-        {
-            if (Status == StatusPengaduan.Dibuat)
-            {
-                Status = StatusPengaduan.Ditolak;
-            }
-            else
-            {
-                throw new InvalidOperationException("Transisi status dari " + Status + " ke Ditolak tidak valid.");
-            }
+            this.Status = statusBaru;
         }
 
         public override string ToString()
@@ -73,16 +45,30 @@ namespace App.Core.Models
 
             if (Detail is PengaduanKebersihan kebersihan)
             {
-                detailInfo = "\n  Masalah    : " + kebersihan.Masalah +
-                             "\n  Lokasi    : " + kebersihan.Lokasi +
+                detailInfo = "\n  Nama Pelapor : " + kebersihan.NamaPelapor +
+                             "\n  Kategori  : " + kebersihan.Kategori +
                              "\n  Prioritas : " + kebersihan.PrioritasPengaduan +
-                             "\n  Nama Pelapor : " + kebersihan.NamaPelapor +
-                             "\n  Kategori  : " + kebersihan.Kategori;
+                             "\n  Masalah    : " + kebersihan.Masalah +
+                             "\n  Lokasi    : " + kebersihan.Lokasi;
             }
 
             return "[" + Id + "] " + Status + " - Dibuat pada " + TanggalDibuat.ToString("dd/MM/yyyy HH:mm:ss") + detailInfo;
         }
 
+    }
+
+    public static class StatusTransisi
+    {
+        private static readonly Dictionary<StatusPengaduan, List<StatusPengaduan>> _transisiValid = new()
+        {
+            { StatusPengaduan.Dibuat, new List<StatusPengaduan> { StatusPengaduan.Diproses, StatusPengaduan.Ditolak } },
+            { StatusPengaduan.Diproses, new List<StatusPengaduan> { StatusPengaduan.Selesai } },
+        };
+
+        public static bool BisaTransisi(StatusPengaduan dari, StatusPengaduan ke)
+        {
+            return _transisiValid.ContainsKey(dari) && _transisiValid[dari].Contains(ke);
+        }
     }
 
 }

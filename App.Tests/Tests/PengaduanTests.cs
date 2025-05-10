@@ -25,7 +25,7 @@ namespace App.Tests.Tests
         {
             var pengaduan = new Pengaduan<string>("2", "Sampah tidak terangkut");
 
-            pengaduan.Proses();
+            pengaduan.UbahStatus(StatusPengaduan.Diproses);
 
             Assert.Equal(StatusPengaduan.Diproses, pengaduan.Status);
         }
@@ -34,20 +34,19 @@ namespace App.Tests.Tests
         public void Should_Throw_Exception_When_Proses_Without_Dibuat_Status()
         {
             var pengaduan = new Pengaduan<string>("3", "Masalah di jalan");
-            pengaduan.Proses();
+            pengaduan.UbahStatus(StatusPengaduan.Diproses);
 
-            var exception = Assert.Throws<InvalidOperationException>(() => pengaduan.Proses());
-            Assert.Equal("Transisi status dari Diproses ke Diproses tidak valid.", exception.Message);
-            
+            var exception = Assert.Throws<InvalidOperationException>(() => pengaduan.UbahStatus(StatusPengaduan.Diproses));
+            Assert.Equal("Transisi dari Diproses ke Diproses tidak valid.", exception.Message);
         }
 
         [Fact]
         public void Should_Selesai_Pengaduan_From_Diproses_To_Selesai()
         {
             var pengaduan = new Pengaduan<string>("4", "Lampu jalan mati");
-            pengaduan.Proses(); // Status harus Diproses dulu
+            pengaduan.UbahStatus(StatusPengaduan.Diproses);
 
-            pengaduan.Selesai();
+            pengaduan.UbahStatus(StatusPengaduan.Selesai);
 
             Assert.Equal(StatusPengaduan.Selesai, pengaduan.Status);
         }
@@ -57,8 +56,8 @@ namespace App.Tests.Tests
         {
             var pengaduan = new Pengaduan<string>("5", "Jalan berlubang");
 
-            var exception = Assert.Throws<InvalidOperationException>(() => pengaduan.Selesai());
-            Assert.Equal("Transisi status dari Dibuat ke Selesai tidak valid.", exception.Message);
+            var exception = Assert.Throws<InvalidOperationException>(() => pengaduan.UbahStatus(StatusPengaduan.Selesai));
+            Assert.Equal("Transisi dari Dibuat ke Selesai tidak valid.", exception.Message);
         }
 
         [Fact]
@@ -66,7 +65,7 @@ namespace App.Tests.Tests
         {
             var pengaduan = new Pengaduan<string>("6", "Kebersihan kurang");
 
-            pengaduan.Tolak();
+            pengaduan.UbahStatus(StatusPengaduan.Ditolak);
 
             Assert.Equal(StatusPengaduan.Ditolak, pengaduan.Status);
         }
@@ -75,10 +74,11 @@ namespace App.Tests.Tests
         public void Should_Throw_Exception_When_Tolak_Without_Dibuat_Status()
         {
             var pengaduan = new Pengaduan<string>("7", "Fasilitas rusak");
-            pengaduan.Proses(); // Status diubah jadi Diproses
+            pengaduan.UbahStatus(StatusPengaduan.Diproses);
 
-            var exception = Assert.Throws<InvalidOperationException>(() => pengaduan.Tolak());
-            Assert.Equal("Transisi status dari Diproses ke Ditolak tidak valid.", exception.Message);
+            var exception = Assert.Throws<InvalidOperationException>(() => pengaduan.UbahStatus(StatusPengaduan.Ditolak));
+            Assert.Equal("Transisi dari Diproses ke Ditolak tidak valid.", exception.Message);
         }
+
     }
 }

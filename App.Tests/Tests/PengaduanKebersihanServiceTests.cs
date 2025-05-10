@@ -146,7 +146,7 @@ namespace App.Tests.Tests
             var ex = Assert.Throws<InvalidOperationException>(() =>
                 service.UbahStatus(pengaduan.Id, StatusPengaduan.Ditolak));
 
-            Assert.Equal("Transisi status dari Diproses ke Ditolak tidak valid.", ex.Message);
+            Assert.Equal("Transisi dari Diproses ke Ditolak tidak valid.", ex.Message);
         }
 
         [Fact]
@@ -195,6 +195,24 @@ namespace App.Tests.Tests
             var p2 = service.TambahPengaduan("Sari", "Masalah B", "Lokasi B", Prioritas.Rendah, "Kebersihan");
 
             Assert.NotEqual(p1.Id, p2.Id);
+        }
+
+        [Fact]
+        public void Should_Update_Data_Pengaduan()
+        {
+            var service = new PengaduanKebersihanService();
+            var pengaduan = service.TambahPengaduan("Joko", "Sampah menumpuk", "Koridor 3", Prioritas.Tinggi, "Kebersihan");
+
+            service.UbahDataPengaduan(pengaduan.Id, "Sari", "Sampah bertumpuk", "Koridor 4", Prioritas.Sedang, "Kebersihan");
+
+            var updatedPengaduan = service.AmbilPengaduanById(pengaduan.Id);
+
+            Assert.NotNull(updatedPengaduan);
+            Assert.Equal("Sari", updatedPengaduan.Detail.NamaPelapor);
+            Assert.Equal("Sampah bertumpuk", updatedPengaduan.Detail.Masalah);
+            Assert.Equal("Koridor 4", updatedPengaduan.Detail.Lokasi);
+            Assert.Equal(Prioritas.Sedang, updatedPengaduan.Detail.PrioritasPengaduan);
+            Assert.Equal("Kebersihan", updatedPengaduan.Detail.Kategori);
         }
 
     }

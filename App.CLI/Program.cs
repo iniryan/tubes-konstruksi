@@ -46,8 +46,9 @@ class Program
             Console.WriteLine("3. Ubah Status Pengaduan");
             Console.WriteLine("4. Cari Pengaduan Berdasarkan ID");
             Console.WriteLine("5. Hapus Pengaduan");
-            Console.WriteLine("6. Kembali ke Menu Utama");
-            Console.Write("Pilih menu (1-6): ");
+            Console.WriteLine("6. Ubah Data Pengaduan");
+            Console.WriteLine("7. Kembali ke Menu Utama");
+            Console.Write("Pilih menu (1-7): ");
             var pilihan = Console.ReadLine();
 
             switch (pilihan)
@@ -185,6 +186,91 @@ class Program
                     break;
 
                 case "6":
+                    Console.Write("\nMasukkan ID pengaduan yang ingin diubah: ");
+                    var idUbahData = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(idUbahData))
+                    {
+                        Console.WriteLine("ID tidak boleh kosong.");
+                        break;
+                    }
+
+                    var pengaduanData = service.AmbilPengaduanById(idUbahData);
+                    if (pengaduanData == null)
+                    {
+                        Console.WriteLine("Pengaduan tidak ditemukan.");
+                        break;
+                    }
+
+                    Console.WriteLine("\nData pengaduan saat ini:");
+                    Console.WriteLine("Nama Pelapor: " + pengaduanData.Detail.NamaPelapor);
+                    Console.WriteLine("Kategori: " + pengaduanData.Detail.Kategori);
+                    Console.WriteLine("Prioritas: " + pengaduanData.Detail.PrioritasPengaduan);
+                    Console.WriteLine("Masalah: " + pengaduanData.Detail.Masalah);
+                    Console.WriteLine("Lokasi: " + pengaduanData.Detail.Lokasi);
+
+                    Console.Write("\nMasukkan nama pelapor baru (kosongkan untuk mempertahankan): ");
+                    var namaBaru = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(namaBaru))
+                    {
+                        namaBaru = pengaduanData.Detail.NamaPelapor;
+                    }
+
+                    Console.Write("Masukkan masalah baru (kosongkan untuk mempertahankan): ");
+                    var masalahBaru = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(masalahBaru))
+                    {
+                        masalahBaru = pengaduanData.Detail.Masalah;
+                    }
+
+                    Console.Write("Masukkan lokasi baru (kosongkan untuk mempertahankan): ");
+                    var lokasiBaru = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(lokasiBaru))
+                    {
+                        lokasiBaru = pengaduanData.Detail.Lokasi;
+                    }
+
+                    Console.Write("Masukkan kategori baru (kosongkan untuk mempertahankan): ");
+                    var kategoriBaru = Console.ReadLine();
+                    if (string.IsNullOrWhiteSpace(kategoriBaru))
+                    {
+                        kategoriBaru = pengaduanData.Detail.Kategori;
+                    }
+
+                    Console.WriteLine("Pilih prioritas baru (kosongkan untuk mempertahankan):");
+                    Console.WriteLine("1. Rendah");
+                    Console.WriteLine("2. Sedang");
+                    Console.WriteLine("3. Tinggi");
+                    Console.Write("Pilih prioritas baru (1-3, kosongkan untuk mempertahankan): ");
+                    var prioritasBaruInput = Console.ReadLine();
+                    Prioritas prioritasBaru;
+                    if (string.IsNullOrWhiteSpace(prioritasBaruInput))
+                    {
+                        prioritasBaru = pengaduanData.Detail.PrioritasPengaduan;
+                    }
+                    else
+                    {
+                        prioritasBaru = prioritasBaruInput switch
+                        {
+                            "1" => Prioritas.Rendah,
+                            "2" => Prioritas.Sedang,
+                            "3" => Prioritas.Tinggi,
+                            _ => throw new ArgumentException("Prioritas tidak valid.")
+                        };
+                    }
+
+                    try
+                    {
+                        service.UbahDataPengaduan(idUbahData, namaBaru, masalahBaru, lokasiBaru, prioritasBaru, kategoriBaru);
+                        Console.WriteLine("Data pengaduan berhasil diubah.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Gagal mengubah data pengaduan: " + ex.Message);
+                    }
+                    break;
+
+
+                case "7":
                     Console.WriteLine("\nKembali ke menu utama...");
                     return;
 

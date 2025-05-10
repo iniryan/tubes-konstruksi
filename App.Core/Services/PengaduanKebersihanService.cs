@@ -39,20 +39,21 @@ namespace App.Core.Services
             var pengaduan = AmbilPengaduanById(id);
             if (pengaduan == null) throw new KeyNotFoundException("Pengaduan tidak ditemukan.");
 
-            switch (status)
-            {
-                case StatusPengaduan.Diproses:
-                    pengaduan.Proses();
-                    break;
-                case StatusPengaduan.Selesai:
-                    pengaduan.Selesai();
-                    break;
-                case StatusPengaduan.Ditolak:
-                    pengaduan.Tolak();
-                    break;
-                default:
-                    throw new InvalidOperationException("Transisi status tidak valid.");
-            }
+            pengaduan.UbahStatus(status);
+        }
+
+        // UPDATE - Ubah data pengaduan
+        public void UbahDataPengaduan(string id, string namaPelapor, string masalah, string lokasi, Prioritas prioritas, string kategori)
+        {
+            var pengaduan = AmbilPengaduanById(id);
+            if (pengaduan == null) throw new KeyNotFoundException("Pengaduan tidak ditemukan.");
+            if (pengaduan.Detail == null) throw new InvalidOperationException("Pengaduan tidak memiliki detail yang valid.");
+
+            pengaduan.Detail.NamaPelapor = namaPelapor;
+            pengaduan.Detail.Masalah = masalah;
+            pengaduan.Detail.Lokasi = lokasi;
+            pengaduan.Detail.PrioritasPengaduan = prioritas;
+            pengaduan.Detail.Kategori = kategori;
         }
 
         // DELETE
