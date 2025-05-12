@@ -1,0 +1,15 @@
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\bin\Debug\net8.0\APP.CLI.exe
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\bin\Debug\net8.0\APP.CLI.deps.json
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\bin\Debug\net8.0\APP.CLI.runtimeconfig.json
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\bin\Debug\net8.0\APP.CLI.dll
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\bin\Debug\net8.0\APP.CLI.pdb
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\APP.CLI.GeneratedMSBuildEditorConfig.editorconfig
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\APP.CLI.AssemblyInfoInputs.cache
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\APP.CLI.AssemblyInfo.cs
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\APP.CLI.csproj.CoreCompileInputs.cache
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\APP.CLI.sourcelink.json
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\APP.CLI.dll
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\refint\APP.CLI.dll
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\APP.CLI.pdb
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\APP.CLI.genruntimeconfig.cache
+D:\TUGAS AKHIR DAMASYA INE LARISA\tubes-konstruksi\APP.CLI\obj\Debug\net8.0\ref\APP.CLI.dll
