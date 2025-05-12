@@ -1,0 +1,16 @@
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\bin\Debug\net8.0\config.json
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\bin\Debug\net8.0\PengaduanFasilitas.exe
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\bin\Debug\net8.0\PengaduanFasilitas.deps.json
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\bin\Debug\net8.0\PengaduanFasilitas.runtimeconfig.json
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\bin\Debug\net8.0\PengaduanFasilitas.dll
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\bin\Debug\net8.0\PengaduanFasilitas.pdb
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\PengaduanFasilitas.GeneratedMSBuildEditorConfig.editorconfig
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\PengaduanFasilitas.AssemblyInfoInputs.cache
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\PengaduanFasilitas.AssemblyInfo.cs
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\PengaduanFasilitas.csproj.CoreCompileInputs.cache
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\PengaduanFasilitas.sourcelink.json
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\PengaduanFasilitas.dll
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\refint\PengaduanFasilitas.dll
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\PengaduanFasilitas.pdb
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\PengaduanFasilitas.genruntimeconfig.cache
+D:\tubes-konstruksi\PengaduanFasilitas\PengaduanFasilitas\obj\Debug\net8.0\ref\PengaduanFasilitas.dll
