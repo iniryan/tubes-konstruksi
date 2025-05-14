@@ -1,0 +1,12 @@
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\bin\Release\net8.0\App.Core.deps.json
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\bin\Release\net8.0\App.Core.dll
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\bin\Release\net8.0\App.Core.pdb
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\obj\Release\net8.0\App.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\obj\Release\net8.0\App.Core.AssemblyInfoInputs.cache
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\obj\Release\net8.0\App.Core.AssemblyInfo.cs
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\obj\Release\net8.0\App.Core.csproj.CoreCompileInputs.cache
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\obj\Release\net8.0\App.Core.sourcelink.json
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\obj\Release\net8.0\App.Core.dll
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\obj\Release\net8.0\refint\App.Core.dll
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\obj\Release\net8.0\App.Core.pdb
+D:\Backup\Kampus\SEMESTER 08\tubes-konstruksi\App.Core\obj\Release\net8.0\ref\App.Core.dll
