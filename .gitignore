@@ -1,0 +1,22 @@
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.vcxproj.user
+
+# Build Directories
+bin/
+obj/
+out/
+
+# Logs and Temporary Files
+*.log
+*.tmp
+*.cache
+*.pdb
+*.mdb
+
+# Rider IDE (optional, jika menggunakan JetBrains Rider)
+.idea/
+*.sln.iml
