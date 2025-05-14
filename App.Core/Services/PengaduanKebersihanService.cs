@@ -57,7 +57,7 @@ namespace App.Core.Services
         {
             var pengaduan = AmbilPengaduanById(id);
             if (pengaduan == null)
-                throw new KeyNotFoundException($"Pengaduan dengan ID {id} tidak ditemukan.");
+                throw new KeyNotFoundException(string.Format("Pengaduan dengan ID {0} tidak ditemukan.", id));
 
             if (pengaduan.Detail == null)
                 throw new InvalidOperationException("Pengaduan tidak memiliki detail yang valid.");
