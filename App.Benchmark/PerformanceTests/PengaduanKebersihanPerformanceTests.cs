@@ -7,7 +7,7 @@ using App.Core.Services;
 namespace App.Benchmark.PerformanceTests
 {
     [MemoryDiagnoser]
-    [SimpleJob(warmupCount: 1, iterationCount: 5)] // Reduces overhead
+    [SimpleJob(warmupCount: 2, iterationCount: 5)]
     public class PengaduanKebersihanPerformanceTests
     {
         private PengaduanKebersihanService _service = null!;
@@ -17,13 +17,18 @@ namespace App.Benchmark.PerformanceTests
         public void Setup()
         {
             _service = new PengaduanKebersihanService();
-            _ids = new List<string>(20); // Specify initial capacity to reduce allocations
+            _ids = new List<string>(20);
 
             for (int i = 0; i < 20; i++)
             {
-                var pengaduan = _service.TambahPengaduan($"Pelapor {i}", $"Masalah {i}", $"Lokasi {i}", Prioritas.Sedang, "Kebersihan");
+                string pelapor = String.Format("Pelapor {0}", i);
+                string masalah = String.Format("Masalah {0}", i);
+                string lokasi = String.Format("Lokasi {0}", i);
+                var pengaduan = _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Kebersihan");
                 _ids.Add(pengaduan.Id);
             }
+
+            Console.WriteLine("Setup completed. Total Pengaduan: " + _ids.Count);
         }
 
         [Benchmark]
@@ -31,29 +36,69 @@ namespace App.Benchmark.PerformanceTests
         {
             for (int i = 0; i < 20; i++)
             {
-                _service.TambahPengaduan($"Pelapor {i}", $"Masalah {i}", $"Lokasi {i}", Prioritas.Sedang, "Kebersihan");
+                string pelapor = String.Format("Pelapor {0}", i);
+                string masalah = String.Format("Masalah {0}", i);
+                string lokasi = String.Format("Lokasi {0}", i);
+                _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Kebersihan");
             }
         }
 
         [Benchmark]
-        public void UbahStatus_Massal_Performance()
+        public void CariPengaduan_Performance()
         {
             foreach (var id in _ids)
             {
-                _service.UbahStatus(id, StatusPengaduan.Diproses);
+                var pengaduan = _service.AmbilPengaduanById(id);
             }
         }
 
         [Benchmark]
-        public void AmbilSemuaPengaduan_Performance()
+        public void UpdatePengaduan_Performance()
         {
-            var pengaduanList = _service.AmbilSemuaPengaduan();
+            foreach (var id in _ids)
+            {
+                try
+                {
+                    _service.UbahDataPengaduan(id, "Pelapor Update", "Masalah Update", "Lokasi Update", Prioritas.Tinggi, "Kebersihan");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(String.Format("Error updating Pengaduan with ID {0}: {1}", id, ex.Message));
+                }
+            }
         }
 
         [Benchmark]
-        public void AmbilPengaduanById_Performance()
+        public void HapusPengaduan_Performance()
         {
-            var result = _service.AmbilPengaduanById(_ids[0]);
+            foreach (var id in _ids)
+            {
+                try
+                {
+                    var pengaduan = _service.AmbilPengaduanById(id);
+                    if (pengaduan != null)
+                    {
+                        _service.HapusPengaduan(id);
+                    }
+                    else
+                    {
+                        Console.WriteLine(string.Format("Pengaduan dengan ID {0} tidak ditemukan selama penghapusan.", id));
+                    }
+                }
+                catch (KeyNotFoundException ex)
+                {
+                    Console.WriteLine(string.Format("Error: {0}", ex.Message));
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Console.WriteLine(string.Format("Error deleting Pengaduan with ID {0}: {1}", id, ex.Message));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(string.Format("Unexpected error for Pengaduan with ID {0}: {1}", id, ex.Message));
+                }
+            }
         }
+
     }
 }

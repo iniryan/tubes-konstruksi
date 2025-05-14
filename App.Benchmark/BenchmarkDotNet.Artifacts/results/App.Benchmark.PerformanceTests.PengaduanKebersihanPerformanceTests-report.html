@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>App.Benchmark.PerformanceTests.PengaduanKebersihanPerformanceTests-20250515-013347</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.4061)
+AMD Ryzen 7 5800HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.200
+  [Host]     : .NET 9.0.2 (9.0.225.6610), X64 RyuJIT AVX2
+  Job-JBIEIR : .NET 9.0.2 (9.0.225.6610), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>IterationCount=5  WarmupCount=2  
+</code></pre>
+
+<table>
+<thead><tr><th>Method                      </th><th>Mean    </th><th>Error     </th><th>StdDev   </th><th>Gen0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>TambahPengaduan_Massal_Performance</td><td>8,497,595.6 ns</td><td>17,383,161.40 ns</td><td>4,514,351.82 ns</td><td>-</td><td>7.81 KB</td>
+</tr><tr><td>CariPengaduan_Performance</td><td>694.1 ns</td><td>29.02 ns</td><td>7.54 ns</td><td>0.2098</td><td>1.72 KB</td>
+</tr><tr><td>UpdatePengaduan_Performance</td><td>1,841,493.5 ns</td><td>57,165.12 ns</td><td>8,846.37 ns</td><td>-</td><td>10.31 KB</td>
+</tr><tr><td>HapusPengaduan_Performance</td><td>1,825,720.8 ns</td><td>71,409.95 ns</td><td>18,544.94 ns</td><td>-</td><td>5.78 KB</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -52,14 +52,17 @@ namespace App.Core.Services
         }
 
         // UPDATE - Ubah data pengaduan
-        public void UbahDataPengaduan(string id, string namaPelapor, string masalah, 
+        public void UbahDataPengaduan(string id, string namaPelapor, string masalah,
             string lokasi, Prioritas prioritas, string kategori)
         {
             var pengaduan = AmbilPengaduanById(id);
-            if (pengaduan == null) throw new KeyNotFoundException("Pengaduan tidak ditemukan.");
-            if (pengaduan.Detail == null) throw new InvalidOperationException("Pengaduan tidak memiliki detail yang valid.");
+            if (pengaduan == null)
+                throw new KeyNotFoundException($"Pengaduan dengan ID {id} tidak ditemukan.");
 
-            var detailSebelum = pengaduan.Detail;
+            if (pengaduan.Detail == null)
+                throw new InvalidOperationException("Pengaduan tidak memiliki detail yang valid.");
+
+            var previousDetail = pengaduan.Detail;
 
             pengaduan.Detail.NamaPelapor = namaPelapor;
             pengaduan.Detail.Masalah = masalah;
@@ -67,19 +70,33 @@ namespace App.Core.Services
             pengaduan.Detail.PrioritasPengaduan = prioritas;
             pengaduan.Detail.Kategori = kategori;
 
-            if (detailSebelum == pengaduan.Detail)
+            bool hasChanges = false;
+            hasChanges |= previousDetail.NamaPelapor != pengaduan.Detail.NamaPelapor;
+            hasChanges |= previousDetail.Masalah != pengaduan.Detail.Masalah;
+            hasChanges |= previousDetail.Lokasi != pengaduan.Detail.Lokasi;
+            hasChanges |= previousDetail.PrioritasPengaduan != pengaduan.Detail.PrioritasPengaduan;
+            hasChanges |= previousDetail.Kategori != pengaduan.Detail.Kategori;
+
+            if (!hasChanges)
+            {
                 throw new InvalidOperationException("Data pengaduan tidak berubah.");
+            }
         }
+
 
         // DELETE
         public void HapusPengaduan(string id)
         {
             var pengaduan = AmbilPengaduanById(id);
             if (pengaduan == null) throw new KeyNotFoundException("Pengaduan tidak ditemukan.");
-            _pengaduanList.Remove(pengaduan);
+            
+            var berhasilHapus = _pengaduanList.Remove(pengaduan);
+
+            if (!berhasilHapus)
+                throw new InvalidOperationException("Pengaduan gagal dihapus dari daftar.");
 
             if (_pengaduanList.Contains(pengaduan))
-                throw new InvalidOperationException("Pengaduan gagal dihapus dari daftar.");
+                throw new InvalidOperationException("Pengaduan masih ada di daftar setelah dihapus.");
         }
     }
 
