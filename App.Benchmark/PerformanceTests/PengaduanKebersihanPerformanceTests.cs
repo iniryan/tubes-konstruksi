@@ -21,9 +21,9 @@ namespace App.Benchmark.PerformanceTests
 
             for (int i = 0; i < 20; i++)
             {
-                string pelapor = String.Format("Pelapor {0}", i);
-                string masalah = String.Format("Masalah {0}", i);
-                string lokasi = String.Format("Lokasi {0}", i);
+                string pelapor = "Pelapor " + i;
+                string masalah = "Masalah " + i;
+                string lokasi = "Lokasi " + i;
                 var pengaduan = _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Kebersihan");
                 _ids.Add(pengaduan.Id);
             }
@@ -36,9 +36,9 @@ namespace App.Benchmark.PerformanceTests
         {
             for (int i = 0; i < 20; i++)
             {
-                string pelapor = String.Format("Pelapor {0}", i);
-                string masalah = String.Format("Masalah {0}", i);
-                string lokasi = String.Format("Lokasi {0}", i);
+                string pelapor = "Pelapor " + i;
+                string masalah = "Masalah " + i;
+                string lokasi = "Lokasi " + i;
                 _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Kebersihan");
             }
         }
@@ -63,7 +63,7 @@ namespace App.Benchmark.PerformanceTests
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(String.Format("Error updating Pengaduan with ID {0}: {1}", id, ex.Message));
+                    Console.WriteLine("Error updating Pengaduan with ID " + id + ": " + ex.Message);
                 }
             }
         }
@@ -82,23 +82,22 @@ namespace App.Benchmark.PerformanceTests
                     }
                     else
                     {
-                        Console.WriteLine(string.Format("Pengaduan dengan ID {0} tidak ditemukan selama penghapusan.", id));
+                        Console.WriteLine("Pengaduan dengan ID " + id + " tidak ditemukan selama penghapusan.");
                     }
                 }
                 catch (KeyNotFoundException ex)
                 {
-                    Console.WriteLine(string.Format("Error: {0}", ex.Message));
+                    Console.WriteLine("Error: " + ex.Message);
                 }
                 catch (InvalidOperationException ex)
                 {
-                    Console.WriteLine(string.Format("Error deleting Pengaduan with ID {0}: {1}", id, ex.Message));
+                    Console.WriteLine("Error deleting Pengaduan with ID " + id + ": " + ex.Message);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(string.Format("Unexpected error for Pengaduan with ID {0}: {1}", id, ex.Message));
+                    Console.WriteLine("Unexpected error for Pengaduan with ID " + id + ": " + ex.Message);
                 }
             }
         }
-
     }
 }

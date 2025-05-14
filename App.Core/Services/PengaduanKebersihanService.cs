@@ -57,32 +57,45 @@ namespace App.Core.Services
         {
             var pengaduan = AmbilPengaduanById(id);
             if (pengaduan == null)
-                throw new KeyNotFoundException(string.Format("Pengaduan dengan ID {0} tidak ditemukan.", id));
+                throw new KeyNotFoundException("Pengaduan dengan ID " + id + " tidak ditemukan.");
 
             if (pengaduan.Detail == null)
                 throw new InvalidOperationException("Pengaduan tidak memiliki detail yang valid.");
 
-            var previousDetail = pengaduan.Detail;
-
-            pengaduan.Detail.NamaPelapor = namaPelapor;
-            pengaduan.Detail.Masalah = masalah;
-            pengaduan.Detail.Lokasi = lokasi;
-            pengaduan.Detail.PrioritasPengaduan = prioritas;
-            pengaduan.Detail.Kategori = kategori;
-
+            var currentDetail = pengaduan.Detail;
             bool hasChanges = false;
-            hasChanges |= previousDetail.NamaPelapor != pengaduan.Detail.NamaPelapor;
-            hasChanges |= previousDetail.Masalah != pengaduan.Detail.Masalah;
-            hasChanges |= previousDetail.Lokasi != pengaduan.Detail.Lokasi;
-            hasChanges |= previousDetail.PrioritasPengaduan != pengaduan.Detail.PrioritasPengaduan;
-            hasChanges |= previousDetail.Kategori != pengaduan.Detail.Kategori;
+
+            if (currentDetail.NamaPelapor != namaPelapor)
+            {
+                currentDetail.NamaPelapor = namaPelapor;
+                hasChanges = true;
+            }
+            if (currentDetail.Masalah != masalah)
+            {
+                currentDetail.Masalah = masalah;
+                hasChanges = true;
+            }
+            if (currentDetail.Lokasi != lokasi)
+            {
+                currentDetail.Lokasi = lokasi;
+                hasChanges = true;
+            }
+            if (currentDetail.PrioritasPengaduan != prioritas)
+            {
+                currentDetail.PrioritasPengaduan = prioritas;
+                hasChanges = true;
+            }
+            if (currentDetail.Kategori != kategori)
+            {
+                currentDetail.Kategori = kategori;
+                hasChanges = true;
+            }
 
             if (!hasChanges)
             {
                 throw new InvalidOperationException("Data pengaduan tidak berubah.");
             }
         }
-
 
         // DELETE
         public void HapusPengaduan(string id)
