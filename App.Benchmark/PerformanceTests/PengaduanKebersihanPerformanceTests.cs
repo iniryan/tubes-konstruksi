@@ -24,7 +24,7 @@ namespace App.Benchmark.PerformanceTests
                 string pelapor = "Pelapor " + i;
                 string masalah = "Masalah " + i;
                 string lokasi = "Lokasi " + i;
-                var pengaduan = _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Kebersihan");
+                var pengaduan = _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Sampah");
                 _ids.Add(pengaduan.Id);
             }
 
@@ -39,7 +39,7 @@ namespace App.Benchmark.PerformanceTests
                 string pelapor = "Pelapor " + i;
                 string masalah = "Masalah " + i;
                 string lokasi = "Lokasi " + i;
-                _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Kebersihan");
+                _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Sampah");
             }
         }
 
@@ -59,7 +59,7 @@ namespace App.Benchmark.PerformanceTests
             {
                 try
                 {
-                    _service.UbahDataPengaduan(id, "Pelapor Update", "Masalah Update", "Lokasi Update", Prioritas.Tinggi, "Kebersihan");
+                    _service.UbahDataPengaduan(id, "Pelapor Update", "Masalah Update", "Lokasi Update", Prioritas.Tinggi, "Sampah");
                 }
                 catch (Exception ex)
                 {
