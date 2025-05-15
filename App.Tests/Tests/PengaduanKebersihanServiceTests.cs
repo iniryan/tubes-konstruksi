@@ -19,7 +19,7 @@ namespace App.Tests.Tests
                 masalah,
                 lokasi,
                 Prioritas.Tinggi,
-                "Kebersihan"
+                "Sampah"
             );
 
             Assert.NotNull(pengaduan);
@@ -33,7 +33,7 @@ namespace App.Tests.Tests
             var service = new PengaduanKebersihanService();
 
             var ex = Assert.Throws<ArgumentException>(() =>
-                service.TambahPengaduan("", "Masalah", "Lokasi", Prioritas.Sedang, "Kebersihan"));
+                service.TambahPengaduan("", "Masalah", "Lokasi", Prioritas.Sedang, "Sampah"));
 
             Assert.Equal("Nama pelapor harus diisi", ex.Message);
         }
@@ -43,7 +43,7 @@ namespace App.Tests.Tests
         {
             var service = new PengaduanKebersihanService();
             var exception = Assert.Throws<ArgumentException>(() =>
-                service.TambahPengaduan("Joko", "", "Lokasi A", Prioritas.Sedang, "Kebersihan"));
+                service.TambahPengaduan("Joko", "", "Lokasi A", Prioritas.Sedang, "Sampah"));
 
             Assert.Equal("Masalah harus diisi", exception.Message);
         }
@@ -53,7 +53,7 @@ namespace App.Tests.Tests
         {
             var service = new PengaduanKebersihanService();
             var exception = Assert.Throws<ArgumentException>(() =>
-                service.TambahPengaduan("Joko", "Masalah A", "", Prioritas.Rendah, "Kebersihan"));
+                service.TambahPengaduan("Joko", "Masalah A", "", Prioritas.Rendah, "Sampah"));
 
             Assert.Equal("Lokasi harus diisi", exception.Message);
         }
@@ -73,8 +73,8 @@ namespace App.Tests.Tests
         public void Should_Return_All_Added_Pengaduan()
         {
             var service = new PengaduanKebersihanService();
-            service.TambahPengaduan("Joko", "Masalah A", "Lokasi A", Prioritas.Sedang, "Kebersihan");
-            service.TambahPengaduan("Sari", "Masalah B", "Lokasi B", Prioritas.Rendah, "Kebersihan");
+            service.TambahPengaduan("Joko", "Masalah A", "Lokasi A", Prioritas.Sedang, "Sampah");
+            service.TambahPengaduan("Sari", "Masalah B", "Lokasi B", Prioritas.Rendah, "Sampah");
 
             var all = service.AmbilSemuaPengaduan();
 
@@ -85,7 +85,7 @@ namespace App.Tests.Tests
         public void Should_Return_All_Pengaduan()
         {
             var service = new PengaduanKebersihanService();
-            service.TambahPengaduan("Joko", "Sampah menumpuk", "Koridor 2", Prioritas.Tinggi, "Kebersihan");
+            service.TambahPengaduan("Joko", "Sampah menumpuk", "Koridor 2", Prioritas.Tinggi, "Sampah");
 
             var pengaduanList = service.AmbilSemuaPengaduan();
 
@@ -97,7 +97,7 @@ namespace App.Tests.Tests
         public void Should_Have_Default_Status_Dibuat_When_Added()
         {
             var service = new PengaduanKebersihanService();
-            var pengaduan = service.TambahPengaduan("Joko", "Masalah", "Lokasi", Prioritas.Tinggi, "Kebersihan");
+            var pengaduan = service.TambahPengaduan("Joko", "Masalah", "Lokasi", Prioritas.Tinggi, "Sampah");
 
             Assert.Equal(StatusPengaduan.Dibuat, pengaduan.Status);
         }
@@ -106,7 +106,7 @@ namespace App.Tests.Tests
         public void Should_Update_Status_To_Diproses()
         {
             var service = new PengaduanKebersihanService();
-            var pengaduan = service.TambahPengaduan("Joko", "Sampah berserakan", "Halaman", Prioritas.Sedang, "Kebersihan");
+            var pengaduan = service.TambahPengaduan("Joko", "Sampah berserakan", "Halaman", Prioritas.Sedang, "Sampah");
 
             service.UbahStatus(pengaduan.Id, StatusPengaduan.Diproses);
 
@@ -117,7 +117,7 @@ namespace App.Tests.Tests
         public void Should_Update_Status_To_Selesai_From_Diproses()
         {
             var service = new PengaduanKebersihanService();
-            var pengaduan = service.TambahPengaduan("Joko", "Sampah belum diangkut", "Lorong", Prioritas.Sedang, "Kebersihan");
+            var pengaduan = service.TambahPengaduan("Joko", "Sampah belum diangkut", "Lorong", Prioritas.Sedang, "Sampah");
             service.UbahStatus(pengaduan.Id, StatusPengaduan.Diproses);
 
             service.UbahStatus(pengaduan.Id, StatusPengaduan.Selesai);
@@ -129,7 +129,7 @@ namespace App.Tests.Tests
         public void Should_Update_Status_To_Ditolak_From_Dibuat()
         {
             var service = new PengaduanKebersihanService();
-            var pengaduan = service.TambahPengaduan("Joko", "Pengaduan tidak relevan", "Tempat Sampah", Prioritas.Rendah, "Kebersihan");
+            var pengaduan = service.TambahPengaduan("Joko", "Pengaduan tidak relevan", "Tempat Sampah", Prioritas.Rendah, "Sampah");
 
             service.UbahStatus(pengaduan.Id, StatusPengaduan.Ditolak);
 
@@ -140,7 +140,7 @@ namespace App.Tests.Tests
         public void Should_Throw_Exception_If_Transition_Invalid()
         {
             var service = new PengaduanKebersihanService();
-            var pengaduan = service.TambahPengaduan("Joko", "Sampah banyak", "Area Belakang", Prioritas.Sedang, "Kebersihan");
+            var pengaduan = service.TambahPengaduan("Joko", "Sampah banyak", "Area Belakang", Prioritas.Sedang, "Sampah");
             service.UbahStatus(pengaduan.Id, StatusPengaduan.Diproses);
 
             var ex = Assert.Throws<InvalidOperationException>(() =>
@@ -165,7 +165,7 @@ namespace App.Tests.Tests
         public void Should_Delete_Pengaduan_By_Id()
         {
             var service = new PengaduanKebersihanService();
-            var pengaduan = service.TambahPengaduan("Joko", "Sampah di tangga", "Tangga", Prioritas.Tinggi, "Kebersihan");
+            var pengaduan = service.TambahPengaduan("Joko", "Sampah di tangga", "Tangga", Prioritas.Tinggi, "Sampah");
 
             service.HapusPengaduan(pengaduan.Id);
 
@@ -179,7 +179,7 @@ namespace App.Tests.Tests
         public void Should_Get_Pengaduan_By_Id()
         {
             var service = new PengaduanKebersihanService();
-            var pengaduan = service.TambahPengaduan("Joko", "Tumpukan sampah", "Lobby", Prioritas.Sedang, "Kebersihan");
+            var pengaduan = service.TambahPengaduan("Joko", "Tumpukan sampah", "Lobby", Prioritas.Sedang, "Sampah");
 
             var result = service.AmbilPengaduanById(pengaduan.Id);
 
@@ -191,8 +191,8 @@ namespace App.Tests.Tests
         public void Should_Generate_Unique_Id_For_Each_Pengaduan()
         {
             var service = new PengaduanKebersihanService();
-            var p1 = service.TambahPengaduan("Joko", "Masalah A", "Lokasi A", Prioritas.Tinggi, "Kebersihan");
-            var p2 = service.TambahPengaduan("Sari", "Masalah B", "Lokasi B", Prioritas.Rendah, "Kebersihan");
+            var p1 = service.TambahPengaduan("Joko", "Masalah A", "Lokasi A", Prioritas.Tinggi, "Sampah");
+            var p2 = service.TambahPengaduan("Sari", "Masalah B", "Lokasi B", Prioritas.Rendah, "Sampah");
 
             Assert.NotEqual(p1.Id, p2.Id);
         }
@@ -201,9 +201,9 @@ namespace App.Tests.Tests
         public void Should_Update_Data_Pengaduan()
         {
             var service = new PengaduanKebersihanService();
-            var pengaduan = service.TambahPengaduan("Joko", "Sampah menumpuk", "Koridor 3", Prioritas.Tinggi, "Kebersihan");
+            var pengaduan = service.TambahPengaduan("Joko", "Sampah menumpuk", "Koridor 3", Prioritas.Tinggi, "Sampah");
 
-            service.UbahDataPengaduan(pengaduan.Id, "Sari", "Sampah bertumpuk", "Koridor 4", Prioritas.Sedang, "Kebersihan");
+            service.UbahDataPengaduan(pengaduan.Id, "Sari", "Sampah bertumpuk", "Koridor 4", Prioritas.Sedang, "Sampah");
 
             var updatedPengaduan = service.AmbilPengaduanById(pengaduan.Id);
 
