@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj": {}
+    "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj": {}
   },
   "projects": {
-    "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj": {
+    "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj",
+        "projectUniqueName": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj",
         "projectName": "APP.CLI",
-        "projectPath": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj",
+        "projectPath": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj",
         "packagesPath": "C:\\Users\\Januar129\\.nuget\\packages\\",
-        "outputPath": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\obj\\",
+        "outputPath": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "MSTest": {
+              "target": "Package",
+              "version": "[3.8.3, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,26 +1,43 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\",
+  "WorkspaceRootPath": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|d:\\tugas akhir damasya ine larisa\\tubes-konstruksi\\app.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96662382-307D-4D20-BAAE-23947B4CCAA3}|..\\App.BANCHMARK\\App.BANCHMARK.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.banchmark\\benchmarkrunnerprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|d:\\tugas akhir damasya ine larisa\\tubes-konstruksi\\app.cli\\data\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{96662382-307D-4D20-BAAE-23947B4CCAA3}|..\\App.BANCHMARK\\App.BANCHMARK.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.banchmark\\tamuhelperperformancetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96662382-307D-4D20-BAAE-23947B4CCAA3}|..\\App.BANCHMARK\\App.BANCHMARK.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.banchmark\\app.banchmark.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC0A65A-06F9-4A7E-B1CD-E424E3517B90}|..\\APP.TESTING\\APP.TESTING.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.testing\\app.testing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.cli\\models\\tamu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|solutionrelative:models\\tamu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Januar129\\.nuget\\packages\\microsoft.net.test.sdk\\17.13.0\\build\\netcoreapp3.1\\Microsoft.NET.Test.Sdk.Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC0A65A-06F9-4A7E-B1CD-E424E3517B90}|..\\APP.TESTING\\APP.TESTING.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.testing\\mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8DC0A65A-06F9-4A7E-B1CD-E424E3517B90}|..\\APP.TESTING\\APP.TESTING.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.testing\\tamutest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.cli\\data\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|solutionrelative:data\\guestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|d:\\tugas akhir damasya ine larisa\\tubes-konstruksi\\app.cli\\app.cli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|solutionrelative:app.cli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|d:\\tugas akhir damasya ine larisa\\tubes-konstruksi\\app.cli\\helpers\\tamuhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.cli\\helpers\\tamuhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|solutionrelative:helpers\\tamuhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|d:\\tugas akhir damasya ine larisa\\tubes-konstruksi\\app.cli\\models\\tamu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|solutionrelative:models\\tamu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.cli\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F42D137F-E65E-41BB-A089-7424737D6A13}|APP.CLI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,41 +47,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "APP.BANCHMARK",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\App.BANCHMARK\\APP.BANCHMARK.csproj",
+              "RelativeDocumentMoniker": "..\\App.BANCHMARK\\APP.BANCHMARK.csproj",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\App.BANCHMARK\\APP.BANCHMARK.csproj",
+              "RelativeToolTip": "..\\App.BANCHMARK\\APP.BANCHMARK.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-15T04:04:58.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GuestRepository.cs",
-              "DocumentMoniker": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\Data\\GuestRepository.cs",
-              "RelativeDocumentMoniker": "Data\\GuestRepository.cs",
-              "ToolTip": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\Data\\GuestRepository.cs",
-              "RelativeToolTip": "Data\\GuestRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAAAAAAAAAAAAA==",
+              "Title": "TamuHelperPerformanceTests.cs",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\App.BANCHMARK\\TamuHelperPerformanceTests.cs",
+              "RelativeDocumentMoniker": "..\\App.BANCHMARK\\TamuHelperPerformanceTests.cs",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\App.BANCHMARK\\TamuHelperPerformanceTests.cs",
+              "RelativeToolTip": "..\\App.BANCHMARK\\TamuHelperPerformanceTests.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T03:45:18.268Z",
+              "WhenOpened": "2025-05-15T04:04:30.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BenchmarkRunnerProgram.cs",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\App.BANCHMARK\\BenchmarkRunnerProgram.cs",
+              "RelativeDocumentMoniker": "..\\App.BANCHMARK\\BenchmarkRunnerProgram.cs",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\App.BANCHMARK\\BenchmarkRunnerProgram.cs",
+              "RelativeToolTip": "..\\App.BANCHMARK\\BenchmarkRunnerProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T03:54:48.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Microsoft.NET.Test.Sdk.Program.cs",
+              "DocumentMoniker": "C:\\Users\\Januar129\\.nuget\\packages\\microsoft.net.test.sdk\\17.13.0\\build\\netcoreapp3.1\\Microsoft.NET.Test.Sdk.Program.cs",
+              "ToolTip": "C:\\Users\\Januar129\\.nuget\\packages\\microsoft.net.test.sdk\\17.13.0\\build\\netcoreapp3.1\\Microsoft.NET.Test.Sdk.Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T03:28:13.833Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "TamuHelper.cs",
-              "DocumentMoniker": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\Helpers\\TamuHelper.cs",
-              "RelativeDocumentMoniker": "Helpers\\TamuHelper.cs",
-              "ToolTip": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\Helpers\\TamuHelper.cs",
-              "RelativeToolTip": "Helpers\\TamuHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Title": "APP.TESTING",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.TESTING\\APP.TESTING.csproj",
+              "RelativeDocumentMoniker": "..\\APP.TESTING\\APP.TESTING.csproj",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.TESTING\\APP.TESTING.csproj",
+              "RelativeToolTip": "..\\APP.TESTING\\APP.TESTING.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-15T02:40:37.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MSTestSettings.cs",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.TESTING\\MSTestSettings.cs",
+              "RelativeDocumentMoniker": "..\\APP.TESTING\\MSTestSettings.cs",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.TESTING\\MSTestSettings.cs",
+              "RelativeToolTip": "..\\APP.TESTING\\MSTestSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T03:39:24.791Z",
+              "WhenOpened": "2025-05-15T00:17:57.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TamuTest.cs",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.TESTING\\TamuTest.cs",
+              "RelativeDocumentMoniker": "..\\APP.TESTING\\TamuTest.cs",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.TESTING\\TamuTest.cs",
+              "RelativeToolTip": "..\\APP.TESTING\\TamuTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T23:26:57.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Tamu.cs",
-              "DocumentMoniker": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\Models\\Tamu.cs",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\Models\\Tamu.cs",
               "RelativeDocumentMoniker": "Models\\Tamu.cs",
-              "ToolTip": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\Models\\Tamu.cs",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\Models\\Tamu.cs",
               "RelativeToolTip": "Models\\Tamu.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -73,24 +153,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "APP.CLI",
-              "DocumentMoniker": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj",
-              "RelativeDocumentMoniker": "APP.CLI.csproj",
-              "ToolTip": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj",
-              "RelativeToolTip": "APP.CLI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-12T03:31:25.313Z",
+              "DocumentIndex": 8,
+              "Title": "GuestRepository.cs",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\Data\\GuestRepository.cs",
+              "RelativeDocumentMoniker": "Data\\GuestRepository.cs",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\Data\\GuestRepository.cs",
+              "RelativeToolTip": "Data\\GuestRepository.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAnwFgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T03:45:18.268Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
+              "Title": "TamuHelper.cs",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\Helpers\\TamuHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\TamuHelper.cs",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\Helpers\\TamuHelper.cs",
+              "RelativeToolTip": "Helpers\\TamuHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T03:39:24.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\Program.cs",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\TUGAS AKHIR DAMASYA INE LARISA\\tubes-konstruksi\\APP.CLI\\Program.cs",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

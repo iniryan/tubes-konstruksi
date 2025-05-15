@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.TESTING\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{485C4CF8-CA8D-2AFF-062D-AFED5546A764}|APP.TESTING.csproj|d:\\tugbes konstruksi\\tubes-konstruksi\\app.testing\\tamutest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{485C4CF8-CA8D-2AFF-062D-AFED5546A764}|APP.TESTING.csproj|solutionrelative:tamutest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TamuTest.cs",
+              "DocumentMoniker": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.TESTING\\TamuTest.cs",
+              "RelativeDocumentMoniker": "TamuTest.cs",
+              "ToolTip": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.TESTING\\TamuTest.cs",
+              "RelativeToolTip": "TamuTest.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T00:30:10.838Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
