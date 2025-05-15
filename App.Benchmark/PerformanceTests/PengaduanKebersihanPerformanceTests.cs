@@ -17,9 +17,9 @@ namespace App.Benchmark.PerformanceTests
         public void Setup()
         {
             _service = new PengaduanKebersihanService();
-            _ids = new List<string>(20);
+            _ids = new List<string>(100);
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 100; i++)
             {
                 string pelapor = "Pelapor " + i;
                 string masalah = "Masalah " + i;
@@ -34,7 +34,7 @@ namespace App.Benchmark.PerformanceTests
         [Benchmark]
         public void TambahPengaduan_Massal_Performance()
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 100; i++)
             {
                 string pelapor = "Pelapor " + i;
                 string masalah = "Masalah " + i;
