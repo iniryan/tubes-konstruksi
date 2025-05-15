@@ -17,14 +17,14 @@ namespace App.Benchmark.PerformanceTests
         public void Setup()
         {
             _service = new PengaduanKebersihanService();
-            _ids = new List<string>(20);
+            _ids = new List<string>(100);
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 100; i++)
             {
                 string pelapor = "Pelapor " + i;
                 string masalah = "Masalah " + i;
                 string lokasi = "Lokasi " + i;
-                var pengaduan = _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Kebersihan");
+                var pengaduan = _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Sampah");
                 _ids.Add(pengaduan.Id);
             }
 
@@ -34,12 +34,12 @@ namespace App.Benchmark.PerformanceTests
         [Benchmark]
         public void TambahPengaduan_Massal_Performance()
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 100; i++)
             {
                 string pelapor = "Pelapor " + i;
                 string masalah = "Masalah " + i;
                 string lokasi = "Lokasi " + i;
-                _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Kebersihan");
+                _service.TambahPengaduan(pelapor, masalah, lokasi, Prioritas.Sedang, "Sampah");
             }
         }
 
@@ -59,7 +59,7 @@ namespace App.Benchmark.PerformanceTests
             {
                 try
                 {
-                    _service.UbahDataPengaduan(id, "Pelapor Update", "Masalah Update", "Lokasi Update", Prioritas.Tinggi, "Kebersihan");
+                    _service.UbahDataPengaduan(id, "Pelapor Update", "Masalah Update", "Lokasi Update", Prioritas.Tinggi, "Sampah");
                 }
                 catch (Exception ex)
                 {
