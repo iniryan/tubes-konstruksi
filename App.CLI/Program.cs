@@ -60,8 +60,40 @@ class Program
                     var masalah = Console.ReadLine();
                     Console.Write("Masukkan lokasi: ");
                     var lokasi = Console.ReadLine();
-                    Console.Write("Masukkan kategori (misalnya: Sampah, Saluran Air, WC Umum, Lainnya): ");
-                    var kategori = Console.ReadLine();
+                    string? kategori = null;
+                    while (true)
+                    {
+                        Console.WriteLine("Pilih kategori:");
+                        Console.WriteLine("1. Sampah");
+                        Console.WriteLine("2. Saluran Air");
+                        Console.WriteLine("3. WC Umum");
+                        Console.WriteLine("4. Lainnya");
+                        Console.Write("Masukkan pilihan kategori (1-4): ");
+                        var kategoriInput = Console.ReadLine();
+
+                        if (string.IsNullOrWhiteSpace(kategoriInput))
+                        {
+                            Console.WriteLine("Kategori harus diisi.");
+                            continue;
+                        }
+
+                        if (kategoriInput != "1" && kategoriInput != "2" && kategoriInput != "3" && kategoriInput != "4")
+                        {
+                            Console.WriteLine("Input kategori tidak valid. Silakan coba lagi.");
+                        }
+                        else
+                        {
+                            kategori = kategoriInput switch
+                            {
+                                "1" => "Sampah",
+                                "2" => "Saluran Air",
+                                "3" => "WC Umum",
+                                "4" => "Lainnya",
+                                _ => throw new InvalidOperationException()
+                            };
+                            break;
+                        }
+                    }
 
                     Console.WriteLine("Pilih prioritas:");
                     Console.WriteLine("1. Rendah");

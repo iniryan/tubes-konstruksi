@@ -212,7 +212,7 @@ namespace App.Tests.Tests
             Assert.Equal("Sampah bertumpuk", updatedPengaduan.Detail.Masalah);
             Assert.Equal("Koridor 4", updatedPengaduan.Detail.Lokasi);
             Assert.Equal(Prioritas.Sedang, updatedPengaduan.Detail.PrioritasPengaduan);
-            Assert.Equal("Kebersihan", updatedPengaduan.Detail.Kategori);
+            Assert.Equal("Sampah", updatedPengaduan.Detail.Kategori);
         }
 
     }
