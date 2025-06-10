@@ -2,7 +2,7 @@ using Microsoft.Data.Sqlite;
 using System;
 using System.IO;
 
-namespace PengaduanKeamananCLI.Database
+namespace App.Core.Utils
 {
     public static class DatabaseHelper
     {

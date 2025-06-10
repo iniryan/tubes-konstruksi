@@ -1,7 +1,7 @@
 using Microsoft.Data.Sqlite;
 using PengaduanKeamananCLI.Models;
-using PengaduanKeamananCLI.Database;
 using System;
+using App.Core.Utils;
 
 namespace PengaduanKeamananCLI.Services
 {
