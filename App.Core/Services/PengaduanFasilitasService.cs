@@ -1,4 +1,5 @@
-﻿using PengaduanFasilitas.Models;
+﻿using App.Core.Utils;
+using PengaduanFasilitas.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PengaduanFasilitas.Services
 {
-    public class PengaduanFasilitasServ
+    public class PengaduanFasilitasService
     {
         private List<Pengaduan> complaints = new();
         private readonly Validator validator = new();

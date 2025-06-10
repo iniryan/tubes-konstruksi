@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
-namespace PengaduanFasilitas.Services
+namespace App.Core.Utils
 {
     public class Validator
     {
