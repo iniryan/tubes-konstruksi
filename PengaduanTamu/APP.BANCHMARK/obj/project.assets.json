@@ -4546,23 +4546,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Januar129\\.nuget\\packages\\": {},
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\App.BANCHMARK\\App.BANCHMARK.csproj",
-      "projectName": "App.BANCHMARK",
-      "projectPath": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\App.BANCHMARK\\App.BANCHMARK.csproj",
-      "packagesPath": "C:\\Users\\Januar129\\.nuget\\packages\\",
-      "outputPath": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\App.BANCHMARK\\obj\\",
+      "projectUniqueName": "D:\\Backup\\Kampus\\SEMESTER 08\\tubes-konstruksi\\PengaduanTamu\\App.BANCHMARK\\APP.BANCHMARK.csproj",
+      "projectName": "APP.BANCHMARK",
+      "projectPath": "D:\\Backup\\Kampus\\SEMESTER 08\\tubes-konstruksi\\PengaduanTamu\\App.BANCHMARK\\APP.BANCHMARK.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "D:\\Backup\\Kampus\\SEMESTER 08\\tubes-konstruksi\\PengaduanTamu\\App.BANCHMARK\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Januar129\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4577,8 +4577,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj": {
-              "projectPath": "D:\\TUGBES KONSTRUKSI\\tubes-konstruksi\\APP.CLI\\APP.CLI.csproj"
+            "D:\\Backup\\Kampus\\SEMESTER 08\\tubes-konstruksi\\PengaduanTamu\\APP.CLI\\APP.CLI.csproj": {
+              "projectPath": "D:\\Backup\\Kampus\\SEMESTER 08\\tubes-konstruksi\\PengaduanTamu\\APP.CLI\\APP.CLI.csproj"
             }
           }
         }
@@ -4620,7 +4620,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -5,12 +5,12 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Januar129\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\ASUS\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.13.2</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\Januar129\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\ASUS\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
@@ -28,7 +28,7 @@
     <Import Project="$(NuGetPackageRoot)microsoft.net.test.sdk\17.13.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.test.sdk\17.13.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\Januar129\.nuget\packages\xunit.analyzers\1.18.0</Pkgxunit_analyzers>
-    <PkgMSTest_Analyzers Condition=" '$(PkgMSTest_Analyzers)' == '' ">C:\Users\Januar129\.nuget\packages\mstest.analyzers\3.8.3</PkgMSTest_Analyzers>
+    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\ASUS\.nuget\packages\xunit.analyzers\1.18.0</Pkgxunit_analyzers>
+    <PkgMSTest_Analyzers Condition=" '$(PkgMSTest_Analyzers)' == '' ">C:\Users\ASUS\.nuget\packages\mstest.analyzers\3.8.3</PkgMSTest_Analyzers>
   </PropertyGroup>
 </Project>
