@@ -7,13 +7,14 @@
         public Prioritas PrioritasPengaduan { get; set; }
         public string Kategori { get; set; }
 
-        public DetailKebersihan(string namaPelapor, string lokasi, string deskripsi, Prioritas prioritas, string kategori)
+        [System.Text.Json.Serialization.JsonConstructor]
+        public DetailKebersihan(string namaPelapor, string lokasi, string deskripsi, Prioritas prioritasPengaduan, string kategori)
             : base(namaPelapor, lokasi, deskripsi)
         {
             if (string.IsNullOrWhiteSpace(kategori))
                 throw new ArgumentException("Kategori harus diisi.", nameof(kategori));
 
-            PrioritasPengaduan = prioritas;
+            PrioritasPengaduan = prioritasPengaduan;
             Kategori = kategori;
         }
     }

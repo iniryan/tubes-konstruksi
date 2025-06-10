@@ -1,0 +1,14 @@
+[
+  {
+    "Id": "33fb0286-dfe5-48a4-ab07-6974d51fd6aa",
+    "Detail": {
+      "PrioritasPengaduan": 1,
+      "Kategori": "Sampah Organik",
+      "NamaPelapor": "Budi Santoso (Diperbarui)",
+      "Lokasi": "Lobi Gedung A",
+      "Deskripsi": "Tumpukan sampah di depan lobi utama gedung A."
+    },
+    "Status": 1,
+    "TanggalDibuat": "2025-06-10T15:10:16.093462+07:00"
+  }
+]
