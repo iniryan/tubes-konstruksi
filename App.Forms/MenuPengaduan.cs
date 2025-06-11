@@ -17,6 +17,7 @@ namespace App.Forms
         private readonly User _currentUser;
         private Control currentControl;
         private PengaduanKebersihan pengaduanKebersihan;
+        private PengaduanFasilitasForm pengaduanFasilitas;
 
         public Panel GetPanel()
         {
@@ -38,6 +39,11 @@ namespace App.Forms
             pengaduanKebersihan.Visible = false;
             pengaduanKebersihan.Dock = DockStyle.Fill;
             panelContentPengaduan.Controls.Add(pengaduanKebersihan);
+            
+            pengaduanFasilitas = new PengaduanFasilitasForm();
+            pengaduanFasilitas.Dock = DockStyle.Fill;
+            pengaduanFasilitas.Visible = false;
+            panelContentPengaduan.Controls.Add(pengaduanFasilitas);
         }
 
         private void SetupComboBox()
@@ -78,8 +84,9 @@ namespace App.Forms
                     // currentControl = pengaduanKeamanan;
                     break;
                 case "Fasilitas":
-                    // pengaduanFasilitas.Visible = true;
-                    // currentControl = pengaduanFasilitas;
+                    // TODO: Tampilkan UserControl untuk Fasilitas
+                     pengaduanFasilitas.Visible = true;
+                    currentControl = pengaduanFasilitas;
                     break;
             }
         }
