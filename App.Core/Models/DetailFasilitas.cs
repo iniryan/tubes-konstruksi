@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PengaduanFasilitas.Models
+﻿namespace App.Core.Models
 {
-    public class Pengaduan
+    public class DetailFasilitas : PengaduanDetailBase
     {
-        public string Type { get; set; }
-        public string Description { get; set; }
+        public string JenisFasilitas { get; set; }
 
-        public Pengaduan(string type, string description)
+        public DetailFasilitas(string namaPelapor, string lokasi, string deskripsi, string jenisFasilitas)
+            : base(namaPelapor, lokasi, deskripsi)
         {
-            Type = type;
-            Description = description;
+            if (string.IsNullOrWhiteSpace(jenisFasilitas))
+                throw new ArgumentException("Jenis fasilitas harus diisi.", nameof(jenisFasilitas));
+            JenisFasilitas = jenisFasilitas;
         }
     }
 }

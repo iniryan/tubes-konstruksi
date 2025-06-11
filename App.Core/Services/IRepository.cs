@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace App.Core.Services
+﻿namespace App.Core.Services
 {
-    interface IRepository
+    public interface IRepository<T> where T : class
     {
+        T? GetById(string id);
+        IEnumerable<T> GetAll();
+        void Add(T entity);
+        void Update(T entity);
+        void Delete(string id);
     }
 }

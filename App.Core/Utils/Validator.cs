@@ -1,32 +1,45 @@
-﻿using System;
+﻿using App.Core.Models; // Ditambahkan untuk mengakses DetailFasilitas
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json.Nodes;
-using System.Threading.Tasks;
 
 namespace App.Core.Utils
 {
     public class Validator
     {
-        private readonly List<string> allowedTypes;
-        private readonly int maxLength;
+        private readonly List<string> _allowedTypes;
+        private readonly int _maxLength;
 
         public Validator()
         {
+            // Logika untuk membaca file konfigurasi tetap sama
             var config = JsonNode.Parse(File.ReadAllText("config.json"));
-            allowedTypes = config["AllowedTypes"].AsArray().Select(t => t.ToString()).ToList();
-            maxLength = config["MaxDescriptionLength"].GetValue<int>();
+            _allowedTypes = config["AllowedTypes"].AsArray().Select(t => t.ToString()).ToList();
+            _maxLength = config["MaxDescriptionLength"].GetValue<int>();
         }
 
-        public void Validate(string type, string description)
+        /// <summary>
+        /// Memvalidasi objek DetailFasilitas berdasarkan aturan dari config.json.
+        /// </summary>
+        /// <param name="detail">Objek detail pengaduan yang akan divalidasi.</param>
+        public void Validate(DetailFasilitas detail)
         {
-            if (!allowedTypes.Contains(type))
-                throw new ArgumentException("Jenis pengaduan tidak valid.");
-            if (string.IsNullOrWhiteSpace(description))
-                throw new ArgumentException("Deskripsi tidak boleh kosong.");
-            if (description.Length > maxLength)
-                throw new ArgumentException($"Deskripsi terlalu panjang. Maksimal {maxLength} karakter.");
+            if (detail == null)
+                throw new ArgumentNullException(nameof(detail), "Detail pengaduan tidak boleh null.");
+
+            // 1. Validasi jenis fasilitas berdasarkan daftar yang diizinkan dari config
+            if (!_allowedTypes.Contains(detail.JenisFasilitas))
+                throw new ArgumentException($"Jenis fasilitas '{detail.JenisFasilitas}' tidak valid.");
+
+            // 2. Validasi panjang deskripsi berdasarkan batas maksimal dari config
+            if (detail.Deskripsi.Length > _maxLength)
+                throw new ArgumentException($"Deskripsi terlalu panjang. Maksimal {_maxLength} karakter.");
+
+            // Catatan: Validasi string kosong (IsNullOrWhiteSpace) tidak lagi dilakukan di sini
+            // karena sudah ditangani langsung di dalam constructor model (DetailFasilitas 
+            // dan PengaduanDetailBase), sehingga mencegah pembuatan objek yang tidak valid.
         }
     }
 }
