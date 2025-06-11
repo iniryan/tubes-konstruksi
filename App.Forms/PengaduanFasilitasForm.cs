@@ -1,4 +1,4 @@
-﻿using App.Core.Models;
+using App.Core.Models;
 using App.Core.Services;
 using System;
 using System.Collections.Generic;

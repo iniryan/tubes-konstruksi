@@ -59,7 +59,7 @@
             // labelTextDaftarPengaduan
             // 
             labelTextDaftarPengaduan.AutoSize = true;
-            labelTextDaftarPengaduan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextDaftarPengaduan.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextDaftarPengaduan.Location = new Point(42, 11);
             labelTextDaftarPengaduan.Name = "labelTextDaftarPengaduan";
             labelTextDaftarPengaduan.Size = new Size(183, 28);

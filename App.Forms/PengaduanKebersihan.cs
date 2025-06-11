@@ -10,18 +10,20 @@ namespace App.Forms
 {
     public partial class PengaduanKebersihan : UserControl
     {
+        private readonly User _currentUser;
         private readonly PengaduanKebersihanService _pengaduanService;
         private string? _selectedPengaduanId = null;
 
         private bool _isClearing = false;
 
-        public PengaduanKebersihan()
+        public PengaduanKebersihan(User user)
         {
             InitializeComponent();
+            _currentUser = user;
+
             this.Dock = DockStyle.Fill;
             _pengaduanService = new PengaduanKebersihanService();
 
-            // Event handlers
             this.Load += PengaduanKebersihan_Load;
             buttonSave.Click += ButtonSave_Click;
             buttonClear.Click += ButtonClear_Click;
@@ -51,7 +53,7 @@ namespace App.Forms
             var headerStyle = dataGridViewDataKebersihan.ColumnHeadersDefaultCellStyle;
             headerStyle.BackColor = Color.Navy;
             headerStyle.ForeColor = Color.White;
-            headerStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            headerStyle.Font = new Font("Product Sans", 10, FontStyle.Bold);
             headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             dataGridViewDataKebersihan.TopLeftHeaderCell.Style.ApplyStyle(headerStyle);
@@ -102,11 +104,11 @@ namespace App.Forms
 
                 _selectedPengaduanId = selectedRow.Cells["Id"].Value?.ToString();
 
-                // Mengisi form dari data yang sudah ada di grid
-                // textBoxNamaPelapor.Text = selectedRow.Cells["Pelapor"].Value?.ToString();
+
                 comboBoxPrioritas.SelectedItem = (Prioritas)selectedRow.Cells["PrioritasPengaduan"].Value;
                 comboBoxKategori.SelectedItem = selectedRow.Cells["Kategori"].Value?.ToString();
                 textBoxLokasi.Text = selectedRow.Cells["Lokasi"].Value?.ToString();
+                textBoxNamaPelapor.Text = selectedRow.Cells["Pelapor"].Value?.ToString();
                 richTextBoxDeskripsi.Text = selectedRow.Cells["Deskripsi"].Value?.ToString();
 
                 labelTextFormKebersihan.Text = "Ubah Data Pengaduan";
@@ -122,7 +124,6 @@ namespace App.Forms
         {
             try
             {
-                // Validasi input
                 if (comboBoxPrioritas.SelectedItem is not Prioritas prioritas)
                 {
                     MessageBox.Show("Prioritas harus dipilih.", "Validasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -132,7 +133,7 @@ namespace App.Forms
                 string? kategori = comboBoxKategori.SelectedItem?.ToString();
                 string lokasi = textBoxLokasi.Text;
                 string deskripsi = richTextBoxDeskripsi.Text;
-                string namaPelapor = "Ryan Santoso"; // Ganti dengan user yang login
+                string namaPelapor = textBoxNamaPelapor.Text;
 
                 if (string.IsNullOrWhiteSpace(lokasi) || string.IsNullOrWhiteSpace(deskripsi) || string.IsNullOrWhiteSpace(kategori))
                 {
@@ -140,7 +141,6 @@ namespace App.Forms
                     return;
                 }
 
-                // Tambah atau Ubah
                 if (_selectedPengaduanId == null)
                 {
                     await _pengaduanService.TambahPengaduanAsync(namaPelapor, deskripsi, lokasi, prioritas, kategori);
@@ -196,10 +196,9 @@ namespace App.Forms
             _isClearing = true;
 
             _selectedPengaduanId = null;
-            //textBoxNamaPelapor.Clear();
-            textBoxLokasi.Clear();
+            textBoxNamaPelapor.Clear();
             richTextBoxDeskripsi.Clear();
-
+            textBoxLokasi.Clear();
             comboBoxPrioritas.SelectedIndex = 0;
             comboBoxKategori.SelectedIndex = -1;
 
@@ -216,7 +215,7 @@ namespace App.Forms
             if (dataGridViewDataKebersihan.Rows[e.RowIndex].Selected) return;
 
             string symbol = "▶";
-            using (Font font = new Font("Segoe UI", 10, FontStyle.Bold))
+            using (Font font = new Font("Product Sans", 10, FontStyle.Bold))
             using (SolidBrush brush = new SolidBrush(Color.Gray))
             {
                 SizeF stringSize = e.Graphics.MeasureString(symbol, font);
@@ -224,6 +223,11 @@ namespace App.Forms
                 float y = e.RowBounds.Top + (e.RowBounds.Height - stringSize.Height) / 2;
                 e.Graphics.DrawString(symbol, font, brush, x, y);
             }
+        }
+
+        private void buttonSave_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
