@@ -171,5 +171,11 @@ namespace App.Core.Services
                 .GroupBy(p => p.Status)
                 .ToDictionary(g => g.Key, g => g.Count());
         }
+
+        public async Task<int> HitungTotalPengaduanAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan.Count;
+        }
     }
 }

@@ -108,7 +108,7 @@ namespace App.Forms
                 comboBoxPrioritas.SelectedItem = (Prioritas)selectedRow.Cells["PrioritasPengaduan"].Value;
                 comboBoxKategori.SelectedItem = selectedRow.Cells["Kategori"].Value?.ToString();
                 textBoxLokasi.Text = selectedRow.Cells["Lokasi"].Value?.ToString();
-                textBoxNamaPelapor.Text = selectedRow.Cells["NamaPelapor"].Value?.ToString();
+                textBoxNamaPelapor.Text = selectedRow.Cells["Pelapor"].Value?.ToString();
                 richTextBoxDeskripsi.Text = selectedRow.Cells["Deskripsi"].Value?.ToString();
 
                 labelTextFormKebersihan.Text = "Ubah Data Pengaduan";
@@ -131,7 +131,7 @@ namespace App.Forms
                 }
 
                 string? kategori = comboBoxKategori.SelectedItem?.ToString();
-                string lokasi = textBoxNamaPelapor.Text;
+                string lokasi = textBoxLokasi.Text;
                 string deskripsi = richTextBoxDeskripsi.Text;
                 string namaPelapor = textBoxNamaPelapor.Text;
 
