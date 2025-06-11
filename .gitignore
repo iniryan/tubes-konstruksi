@@ -9,6 +9,7 @@
 bin/
 obj/
 out/
+file/
 
 # Logs and Temporary Files
 *.log

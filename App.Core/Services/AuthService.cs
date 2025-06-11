@@ -1,57 +1,93 @@
-using Microsoft.Data.Sqlite;
-using PengaduanKeamananCLI.Models;
-using System;
+﻿using App.Core.Models;
 using App.Core.Utils;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PengaduanKeamananCLI.Services
+namespace App.Core.Services
 {
-    public static class AuthService
+    public class AuthService : IAuthService
     {
-        public static User? Login(string username, string password)
+        private readonly string _filePath;
+
+        public AuthService()
         {
-            using (var conn = new SqliteConnection(DatabaseHelper.ConnString))
+            string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string solutionDirectory = Path.GetFullPath(Path.Combine(exeDirectory, "..", "..", "..", ".."));
+            _filePath = Path.Combine(solutionDirectory, "App.Core", "Database", "User.json");
+
+            string? directoryPath = Path.GetDirectoryName(_filePath);
+            if (directoryPath != null)
             {
-                conn.Open();
-                var cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT id, username, password, role FROM users WHERE username = @u AND password = @p";
-                cmd.Parameters.AddWithValue("@u", username);
-                cmd.Parameters.AddWithValue("@p", password);
-                using (var reader = cmd.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        return new User
-                        {
-                            Id = reader.GetInt32(0),
-                            Username = reader.GetString(1),
-                            Password = reader.GetString(2),
-                            Role = reader.GetString(3)
-                        };
-                    }
-                }
+                Directory.CreateDirectory(directoryPath);
             }
-            return null;
         }
 
-        public static bool Register(string username, string password)
+        public async Task<User> RegisterAsync(string username, string password, string role, string alamat, string notelp, string name)
         {
-            using (var conn = new SqliteConnection(DatabaseHelper.ConnString))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(role))
             {
-                conn.Open();
-                var cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT COUNT(*) FROM users WHERE username = @u";
-                cmd.Parameters.AddWithValue("@u", username);
-                object? result = cmd.ExecuteScalar();
-                long count = (result is not null) ? (long)result : 0;
-                if (count > 0)
-                {
-                    return false; // Username sudah ada
-                }
-                cmd.CommandText = "INSERT INTO users (username, password, role) VALUES (@u, @p, 'user')";
-                cmd.Parameters.AddWithValue("@p", password);
-                cmd.ExecuteNonQuery();
-                return true;
+                throw new ArgumentException("Username, password, and role cannot be empty.");
             }
+
+            var users = await JsonUtils.ReadDataAsync<User>(_filePath);
+
+            if (users.Any(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase)))
+            {
+                throw new InvalidOperationException("Username already exists.");
+            }
+
+            var user = new User
+            {
+                Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1,
+                Username = username,
+                Password = HashPassword(password),
+                Role = role,
+                Alamat = alamat,
+                NoTelepon = notelp,
+                Name = name,
+            };
+
+            users.Add(user);
+            await JsonUtils.WriteDataAsync(_filePath, users);
+
+            return user;
+        }
+
+        public async Task<User> LoginAsync(string username, string password)
+        {
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                throw new ArgumentException("Username and password cannot be empty.");
+            }
+
+            var users = await JsonUtils.ReadDataAsync<User>(_filePath);
+            var user = users.FirstOrDefault(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
+
+            if (user == null || !VerifyPassword(password, user.Password))
+            {
+                throw new UnauthorizedAccessException("Invalid username or password.");
+            }
+
+            return user;
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
+        private bool VerifyPassword(string password, string hashedPassword)
+        {
+            return HashPassword(password) == hashedPassword;
         }
     }
-} 
+}

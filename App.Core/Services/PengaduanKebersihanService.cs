@@ -1,116 +1,181 @@
-﻿using System;
+﻿using App.Core.Models;
+using App.Core.Utils;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using App.Core.Models;
-using System.Xml.Linq;
+using System.Threading.Tasks;
 
 namespace App.Core.Services
 {
     public class PengaduanKebersihanService
     {
-        private readonly List<Pengaduan<PengaduanKebersihan>> _pengaduanList = new();
+        private readonly string _filePath;
+
+        public PengaduanKebersihanService()
+        {
+            string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            string solutionDirectory = Path.GetFullPath(Path.Combine(exeDirectory, "..", "..", "..", ".."));
+
+            _filePath = Path.Combine(solutionDirectory, "App.Core", "Database", "Kebersihan.json");
+
+            string? directoryPath = Path.GetDirectoryName(_filePath);
+            if (directoryPath != null)
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+        }
 
         // CREATE
-        public Pengaduan<PengaduanKebersihan> TambahPengaduan(string namaPelapor, string masalah, 
+        public async Task<Pengaduan<DetailKebersihan>> TambahPengaduanAsync(string namaPelapor, string deskripsi,
             string lokasi, Prioritas prioritas, string kategori)
         {
-            var pengaduan = new Pengaduan<PengaduanKebersihan>(
-                id: Guid.NewGuid().ToString(),
-                detail: new PengaduanKebersihan(namaPelapor, masalah, lokasi, prioritas, kategori)
-            );
-            _pengaduanList.Add(pengaduan);
-
-            if (!_pengaduanList.Contains(pengaduan))
-                throw new InvalidOperationException("Pengaduan gagal ditambahkan ke daftar.");
-
-            return pengaduan;
+            var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailKebersihan>>(_filePath);
+            var detail = new DetailKebersihan(namaPelapor, lokasi, deskripsi, prioritas, kategori);
+            var pengaduanBaru = new Pengaduan<DetailKebersihan>(Guid.NewGuid().ToString(), detail);
+            semuaPengaduan.Add(pengaduanBaru);
+            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            return pengaduanBaru;
         }
 
-        // READ - Semua pengaduan
-        public List<Pengaduan<PengaduanKebersihan>> AmbilSemuaPengaduan()
+        // READ - Mengambil semua pengaduan kebersihan
+        public async Task<List<Pengaduan<DetailKebersihan>>> AmbilSemuaPengaduanAsync()
         {
-            return _pengaduanList;
+            return await JsonUtils.ReadDataAsync<Pengaduan<DetailKebersihan>>(_filePath);
         }
 
-        // READ - Pengaduan berdasarkan ID
-        public Pengaduan<PengaduanKebersihan>? AmbilPengaduanById(string id)
+        // READ - Mengambil pengaduan berdasarkan ID
+        public async Task<Pengaduan<DetailKebersihan>?> AmbilPengaduanByIdAsync(string id)
         {
-            return _pengaduanList.FirstOrDefault(p => p.Id == id);
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan.FirstOrDefault(p => p.Id == id);
         }
 
-        // UPDATE - Ubah status pengaduan
-        public void UbahStatus(string id, StatusPengaduan status)
+        // UPDATE
+        public async Task UbahStatusAsync(string id, StatusPengaduan statusBaru)
         {
-            var pengaduan = AmbilPengaduanById(id);
-            if (pengaduan == null) throw new KeyNotFoundException("Pengaduan tidak ditemukan.");
-
-            var statusSebelum = pengaduan.Status;
-            pengaduan.UbahStatus(status);
-
-            if (pengaduan.Status == statusSebelum)
-                throw new InvalidOperationException("Status pengaduan tidak berubah.");
-        }
-
-        // UPDATE - Ubah data pengaduan
-        public void UbahDataPengaduan(string id, string namaPelapor, string masalah,
-            string lokasi, Prioritas prioritas, string kategori)
-        {
-            var pengaduan = AmbilPengaduanById(id);
+            var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailKebersihan>>(_filePath);
+            var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
             if (pengaduan == null)
-                throw new KeyNotFoundException("Pengaduan dengan ID " + id + " tidak ditemukan.");
+            {
+                throw new KeyNotFoundException("Pengaduan dengan ID tersebut tidak ditemukan.");
+            }
+            pengaduan.UbahStatus(statusBaru);
+            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+        }
 
-            if (pengaduan.Detail == null)
-                throw new InvalidOperationException("Pengaduan tidak memiliki detail yang valid.");
-
-            var currentDetail = pengaduan.Detail;
-            bool hasChanges = false;
-
-            if (currentDetail.NamaPelapor != namaPelapor)
+        // UPDATE - Mengubah detail data sebuah pengaduan
+        public async Task UbahDataPengaduanAsync(string id, string namaPelapor, string deskripsi, string lokasi, Prioritas prioritas, string kategori)
+        {
+            var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailKebersihan>>(_filePath);
+            var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
+            if (pengaduan == null)
             {
-                currentDetail.NamaPelapor = namaPelapor;
-                hasChanges = true;
-            }
-            if (currentDetail.Masalah != masalah)
-            {
-                currentDetail.Masalah = masalah;
-                hasChanges = true;
-            }
-            if (currentDetail.Lokasi != lokasi)
-            {
-                currentDetail.Lokasi = lokasi;
-                hasChanges = true;
-            }
-            if (currentDetail.PrioritasPengaduan != prioritas)
-            {
-                currentDetail.PrioritasPengaduan = prioritas;
-                hasChanges = true;
-            }
-            if (currentDetail.Kategori != kategori)
-            {
-                currentDetail.Kategori = kategori;
-                hasChanges = true;
+                throw new KeyNotFoundException("Pengaduan dengan ID tersebut tidak ditemukan untuk diubah.");
             }
 
-            if (!hasChanges)
-            {
-                throw new InvalidOperationException("Data pengaduan tidak berubah.");
-            }
+            if (string.IsNullOrWhiteSpace(namaPelapor)) throw new ArgumentException("Nama pelapor tidak boleh kosong.", nameof(namaPelapor));
+            if (string.IsNullOrWhiteSpace(lokasi)) throw new ArgumentException("Lokasi tidak boleh kosong.", nameof(lokasi));
+            if (string.IsNullOrWhiteSpace(deskripsi)) throw new ArgumentException("Deskripsi tidak boleh kosong.", nameof(deskripsi));
+            if (string.IsNullOrWhiteSpace(kategori)) throw new ArgumentException("Kategori tidak boleh kosong.", nameof(kategori));
+
+            pengaduan.Detail.NamaPelapor = namaPelapor;
+            pengaduan.Detail.Lokasi = lokasi;
+            pengaduan.Detail.Deskripsi = deskripsi;
+            pengaduan.Detail.PrioritasPengaduan = prioritas;
+            pengaduan.Detail.Kategori = kategori;
+
+            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
         }
 
         // DELETE
-        public void HapusPengaduan(string id)
+        public async Task HapusPengaduanAsync(string id)
         {
-            var pengaduan = AmbilPengaduanById(id);
-            if (pengaduan == null) throw new KeyNotFoundException("Pengaduan tidak ditemukan.");
-            
-            var berhasilHapus = _pengaduanList.Remove(pengaduan);
+            var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailKebersihan>>(_filePath);
+            var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
+            if (pengaduan == null)
+            {
+                throw new KeyNotFoundException("Pengaduan tidak ditemukan untuk dihapus.");
+            }
+            semuaPengaduan.Remove(pengaduan);
+            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+        }
 
-            if (!berhasilHapus)
-                throw new InvalidOperationException("Pengaduan gagal dihapus dari daftar.");
+        // FUNGSI UNTUK DASBOR ADMIN
+        public async Task<List<Pengaduan<DetailKebersihan>>> AmbilPengaduanTerbaruAsync(int jumlah = 5)
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan.OrderByDescending(p => p.TanggalDibuat).Take(jumlah).ToList();
+        }
 
-            if (_pengaduanList.Contains(pengaduan))
-                throw new InvalidOperationException("Pengaduan masih ada di daftar setelah dihapus.");
+        public async Task<List<Pengaduan<DetailKebersihan>>> AmbilPengaduanTerlamaBelumSelesaiAsync(int jumlah = 5)
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan
+                .Where(p => p.Status == StatusPengaduan.Diproses)
+                .OrderBy(p => p.TanggalDibuat)
+                .Take(jumlah)
+                .ToList();
+        }
+
+
+        // FUNGSI UNTUK DASBOR PELAPOR (PENGGUNA)
+        public async Task<(int total, int diproses, int selesai)> HitungStatistikPengaduanPelaporAsync(string namaPelapor)
+        {
+            if (string.IsNullOrWhiteSpace(namaPelapor)) return (0, 0, 0);
+
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            var pengaduanPelapor = semuaPengaduan.Where(p => p.Detail.NamaPelapor.Equals(namaPelapor, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            int total = pengaduanPelapor.Count;
+            int diproses = pengaduanPelapor.Count(p => p.Status == StatusPengaduan.Diproses);
+            int selesai = pengaduanPelapor.Count(p => p.Status == StatusPengaduan.Selesai);
+
+            return (total, diproses, selesai);
+        }
+
+        public async Task<List<Pengaduan<DetailKebersihan>>> AmbilPengaduanTerakhirPelaporAsync(string namaPelapor, int jumlah = 5)
+        {
+            if (string.IsNullOrWhiteSpace(namaPelapor)) return new List<Pengaduan<DetailKebersihan>>();
+
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan
+                .Where(p => p.Detail.NamaPelapor.Equals(namaPelapor, StringComparison.OrdinalIgnoreCase))
+                .OrderByDescending(p => p.TanggalDibuat)
+                .Take(jumlah)
+                .ToList();
+        }
+
+        // FUNGSI BARU UNTUK DASBOR UTAMA (KPI & GRAFIK)
+        public async Task<(int totalSemua, int perluDiproses)> HitungStatistikUtamaAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            int totalSemua = semuaPengaduan.Count;
+            int perluDiproses = semuaPengaduan.Count(p => p.Status == StatusPengaduan.Dibuat);
+            return (totalSemua, perluDiproses);
+        }
+
+        public async Task<Dictionary<string, int>> HitungJumlahPerKategoriAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan
+                .GroupBy(p => p.Detail.Kategori)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
+        public async Task<Dictionary<StatusPengaduan, int>> HitungKomposisiStatusAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan
+                .GroupBy(p => p.Status)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
+        public async Task<int> HitungTotalPengaduanAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan.Count;
         }
     }
-
 }
