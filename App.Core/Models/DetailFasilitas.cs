@@ -9,7 +9,6 @@
         {
             if (string.IsNullOrWhiteSpace(jenisFasilitas))
                 throw new ArgumentException("Jenis fasilitas harus diisi.", nameof(jenisFasilitas));
-
             JenisFasilitas = jenisFasilitas;
         }
     }
