@@ -3,8 +3,8 @@
     "Id": "5e05b248-5b2f-4495-8a16-1fb3e5e05c51",
     "Detail": {
       "PrioritasPengaduan": 2,
-      "Kategori": "Elektronik",
-      "NamaPelapor": "Budi Santoso",
+      "Kategori": "WC Umum",
+      "NamaPelapor": "Ryan Santoso",
       "Lokasi": "Lantai 5",
       "Deskripsi": "AC tidak dingin"
     },
@@ -15,8 +15,8 @@
     "Id": "8f1915c8-ee6a-4085-9398-d044d83cf772",
     "Detail": {
       "PrioritasPengaduan": 1,
-      "Kategori": "Sanitasi",
-      "NamaPelapor": "Siti Aminah",
+      "Kategori": "Saluran Air",
+      "NamaPelapor": "Ryan Santoso",
       "Lokasi": "Toilet Wanita Lt. 2",
       "Deskripsi": "Keran bocor"
     },
@@ -27,8 +27,8 @@
     "Id": "caeb87ad-cada-4f09-8021-1d5619dbb417",
     "Detail": {
       "PrioritasPengaduan": 1,
-      "Kategori": "Aset Kantor",
-      "NamaPelapor": "Andi Wijaya",
+      "Kategori": "Lingkungan",
+      "NamaPelapor": "Ryan Santoso",
       "Lokasi": "Ruang Rapat 3A (Gedung B)",
       "Deskripsi": "Proyektor di Ruang Rapat 3A gambarnya buram dan kekuningan."
     },

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panelContentPengaduan = new Panel();
+            buttonClear = new Button();
+            buttonDelete = new Button();
             labelTextDaftarPengaduan = new Label();
             dataGridViewDataKebersihan = new DataGridView();
             panelFormKebersihan = new Panel();
@@ -43,8 +45,6 @@
             textBoxLokasi = new TextBox();
             comboBoxPrioritas = new ComboBox();
             panelMenuPengaduan = new Panel();
-            buttonDelete = new Button();
-            buttonClear = new Button();
             panelContentPengaduan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDataKebersihan).BeginInit();
             panelFormKebersihan.SuspendLayout();
@@ -63,6 +63,32 @@
             panelContentPengaduan.Name = "panelContentPengaduan";
             panelContentPengaduan.Size = new Size(948, 558);
             panelContentPengaduan.TabIndex = 1;
+            // 
+            // buttonClear
+            // 
+            buttonClear.BackColor = SystemColors.Info;
+            buttonClear.FlatStyle = FlatStyle.Flat;
+            buttonClear.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonClear.ForeColor = SystemColors.ActiveCaptionText;
+            buttonClear.Location = new Point(348, 476);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(164, 40);
+            buttonClear.TabIndex = 11;
+            buttonClear.Text = "Clear Form";
+            buttonClear.UseVisualStyleBackColor = false;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.BackColor = Color.Firebrick;
+            buttonDelete.FlatStyle = FlatStyle.Flat;
+            buttonDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonDelete.ForeColor = SystemColors.Control;
+            buttonDelete.Location = new Point(126, 476);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(202, 40);
+            buttonDelete.TabIndex = 10;
+            buttonDelete.Text = "Hapus Data";
+            buttonDelete.UseVisualStyleBackColor = false;
             // 
             // labelTextDaftarPengaduan
             // 
@@ -203,32 +229,6 @@
             panelMenuPengaduan.Name = "panelMenuPengaduan";
             panelMenuPengaduan.Size = new Size(948, 673);
             panelMenuPengaduan.TabIndex = 10;
-            // 
-            // buttonDelete
-            // 
-            buttonDelete.BackColor = Color.Firebrick;
-            buttonDelete.FlatStyle = FlatStyle.Flat;
-            buttonDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            buttonDelete.ForeColor = SystemColors.Control;
-            buttonDelete.Location = new Point(126, 476);
-            buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(202, 40);
-            buttonDelete.TabIndex = 10;
-            buttonDelete.Text = "Hapus Data";
-            buttonDelete.UseVisualStyleBackColor = false;
-            // 
-            // buttonClear
-            // 
-            buttonClear.BackColor = SystemColors.Info;
-            buttonClear.FlatStyle = FlatStyle.Flat;
-            buttonClear.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            buttonClear.ForeColor = SystemColors.ActiveCaptionText;
-            buttonClear.Location = new Point(348, 476);
-            buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(164, 40);
-            buttonClear.TabIndex = 11;
-            buttonClear.Text = "Clear Form";
-            buttonClear.UseVisualStyleBackColor = false;
             // 
             // PengaduanKebersihan
             // 

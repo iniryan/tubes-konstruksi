@@ -1,7 +1,9 @@
 ﻿using App.Core.Models;
 using App.Core.Services;
 using System;
+using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace App.Forms
@@ -11,21 +13,21 @@ namespace App.Forms
         private readonly PengaduanKebersihanService _pengaduanService;
         private string? _selectedPengaduanId = null;
 
+        private bool _isClearing = false;
+
         public PengaduanKebersihan()
         {
             InitializeComponent();
             this.Dock = DockStyle.Fill;
-
-            // Inisialisasi service
             _pengaduanService = new PengaduanKebersihanService();
 
-            // Tambahkan event handler
+            // Event handlers
             this.Load += PengaduanKebersihan_Load;
-            buttonSave.Click += buttonSave_Click;
-            buttonClear.Click += buttonClear_Click;
-            buttonDelete.Click += buttonDelete_Click;
-            dataGridViewDataKebersihan.SelectionChanged += dataGridViewDataKebersihan_SelectionChanged;
-            dataGridViewDataKebersihan.RowPostPaint += dataGridViewDataKebersihan_RowPostPaint;
+            buttonSave.Click += ButtonSave_Click;
+            buttonClear.Click += ButtonClear_Click;
+            buttonDelete.Click += ButtonDelete_Click;
+            dataGridViewDataKebersihan.SelectionChanged += DataGridViewDataKebersihan_SelectionChanged;
+            dataGridViewDataKebersihan.RowPostPaint += DataGridViewDataKebersihan_RowPostPaint;
         }
 
         private async void PengaduanKebersihan_Load(object? sender, EventArgs e)
@@ -38,8 +40,13 @@ namespace App.Forms
         private void SetupDataGridViewStyles()
         {
             dataGridViewDataKebersihan.RowHeadersVisible = true;
-
             dataGridViewDataKebersihan.TopLeftHeaderCell.Value = "Pilih Data";
+            dataGridViewDataKebersihan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDataKebersihan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            dataGridViewDataKebersihan.AllowUserToAddRows = false;
+            dataGridViewDataKebersihan.AllowUserToDeleteRows = false;
+            dataGridViewDataKebersihan.ReadOnly = true;
 
             var headerStyle = dataGridViewDataKebersihan.ColumnHeadersDefaultCellStyle;
             headerStyle.BackColor = Color.Navy;
@@ -48,44 +55,27 @@ namespace App.Forms
             headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             dataGridViewDataKebersihan.TopLeftHeaderCell.Style.ApplyStyle(headerStyle);
-
-            dataGridViewDataKebersihan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
-            dataGridViewDataKebersihan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewDataKebersihan.AllowUserToAddRows = false;
-            dataGridViewDataKebersihan.AllowUserToDeleteRows = false;
-            dataGridViewDataKebersihan.ReadOnly = true;
         }
 
-        private void dataGridViewDataKebersihan_RowPostPaint(object? sender, DataGridViewRowPostPaintEventArgs e)
+        private void SetupComboBoxes()
         {
-            if (dataGridViewDataKebersihan.Rows[e.RowIndex].Selected)
-            {
-                return;
-            }
+            comboBoxPrioritas.DataSource = Enum.GetValues(typeof(Prioritas));
 
-            string symbol = "▶";
-            Font font = new Font("Segoe UI", 10, FontStyle.Bold);
-            SolidBrush brush = new SolidBrush(Color.Gray);
+            comboBoxKategori.Items.AddRange(new string[] { "Sampah", "WC Umum", "Saluran Air", "Lingkungan" });
 
-            SizeF stringSize = e.Graphics.MeasureString(symbol, font);
-
-            float x = e.RowBounds.Left + (dataGridViewDataKebersihan.RowHeadersWidth - stringSize.Width) / 2;
-            float y = e.RowBounds.Top + (e.RowBounds.Height - stringSize.Height) / 2;
-
-            e.Graphics.DrawString(symbol, font, brush, x, y);
+            comboBoxPrioritas.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxKategori.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private async Task LoadDataAsync()
         {
             var data = await _pengaduanService.AmbilSemuaPengaduanAsync();
-
             var displayData = data.Select(p => new
             {
                 p.Id,
                 Pelapor = p.Detail.NamaPelapor,
                 p.Status,
-                Prioritas = p.Detail.PrioritasPengaduan,
+                p.Detail.PrioritasPengaduan,
                 p.Detail.Kategori,
                 p.Detail.Lokasi,
                 p.Detail.Deskripsi,
@@ -94,53 +84,45 @@ namespace App.Forms
 
             dataGridViewDataKebersihan.DataSource = displayData;
 
-            // Atur visibilitas kolom
-            dataGridViewDataKebersihan.Columns["Id"].Visible = false;
+            if (dataGridViewDataKebersihan.Columns["Id"] != null)
+            {
+                dataGridViewDataKebersihan.Columns["Id"].Visible = false;
+            }
+
+            dataGridViewDataKebersihan.ClearSelection();
         }
 
-        private void SetupComboBoxes()
+        private void DataGridViewDataKebersihan_SelectionChanged(object? sender, EventArgs e)
         {
-            comboBoxPrioritas.DataSource = Enum.GetValues(typeof(Prioritas));
+            if (_isClearing) return;
 
-            comboBoxKategori.Items.AddRange(new string[] { "Sampah", "Sanitasi", "Elektronik", "Listrik", "Aset Kantor" });
-        }
-
-        private async void dataGridViewDataKebersihan_SelectionChanged(object? sender, EventArgs e)
-        {
             if (dataGridViewDataKebersihan.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridViewDataKebersihan.SelectedRows[0];
-                _selectedPengaduanId = selectedRow.Cells["Id"].Value.ToString();
 
-                if (_selectedPengaduanId != null)
-                {
-                    var pengaduan = await _pengaduanService.AmbilPengaduanByIdAsync(_selectedPengaduanId);
-                    if (pengaduan != null)
-                    {
-                        String textNama = "Ryan Santotso";
-                        pengaduan.Detail.NamaPelapor = textNama;
-                        //textBoxNamaPelapor.Text = pengaduan.Detail.NamaPelapor;
-                        comboBoxPrioritas.SelectedItem = pengaduan.Detail.PrioritasPengaduan;
-                        comboBoxKategori.SelectedItem = pengaduan.Detail.Kategori;
-                        textBoxLokasi.Text = pengaduan.Detail.Lokasi;
-                        richTextBoxDeskripsi.Text = pengaduan.Detail.Deskripsi;
+                _selectedPengaduanId = selectedRow.Cells["Id"].Value?.ToString();
 
-                        labelTextFormKebersihan.Text = "Ubah Data Pengaduan";
-                        buttonSave.Text = "Ubah Data";
-                    }
-                }
+                // Mengisi form dari data yang sudah ada di grid
+                // textBoxNamaPelapor.Text = selectedRow.Cells["Pelapor"].Value?.ToString();
+                comboBoxPrioritas.SelectedItem = (Prioritas)selectedRow.Cells["PrioritasPengaduan"].Value;
+                comboBoxKategori.SelectedItem = selectedRow.Cells["Kategori"].Value?.ToString();
+                textBoxLokasi.Text = selectedRow.Cells["Lokasi"].Value?.ToString();
+                richTextBoxDeskripsi.Text = selectedRow.Cells["Deskripsi"].Value?.ToString();
+
+                labelTextFormKebersihan.Text = "Ubah Data Pengaduan";
+                buttonSave.Text = "Ubah Data";
+            }
+            else
+            {
+                ClearForm();
             }
         }
 
-        private async void buttonSave_Click(object? sender, EventArgs e)
+        private async void ButtonSave_Click(object? sender, EventArgs e)
         {
             try
             {
-                //string namaPelapor = textBoxNamaPelapor.Text;
-                string namaPelapor = "Ryan Santoso";
-                string lokasi = textBoxLokasi.Text;
-                string deskripsi = richTextBoxDeskripsi.Text;
-
+                // Validasi input
                 if (comboBoxPrioritas.SelectedItem is not Prioritas prioritas)
                 {
                     MessageBox.Show("Prioritas harus dipilih.", "Validasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -148,28 +130,30 @@ namespace App.Forms
                 }
 
                 string? kategori = comboBoxKategori.SelectedItem?.ToString();
+                string lokasi = textBoxLokasi.Text;
+                string deskripsi = richTextBoxDeskripsi.Text;
+                string namaPelapor = "Ryan Santoso"; // Ganti dengan user yang login
 
-                if (string.IsNullOrWhiteSpace(namaPelapor) || string.IsNullOrWhiteSpace(lokasi) || string.IsNullOrWhiteSpace(deskripsi) || string.IsNullOrWhiteSpace(kategori))
+                if (string.IsNullOrWhiteSpace(lokasi) || string.IsNullOrWhiteSpace(deskripsi) || string.IsNullOrWhiteSpace(kategori))
                 {
                     MessageBox.Show("Semua field harus diisi.", "Validasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Mode Tambah
+                // Tambah atau Ubah
                 if (_selectedPengaduanId == null)
                 {
                     await _pengaduanService.TambahPengaduanAsync(namaPelapor, deskripsi, lokasi, prioritas, kategori);
                     MessageBox.Show("Pengaduan berhasil ditambahkan.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                // Mode Ubah
                 else
                 {
                     await _pengaduanService.UbahDataPengaduanAsync(_selectedPengaduanId, namaPelapor, deskripsi, lokasi, prioritas, kategori);
                     MessageBox.Show("Pengaduan berhasil diubah.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                ClearForm();
                 await LoadDataAsync();
+                ClearForm();
             }
             catch (Exception ex)
             {
@@ -177,26 +161,12 @@ namespace App.Forms
             }
         }
 
-        private void ClearForm()
-        {
-            _selectedPengaduanId = null;
-            //textBoxNamaPelapor.Clear();
-            textBoxLokasi.Clear();
-            richTextBoxDeskripsi.Clear();
-            comboBoxPrioritas.SelectedIndex = 0;
-            comboBoxKategori.SelectedIndex = -1;
-
-            labelTextFormKebersihan.Text = "Form Pengaduan Kebersihan";
-            buttonSave.Text = "Simpan Data";
-            dataGridViewDataKebersihan.ClearSelection();
-        }
-
-        private void buttonClear_Click(object? sender, EventArgs e)
+        private void ButtonClear_Click(object? sender, EventArgs e)
         {
             ClearForm();
         }
 
-        private async void buttonDelete_Click(object? sender, EventArgs e)
+        private async void ButtonDelete_Click(object? sender, EventArgs e)
         {
             if (_selectedPengaduanId == null)
             {
@@ -205,20 +175,54 @@ namespace App.Forms
             }
 
             var confirmResult = MessageBox.Show("Apakah Anda yakin ingin menghapus pengaduan ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             if (confirmResult == DialogResult.Yes)
             {
                 try
                 {
                     await _pengaduanService.HapusPengaduanAsync(_selectedPengaduanId);
                     MessageBox.Show("Pengaduan berhasil dihapus.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearForm();
                     await LoadDataAsync();
+                    ClearForm();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Gagal menghapus data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void ClearForm()
+        {
+            _isClearing = true;
+
+            _selectedPengaduanId = null;
+            //textBoxNamaPelapor.Clear();
+            textBoxLokasi.Clear();
+            richTextBoxDeskripsi.Clear();
+
+            comboBoxPrioritas.SelectedIndex = 0;
+            comboBoxKategori.SelectedIndex = -1;
+
+            labelTextFormKebersihan.Text = "Form Pengaduan Kebersihan";
+            buttonSave.Text = "Simpan Data";
+
+            dataGridViewDataKebersihan.ClearSelection();
+
+            _isClearing = false;
+        }
+
+        private void DataGridViewDataKebersihan_RowPostPaint(object? sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            if (dataGridViewDataKebersihan.Rows[e.RowIndex].Selected) return;
+
+            string symbol = "▶";
+            using (Font font = new Font("Segoe UI", 10, FontStyle.Bold))
+            using (SolidBrush brush = new SolidBrush(Color.Gray))
+            {
+                SizeF stringSize = e.Graphics.MeasureString(symbol, font);
+                float x = e.RowBounds.Left + (dataGridViewDataKebersihan.RowHeadersWidth - stringSize.Width) / 2;
+                float y = e.RowBounds.Top + (e.RowBounds.Height - stringSize.Height) / 2;
+                e.Graphics.DrawString(symbol, font, brush, x, y);
             }
         }
     }
