@@ -1,4 +1,3 @@
-﻿
 using App.Core.Models;
 
 namespace App.Core.Services

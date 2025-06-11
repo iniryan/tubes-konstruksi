@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using App.Core.Models;
-using PengaduanFasilitas.Services;
+using App.Core.Services;
 
 public class Program
 {
@@ -67,6 +67,8 @@ public class Program
                 Console.Clear();
             }
         }
+
+        Console.WriteLine("\n\n===== Tes Selesai =====");
     }
 
     private static void ShowMenu()
