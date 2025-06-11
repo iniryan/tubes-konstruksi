@@ -139,6 +139,7 @@
             buttonSave.TabIndex = 13;
             buttonSave.Text = "Simpan Data";
             buttonSave.UseVisualStyleBackColor = false;
+            buttonSave.Click += buttonSave_Click_1;
             // 
             // labelTextDeskripsiPengaduan
             // 

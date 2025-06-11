@@ -50,5 +50,10 @@ namespace App.Forms
         {
 
         }
+
+        private void daftarButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

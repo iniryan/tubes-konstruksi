@@ -225,5 +225,10 @@ namespace App.Forms
                 e.Graphics.DrawString(symbol, font, brush, x, y);
             }
         }
+
+        private void buttonSave_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
