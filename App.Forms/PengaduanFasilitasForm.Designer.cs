@@ -28,129 +28,246 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
+            buttonSimpan = new Button();
+            labelTextDeskripsiPengaduan = new Label();
+            labelTextLokasi = new Label();
+            labelTextKategori = new Label();
+            labelTextPrioritas = new Label();
+            labelTextFormKebersihan = new Label();
+            comboBoxJenisFasilitas = new ComboBox();
+            richTextBoxDeskripsi = new RichTextBox();
+            textBoxLokasi = new TextBox();
+            comboBoxPrioritas = new ComboBox();
+            buttonClearForm = new Button();
+            buttonHapus = new Button();
+            labelTextDaftarPengaduan = new Label();
+            dataGridViewDataKebersihan = new DataGridView();
+            panelContentPengaduan = new Panel();
+            panelFormKebersihan = new Panel();
+            panelMenuPengaduan = new Panel();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewDataKebersihan).BeginInit();
+            panelContentPengaduan.SuspendLayout();
+            panelFormKebersihan.SuspendLayout();
+            panelMenuPengaduan.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // buttonSimpan
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 20);
-            label1.TabIndex = 2;
+            buttonSimpan.BackColor = SystemColors.Highlight;
+            buttonSimpan.FlatStyle = FlatStyle.Flat;
+            buttonSimpan.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonSimpan.ForeColor = SystemColors.Control;
+            buttonSimpan.Location = new Point(29, 476);
+            buttonSimpan.Name = "buttonSimpan";
+            buttonSimpan.Size = new Size(360, 40);
+            buttonSimpan.TabIndex = 13;
+            buttonSimpan.Text = "Simpan Data";
+            buttonSimpan.UseVisualStyleBackColor = false;
+            buttonSimpan.Click += buttonSimpan_Click;
             // 
-            // tabControl1
+            // labelTextDeskripsiPengaduan
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(12, 9);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(776, 429);
-            tabControl1.TabIndex = 7;
+            labelTextDeskripsiPengaduan.AutoSize = true;
+            labelTextDeskripsiPengaduan.Location = new Point(25, 300);
+            labelTextDeskripsiPengaduan.Name = "labelTextDeskripsiPengaduan";
+            labelTextDeskripsiPengaduan.Size = new Size(146, 20);
+            labelTextDeskripsiPengaduan.TabIndex = 12;
+            labelTextDeskripsiPengaduan.Text = "Deskripsi Pengaduan";
             // 
-            // tabPage1
+            // labelTextLokasi
             // 
-            tabPage1.Controls.Add(button1);
-            tabPage1.Controls.Add(label3);
-            tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(comboBox1);
-            tabPage1.Controls.Add(textBox1);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(768, 396);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            labelTextLokasi.AutoSize = true;
+            labelTextLokasi.Location = new Point(29, 220);
+            labelTextLokasi.Name = "labelTextLokasi";
+            labelTextLokasi.Size = new Size(50, 20);
+            labelTextLokasi.TabIndex = 11;
+            labelTextLokasi.Text = "Lokasi";
             // 
-            // tabPage2
+            // labelTextKategori
             // 
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(768, 396);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            labelTextKategori.AutoSize = true;
+            labelTextKategori.Location = new Point(25, 140);
+            labelTextKategori.Name = "labelTextKategori";
+            labelTextKategori.Size = new Size(95, 20);
+            labelTextKategori.TabIndex = 10;
+            labelTextKategori.Text = "Jenis Fasilitas";
             // 
-            // textBox1
+            // labelTextPrioritas
             // 
-            textBox1.Location = new Point(26, 143);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(182, 27);
-            textBox1.TabIndex = 0;
+            labelTextPrioritas.AutoSize = true;
+            labelTextPrioritas.Location = new Point(25, 60);
+            labelTextPrioritas.Name = "labelTextPrioritas";
+            labelTextPrioritas.Size = new Size(95, 20);
+            labelTextPrioritas.TabIndex = 9;
+            labelTextPrioritas.Text = "Pilih Prioritas";
             // 
-            // comboBox1
+            // labelTextFormKebersihan
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(26, 68);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 1;
+            labelTextFormKebersihan.AutoSize = true;
+            labelTextFormKebersihan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextFormKebersihan.Location = new Point(21, 14);
+            labelTextFormKebersihan.Name = "labelTextFormKebersihan";
+            labelTextFormKebersihan.Size = new Size(251, 28);
+            labelTextFormKebersihan.TabIndex = 8;
+            labelTextFormKebersihan.Text = "Form Pengaduan Fasilitas";
             // 
-            // label2
+            // comboBoxJenisFasilitas
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(26, 120);
-            label2.Name = "label2";
-            label2.Size = new Size(69, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Deskripsi";
+            comboBoxJenisFasilitas.FlatStyle = FlatStyle.Flat;
+            comboBoxJenisFasilitas.FormattingEnabled = true;
+            comboBoxJenisFasilitas.Location = new Point(29, 176);
+            comboBoxJenisFasilitas.Name = "comboBoxJenisFasilitas";
+            comboBoxJenisFasilitas.Size = new Size(360, 28);
+            comboBoxJenisFasilitas.TabIndex = 7;
             // 
-            // label3
+            // richTextBoxDeskripsi
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(26, 45);
-            label3.Name = "label3";
-            label3.Size = new Size(72, 20);
-            label3.TabIndex = 3;
-            label3.Text = "Pilih Jenis";
+            richTextBoxDeskripsi.BorderStyle = BorderStyle.None;
+            richTextBoxDeskripsi.Location = new Point(29, 336);
+            richTextBoxDeskripsi.Name = "richTextBoxDeskripsi";
+            richTextBoxDeskripsi.Size = new Size(360, 120);
+            richTextBoxDeskripsi.TabIndex = 6;
+            richTextBoxDeskripsi.Text = "";
             // 
-            // button1
+            // textBoxLokasi
             // 
-            button1.Location = new Point(31, 226);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Kirim";
-            button1.UseVisualStyleBackColor = true;
+            textBoxLokasi.BorderStyle = BorderStyle.None;
+            textBoxLokasi.Location = new Point(29, 256);
+            textBoxLokasi.Name = "textBoxLokasi";
+            textBoxLokasi.Size = new Size(360, 20);
+            textBoxLokasi.TabIndex = 5;
+            // 
+            // comboBoxPrioritas
+            // 
+            comboBoxPrioritas.FlatStyle = FlatStyle.Flat;
+            comboBoxPrioritas.FormattingEnabled = true;
+            comboBoxPrioritas.Location = new Point(29, 96);
+            comboBoxPrioritas.Name = "comboBoxPrioritas";
+            comboBoxPrioritas.Size = new Size(360, 28);
+            comboBoxPrioritas.TabIndex = 4;
+            // 
+            // buttonClearForm
+            // 
+            buttonClearForm.BackColor = SystemColors.Info;
+            buttonClearForm.FlatStyle = FlatStyle.Flat;
+            buttonClearForm.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonClearForm.ForeColor = SystemColors.ActiveCaptionText;
+            buttonClearForm.Location = new Point(348, 476);
+            buttonClearForm.Name = "buttonClearForm";
+            buttonClearForm.Size = new Size(164, 40);
+            buttonClearForm.TabIndex = 11;
+            buttonClearForm.Text = "Clear Form";
+            buttonClearForm.UseVisualStyleBackColor = false;
+            buttonClearForm.Click += buttonClearForm_Click;
+            // 
+            // buttonHapus
+            // 
+            buttonHapus.BackColor = Color.Firebrick;
+            buttonHapus.FlatStyle = FlatStyle.Flat;
+            buttonHapus.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonHapus.ForeColor = SystemColors.Control;
+            buttonHapus.Location = new Point(126, 476);
+            buttonHapus.Name = "buttonHapus";
+            buttonHapus.Size = new Size(202, 40);
+            buttonHapus.TabIndex = 10;
+            buttonHapus.Text = "Hapus Data";
+            buttonHapus.UseVisualStyleBackColor = false;
+            buttonHapus.Click += buttonHapus_Click;
+            // 
+            // labelTextDaftarPengaduan
+            // 
+            labelTextDaftarPengaduan.AutoSize = true;
+            labelTextDaftarPengaduan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextDaftarPengaduan.Location = new Point(21, 14);
+            labelTextDaftarPengaduan.Name = "labelTextDaftarPengaduan";
+            labelTextDaftarPengaduan.Size = new Size(264, 28);
+            labelTextDaftarPengaduan.TabIndex = 9;
+            labelTextDaftarPengaduan.Text = "Daftar Pengaduan Fasilitas";
+            // 
+            // dataGridViewDataKebersihan
+            // 
+            dataGridViewDataKebersihan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewDataKebersihan.Location = new Point(21, 60);
+            dataGridViewDataKebersihan.Name = "dataGridViewDataKebersihan";
+            dataGridViewDataKebersihan.RowHeadersWidth = 51;
+            dataGridViewDataKebersihan.Size = new Size(491, 396);
+            dataGridViewDataKebersihan.TabIndex = 1;
+            // 
+            // panelContentPengaduan
+            // 
+            panelContentPengaduan.Controls.Add(buttonClearForm);
+            panelContentPengaduan.Controls.Add(buttonHapus);
+            panelContentPengaduan.Controls.Add(labelTextDaftarPengaduan);
+            panelContentPengaduan.Controls.Add(dataGridViewDataKebersihan);
+            panelContentPengaduan.Controls.Add(panelFormKebersihan);
+            panelContentPengaduan.Dock = DockStyle.Bottom;
+            panelContentPengaduan.Location = new Point(0, 115);
+            panelContentPengaduan.Name = "panelContentPengaduan";
+            panelContentPengaduan.Size = new Size(948, 558);
+            panelContentPengaduan.TabIndex = 1;
+            // 
+            // panelFormKebersihan
+            // 
+            panelFormKebersihan.Controls.Add(buttonSimpan);
+            panelFormKebersihan.Controls.Add(labelTextDeskripsiPengaduan);
+            panelFormKebersihan.Controls.Add(labelTextLokasi);
+            panelFormKebersihan.Controls.Add(labelTextKategori);
+            panelFormKebersihan.Controls.Add(labelTextPrioritas);
+            panelFormKebersihan.Controls.Add(labelTextFormKebersihan);
+            panelFormKebersihan.Controls.Add(comboBoxJenisFasilitas);
+            panelFormKebersihan.Controls.Add(richTextBoxDeskripsi);
+            panelFormKebersihan.Controls.Add(textBoxLokasi);
+            panelFormKebersihan.Controls.Add(comboBoxPrioritas);
+            panelFormKebersihan.Dock = DockStyle.Right;
+            panelFormKebersihan.Location = new Point(531, 0);
+            panelFormKebersihan.Name = "panelFormKebersihan";
+            panelFormKebersihan.Size = new Size(417, 558);
+            panelFormKebersihan.TabIndex = 0;
+            // 
+            // panelMenuPengaduan
+            // 
+            panelMenuPengaduan.Controls.Add(panelContentPengaduan);
+            panelMenuPengaduan.Dock = DockStyle.Right;
+            panelMenuPengaduan.Location = new Point(234, 0);
+            panelMenuPengaduan.Name = "panelMenuPengaduan";
+            panelMenuPengaduan.Size = new Size(948, 673);
+            panelMenuPengaduan.TabIndex = 11;
             // 
             // PengaduanFasilitasForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(tabControl1);
-            Controls.Add(label1);
+            ClientSize = new Size(1182, 673);
+            Controls.Add(panelMenuPengaduan);
             Name = "PengaduanFasilitasForm";
             Text = "PengaduanFasilitasForm";
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewDataKebersihan).EndInit();
+            panelContentPengaduan.ResumeLayout(false);
+            panelContentPengaduan.PerformLayout();
+            panelFormKebersihan.ResumeLayout(false);
+            panelFormKebersihan.PerformLayout();
+            panelMenuPengaduan.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Label label1;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        private Label label3;
-        private Label label2;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
-        private Button button1;
+
+        private Button buttonSimpan;
+        private Label labelTextDeskripsiPengaduan;
+        private Label labelTextLokasi;
+        private Label labelTextKategori;
+        private Label labelTextPrioritas;
+        private Label labelTextFormKebersihan;
+        private ComboBox comboBoxJenisFasilitas;
+        private RichTextBox richTextBoxDeskripsi;
+        private TextBox textBoxLokasi;
+        private ComboBox comboBoxPrioritas;
+        private Button buttonClearForm;
+        private Button buttonHapus;
+        private Label labelTextDaftarPengaduan;
+        private DataGridView dataGridViewDataKebersihan;
+        private Panel panelContentPengaduan;
+        private Panel panelFormKebersihan;
+        private Panel panelMenuPengaduan;
     }
 }

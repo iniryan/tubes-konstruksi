@@ -1,145 +1,99 @@
-﻿// Lokasi file: PengaduanFasilitas/Services/PengaduanFasilitasService.cs
-using App.Core.Models;
-using App.Core.Services;
+﻿using App.Core.Models;
 using App.Core.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
-namespace PengaduanFasilitas.Services
+namespace App.Core.Services
 {
-    public class PengaduanFasilitasService : IPengaduanService<DetailFasilitas>
+    public class PengaduanFasilitasService
     {
         private readonly string _filePath;
-        private readonly Validator _validator;
-        private List<Pengaduan<DetailFasilitas>> _dataCache;
-
-        /// <summary>
-        /// Constructor untuk PengaduanFasilitasService.
-        /// </summary>
-        /// <param name="filePath">Path ke file JSON untuk penyimpanan (Runtime Configuration).</param>
-        public PengaduanFasilitasService(string filePath)
+        public PengaduanFasilitasService()
         {
-            if (string.IsNullOrWhiteSpace(filePath))
-                throw new ArgumentNullException(nameof(filePath), "File path tidak boleh kosong.");
-
-            _filePath = filePath;
-
-            // Inisialisasi komponen yang dibutuhkan
-            _validator = new Validator();
-            _dataCache = LoadDataFromFile();
+            string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string solutionDirectory = Path.GetFullPath(Path.Combine(exeDirectory, "..", "..", "..", ".."));
+            _filePath = Path.Combine(solutionDirectory, "App.Core", "Database", "Fasilitas.json");
+            string? directoryPath = Path.GetDirectoryName(_filePath);
+            if (directoryPath != null)
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
         }
 
-        #region Implementasi IPengaduanService
-
-        public Pengaduan<DetailFasilitas> BuatPengaduan(DetailFasilitas detail)
+        // CREATE
+        public async Task<Pengaduan<DetailFasilitas>> TambahPengaduanAsync(string namaPelapor, string lokasi,
+            string deskripsi, Prioritas prioritas, string jenisFasilitas)
         {
-            // 1. Validasi input menggunakan Validator sebelum diproses
-            _validator.Validate(detail);
-
-            // 2. Proses pembuatan pengaduan jika valid
-            var id = Guid.NewGuid().ToString();
-            var pengaduanBaru = new Pengaduan<DetailFasilitas>(id, detail);
-
-            _dataCache.Add(pengaduanBaru);
-            SaveChangesToFile();
-
-            Console.WriteLine("Pengaduan berhasil dibuat.");
+            var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath);
+            var detail = new DetailFasilitas(namaPelapor, lokasi, deskripsi, jenisFasilitas);
+            var pengaduanBaru = new Pengaduan<DetailFasilitas>(Guid.NewGuid().ToString(), detail);
+            semuaPengaduan.Add(pengaduanBaru);
+            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
             return pengaduanBaru;
         }
 
-        public Pengaduan<DetailFasilitas>? AmbilPengaduanById(string id)
+        // READ - Mengambil semua pengaduan fasilitas
+        public async Task<List<Pengaduan<DetailFasilitas>>> AmbilSemuaPengaduanAsync()
         {
-            return _dataCache.FirstOrDefault(p => p.Id == id);
+            return await JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath);
         }
 
-        public IEnumerable<Pengaduan<DetailFasilitas>> AmbilSemuaPengaduan()
+        // READ - Mengambil pengaduan berdasarkan ID
+        public async Task<Pengaduan<DetailFasilitas>?> AmbilPengaduanByIdAsync(string id)
         {
-            return _dataCache;
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan.FirstOrDefault(p => p.Id == id);
         }
 
-        public void HapusPengaduan(string id)
+        // UPDATE
+        public async Task UbahStatusAsync(string id, StatusPengaduan statusBaru)
         {
-            var pengaduan = AmbilPengaduanById(id);
+            var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath);
+            var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
             if (pengaduan == null)
             {
-                Console.WriteLine($"Error: Pengaduan dengan ID '{id}' tidak ditemukan.");
-                return;
+                throw new KeyNotFoundException($"Pengaduan dengan ID {id} tidak ditemukan.");
             }
-
-            _dataCache.Remove(pengaduan);
-            SaveChangesToFile();
-            Console.WriteLine($"Pengaduan dengan ID '{id}' berhasil dihapus.");
+            pengaduan.UbahStatus(statusBaru);
+            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
         }
 
-        public void UbahDataPengaduan(string id, DetailFasilitas detailBaru)
+        // UPDATE - Mengubah detail data sebuah pengaduan
+        public async Task UbahDataPengaduanAsync(string id, string namaPelapor, string deskripsi, string lokasi, Prioritas prioritas, string jenisFasilitas)
         {
-            var pengaduanLama = AmbilPengaduanById(id);
-            if (pengaduanLama == null)
-            {
-                Console.WriteLine($"Error: Pengaduan dengan ID '{id}' tidak ditemukan.");
-                return;
-            }
-
-            // 1. Validasi juga data baru yang akan di-update
-            _validator.Validate(detailBaru);
-
-            // 2. Lanjutkan proses update jika data baru valid
-            var pengaduanUpdate = new Pengaduan<DetailFasilitas>(
-                pengaduanLama.Id,
-                detailBaru,
-                pengaduanLama.Status,
-                pengaduanLama.TanggalDibuat
-            );
-
-            var index = _dataCache.FindIndex(p => p.Id == id);
-            _dataCache[index] = pengaduanUpdate;
-
-            SaveChangesToFile();
-            Console.WriteLine("Data pengaduan berhasil diubah.");
-        }
-
-        public void UbahStatus(string id, StatusPengaduan statusBaru)
-        {
-            var pengaduan = AmbilPengaduanById(id);
+            var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath);
+            var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
             if (pengaduan == null)
             {
-                Console.WriteLine($"Error: Pengaduan dengan ID '{id}' tidak ditemukan.");
-                return;
+                throw new KeyNotFoundException($"Pengaduan dengan ID {id} tidak ditemukan.");
             }
 
-            try
-            {
-                pengaduan.UbahStatus(statusBaru);
-                SaveChangesToFile();
-                Console.WriteLine($"Status pengaduan berhasil diubah menjadi '{statusBaru}'.");
-            }
-            catch (InvalidOperationException ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
+            if(string.IsNullOrWhiteSpace(namaPelapor)) throw new ArgumentException("Nama pelapor tidak boleh kosong.", nameof(namaPelapor));
+            if (string.IsNullOrWhiteSpace(lokasi)) throw new ArgumentException("Lokasi tidak boleh kosong.", nameof(lokasi));
+            if (string.IsNullOrWhiteSpace(deskripsi)) throw new ArgumentException("Deskripsi tidak boleh kosong.", nameof(deskripsi));
+            if (string.IsNullOrWhiteSpace(jenisFasilitas)) throw new ArgumentException("Jenis fasilitas tidak boleh kosong.", nameof(jenisFasilitas));
+
+            pengaduan.Detail.NamaPelapor = namaPelapor;
+            pengaduan.Detail.Deskripsi = deskripsi;
+            pengaduan.Detail.Lokasi = lokasi;
+            pengaduan.Detail.JenisFasilitas = jenisFasilitas;
+            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
         }
 
-        #endregion
-
-        #region Private Helper Methods (Code Reuse)
-
-        /// <summary>
-        /// Memuat data dari file JSON. Mengenkapsulasi logika pembacaan file.
-        /// </summary>
-        private List<Pengaduan<DetailFasilitas>> LoadDataFromFile()
+        // DELETE
+        public async Task HapusPengaduanAsync(string id)
         {
-            return JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath).GetAwaiter().GetResult();
+            var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath);
+            var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
+            if (pengaduan == null)
+            {
+                throw new KeyNotFoundException($"Pengaduan dengan ID {id} tidak ditemukan.");
+            }
+            semuaPengaduan.Remove(pengaduan);
+            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
         }
-
-        /// <summary>
-        /// Menyimpan data cache saat ini ke dalam file JSON. Mengenkapsulasi logika penulisan file.
-        /// </summary>
-        private void SaveChangesToFile()
-        {
-            JsonUtils.WriteDataAsync(_filePath, _dataCache).GetAwaiter().GetResult();
-        }
-
-        #endregion
     }
 }
