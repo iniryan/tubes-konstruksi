@@ -52,11 +52,23 @@
     "Detail": {
       "PrioritasPengaduan": 2,
       "Kategori": "Sampah",
-      "NamaPelapor": "Ryan Santoso",
+      "NamaPelapor": "ryan",
       "Lokasi": "Rumah Fidi",
       "Deskripsi": "Sampah di rumah fidi banyak"
     },
     "Status": 0,
     "TanggalDibuat": "2025-06-11T10:53:09.3448557+07:00"
+  },
+  {
+    "Id": "5cefb169-86f2-4902-989a-b7c49e061eb5",
+    "Detail": {
+      "PrioritasPengaduan": 2,
+      "Kategori": "Sampah",
+      "NamaPelapor": "ryan",
+      "Lokasi": "Jl. Sedati",
+      "Deskripsi": "Banyak sampah disini \uD83D\uDE0A"
+    },
+    "Status": 0,
+    "TanggalDibuat": "2025-06-11T16:05:36.8798398+07:00"
   }
 ]

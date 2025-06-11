@@ -1,4 +1,4 @@
-﻿using App.Core.Models; // Ditambahkan untuk mengakses DetailFasilitas
+﻿using App.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,16 +14,11 @@ namespace App.Core.Utils
 
         public Validator()
         {
-            // Logika untuk membaca file konfigurasi tetap sama
             var config = JsonNode.Parse(File.ReadAllText("config.json"));
             _allowedTypes = config["AllowedTypes"].AsArray().Select(t => t.ToString()).ToList();
             _maxLength = config["MaxDescriptionLength"].GetValue<int>();
         }
 
-        /// <summary>
-        /// Memvalidasi objek DetailFasilitas berdasarkan aturan dari config.json.
-        /// </summary>
-        /// <param name="detail">Objek detail pengaduan yang akan divalidasi.</param>
         public void Validate(DetailFasilitas detail)
         {
             if (detail == null)
@@ -36,10 +31,6 @@ namespace App.Core.Utils
             // 2. Validasi panjang deskripsi berdasarkan batas maksimal dari config
             if (detail.Deskripsi.Length > _maxLength)
                 throw new ArgumentException($"Deskripsi terlalu panjang. Maksimal {_maxLength} karakter.");
-
-            // Catatan: Validasi string kosong (IsNullOrWhiteSpace) tidak lagi dilakukan di sini
-            // karena sudah ditangani langsung di dalam constructor model (DetailFasilitas 
-            // dan PengaduanDetailBase), sehingga mencegah pembuatan objek yang tidak valid.
         }
     }
 }

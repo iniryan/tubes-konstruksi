@@ -98,7 +98,7 @@
             // 
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F);
+            button1.Font = new Font("Product Sans", 10.2F);
             button1.Location = new Point(12, 370);
             button1.Name = "button1";
             button1.Size = new Size(200, 40);
@@ -111,7 +111,7 @@
             // 
             logOutBtn.FlatAppearance.BorderSize = 0;
             logOutBtn.FlatStyle = FlatStyle.Flat;
-            logOutBtn.Font = new Font("Segoe UI", 10.2F);
+            logOutBtn.Font = new Font("Product Sans", 10.2F);
             logOutBtn.Location = new Point(12, 544);
             logOutBtn.Name = "logOutBtn";
             logOutBtn.Size = new Size(200, 40);
@@ -119,12 +119,13 @@
             logOutBtn.Text = "Log Out";
             logOutBtn.TextAlign = ContentAlignment.MiddleLeft;
             logOutBtn.UseVisualStyleBackColor = true;
+            logOutBtn.Click += logOutBtn_Click;
             // 
             // menuPengaduanBtn
             // 
             menuPengaduanBtn.FlatAppearance.BorderSize = 0;
             menuPengaduanBtn.FlatStyle = FlatStyle.Flat;
-            menuPengaduanBtn.Font = new Font("Segoe UI", 10.2F);
+            menuPengaduanBtn.Font = new Font("Product Sans", 10.2F);
             menuPengaduanBtn.Location = new Point(12, 278);
             menuPengaduanBtn.Name = "menuPengaduanBtn";
             menuPengaduanBtn.Size = new Size(200, 40);
@@ -138,7 +139,7 @@
             // 
             menuPenggunaBtn.FlatAppearance.BorderSize = 0;
             menuPenggunaBtn.FlatStyle = FlatStyle.Flat;
-            menuPenggunaBtn.Font = new Font("Segoe UI", 10.2F);
+            menuPenggunaBtn.Font = new Font("Product Sans", 10.2F);
             menuPenggunaBtn.Location = new Point(12, 324);
             menuPenggunaBtn.Name = "menuPenggunaBtn";
             menuPenggunaBtn.Size = new Size(200, 40);
@@ -151,7 +152,7 @@
             // 
             daftarPengaduanBtn.FlatAppearance.BorderSize = 0;
             daftarPengaduanBtn.FlatStyle = FlatStyle.Flat;
-            daftarPengaduanBtn.Font = new Font("Segoe UI", 10.2F);
+            daftarPengaduanBtn.Font = new Font("Product Sans", 10.2F);
             daftarPengaduanBtn.Location = new Point(12, 232);
             daftarPengaduanBtn.Name = "daftarPengaduanBtn";
             daftarPengaduanBtn.Size = new Size(200, 40);
@@ -165,7 +166,7 @@
             dashboardBtn.BackColor = SystemColors.Control;
             dashboardBtn.FlatAppearance.BorderSize = 0;
             dashboardBtn.FlatStyle = FlatStyle.Flat;
-            dashboardBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dashboardBtn.Font = new Font("Product Sans", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dashboardBtn.Location = new Point(12, 186);
             dashboardBtn.Name = "dashboardBtn";
             dashboardBtn.Size = new Size(200, 40);
@@ -219,7 +220,7 @@
             // labelLapTamu
             // 
             labelLapTamu.AutoSize = true;
-            labelLapTamu.Font = new Font("Segoe UI", 12F);
+            labelLapTamu.Font = new Font("Product Sans", 12F);
             labelLapTamu.Location = new Point(10, 122);
             labelLapTamu.Name = "labelLapTamu";
             labelLapTamu.Size = new Size(134, 28);
@@ -229,7 +230,7 @@
             // counterTamu
             // 
             counterTamu.AutoSize = true;
-            counterTamu.Font = new Font("Segoe UI", 35F);
+            counterTamu.Font = new Font("Product Sans", 35F);
             counterTamu.Location = new Point(29, 40);
             counterTamu.Name = "counterTamu";
             counterTamu.Size = new Size(161, 78);
@@ -239,7 +240,7 @@
             // labelLapTamuTextTotal
             // 
             labelLapTamuTextTotal.AutoSize = true;
-            labelLapTamuTextTotal.Font = new Font("Segoe UI", 12F);
+            labelLapTamuTextTotal.Font = new Font("Product Sans", 12F);
             labelLapTamuTextTotal.Location = new Point(10, 10);
             labelLapTamuTextTotal.Name = "labelLapTamuTextTotal";
             labelLapTamuTextTotal.Size = new Size(54, 28);
@@ -260,7 +261,7 @@
             // labelFasilitas
             // 
             labelFasilitas.AutoSize = true;
-            labelFasilitas.Font = new Font("Segoe UI", 12F);
+            labelFasilitas.Font = new Font("Product Sans", 12F);
             labelFasilitas.Location = new Point(10, 122);
             labelFasilitas.Name = "labelFasilitas";
             labelFasilitas.Size = new Size(79, 28);
@@ -270,7 +271,7 @@
             // counterFasilitas
             // 
             counterFasilitas.AutoSize = true;
-            counterFasilitas.Font = new Font("Segoe UI", 35F);
+            counterFasilitas.Font = new Font("Product Sans", 35F);
             counterFasilitas.Location = new Point(29, 40);
             counterFasilitas.Name = "counterFasilitas";
             counterFasilitas.Size = new Size(161, 78);
@@ -280,7 +281,7 @@
             // labelFasilitasTextTotal
             // 
             labelFasilitasTextTotal.AutoSize = true;
-            labelFasilitasTextTotal.Font = new Font("Segoe UI", 12F);
+            labelFasilitasTextTotal.Font = new Font("Product Sans", 12F);
             labelFasilitasTextTotal.Location = new Point(10, 10);
             labelFasilitasTextTotal.Name = "labelFasilitasTextTotal";
             labelFasilitasTextTotal.Size = new Size(54, 28);
@@ -301,7 +302,7 @@
             // labelKeamanan
             // 
             labelKeamanan.AutoSize = true;
-            labelKeamanan.Font = new Font("Segoe UI", 12F);
+            labelKeamanan.Font = new Font("Product Sans", 12F);
             labelKeamanan.Location = new Point(10, 122);
             labelKeamanan.Name = "labelKeamanan";
             labelKeamanan.Size = new Size(103, 28);
@@ -311,7 +312,7 @@
             // counterKeamanan
             // 
             counterKeamanan.AutoSize = true;
-            counterKeamanan.Font = new Font("Segoe UI", 35F);
+            counterKeamanan.Font = new Font("Product Sans", 35F);
             counterKeamanan.Location = new Point(29, 40);
             counterKeamanan.Name = "counterKeamanan";
             counterKeamanan.Size = new Size(161, 78);
@@ -321,7 +322,7 @@
             // labelKeamananTextTotal
             // 
             labelKeamananTextTotal.AutoSize = true;
-            labelKeamananTextTotal.Font = new Font("Segoe UI", 12F);
+            labelKeamananTextTotal.Font = new Font("Product Sans", 12F);
             labelKeamananTextTotal.Location = new Point(10, 10);
             labelKeamananTextTotal.Name = "labelKeamananTextTotal";
             labelKeamananTextTotal.Size = new Size(54, 28);
@@ -342,7 +343,7 @@
             // labelKebersihan
             // 
             labelKebersihan.AutoSize = true;
-            labelKebersihan.Font = new Font("Segoe UI", 12F);
+            labelKebersihan.Font = new Font("Product Sans", 12F);
             labelKebersihan.Location = new Point(10, 122);
             labelKebersihan.Name = "labelKebersihan";
             labelKebersihan.Size = new Size(108, 28);
@@ -352,7 +353,7 @@
             // counterKebersihan
             // 
             counterKebersihan.AutoSize = true;
-            counterKebersihan.Font = new Font("Segoe UI", 35F);
+            counterKebersihan.Font = new Font("Product Sans", 35F);
             counterKebersihan.Location = new Point(29, 40);
             counterKebersihan.Name = "counterKebersihan";
             counterKebersihan.Size = new Size(161, 78);
@@ -362,7 +363,7 @@
             // labelKebersihanTextTotal
             // 
             labelKebersihanTextTotal.AutoSize = true;
-            labelKebersihanTextTotal.Font = new Font("Segoe UI", 12F);
+            labelKebersihanTextTotal.Font = new Font("Product Sans", 12F);
             labelKebersihanTextTotal.Location = new Point(10, 10);
             labelKebersihanTextTotal.Name = "labelKebersihanTextTotal";
             labelKebersihanTextTotal.Size = new Size(54, 28);
@@ -382,7 +383,7 @@
             // labelTextPengaduanTerbaru
             // 
             labelTextPengaduanTerbaru.AutoSize = true;
-            labelTextPengaduanTerbaru.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextPengaduanTerbaru.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextPengaduanTerbaru.Location = new Point(44, 13);
             labelTextPengaduanTerbaru.Name = "labelTextPengaduanTerbaru";
             labelTextPengaduanTerbaru.Size = new Size(194, 28);

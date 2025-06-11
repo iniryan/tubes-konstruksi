@@ -94,7 +94,7 @@
             // 
             btnLogin.BackColor = SystemColors.Highlight;
             btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnLogin.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             btnLogin.ForeColor = SystemColors.Control;
             btnLogin.Location = new Point(426, 465);
             btnLogin.Name = "btnLogin";
@@ -102,12 +102,13 @@
             btnLogin.TabIndex = 14;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnRegister
             // 
             btnRegister.BackColor = SystemColors.Highlight;
             btnRegister.FlatStyle = FlatStyle.Flat;
-            btnRegister.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnRegister.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             btnRegister.ForeColor = SystemColors.Control;
             btnRegister.Location = new Point(1009, 17);
             btnRegister.Name = "btnRegister";

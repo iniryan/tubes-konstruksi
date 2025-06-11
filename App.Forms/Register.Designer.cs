@@ -139,7 +139,7 @@
             // 
             btnLogin.BackColor = SystemColors.Highlight;
             btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnLogin.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             btnLogin.ForeColor = SystemColors.Control;
             btnLogin.Location = new Point(1010, 22);
             btnLogin.Name = "btnLogin";
@@ -152,7 +152,7 @@
             // 
             daftarButton.BackColor = SystemColors.Highlight;
             daftarButton.FlatStyle = FlatStyle.Flat;
-            daftarButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            daftarButton.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             daftarButton.ForeColor = SystemColors.Control;
             daftarButton.Location = new Point(438, 499);
             daftarButton.Name = "daftarButton";

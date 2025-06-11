@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using App.Core.Models;
 
 namespace App.Forms
 {
@@ -15,18 +16,22 @@ namespace App.Forms
         private Panel currentPanel;
         private DaftarPengaduan daftarPengaduanForm;
         private MenuPengaduan menuPengaduanForm;
+        private readonly User _currentUser;
 
-        public Dashboard()
+        public Dashboard(User user)
         {
             InitializeComponent();
+            _currentUser = user;
             currentPanel = panelBase;
 
             // Add click event handlers for the buttons
             daftarPengaduanBtn.Click += daftarPengaduanBtn_Click;
             dashboardBtn.Click += dashboardBtn_Click;
             menuPengaduanBtn.Click += menuPengaduanBtn_Click;
-            daftarPengaduanForm = new DaftarPengaduan();
-            menuPengaduanForm = new MenuPengaduan();
+            logOutBtn.Click += logOutBtn_Click;
+
+            daftarPengaduanForm = new DaftarPengaduan(_currentUser);
+            menuPengaduanForm = new MenuPengaduan(_currentUser);
         }
 
         private void daftarPengaduanBtn_Click(object sender, EventArgs e)
@@ -37,9 +42,9 @@ namespace App.Forms
             daftarPengaduanForm.GetPanel().Dock = DockStyle.Fill;
 
             // Update button styles
-            daftarPengaduanBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Bold);
-            dashboardBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Regular);
-            menuPengaduanBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Regular);
+            daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Bold);
+            dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
         }
 
         private void dashboardBtn_Click(object sender, EventArgs e)
@@ -49,9 +54,9 @@ namespace App.Forms
             RestoreDashboardPanel();
 
             // Update button styles
-            dashboardBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Bold);
-            daftarPengaduanBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Regular);
-            menuPengaduanBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Regular);
+            dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Bold);
+            daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
         }
 
         private void RestoreDashboardPanel()
@@ -70,9 +75,14 @@ namespace App.Forms
             menuPengaduanForm.GetPanel().Dock = DockStyle.Fill;
 
             // Update button styles
-            daftarPengaduanBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Regular);
-            dashboardBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Regular);
-            menuPengaduanBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Bold);
+            daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Bold);
+        }
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

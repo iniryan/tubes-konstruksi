@@ -87,7 +87,7 @@
             // labelTextMenuPengaduan
             // 
             labelTextMenuPengaduan.AutoSize = true;
-            labelTextMenuPengaduan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextMenuPengaduan.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextMenuPengaduan.Location = new Point(42, 11);
             labelTextMenuPengaduan.Name = "labelTextMenuPengaduan";
             labelTextMenuPengaduan.Size = new Size(176, 28);

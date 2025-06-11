@@ -18,7 +18,7 @@ namespace App.Core.Services
         {
             string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string solutionDirectory = Path.GetFullPath(Path.Combine(exeDirectory, "..", "..", "..", ".."));
-            _filePath = Path.Combine(solutionDirectory, "App.Core", "Database", "Users.json");
+            _filePath = Path.Combine(solutionDirectory, "App.Core", "Database", "User.json");
 
             string? directoryPath = Path.GetDirectoryName(_filePath);
             if (directoryPath != null)
@@ -27,7 +27,7 @@ namespace App.Core.Services
             }
         }
 
-        public async Task<User> RegisterAsync(string username, string password, string role)
+        public async Task<User> RegisterAsync(string username, string password, string role, string alamat, string notelp, string name)
         {
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(role))
             {
@@ -46,7 +46,10 @@ namespace App.Core.Services
                 Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1,
                 Username = username,
                 Password = HashPassword(password),
-                Role = role
+                Role = role,
+                Alamat = alamat,
+                NoTelepon = notelp,
+                Name = name,
             };
 
             users.Add(user);

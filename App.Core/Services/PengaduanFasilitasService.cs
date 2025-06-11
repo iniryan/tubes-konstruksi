@@ -1,5 +1,4 @@
-﻿// Lokasi file: PengaduanFasilitas/Services/PengaduanFasilitasService.cs
-using App.Core.Models;
+﻿using App.Core.Models;
 using App.Core.Services;
 using App.Core.Utils;
 using System;

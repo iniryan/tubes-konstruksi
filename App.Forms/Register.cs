@@ -1,49 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using App.Core.Services;
+using System;
 using System.Windows.Forms;
 
 namespace App.Forms
 {
     public partial class Register : Form
     {
+        private readonly IAuthService _authService;
+
         public Register()
         {
             InitializeComponent();
+            _authService = new AuthService();
+
+            daftarButton.Click += daftarButton_Click_Async;
+            btnLogin.Click += btnLogin_Click;
         }
 
-        private void daftarButton_Click(object sender, EventArgs e)
+        private async void daftarButton_Click_Async(object? sender, EventArgs e)
         {
-            //string nama = namaLengkap.Text;
-            //string alamat = alamatLengkap.Text;
-            //string noHP = noHandphone.Text;
-            //string username = newUsername.Text;
-            //string password = newPassword.Text;
+            string username = newUsername.Text;
+            string password = newPassword.Text;
+            string alamat = alamatLengkap.Text;
+            string notelp = noHandphone.Text;
+            string name = namaLengkap.Text;
 
-            //if (string.IsNullOrWhiteSpace(nama) || string.IsNullOrWhiteSpace(alamat) ||
-            //    string.IsNullOrWhiteSpace(noHP) || string.IsNullOrWhiteSpace(username) ||
-            //    string.IsNullOrWhiteSpace(password))
-            //{
-            //    MessageBox.Show("Semua field harus diisi.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(alamat) || string.IsNullOrWhiteSpace(notelp) || string.IsNullOrWhiteSpace(name))
+            {
+                MessageBox.Show("Field tidak boleh kosong.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            ////bool isSuccess = AuthService.Register(username, password);
+            try
+            {
+                var user = await _authService.RegisterAsync(username, password, "civilian", alamat, notelp, name);
+                MessageBox.Show($"Registrasi berhasil untuk user: {user.Username}! Silakan login.", "Registrasi Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Registration Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Registration Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-            //if (isSuccess)
-            //{
-            //    MessageBox.Show("Registrasi berhasil! Silakan login.", "Registrasi Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Username sudah terdaftar. Silakan gunakan username lain.", "Registration Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+        private void btnLogin_Click(object? sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
