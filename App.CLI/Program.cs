@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using App.Core.Models;
 using App.Core.Services;
@@ -10,70 +11,136 @@ public class Program
         Console.WriteLine("===== Aplikasi Tes Pengaduan Kebersihan =====");
 
         var service = new PengaduanKebersihanService();
-        string idPengaduanBaru = "";
 
         try
         {
-            // TEST CREATE
-            Console.WriteLine("\n[TEST 1] Menambahkan pengaduan baru...");
-            var pengaduanDibuat = await service.TambahPengaduanAsync(
-                namaPelapor: "Budi Santoso",
-                deskripsi: "Tumpukan sampah di depan lobi.",
-                lokasi: "Lobi Utama",
-                prioritas: Prioritas.Tinggi,
-                kategori: "Sampah"
-            );
-            idPengaduanBaru = pengaduanDibuat.Id;
-            Console.WriteLine("-> SUKSES: Pengaduan berhasil dibuat.");
-            Console.WriteLine(pengaduanDibuat);
-            Console.WriteLine("-> CEK: File 'Database/Kebersihan.json' seharusnya sudah terisi data.");
+            // === PERSIAPAN DATA UJI COBA ===
+            Console.WriteLine("\nINFO: Mempersiapkan data uji coba...");
+            var semuaDataLama = await service.AmbilSemuaPengaduanAsync();
+            foreach (var item in semuaDataLama) { await service.HapusPengaduanAsync(item.Id); }
 
+            // Tambahkan data contoh
+            await service.TambahPengaduanAsync("Budi Santoso", "AC tidak dingin", "Lantai 5", Prioritas.Tinggi, "Elektronik");
+            await Task.Delay(5); // Jeda kecil untuk memastikan TanggalDibuat berbeda
+            var p2 = await service.TambahPengaduanAsync("Siti Aminah", "Keran bocor", "Toilet Wanita Lt. 2", Prioritas.Sedang, "Sanitasi");
+            await Task.Delay(5);
+            var p3 = await service.TambahPengaduanAsync("Budi Santoso", "Lampu koridor mati", "Koridor Blok C", Prioritas.Rendah, "Listrik");
+            await Task.Delay(5);
+            var p4 = await service.TambahPengaduanAsync("Andi Wijaya", "Proyektor rusak", "Ruang Rapat 3A", Prioritas.Tinggi, "Elektronik");
+            await Task.Delay(5);
+            var p5 = await service.TambahPengaduanAsync("Rina Lestari", "Sampah menumpuk", "Pantry Lt. 4", Prioritas.Sedang, "Sampah");
 
-            // TEST READ
-            Console.WriteLine("\n[TEST 2] Mengambil semua data pengaduan...");
-            var semuaPengaduan = await service.AmbilSemuaPengaduanAsync();
-            if (semuaPengaduan.Count > 0)
-            {
-                Console.WriteLine($"-> SUKSES: Ditemukan {semuaPengaduan.Count} pengaduan.");
-                foreach (var p in semuaPengaduan)
-                {
-                    Console.WriteLine("   " + p);
-                }
-            }
-            else
-            {
-                Console.WriteLine("-> INFO: Tidak ada data pengaduan yang ditemukan.");
-            }
+            // Ubah beberapa status untuk data uji dengan alur yang benar
+            await service.UbahStatusAsync(p2.Id, StatusPengaduan.Diproses);
+            await service.UbahStatusAsync(p3.Id, StatusPengaduan.Diproses);
+            await service.UbahStatusAsync(p3.Id, StatusPengaduan.Selesai);
+            await service.UbahStatusAsync(p5.Id, StatusPengaduan.Ditolak);
 
-            // TEST UPDATE
-            Console.WriteLine($"\n[TEST 3] Mengubah status pengaduan ID: {idPengaduanBaru} menjadi 'Diproses'...");
-            await service.UbahStatusAsync(idPengaduanBaru, StatusPengaduan.Diproses);
-            Console.WriteLine("-> SUKSES: Status berhasil diubah.");
+            Console.WriteLine("-> SUKSES: Data uji coba berhasil dibuat.");
 
-            var pengaduanDiupdate = await service.AmbilPengaduanByIdAsync(idPengaduanBaru);
-            Console.WriteLine("-> Verifikasi data terbaru:");
-            Console.WriteLine("   " + pengaduanDiupdate);
+            // === PENGUJIAN FUNGSI UPDATE ===
 
-            // TEST UPDATE DATA
-            Console.WriteLine($"\n[TEST 4] Mengubah detail data pengaduan ID: {idPengaduanBaru}...");
+            // [TEST 3] Mengubah Detail Data Pengaduan
+            Console.WriteLine($"\n===== [TEST 3] PENGUJIAN UBAH DETAIL DATA (ID: {p4.Id.Substring(0, 8)}) =====");
+            Console.WriteLine("Data Sebelum Diubah:");
+            Console.WriteLine($"  -> {await service.AmbilPengaduanByIdAsync(p4.Id)}");
+
             await service.UbahDataPengaduanAsync(
-                id: idPengaduanBaru,
-                namaPelapor: "Budi Santoso (Diperbarui)",
-                deskripsi: "Tumpukan sampah di depan lobi utama gedung A.",
-                lokasi: "Lobi Gedung A",
-                prioritas: Prioritas.Sedang,
-                kategori: "Sampah Organik"
+                id: p4.Id,
+                namaPelapor: "Andi Wijaya", // Nama tetap
+                deskripsi: "Proyektor di Ruang Rapat 3A gambarnya buram dan kekuningan.", // Deskripsi diubah
+                lokasi: "Ruang Rapat 3A (Gedung B)", // Lokasi diubah
+                prioritas: Prioritas.Sedang, // Prioritas diubah
+                kategori: "Aset Kantor" // Kategori diubah
             );
+
+            Console.WriteLine("\nData Setelah Diubah:");
+            Console.WriteLine($"  -> {await service.AmbilPengaduanByIdAsync(p4.Id)}");
             Console.WriteLine("-> SUKSES: Detail data berhasil diubah.");
 
-            // TEST DELETE
-            //Console.WriteLine($"\n[TEST 4] Menghapus pengaduan ID: {idPengaduanBaru}...");
-            //await service.HapusPengaduanAsync(idPengaduanBaru);
-            //Console.WriteLine("-> SUKSES: Pengaduan berhasil dihapus.");
+            // =================================================================
+            // [BAGIAN 1] DASBOR UTAMA ADMIN (KPI & GRAFIK)
+            // =================================================================
+            Console.WriteLine("\n\n" + new string('=', 50));
+            Console.WriteLine("===== [BAGIAN 1] DASBOR UTAMA (ADMIN VIEW) =====");
+            Console.WriteLine(new string('=', 50));
 
-            //var pengaduanSetelahHapus = await service.AmbilSemuaPengaduanAsync();
-            //Console.WriteLine($"-> Verifikasi: Jumlah pengaduan sekarang adalah {pengaduanSetelahHapus.Count}.");
+            // 1.1: Kartu Statistik Utama (KPI)
+            Console.WriteLine("\n--- Kartu Statistik Utama (KPI) ---");
+            var kpi = await service.HitungStatistikUtamaAsync();
+            Console.WriteLine($"  Total Pengaduan Masuk   : {kpi.totalSemua}");
+            Console.WriteLine($"  Pengaduan Perlu Diproses: {kpi.perluDiproses}");
 
+            // 1.2: Grafik Batang - Jumlah Pengaduan per Kategori
+            Console.WriteLine("\n--- Grafik Batang: Jumlah Pengaduan per Kategori ---");
+            var dataGrafikKategori = await service.HitungJumlahPerKategoriAsync();
+            if (dataGrafikKategori.Any())
+            {
+                int maxLabelLength = dataGrafikKategori.Keys.Max(k => k.Length);
+                foreach (var kvp in dataGrafikKategori.OrderByDescending(kv => kv.Value))
+                {
+                    Console.Write($"  {kvp.Key.PadRight(maxLabelLength)} | ");
+                    Console.WriteLine(new string('█', kvp.Value) + $" ({kvp.Value})");
+                }
+            }
+
+            // 1.3: Grafik Lingkaran - Komposisi Status Pengaduan
+            Console.WriteLine("\n--- Grafik Lingkaran: Komposisi Status Pengaduan ---");
+            var dataGrafikStatus = await service.HitungKomposisiStatusAsync();
+            if (kpi.totalSemua > 0)
+            {
+                foreach (var kvp in dataGrafikStatus.OrderBy(kv => kv.Key.ToString()))
+                {
+                    double percentage = (double)kvp.Value / kpi.totalSemua * 100;
+                    Console.WriteLine($"  {kvp.Key,-10}: {kvp.Value} pengaduan ({percentage:F1}%)");
+                }
+            }
+
+            // =================================================================
+            // [BAGIAN 2] DASBOR TINDAKAN ADMIN (ACTIONABLE LISTS)
+            // =================================================================
+            Console.WriteLine("\n\n" + new string('=', 50));
+            Console.WriteLine("===== [BAGIAN 2] DAFTAR TINDAKAN (ADMIN VIEW) =====");
+            Console.WriteLine(new string('=', 50));
+
+            // 2.1: Ambil 5 pengaduan terbaru
+            Console.WriteLine("\n--- 5 Pengaduan Terbaru ---");
+            var pengaduanTerbaru = await service.AmbilPengaduanTerbaruAsync(5);
+            foreach (var p in pengaduanTerbaru)
+            {
+                Console.WriteLine($"  ID: {p.Id.Substring(0, 8)} | Kategori: {p.Detail.Kategori,-12} | Dibuat: {p.TanggalDibuat:g}");
+            }
+
+            // 2.2: Ambil pengaduan terlama yang belum selesai
+            Console.WriteLine("\n--- Pengaduan Terlama Berstatus 'Diproses' ---");
+            var pengaduanTerlama = await service.AmbilPengaduanTerlamaBelumSelesaiAsync(5);
+            foreach (var p in pengaduanTerlama)
+            {
+                Console.WriteLine($"  ID: {p.Id.Substring(0, 8)} | Status: {p.Status,-8} | Pelapor: {p.Detail.NamaPelapor}");
+            }
+
+            // =================================================================
+            // [BAGIAN 3] DASBOR PELAPOR (USER VIEW)
+            // =================================================================
+            Console.WriteLine("\n\n" + new string('=', 50));
+            Console.WriteLine("===== [BAGIAN 3] DASBOR PELAPOR (Nama: Budi Santoso) =====");
+            Console.WriteLine(new string('=', 50));
+            string namaPelaporTes = "Budi Santoso";
+
+            // 3.1: Hitung statistik pengaduan
+            Console.WriteLine("\n--- Kartu Statistik Pribadi ---");
+            var statistik = await service.HitungStatistikPengaduanPelaporAsync(namaPelaporTes);
+            Console.WriteLine($"  Total Pengaduan Saya: {statistik.total}");
+            Console.WriteLine($"  Pengaduan Diproses  : {statistik.diproses}");
+            Console.WriteLine($"  Pengaduan Selesai   : {statistik.selesai}");
+
+            // 3.2: Ambil daftar pengaduan terakhir
+            Console.WriteLine("\n--- Daftar 5 Pengaduan Terakhir Saya ---");
+            var pengaduanTerakhirPelapor = await service.AmbilPengaduanTerakhirPelaporAsync(namaPelaporTes, 5);
+            foreach (var p in pengaduanTerakhirPelapor)
+            {
+                Console.WriteLine($"  ID: {p.Id.Substring(0, 8)} | Kategori: {p.Detail.Kategori,-12} | Dibuat: {p.TanggalDibuat:d} | Status: {p.Status}");
+            }
         }
         catch (Exception ex)
         {
@@ -82,6 +149,6 @@ public class Program
             Console.ResetColor();
         }
 
-        Console.WriteLine("\n===== Tes Selesai =====");
+        Console.WriteLine("\n\n===== Tes Selesai =====");
     }
 }

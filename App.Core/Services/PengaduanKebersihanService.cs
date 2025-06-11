@@ -101,5 +101,75 @@ namespace App.Core.Services
             semuaPengaduan.Remove(pengaduan);
             await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
         }
+
+        // FUNGSI UNTUK DASBOR ADMIN
+        public async Task<List<Pengaduan<DetailKebersihan>>> AmbilPengaduanTerbaruAsync(int jumlah = 5)
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan.OrderByDescending(p => p.TanggalDibuat).Take(jumlah).ToList();
+        }
+
+        public async Task<List<Pengaduan<DetailKebersihan>>> AmbilPengaduanTerlamaBelumSelesaiAsync(int jumlah = 5)
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan
+                .Where(p => p.Status == StatusPengaduan.Diproses)
+                .OrderBy(p => p.TanggalDibuat)
+                .Take(jumlah)
+                .ToList();
+        }
+
+
+        // FUNGSI UNTUK DASBOR PELAPOR (PENGGUNA)
+        public async Task<(int total, int diproses, int selesai)> HitungStatistikPengaduanPelaporAsync(string namaPelapor)
+        {
+            if (string.IsNullOrWhiteSpace(namaPelapor)) return (0, 0, 0);
+
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            var pengaduanPelapor = semuaPengaduan.Where(p => p.Detail.NamaPelapor.Equals(namaPelapor, StringComparison.OrdinalIgnoreCase)).ToList();
+
+            int total = pengaduanPelapor.Count;
+            int diproses = pengaduanPelapor.Count(p => p.Status == StatusPengaduan.Diproses);
+            int selesai = pengaduanPelapor.Count(p => p.Status == StatusPengaduan.Selesai);
+
+            return (total, diproses, selesai);
+        }
+
+        public async Task<List<Pengaduan<DetailKebersihan>>> AmbilPengaduanTerakhirPelaporAsync(string namaPelapor, int jumlah = 5)
+        {
+            if (string.IsNullOrWhiteSpace(namaPelapor)) return new List<Pengaduan<DetailKebersihan>>();
+
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan
+                .Where(p => p.Detail.NamaPelapor.Equals(namaPelapor, StringComparison.OrdinalIgnoreCase))
+                .OrderByDescending(p => p.TanggalDibuat)
+                .Take(jumlah)
+                .ToList();
+        }
+
+        // FUNGSI BARU UNTUK DASBOR UTAMA (KPI & GRAFIK)
+        public async Task<(int totalSemua, int perluDiproses)> HitungStatistikUtamaAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            int totalSemua = semuaPengaduan.Count;
+            int perluDiproses = semuaPengaduan.Count(p => p.Status == StatusPengaduan.Dibuat);
+            return (totalSemua, perluDiproses);
+        }
+
+        public async Task<Dictionary<string, int>> HitungJumlahPerKategoriAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan
+                .GroupBy(p => p.Detail.Kategori)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
+        public async Task<Dictionary<StatusPengaduan, int>> HitungKomposisiStatusAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan
+                .GroupBy(p => p.Status)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
     }
 }
