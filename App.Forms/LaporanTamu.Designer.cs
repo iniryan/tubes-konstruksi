@@ -28,149 +28,265 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtNama = new TextBox();
-            txtNomorIdentitas = new TextBox();
+            panelMenuLaporanTamu = new Panel();
+            panelContentLaporanTamu = new Panel();
+            buttonClear = new Button();
+            buttonDelete = new Button();
+            labelTextDaftarLaporanTamu = new Label();
+            dataGridViewDataLaporanTamu = new DataGridView();
+            panelFormKebersihan = new Panel();
+            textPegawai = new TextBox();
+            textTujuan = new TextBox();
+            textNomorIdentitas = new TextBox();
+            textNama = new TextBox();
+            buttonSave = new Button();
+            labelTextDeskripsiPengaduan = new Label();
+            labelTextLokasi = new Label();
+            labelTextKategori = new Label();
+            labelTextPrioritas = new Label();
+            labelTextFormTambahTamu = new Label();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            txtTujuan = new TextBox();
-            txtPegawai = new TextBox();
-            btnSimpan_Click = new Button();
-            label6 = new Label();
+            dateTimePickerWaktuKeluar = new DateTimePicker();
+            panelMenuLaporanTamu.SuspendLayout();
+            panelContentLaporanTamu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewDataLaporanTamu).BeginInit();
+            panelFormKebersihan.SuspendLayout();
             SuspendLayout();
             // 
-            // txtNama
+            // panelMenuLaporanTamu
             // 
-            txtNama.Location = new Point(50, 103);
-            txtNama.Name = "txtNama";
-            txtNama.Size = new Size(324, 27);
-            txtNama.TabIndex = 0;
-            txtNama.TextChanged += textBox1_TextChanged;
+            panelMenuLaporanTamu.Controls.Add(panelContentLaporanTamu);
+            panelMenuLaporanTamu.Dock = DockStyle.Right;
+            panelMenuLaporanTamu.Location = new Point(234, 0);
+            panelMenuLaporanTamu.Name = "panelMenuLaporanTamu";
+            panelMenuLaporanTamu.Size = new Size(948, 673);
+            panelMenuLaporanTamu.TabIndex = 11;
             // 
-            // txtNomorIdentitas
+            // panelContentLaporanTamu
             // 
-            txtNomorIdentitas.Location = new Point(50, 183);
-            txtNomorIdentitas.Name = "txtNomorIdentitas";
-            txtNomorIdentitas.Size = new Size(324, 27);
-            txtNomorIdentitas.TabIndex = 1;
-            txtNomorIdentitas.TextChanged += textBox2_TextChanged;
+            panelContentLaporanTamu.Controls.Add(buttonClear);
+            panelContentLaporanTamu.Controls.Add(buttonDelete);
+            panelContentLaporanTamu.Controls.Add(labelTextDaftarLaporanTamu);
+            panelContentLaporanTamu.Controls.Add(dataGridViewDataLaporanTamu);
+            panelContentLaporanTamu.Controls.Add(panelFormKebersihan);
+            panelContentLaporanTamu.Dock = DockStyle.Bottom;
+            panelContentLaporanTamu.Location = new Point(0, 0);
+            panelContentLaporanTamu.Name = "panelContentLaporanTamu";
+            panelContentLaporanTamu.Size = new Size(948, 673);
+            panelContentLaporanTamu.TabIndex = 1;
+            // 
+            // buttonClear
+            // 
+            buttonClear.BackColor = SystemColors.Info;
+            buttonClear.FlatStyle = FlatStyle.Flat;
+            buttonClear.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonClear.ForeColor = SystemColors.ActiveCaptionText;
+            buttonClear.Location = new Point(348, 476);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(164, 40);
+            buttonClear.TabIndex = 11;
+            buttonClear.Text = "Clear Form";
+            buttonClear.UseVisualStyleBackColor = false;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.BackColor = Color.Firebrick;
+            buttonDelete.FlatStyle = FlatStyle.Flat;
+            buttonDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonDelete.ForeColor = SystemColors.Control;
+            buttonDelete.Location = new Point(126, 476);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(202, 40);
+            buttonDelete.TabIndex = 10;
+            buttonDelete.Text = "Hapus Data";
+            buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Click += buttonDelete_Click;
+            // 
+            // labelTextDaftarLaporanTamu
+            // 
+            labelTextDaftarLaporanTamu.AutoSize = true;
+            labelTextDaftarLaporanTamu.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextDaftarLaporanTamu.Location = new Point(21, 14);
+            labelTextDaftarLaporanTamu.Name = "labelTextDaftarLaporanTamu";
+            labelTextDaftarLaporanTamu.Size = new Size(212, 28);
+            labelTextDaftarLaporanTamu.TabIndex = 9;
+            labelTextDaftarLaporanTamu.Text = "Daftar Laporan Tamu";
+            // 
+            // dataGridViewDataLaporanTamu
+            // 
+            dataGridViewDataLaporanTamu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewDataLaporanTamu.Location = new Point(21, 60);
+            dataGridViewDataLaporanTamu.Name = "dataGridViewDataLaporanTamu";
+            dataGridViewDataLaporanTamu.RowHeadersWidth = 51;
+            dataGridViewDataLaporanTamu.Size = new Size(491, 396);
+            dataGridViewDataLaporanTamu.TabIndex = 1;
+            dataGridViewDataLaporanTamu.CellContentClick += dataGridViewDataLaporanTamu_CellContentClick;
+            // 
+            // panelFormKebersihan
+            // 
+            panelFormKebersihan.Controls.Add(dateTimePickerWaktuKeluar);
+            panelFormKebersihan.Controls.Add(label1);
+            panelFormKebersihan.Controls.Add(textPegawai);
+            panelFormKebersihan.Controls.Add(textTujuan);
+            panelFormKebersihan.Controls.Add(textNomorIdentitas);
+            panelFormKebersihan.Controls.Add(textNama);
+            panelFormKebersihan.Controls.Add(buttonSave);
+            panelFormKebersihan.Controls.Add(labelTextDeskripsiPengaduan);
+            panelFormKebersihan.Controls.Add(labelTextLokasi);
+            panelFormKebersihan.Controls.Add(labelTextKategori);
+            panelFormKebersihan.Controls.Add(labelTextPrioritas);
+            panelFormKebersihan.Controls.Add(labelTextFormTambahTamu);
+            panelFormKebersihan.Dock = DockStyle.Right;
+            panelFormKebersihan.Location = new Point(531, 0);
+            panelFormKebersihan.Name = "panelFormKebersihan";
+            panelFormKebersihan.Size = new Size(417, 673);
+            panelFormKebersihan.TabIndex = 0;
+            // 
+            // textPegawai
+            // 
+            textPegawai.Location = new Point(25, 334);
+            textPegawai.Name = "textPegawai";
+            textPegawai.Size = new Size(254, 27);
+            textPegawai.TabIndex = 17;
+            // 
+            // textTujuan
+            // 
+            textTujuan.Location = new Point(21, 253);
+            textTujuan.Name = "textTujuan";
+            textTujuan.Size = new Size(258, 27);
+            textTujuan.TabIndex = 16;
+            // 
+            // textNomorIdentitas
+            // 
+            textNomorIdentitas.Location = new Point(21, 172);
+            textNomorIdentitas.Name = "textNomorIdentitas";
+            textNomorIdentitas.Size = new Size(258, 27);
+            textNomorIdentitas.TabIndex = 15;
+            // 
+            // textNama
+            // 
+            textNama.Location = new Point(25, 96);
+            textNama.Name = "textNama";
+            textNama.Size = new Size(254, 27);
+            textNama.TabIndex = 14;
+            // 
+            // buttonSave
+            // 
+            buttonSave.BackColor = SystemColors.Highlight;
+            buttonSave.FlatStyle = FlatStyle.Flat;
+            buttonSave.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonSave.ForeColor = SystemColors.Control;
+            buttonSave.Location = new Point(29, 476);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(360, 40);
+            buttonSave.TabIndex = 13;
+            buttonSave.Text = "Simpan Data";
+            buttonSave.UseVisualStyleBackColor = false;
+            buttonSave.Click += buttonSave_Click;
+            // 
+            // labelTextDeskripsiPengaduan
+            // 
+            labelTextDeskripsiPengaduan.AutoSize = true;
+            labelTextDeskripsiPengaduan.Location = new Point(25, 300);
+            labelTextDeskripsiPengaduan.Name = "labelTextDeskripsiPengaduan";
+            labelTextDeskripsiPengaduan.Size = new Size(64, 20);
+            labelTextDeskripsiPengaduan.TabIndex = 12;
+            labelTextDeskripsiPengaduan.Text = "Pegawai";
+            // 
+            // labelTextLokasi
+            // 
+            labelTextLokasi.AutoSize = true;
+            labelTextLokasi.Location = new Point(29, 220);
+            labelTextLokasi.Name = "labelTextLokasi";
+            labelTextLokasi.Size = new Size(53, 20);
+            labelTextLokasi.TabIndex = 11;
+            labelTextLokasi.Text = "Tujuan";
+            labelTextLokasi.Click += labelTextLokasi_Click;
+            // 
+            // labelTextKategori
+            // 
+            labelTextKategori.AutoSize = true;
+            labelTextKategori.Location = new Point(25, 140);
+            labelTextKategori.Name = "labelTextKategori";
+            labelTextKategori.Size = new Size(117, 20);
+            labelTextKategori.TabIndex = 10;
+            labelTextKategori.Text = "Nomor Identitas";
+            // 
+            // labelTextPrioritas
+            // 
+            labelTextPrioritas.AutoSize = true;
+            labelTextPrioritas.Location = new Point(25, 60);
+            labelTextPrioritas.Name = "labelTextPrioritas";
+            labelTextPrioritas.Size = new Size(49, 20);
+            labelTextPrioritas.TabIndex = 9;
+            labelTextPrioritas.Text = "Nama";
+            // 
+            // labelTextFormTambahTamu
+            // 
+            labelTextFormTambahTamu.AutoSize = true;
+            labelTextFormTambahTamu.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextFormTambahTamu.Location = new Point(21, 14);
+            labelTextFormTambahTamu.Name = "labelTextFormTambahTamu";
+            labelTextFormTambahTamu.Size = new Size(197, 28);
+            labelTextFormTambahTamu.TabIndex = 8;
+            labelTextFormTambahTamu.Text = "Form Tambah Tamu";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(50, 151);
+            label1.Location = new Point(25, 386);
             label1.Name = "label1";
-            label1.Size = new Size(117, 20);
-            label1.TabIndex = 2;
-            label1.Text = "Nomor Identitas";
+            label1.Size = new Size(96, 20);
+            label1.TabIndex = 18;
+            label1.Text = "Waktu Keluar";
             label1.Click += label1_Click;
             // 
-            // label2
+            // dateTimePickerWaktuKeluar
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(50, 80);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 20);
-            label2.TabIndex = 3;
-            label2.Text = "Nama";
-            label2.Click += label2_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(407, 131);
-            label3.Name = "label3";
-            label3.Size = new Size(0, 20);
-            label3.TabIndex = 4;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(46, 233);
-            label4.Name = "label4";
-            label4.Size = new Size(53, 20);
-            label4.TabIndex = 5;
-            label4.Text = "Tujuan";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(50, 320);
-            label5.Name = "label5";
-            label5.Size = new Size(64, 20);
-            label5.TabIndex = 6;
-            label5.Text = "Pegawai";
-            // 
-            // txtTujuan
-            // 
-            txtTujuan.Location = new Point(50, 266);
-            txtTujuan.Name = "txtTujuan";
-            txtTujuan.Size = new Size(324, 27);
-            txtTujuan.TabIndex = 7;
-            // 
-            // txtPegawai
-            // 
-            txtPegawai.Location = new Point(46, 343);
-            txtPegawai.Name = "txtPegawai";
-            txtPegawai.Size = new Size(328, 27);
-            txtPegawai.TabIndex = 8;
-            // 
-            // btnSimpan_Click
-            // 
-            btnSimpan_Click.Location = new Point(46, 416);
-            btnSimpan_Click.Name = "btnSimpan_Click";
-            btnSimpan_Click.Size = new Size(94, 29);
-            btnSimpan_Click.TabIndex = 9;
-            btnSimpan_Click.Text = "simpan";
-            btnSimpan_Click.UseVisualStyleBackColor = true;
-            btnSimpan_Click.Click += button1_Click;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(502, 49);
-            label6.Name = "label6";
-            label6.Size = new Size(164, 20);
-            label6.TabIndex = 10;
-            label6.Text = "Halaman Tambah Tamu";
-            label6.Click += label6_Click;
+            dateTimePickerWaktuKeluar.Location = new Point(29, 419);
+            dateTimePickerWaktuKeluar.Name = "dateTimePickerWaktuKeluar";
+            dateTimePickerWaktuKeluar.Size = new Size(250, 27);
+            dateTimePickerWaktuKeluar.TabIndex = 19;
+            dateTimePickerWaktuKeluar.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // LaporanTamu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1099, 498);
-            Controls.Add(label6);
-            Controls.Add(btnSimpan_Click);
-            Controls.Add(txtPegawai);
-            Controls.Add(txtTujuan);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(txtNomorIdentitas);
-            Controls.Add(txtNama);
+            ClientSize = new Size(1182, 673);
+            Controls.Add(panelMenuLaporanTamu);
             Name = "LaporanTamu";
             Text = "LaporanTamu";
+            Load += LaporanTamu_Load;
+            panelMenuLaporanTamu.ResumeLayout(false);
+            panelContentLaporanTamu.ResumeLayout(false);
+            panelContentLaporanTamu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewDataLaporanTamu).EndInit();
+            panelFormKebersihan.ResumeLayout(false);
+            panelFormKebersihan.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private TextBox txtNama;
-        private TextBox txtNomorIdentitas;
+        private Panel panelMenuLaporanTamu;
+        private Panel panelContentLaporanTamu;
+        private Button buttonClear;
+        private Button buttonDelete;
+        private Label labelTextDaftarLaporanTamu;
+        private DataGridView dataGridViewDataLaporanTamu;
+        private Panel panelFormKebersihan;
+        private Button buttonSave;
+        private Label labelTextDeskripsiPengaduan;
+        private Label labelTextLokasi;
+        private Label labelTextKategori;
+        private Label labelTextPrioritas;
+        private Label labelTextFormTambahTamu;
+        private TextBox textTujuan;
+        private TextBox textNomorIdentitas;
+        private TextBox textNama;
+        private TextBox textPegawai;
         private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private TextBox txtTujuan;
-        private TextBox txtPegawai;
-        private Button btnSimpan_Click;
-        private Label label6;
+        private DateTimePicker dateTimePickerWaktuKeluar;
     }
 }

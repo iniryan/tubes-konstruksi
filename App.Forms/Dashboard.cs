@@ -74,5 +74,10 @@ namespace App.Forms
             dashboardBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Regular);
             menuPengaduanBtn.Font = new Font("Segoe UI", 10.2f, FontStyle.Bold);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

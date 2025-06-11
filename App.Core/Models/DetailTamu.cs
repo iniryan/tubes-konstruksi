@@ -1,24 +1,23 @@
-﻿namespace App.Core.Models
+﻿using App.Core.Models;
+using System;
+
+namespace App.Core.Models
 {
     public class DetailTamu : PengaduanDetailBase
     {
         public string NomorIdentitas { get; set; }
+        public string Tujuan { get; set; }
         public string PegawaiTujuan { get; set; }
-        public DateTime WaktuDatang { get; set; }
+        public DateTime WaktuDatang { get; set; } = DateTime.Now;
         public DateTime? WaktuKeluar { get; set; }
 
-        public DetailTamu(string namaTamu, string tujuan, string nomorIdentitas, string pegawaiTujuan)
-            : base(namaTamu, tujuan, $"Bertemu dengan {pegawaiTujuan}")
+        public DetailTamu(string namaPelapor, string lokasi, string deskripsi, string nomorIdentitas, string tujuan, string pegawaiTujuan, DateTime? waktuKeluar = null)
+            : base(namaPelapor, lokasi, deskripsi)
         {
-            if (string.IsNullOrWhiteSpace(nomorIdentitas))
-                throw new ArgumentException("Nomor identitas harus diisi.", nameof(nomorIdentitas));
-            if (string.IsNullOrWhiteSpace(pegawaiTujuan))
-                throw new ArgumentException("Pegawai tujuan harus diisi.", nameof(pegawaiTujuan));
-
             NomorIdentitas = nomorIdentitas;
+            Tujuan = tujuan;
             PegawaiTujuan = pegawaiTujuan;
-            WaktuDatang = DateTime.Now;
-            WaktuKeluar = null;
+            WaktuKeluar = waktuKeluar;
         }
     }
 }

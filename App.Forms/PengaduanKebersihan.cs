@@ -174,5 +174,15 @@ namespace App.Forms
                 }
             }
         }
+
+        private void buttonSave_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBoxDeskripsi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

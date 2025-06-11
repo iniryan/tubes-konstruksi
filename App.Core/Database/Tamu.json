@@ -1,0 +1,32 @@
+[
+  {
+    "Id": "4238d82e-d712-4fb6-b5a5-6ac609d8979d",
+    "Detail": {
+      "NomorIdentitas": "123456",
+      "Tujuan": "Surabaya",
+      "PegawaiTujuan": "loopy",
+      "WaktuDatang": "2025-06-11T22:11:52.6378476+07:00",
+      "WaktuKeluar": "2025-07-02T22:11:24.701",
+      "NamaPelapor": "Damasya",
+      "Lokasi": "Lobi Utama",
+      "Deskripsi": "Kunjungan ke loopy untuk Surabaya"
+    },
+    "Status": 0,
+    "TanggalDibuat": "2025-06-11T22:11:52.6380906+07:00"
+  },
+  {
+    "Id": "f2de743e-9423-4fe8-a556-31b339e57e53",
+    "Detail": {
+      "NomorIdentitas": "234567",
+      "Tujuan": "United States",
+      "PegawaiTujuan": "Chris Hamesworth",
+      "WaktuDatang": "2025-06-11T23:15:21.9687175+07:00",
+      "WaktuKeluar": "2025-06-19T23:14:19.683",
+      "NamaPelapor": "Henry Cavil",
+      "Lokasi": "Lobi Utama",
+      "Deskripsi": "Kunjungan ke Chris Hamesworth untuk United States"
+    },
+    "Status": 0,
+    "TanggalDibuat": "2025-06-11T23:15:21.9687307+07:00"
+  }
+]
