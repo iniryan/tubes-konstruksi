@@ -38,11 +38,13 @@
             labelTextKategori = new Label();
             labelTextPrioritas = new Label();
             labelTextFormKebersihan = new Label();
-            comboBox2 = new ComboBox();
-            richTextBox1 = new RichTextBox();
-            textBox1 = new TextBox();
+            comboBoxKategori = new ComboBox();
+            richTextBoxDeskripsi = new RichTextBox();
+            textBoxLokasi = new TextBox();
             comboBoxPrioritas = new ComboBox();
             panelMenuPengaduan = new Panel();
+            buttonDelete = new Button();
+            buttonClear = new Button();
             panelContentPengaduan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDataKebersihan).BeginInit();
             panelFormKebersihan.SuspendLayout();
@@ -51,6 +53,8 @@
             // 
             // panelContentPengaduan
             // 
+            panelContentPengaduan.Controls.Add(buttonClear);
+            panelContentPengaduan.Controls.Add(buttonDelete);
             panelContentPengaduan.Controls.Add(labelTextDaftarPengaduan);
             panelContentPengaduan.Controls.Add(dataGridViewDataKebersihan);
             panelContentPengaduan.Controls.Add(panelFormKebersihan);
@@ -76,7 +80,7 @@
             dataGridViewDataKebersihan.Location = new Point(21, 60);
             dataGridViewDataKebersihan.Name = "dataGridViewDataKebersihan";
             dataGridViewDataKebersihan.RowHeadersWidth = 51;
-            dataGridViewDataKebersihan.Size = new Size(491, 456);
+            dataGridViewDataKebersihan.Size = new Size(491, 396);
             dataGridViewDataKebersihan.TabIndex = 1;
             // 
             // panelFormKebersihan
@@ -87,9 +91,9 @@
             panelFormKebersihan.Controls.Add(labelTextKategori);
             panelFormKebersihan.Controls.Add(labelTextPrioritas);
             panelFormKebersihan.Controls.Add(labelTextFormKebersihan);
-            panelFormKebersihan.Controls.Add(comboBox2);
-            panelFormKebersihan.Controls.Add(richTextBox1);
-            panelFormKebersihan.Controls.Add(textBox1);
+            panelFormKebersihan.Controls.Add(comboBoxKategori);
+            panelFormKebersihan.Controls.Add(richTextBoxDeskripsi);
+            panelFormKebersihan.Controls.Add(textBoxLokasi);
             panelFormKebersihan.Controls.Add(comboBoxPrioritas);
             panelFormKebersihan.Dock = DockStyle.Right;
             panelFormKebersihan.Location = new Point(531, 0);
@@ -156,31 +160,31 @@
             labelTextFormKebersihan.TabIndex = 8;
             labelTextFormKebersihan.Text = "Form Pengaduan Kebersihan";
             // 
-            // comboBox2
+            // comboBoxKategori
             // 
-            comboBox2.FlatStyle = FlatStyle.Flat;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(29, 176);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(360, 28);
-            comboBox2.TabIndex = 7;
+            comboBoxKategori.FlatStyle = FlatStyle.Flat;
+            comboBoxKategori.FormattingEnabled = true;
+            comboBoxKategori.Location = new Point(29, 176);
+            comboBoxKategori.Name = "comboBoxKategori";
+            comboBoxKategori.Size = new Size(360, 28);
+            comboBoxKategori.TabIndex = 7;
             // 
-            // richTextBox1
+            // richTextBoxDeskripsi
             // 
-            richTextBox1.BorderStyle = BorderStyle.None;
-            richTextBox1.Location = new Point(29, 336);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(360, 120);
-            richTextBox1.TabIndex = 6;
-            richTextBox1.Text = "";
+            richTextBoxDeskripsi.BorderStyle = BorderStyle.None;
+            richTextBoxDeskripsi.Location = new Point(29, 336);
+            richTextBoxDeskripsi.Name = "richTextBoxDeskripsi";
+            richTextBoxDeskripsi.Size = new Size(360, 120);
+            richTextBoxDeskripsi.TabIndex = 6;
+            richTextBoxDeskripsi.Text = "";
             // 
-            // textBox1
+            // textBoxLokasi
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(29, 256);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(360, 20);
-            textBox1.TabIndex = 5;
+            textBoxLokasi.BorderStyle = BorderStyle.None;
+            textBoxLokasi.Location = new Point(29, 256);
+            textBoxLokasi.Name = "textBoxLokasi";
+            textBoxLokasi.Size = new Size(360, 20);
+            textBoxLokasi.TabIndex = 5;
             // 
             // comboBoxPrioritas
             // 
@@ -199,6 +203,32 @@
             panelMenuPengaduan.Name = "panelMenuPengaduan";
             panelMenuPengaduan.Size = new Size(948, 673);
             panelMenuPengaduan.TabIndex = 10;
+            // 
+            // buttonDelete
+            // 
+            buttonDelete.BackColor = Color.Firebrick;
+            buttonDelete.FlatStyle = FlatStyle.Flat;
+            buttonDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonDelete.ForeColor = SystemColors.Control;
+            buttonDelete.Location = new Point(126, 476);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(202, 40);
+            buttonDelete.TabIndex = 10;
+            buttonDelete.Text = "Hapus Data";
+            buttonDelete.UseVisualStyleBackColor = false;
+            // 
+            // buttonClear
+            // 
+            buttonClear.BackColor = SystemColors.Info;
+            buttonClear.FlatStyle = FlatStyle.Flat;
+            buttonClear.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonClear.ForeColor = SystemColors.ActiveCaptionText;
+            buttonClear.Location = new Point(348, 476);
+            buttonClear.Name = "buttonClear";
+            buttonClear.Size = new Size(164, 40);
+            buttonClear.TabIndex = 11;
+            buttonClear.Text = "Clear Form";
+            buttonClear.UseVisualStyleBackColor = false;
             // 
             // PengaduanKebersihan
             // 
@@ -228,10 +258,12 @@
         private Label labelTextKategori;
         private Label labelTextPrioritas;
         private Label labelTextFormKebersihan;
-        private ComboBox comboBox2;
-        private RichTextBox richTextBox1;
-        private TextBox textBox1;
+        private ComboBox comboBoxKategori;
+        private RichTextBox richTextBoxDeskripsi;
+        private TextBox textBoxLokasi;
         private ComboBox comboBoxPrioritas;
         private Panel panelMenuPengaduan;
+        private Button buttonClear;
+        private Button buttonDelete;
     }
 }

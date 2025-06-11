@@ -24,18 +24,6 @@
     "TanggalDibuat": "2025-06-11T05:58:21.2664995+07:00"
   },
   {
-    "Id": "69f999c5-1b91-4187-aab2-a58dc435593c",
-    "Detail": {
-      "PrioritasPengaduan": 0,
-      "Kategori": "Listrik",
-      "NamaPelapor": "Budi Santoso",
-      "Lokasi": "Koridor Blok C",
-      "Deskripsi": "Lampu koridor mati"
-    },
-    "Status": 2,
-    "TanggalDibuat": "2025-06-11T05:58:21.2845879+07:00"
-  },
-  {
     "Id": "caeb87ad-cada-4f09-8021-1d5619dbb417",
     "Detail": {
       "PrioritasPengaduan": 1,
@@ -58,5 +46,17 @@
     },
     "Status": 3,
     "TanggalDibuat": "2025-06-11T05:58:21.3162257+07:00"
+  },
+  {
+    "Id": "a6509390-c5cd-4c7f-ac11-5fc06d8102ff",
+    "Detail": {
+      "PrioritasPengaduan": 2,
+      "Kategori": "Sampah",
+      "NamaPelapor": "Ryan Santoso",
+      "Lokasi": "Rumah Fidi",
+      "Deskripsi": "Sampah di rumah fidi banyak"
+    },
+    "Status": 0,
+    "TanggalDibuat": "2025-06-11T10:53:09.3448557+07:00"
   }
 ]

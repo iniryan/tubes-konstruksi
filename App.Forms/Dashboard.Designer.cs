@@ -207,6 +207,7 @@
             // 
             // panelContainerLapTamu
             // 
+            panelContainerLapTamu.BorderStyle = BorderStyle.FixedSingle;
             panelContainerLapTamu.Controls.Add(labelLapTamu);
             panelContainerLapTamu.Controls.Add(counterTamu);
             panelContainerLapTamu.Controls.Add(labelLapTamuTextTotal);
@@ -247,6 +248,7 @@
             // 
             // panelContainerFasilitas
             // 
+            panelContainerFasilitas.BorderStyle = BorderStyle.FixedSingle;
             panelContainerFasilitas.Controls.Add(labelFasilitas);
             panelContainerFasilitas.Controls.Add(counterFasilitas);
             panelContainerFasilitas.Controls.Add(labelFasilitasTextTotal);
@@ -287,6 +289,7 @@
             // 
             // panelContainerKeamanan
             // 
+            panelContainerKeamanan.BorderStyle = BorderStyle.FixedSingle;
             panelContainerKeamanan.Controls.Add(labelKeamanan);
             panelContainerKeamanan.Controls.Add(counterKeamanan);
             panelContainerKeamanan.Controls.Add(labelKeamananTextTotal);
@@ -327,6 +330,7 @@
             // 
             // panelContainerKebersihan
             // 
+            panelContainerKebersihan.BorderStyle = BorderStyle.FixedSingle;
             panelContainerKebersihan.Controls.Add(labelKebersihan);
             panelContainerKebersihan.Controls.Add(counterKebersihan);
             panelContainerKebersihan.Controls.Add(labelKebersihanTextTotal);
