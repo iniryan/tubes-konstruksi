@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using App.Core.Services;
-
+﻿using System.Text.Json.Serialization;
 namespace App.Core.Models
 {
     public enum StatusPengaduan
@@ -14,8 +8,7 @@ namespace App.Core.Models
         Selesai,
         Ditolak
     }
-
-    public class Pengaduan<T>
+    public class Pengaduan<T> where T : PengaduanDetailBase
     {
         public string Id { get; private set; }
         public T Detail { get; private set; }
@@ -24,51 +17,43 @@ namespace App.Core.Models
 
         public Pengaduan(string id, T detail)
         {
-            if (string.IsNullOrWhiteSpace(id)) throw new ArgumentException("ID tidak boleh kosong");
+            if (string.IsNullOrWhiteSpace(id)) throw new ArgumentException("ID tidak boleh kosong", nameof(id));
+
             Id = id;
             Detail = detail ?? throw new ArgumentNullException(nameof(detail));
             Status = StatusPengaduan.Dibuat;
             TanggalDibuat = DateTime.Now;
         }
 
+        [JsonConstructor]
+        public Pengaduan(string id, T detail, StatusPengaduan status, DateTime tanggalDibuat)
+        {
+            Id = id;
+            Detail = detail;
+            Status = status;
+            TanggalDibuat = tanggalDibuat;
+        }
+
         public void UbahStatus(StatusPengaduan statusBaru)
         {
             if (!StatusTransisi.BisaTransisi(this.Status, statusBaru))
-                throw new InvalidOperationException("Transisi dari " + this.Status + " ke " + statusBaru + " tidak valid.");
+                throw new InvalidOperationException($"Transisi dari {this.Status} ke {statusBaru} tidak valid.");
 
             this.Status = statusBaru;
         }
-
-        public override string ToString()
-        {
-            var detailInfo = "";
-
-            if (Detail is PengaduanKebersihan kebersihan)
-            {
-                detailInfo = "\n  Nama Pelapor : " + kebersihan.NamaPelapor +
-                             "\n  Kategori  : " + kebersihan.Kategori +
-                             "\n  Prioritas : " + kebersihan.PrioritasPengaduan +
-                             "\n  Masalah    : " + kebersihan.Masalah +
-                             "\n  Lokasi    : " + kebersihan.Lokasi;
-            }
-
-            return "[" + Id + "] " + Status + " - Dibuat pada " + TanggalDibuat.ToString("dd/MM/yyyy HH:mm:ss") + detailInfo;
-        }
-
     }
 
     public static class StatusTransisi
     {
         private static readonly Dictionary<StatusPengaduan, List<StatusPengaduan>> _transisiValid = new()
-        {
-            { StatusPengaduan.Dibuat, new List<StatusPengaduan> { StatusPengaduan.Diproses, StatusPengaduan.Ditolak } },
-            { StatusPengaduan.Diproses, new List<StatusPengaduan> { StatusPengaduan.Selesai } },
-        };
+            {
+                { StatusPengaduan.Dibuat, new List<StatusPengaduan> { StatusPengaduan.Diproses, StatusPengaduan.Ditolak } },
+                { StatusPengaduan.Diproses, new List<StatusPengaduan> { StatusPengaduan.Selesai } },
+            };
 
         public static bool BisaTransisi(StatusPengaduan dari, StatusPengaduan ke)
         {
             return _transisiValid.ContainsKey(dari) && _transisiValid[dari].Contains(ke);
         }
     }
-
 }

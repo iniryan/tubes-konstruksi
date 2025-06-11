@@ -1,4 +1,4 @@
-namespace PengaduanKeamananCLI.Models
+namespace App.Core.Models
 {
     public class User
     {
@@ -7,4 +7,4 @@ namespace PengaduanKeamananCLI.Models
         public string Password { get; set; } = string.Empty;
         public string Role { get; set; } = string.Empty;
     }
-} 
+}
