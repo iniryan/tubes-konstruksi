@@ -24,5 +24,10 @@ namespace App.Forms
         {
             return panelDaftarPengaduan;
         }
+
+        private void labelTextDaftarPengaduan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

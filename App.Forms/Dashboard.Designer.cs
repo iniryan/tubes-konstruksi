@@ -30,7 +30,7 @@
         {
             labelJudul = new Label();
             panelSidebar = new Panel();
-            button1 = new Button();
+            buttonTamu = new Button();
             logOutBtn = new Button();
             menuPengaduanBtn = new Button();
             menuPenggunaBtn = new Button();
@@ -86,7 +86,7 @@
             // 
             // panelSidebar
             // 
-            panelSidebar.Controls.Add(button1);
+            panelSidebar.Controls.Add(buttonTamu);
             panelSidebar.Controls.Add(labelJudul);
             panelSidebar.Controls.Add(logOutBtn);
             panelSidebar.Controls.Add(menuPengaduanBtn);
@@ -99,19 +99,19 @@
             panelSidebar.Size = new Size(234, 673);
             panelSidebar.TabIndex = 1;
             // 
-            // button1
+            // buttonTamu
             // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Product Sans", 10.2F);
-            button1.Location = new Point(12, 370);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 40);
-            button1.TabIndex = 5;
-            button1.Text = "Laporan Tamu";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonTamu.FlatAppearance.BorderSize = 0;
+            buttonTamu.FlatStyle = FlatStyle.Flat;
+            buttonTamu.Font = new Font("Product Sans", 10.2F);
+            buttonTamu.Location = new Point(12, 370);
+            buttonTamu.Name = "buttonTamu";
+            buttonTamu.Size = new Size(200, 40);
+            buttonTamu.TabIndex = 5;
+            buttonTamu.Text = "Laporan Tamu";
+            buttonTamu.TextAlign = ContentAlignment.MiddleLeft;
+            buttonTamu.UseVisualStyleBackColor = true;
+            buttonTamu.Click += buttonTamu_Click;
             // 
             // logOutBtn
             // 
@@ -385,7 +385,7 @@
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(948, 468);
             panelContent.TabIndex = 5;
-            this.panelContent.Controls.Add(this.chartPengaduan);
+            this.panelContent.Controls.Add(this.chartPengaduan);            // 
             // 
             // labelTextPengaduanTerbaru
             // 
@@ -482,6 +482,6 @@
         private Label labelTextPengaduanTerbaru;
         private DataGridView dataPengaduanTerbaruGridView;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPengaduan;
-        private Button button1;
+        private Button buttonTamu;
     }
 }

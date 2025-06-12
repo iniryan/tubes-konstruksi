@@ -9,12 +9,19 @@ namespace App.Forms
 {
     public partial class LaporanTamu : Form
     {
+        private readonly User _currentUser;
+        private Control currentControl;
         private readonly GuestRepository _guestRepository;
         private string? _selectedTamuId = null;
+        public Panel GetPanel()
+        {
+            return panelContentLaporanTamu;
+        }
 
-        public LaporanTamu()
+        public LaporanTamu(User user)
         {
             InitializeComponent();
+            _currentUser = user;
             this.Dock = DockStyle.Fill;
 
             _guestRepository = new GuestRepository();
@@ -23,7 +30,7 @@ namespace App.Forms
             buttonSave.Click += buttonSave_Click;
             dataGridViewDataLaporanTamu.SelectionChanged += dataGridViewDataLaporanTamu_SelectionChanged;
             buttonClear.Click += buttonClear_Click;
-            buttonDelete.Click += buttonDelete_Click;
+            //buttonDelete.Click += buttonDelete_Click;
         }
 
         private async void LaporanTamu_Load(object sender, EventArgs e)

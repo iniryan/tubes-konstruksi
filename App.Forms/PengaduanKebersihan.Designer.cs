@@ -225,7 +225,6 @@
             richTextBoxDeskripsi.Size = new Size(360, 120);
             richTextBoxDeskripsi.TabIndex = 6;
             richTextBoxDeskripsi.Text = "";
-            richTextBoxDeskripsi.TextChanged += richTextBoxDeskripsi_TextChanged;
             // 
             // textBoxNamaPelapor
             // 

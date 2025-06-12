@@ -1,0 +1,14 @@
+[
+  {
+    "Id": "d09f52ba-abc0-42a9-96ae-58cbdd99f09f",
+    "Detail": {
+      "PrioritasPengaduan": 0,
+      "Kategori": "WC Umum",
+      "NamaPelapor": "John",
+      "Lokasi": "Kampung ABC",
+      "Deskripsi": "WC Mampet, tolong segera diperbaiki sebelum muncul musibah!"
+    },
+    "Status": 0,
+    "TanggalDibuat": "2025-06-12T19:38:45.9943604+07:00"
+  }
+]

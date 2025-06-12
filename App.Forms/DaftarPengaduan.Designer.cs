@@ -62,9 +62,10 @@
             labelTextDaftarPengaduan.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextDaftarPengaduan.Location = new Point(42, 11);
             labelTextDaftarPengaduan.Name = "labelTextDaftarPengaduan";
-            labelTextDaftarPengaduan.Size = new Size(183, 28);
+            labelTextDaftarPengaduan.Size = new Size(241, 25);
             labelTextDaftarPengaduan.TabIndex = 1;
-            labelTextDaftarPengaduan.Text = "Daftar Pengaduan";
+            labelTextDaftarPengaduan.Text = "Daftar Semua Pengaduan";
+            labelTextDaftarPengaduan.Click += labelTextDaftarPengaduan_Click;
             // 
             // dataSemuaPengaduanGridView
             // 

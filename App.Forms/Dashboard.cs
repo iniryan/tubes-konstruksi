@@ -14,6 +14,7 @@ namespace App.Forms
     {
         private DaftarPengaduan daftarPengaduanForm;
         private MenuPengaduan menuPengaduanForm;
+        private LaporanTamu lapTamu;
         private readonly User _currentUser;
         private readonly PengaduanKebersihanService _pengaduanKebersihanService;
         // private readonly PengaduanFasilitasService _pengaduanFasilitasService;
@@ -33,6 +34,7 @@ namespace App.Forms
 
             daftarPengaduanForm = new DaftarPengaduan(_currentUser);
             menuPengaduanForm = new MenuPengaduan(_currentUser);
+            lapTamu = new LaporanTamu(_currentUser);
 
             LoadDashboardDataAsync();
         }
@@ -63,6 +65,11 @@ namespace App.Forms
 
         private async Task LoadPengaduanChartAsync()
         {
+            if (this.chartPengaduan == null)
+            {
+                MessageBox.Show("Chart control is not initialized. Please fix it in the Dashboard designer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 Dictionary<StatusPengaduan, int> dataStatus = await _pengaduanKebersihanService.HitungKomposisiStatusAsync();
@@ -72,8 +79,8 @@ namespace App.Forms
                     kvp => kvp.Value
                 );
 
-                var chart = this.chartPengaduan; // <-- Menggunakan nama chart yang benar
-                var seriesName = "Pengaduan";   // <-- Nama series yang sudah konsisten
+                var chart = this.chartPengaduan;
+                var seriesName = "Pengaduan";
 
                 chart.Series[seriesName].Points.Clear();
                 chart.Titles.Clear();
@@ -106,6 +113,7 @@ namespace App.Forms
             daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Bold);
             dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            buttonTamu.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
         }
 
         private void dashboardBtn_Click(object sender, EventArgs e)
@@ -116,6 +124,7 @@ namespace App.Forms
             dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Bold);
             daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            buttonTamu.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
         }
 
         private void RestoreDashboardPanel()
@@ -133,6 +142,7 @@ namespace App.Forms
             menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Bold);
             daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            buttonTamu.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
         }
 
         private void logOutBtn_Click(object sender, EventArgs e)
@@ -140,9 +150,16 @@ namespace App.Forms
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonTamu_Click(object sender, EventArgs e)
         {
+            panelBase.Controls.Clear();
+            panelBase.Controls.Add(lapTamu.GetPanel());
+            lapTamu.GetPanel().Dock = DockStyle.Fill;
 
+            buttonTamu.Font = new Font("Product Sans", 10.2f, FontStyle.Bold);
+            menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
         }
     }
 }
