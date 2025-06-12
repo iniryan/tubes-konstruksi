@@ -77,7 +77,7 @@
             // 
             // labelJudul
             // 
-            labelJudul.Font = new Font("Product Sans", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelJudul.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelJudul.Location = new Point(12, 23);
             labelJudul.Name = "labelJudul";
             labelJudul.Size = new Size(189, 74);
@@ -111,6 +111,7 @@
             button1.Text = "Laporan Tamu";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // logOutBtn
             // 

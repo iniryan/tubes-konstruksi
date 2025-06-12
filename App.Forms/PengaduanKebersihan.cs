@@ -190,7 +190,6 @@ namespace App.Forms
                 }
             }
         }
-
         private void ClearForm()
         {
             _isClearing = true;
