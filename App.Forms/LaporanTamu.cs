@@ -13,6 +13,9 @@ namespace App.Forms
         private Control currentControl;
         private readonly GuestRepository _guestRepository;
         private string? _selectedTamuId = null;
+
+        private bool _isClearing = false;
+
         public Panel GetPanel()
         {
             return panelContentLaporanTamu;
@@ -29,13 +32,50 @@ namespace App.Forms
             this.Load += LaporanTamu_Load;
             buttonSave.Click += buttonSave_Click;
             dataGridViewDataLaporanTamu.SelectionChanged += dataGridViewDataLaporanTamu_SelectionChanged;
+            dataGridViewDataLaporanTamu.RowPostPaint += dataGridViewDataLaporanTamu_RowPostPaint;
             buttonClear.Click += buttonClear_Click;
             //buttonDelete.Click += buttonDelete_Click;
         }
 
         private async void LaporanTamu_Load(object sender, EventArgs e)
         {
+            SetupDataGridViewStyles();
             await LoadDataAsync();
+        }
+
+        private void SetupDataGridViewStyles()
+        {
+            dataGridViewDataLaporanTamu.RowHeadersVisible = true;
+            dataGridViewDataLaporanTamu.TopLeftHeaderCell.Value = "Pilih Data";
+            dataGridViewDataLaporanTamu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDataLaporanTamu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            dataGridViewDataLaporanTamu.AllowUserToAddRows = false;
+            dataGridViewDataLaporanTamu.AllowUserToDeleteRows = false;
+            dataGridViewDataLaporanTamu.ReadOnly = true;
+
+            var headerStyle = dataGridViewDataLaporanTamu.ColumnHeadersDefaultCellStyle;
+            headerStyle.BackColor = Color.Navy;
+            headerStyle.ForeColor = Color.White;
+            headerStyle.Font = new Font("Product Sans", 10, FontStyle.Bold);
+            headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            dataGridViewDataLaporanTamu.TopLeftHeaderCell.Style.ApplyStyle(headerStyle);
+        }
+
+        private void dataGridViewDataLaporanTamu_RowPostPaint(object? sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            if (dataGridViewDataLaporanTamu.Rows[e.RowIndex].Selected) return;
+
+            string symbol = "▶";
+            using (Font font = new Font("Product Sans", 10, FontStyle.Bold))
+            using (SolidBrush brush = new SolidBrush(Color.Gray))
+            {
+                SizeF stringSize = e.Graphics.MeasureString(symbol, font);
+                float x = e.RowBounds.Left + (dataGridViewDataLaporanTamu.RowHeadersWidth - stringSize.Width) / 2;
+                float y = e.RowBounds.Top + (e.RowBounds.Height - stringSize.Height) / 2;
+                e.Graphics.DrawString(symbol, font, brush, x, y);
+            }
         }
 
         private async Task LoadDataAsync()
@@ -61,6 +101,8 @@ namespace App.Forms
 
         private void dataGridViewDataLaporanTamu_SelectionChanged(object sender, EventArgs e)
         {
+            if (_isClearing) return;
+
             if (dataGridViewDataLaporanTamu.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridViewDataLaporanTamu.SelectedRows[0];
@@ -86,6 +128,8 @@ namespace App.Forms
                     labelTextFormTambahTamu.Text = "Ubah Data Tamu";
                     buttonSave.Text = "Ubah Data";
                 }
+            } else {
+                ClearForm();
             }
         }
 
@@ -121,8 +165,8 @@ namespace App.Forms
                     MessageBox.Show("Tamu berhasil diubah!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                ClearForm();
                 await LoadDataAsync();
+                ClearForm();
             }
             catch (Exception ex)
             {
