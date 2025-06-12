@@ -34,7 +34,7 @@
             buttonDelete = new Button();
             labelTextDaftarLaporanTamu = new Label();
             dataGridViewDataLaporanTamu = new DataGridView();
-            panelFormKebersihan = new Panel();
+            panelFormTamu = new Panel();
             textPegawai = new TextBox();
             textTujuan = new TextBox();
             textNomorIdentitas = new TextBox();
@@ -50,7 +50,7 @@
             panelMenuLaporanTamu.SuspendLayout();
             panelContentLaporanTamu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDataLaporanTamu).BeginInit();
-            panelFormKebersihan.SuspendLayout();
+            panelFormTamu.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenuLaporanTamu
@@ -68,7 +68,7 @@
             panelContentLaporanTamu.Controls.Add(buttonDelete);
             panelContentLaporanTamu.Controls.Add(labelTextDaftarLaporanTamu);
             panelContentLaporanTamu.Controls.Add(dataGridViewDataLaporanTamu);
-            panelContentLaporanTamu.Controls.Add(panelFormKebersihan);
+            panelContentLaporanTamu.Controls.Add(panelFormTamu);
             panelContentLaporanTamu.Dock = DockStyle.Bottom;
             panelContentLaporanTamu.Location = new Point(0, 0);
             panelContentLaporanTamu.Name = "panelContentLaporanTamu";
@@ -79,7 +79,7 @@
             // 
             buttonClear.BackColor = SystemColors.Info;
             buttonClear.FlatStyle = FlatStyle.Flat;
-            buttonClear.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonClear.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             buttonClear.ForeColor = SystemColors.ActiveCaptionText;
             buttonClear.Location = new Point(348, 476);
             buttonClear.Name = "buttonClear";
@@ -92,7 +92,7 @@
             // 
             buttonDelete.BackColor = Color.Firebrick;
             buttonDelete.FlatStyle = FlatStyle.Flat;
-            buttonDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonDelete.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             buttonDelete.ForeColor = SystemColors.Control;
             buttonDelete.Location = new Point(126, 476);
             buttonDelete.Name = "buttonDelete";
@@ -105,7 +105,7 @@
             // labelTextDaftarLaporanTamu
             // 
             labelTextDaftarLaporanTamu.AutoSize = true;
-            labelTextDaftarLaporanTamu.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextDaftarLaporanTamu.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextDaftarLaporanTamu.Location = new Point(21, 14);
             labelTextDaftarLaporanTamu.Name = "labelTextDaftarLaporanTamu";
             labelTextDaftarLaporanTamu.Size = new Size(212, 28);
@@ -122,25 +122,25 @@
             dataGridViewDataLaporanTamu.TabIndex = 1;
             dataGridViewDataLaporanTamu.CellContentClick += dataGridViewDataLaporanTamu_CellContentClick;
             // 
-            // panelFormKebersihan
+            // panelFormTamu
             // 
-            panelFormKebersihan.Controls.Add(dateTimePickerWaktuKeluar);
-            panelFormKebersihan.Controls.Add(label1);
-            panelFormKebersihan.Controls.Add(textPegawai);
-            panelFormKebersihan.Controls.Add(textTujuan);
-            panelFormKebersihan.Controls.Add(textNomorIdentitas);
-            panelFormKebersihan.Controls.Add(textNama);
-            panelFormKebersihan.Controls.Add(buttonSave);
-            panelFormKebersihan.Controls.Add(labelTextDeskripsiPengaduan);
-            panelFormKebersihan.Controls.Add(labelTextLokasi);
-            panelFormKebersihan.Controls.Add(labelTextKategori);
-            panelFormKebersihan.Controls.Add(labelTextPrioritas);
-            panelFormKebersihan.Controls.Add(labelTextFormTambahTamu);
-            panelFormKebersihan.Dock = DockStyle.Right;
-            panelFormKebersihan.Location = new Point(531, 0);
-            panelFormKebersihan.Name = "panelFormKebersihan";
-            panelFormKebersihan.Size = new Size(417, 673);
-            panelFormKebersihan.TabIndex = 0;
+            panelFormTamu.Controls.Add(dateTimePickerWaktuKeluar);
+            panelFormTamu.Controls.Add(label1);
+            panelFormTamu.Controls.Add(textPegawai);
+            panelFormTamu.Controls.Add(textTujuan);
+            panelFormTamu.Controls.Add(textNomorIdentitas);
+            panelFormTamu.Controls.Add(textNama);
+            panelFormTamu.Controls.Add(buttonSave);
+            panelFormTamu.Controls.Add(labelTextDeskripsiPengaduan);
+            panelFormTamu.Controls.Add(labelTextLokasi);
+            panelFormTamu.Controls.Add(labelTextKategori);
+            panelFormTamu.Controls.Add(labelTextPrioritas);
+            panelFormTamu.Controls.Add(labelTextFormTambahTamu);
+            panelFormTamu.Dock = DockStyle.Right;
+            panelFormTamu.Location = new Point(531, 0);
+            panelFormTamu.Name = "panelFormTamu";
+            panelFormTamu.Size = new Size(417, 673);
+            panelFormTamu.TabIndex = 0;
             // 
             // textPegawai
             // 
@@ -174,7 +174,7 @@
             // 
             buttonSave.BackColor = SystemColors.Highlight;
             buttonSave.FlatStyle = FlatStyle.Flat;
-            buttonSave.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonSave.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             buttonSave.ForeColor = SystemColors.Control;
             buttonSave.Location = new Point(29, 476);
             buttonSave.Name = "buttonSave";
@@ -224,7 +224,7 @@
             // labelTextFormTambahTamu
             // 
             labelTextFormTambahTamu.AutoSize = true;
-            labelTextFormTambahTamu.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextFormTambahTamu.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextFormTambahTamu.Location = new Point(21, 14);
             labelTextFormTambahTamu.Name = "labelTextFormTambahTamu";
             labelTextFormTambahTamu.Size = new Size(197, 28);
@@ -262,8 +262,8 @@
             panelContentLaporanTamu.ResumeLayout(false);
             panelContentLaporanTamu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDataLaporanTamu).EndInit();
-            panelFormKebersihan.ResumeLayout(false);
-            panelFormKebersihan.PerformLayout();
+            panelFormTamu.ResumeLayout(false);
+            panelFormTamu.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -275,7 +275,7 @@
         private Button buttonDelete;
         private Label labelTextDaftarLaporanTamu;
         private DataGridView dataGridViewDataLaporanTamu;
-        private Panel panelFormKebersihan;
+        private Panel panelFormTamu;
         private Button buttonSave;
         private Label labelTextDeskripsiPengaduan;
         private Label labelTextLokasi;
