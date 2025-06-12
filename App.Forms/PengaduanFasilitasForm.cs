@@ -30,7 +30,7 @@ namespace App.Forms
             this.Load += PengaduanFasilitasForm_Load;
             buttonSimpanFasilitas.Click += buttonSimpan_Click;
             buttonClearFormFasilitas.Click += buttonClearForm_Click;
-            
+
             dataGridViewDataFasilitas.SelectionChanged += DataGridViewDataFasilitas_SelectionChanged;
             dataGridViewDataFasilitas.RowPostPaint += DataGridViewDataFasilitas_RowPostPaint;
         }
@@ -217,6 +217,11 @@ namespace App.Forms
                 float y = e.RowBounds.Top + (e.RowBounds.Height - stringSize.Height) / 2;
                 e.Graphics.DrawString(symbol, font, brush, x, y);
             }
+        }
+
+        private void panelContentPengaduan_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

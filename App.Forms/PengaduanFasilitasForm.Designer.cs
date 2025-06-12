@@ -43,11 +43,11 @@
             labelTextDaftarPengaduan = new Label();
             dataGridViewDataFasilitas = new DataGridView();
             panelContentPengaduan = new Panel();
-            panelFormKebersihan = new Panel();
+            panelFormFasilitas = new Panel();
             panelMenuPengaduan = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDataFasilitas).BeginInit();
             panelContentPengaduan.SuspendLayout();
-            panelFormKebersihan.SuspendLayout();
+            panelFormFasilitas.SuspendLayout();
             panelMenuPengaduan.SuspendLayout();
             SuspendLayout();
             // 
@@ -107,7 +107,7 @@
             labelTextForm.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextForm.Location = new Point(21, 14);
             labelTextForm.Name = "labelTextForm";
-            labelTextForm.Size = new Size(251, 28);
+            labelTextForm.Size = new Size(245, 25);
             labelTextForm.TabIndex = 8;
             labelTextForm.Text = "Form Pengaduan Fasilitas";
             // 
@@ -180,7 +180,7 @@
             labelTextDaftarPengaduan.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextDaftarPengaduan.Location = new Point(21, 14);
             labelTextDaftarPengaduan.Name = "labelTextDaftarPengaduan";
-            labelTextDaftarPengaduan.Size = new Size(264, 28);
+            labelTextDaftarPengaduan.Size = new Size(255, 25);
             labelTextDaftarPengaduan.TabIndex = 9;
             labelTextDaftarPengaduan.Text = "Daftar Pengaduan Fasilitas";
             // 
@@ -199,30 +199,31 @@
             panelContentPengaduan.Controls.Add(buttonHapusFasilitas);
             panelContentPengaduan.Controls.Add(labelTextDaftarPengaduan);
             panelContentPengaduan.Controls.Add(dataGridViewDataFasilitas);
-            panelContentPengaduan.Controls.Add(panelFormKebersihan);
+            panelContentPengaduan.Controls.Add(panelFormFasilitas);
             panelContentPengaduan.Dock = DockStyle.Bottom;
             panelContentPengaduan.Location = new Point(0, 115);
             panelContentPengaduan.Name = "panelContentPengaduan";
             panelContentPengaduan.Size = new Size(948, 558);
             panelContentPengaduan.TabIndex = 1;
+            panelContentPengaduan.Paint += panelContentPengaduan_Paint;
             // 
-            // panelFormKebersihan
+            // panelFormFasilitas
             // 
-            panelFormKebersihan.Controls.Add(buttonSimpanFasilitas);
-            panelFormKebersihan.Controls.Add(labelTextDeskripsiPengaduan);
-            panelFormKebersihan.Controls.Add(labelTextLokasi);
-            panelFormKebersihan.Controls.Add(labelTextFasilitas);
-            panelFormKebersihan.Controls.Add(labelTextPrioritas);
-            panelFormKebersihan.Controls.Add(labelTextForm);
-            panelFormKebersihan.Controls.Add(comboBoxJenisFasilitas);
-            panelFormKebersihan.Controls.Add(richTextBoxDeskripsi);
-            panelFormKebersihan.Controls.Add(textBoxLokasi);
-            panelFormKebersihan.Controls.Add(comboBoxPrioritas);
-            panelFormKebersihan.Dock = DockStyle.Right;
-            panelFormKebersihan.Location = new Point(531, 0);
-            panelFormKebersihan.Name = "panelFormKebersihan";
-            panelFormKebersihan.Size = new Size(417, 558);
-            panelFormKebersihan.TabIndex = 0;
+            panelFormFasilitas.Controls.Add(buttonSimpanFasilitas);
+            panelFormFasilitas.Controls.Add(labelTextDeskripsiPengaduan);
+            panelFormFasilitas.Controls.Add(labelTextLokasi);
+            panelFormFasilitas.Controls.Add(labelTextFasilitas);
+            panelFormFasilitas.Controls.Add(labelTextPrioritas);
+            panelFormFasilitas.Controls.Add(labelTextForm);
+            panelFormFasilitas.Controls.Add(comboBoxJenisFasilitas);
+            panelFormFasilitas.Controls.Add(richTextBoxDeskripsi);
+            panelFormFasilitas.Controls.Add(textBoxLokasi);
+            panelFormFasilitas.Controls.Add(comboBoxPrioritas);
+            panelFormFasilitas.Dock = DockStyle.Right;
+            panelFormFasilitas.Location = new Point(531, 0);
+            panelFormFasilitas.Name = "panelFormFasilitas";
+            panelFormFasilitas.Size = new Size(417, 558);
+            panelFormFasilitas.TabIndex = 0;
             // 
             // panelMenuPengaduan
             // 
@@ -243,8 +244,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewDataFasilitas).EndInit();
             panelContentPengaduan.ResumeLayout(false);
             panelContentPengaduan.PerformLayout();
-            panelFormKebersihan.ResumeLayout(false);
-            panelFormKebersihan.PerformLayout();
+            panelFormFasilitas.ResumeLayout(false);
+            panelFormFasilitas.PerformLayout();
             panelMenuPengaduan.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -266,7 +267,7 @@
         private Label labelTextDaftarPengaduan;
         private DataGridView dataGridViewDataFasilitas;
         private Panel panelContentPengaduan;
-        private Panel panelFormKebersihan;
+        private Panel panelFormFasilitas;
         private Panel panelMenuPengaduan;
     }
 }
