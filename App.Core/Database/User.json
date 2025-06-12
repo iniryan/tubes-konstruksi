@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "Name": "Ahmad Zufar",
+    "Username": "zufar",
+    "Password": "8e10ed93d53d1ff2a41538d9bb670c207a2dffc7e365e6d0661d449186a3629e",
+    "Role": "civilian",
+    "Alamat": "Jl. Ngagel",
+    "NoTelepon": "089110108811"
+  },
+  {
+    "Id": 2,
+    "Name": "ryan",
+    "Username": "ryan",
+    "Password": "6c374c117dca49b96eed7baa82ece9ff6b7d61e6c540e0a00e8848d79e4246ca",
+    "Role": "civilian",
+    "Alamat": "Jl. Sedati",
+    "NoTelepon": "083877534252"
+  },
+  {
+    "Id": 3,
+    "Name": "adi",
+    "Username": "adi",
+    "Password": "882faefe28371f8145b880c83c83bc7dd497e251eb6686af30e509a75f35ba44",
+    "Role": "civilian",
+    "Alamat": "adi",
+    "NoTelepon": "0891"
+  }
+]

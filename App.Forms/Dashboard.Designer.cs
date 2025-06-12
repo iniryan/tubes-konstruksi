@@ -68,6 +68,11 @@
             panelContainerKebersihan.SuspendLayout();
             panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataPengaduanTerbaruGridView).BeginInit();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.chartPengaduan = new System.Windows.Forms.DataVisualization.Charting.Chart();
+
             SuspendLayout();
             // 
             // labelJudul
@@ -98,7 +103,7 @@
             // 
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F);
+            button1.Font = new Font("Product Sans", 10.2F);
             button1.Location = new Point(12, 370);
             button1.Name = "button1";
             button1.Size = new Size(200, 40);
@@ -112,7 +117,7 @@
             // 
             logOutBtn.FlatAppearance.BorderSize = 0;
             logOutBtn.FlatStyle = FlatStyle.Flat;
-            logOutBtn.Font = new Font("Segoe UI", 10.2F);
+            logOutBtn.Font = new Font("Product Sans", 10.2F);
             logOutBtn.Location = new Point(12, 544);
             logOutBtn.Name = "logOutBtn";
             logOutBtn.Size = new Size(200, 40);
@@ -120,12 +125,13 @@
             logOutBtn.Text = "Log Out";
             logOutBtn.TextAlign = ContentAlignment.MiddleLeft;
             logOutBtn.UseVisualStyleBackColor = true;
+            logOutBtn.Click += logOutBtn_Click;
             // 
             // menuPengaduanBtn
             // 
             menuPengaduanBtn.FlatAppearance.BorderSize = 0;
             menuPengaduanBtn.FlatStyle = FlatStyle.Flat;
-            menuPengaduanBtn.Font = new Font("Segoe UI", 10.2F);
+            menuPengaduanBtn.Font = new Font("Product Sans", 10.2F);
             menuPengaduanBtn.Location = new Point(12, 278);
             menuPengaduanBtn.Name = "menuPengaduanBtn";
             menuPengaduanBtn.Size = new Size(200, 40);
@@ -139,7 +145,7 @@
             // 
             menuPenggunaBtn.FlatAppearance.BorderSize = 0;
             menuPenggunaBtn.FlatStyle = FlatStyle.Flat;
-            menuPenggunaBtn.Font = new Font("Segoe UI", 10.2F);
+            menuPenggunaBtn.Font = new Font("Product Sans", 10.2F);
             menuPenggunaBtn.Location = new Point(12, 324);
             menuPenggunaBtn.Name = "menuPenggunaBtn";
             menuPenggunaBtn.Size = new Size(200, 40);
@@ -152,7 +158,7 @@
             // 
             daftarPengaduanBtn.FlatAppearance.BorderSize = 0;
             daftarPengaduanBtn.FlatStyle = FlatStyle.Flat;
-            daftarPengaduanBtn.Font = new Font("Segoe UI", 10.2F);
+            daftarPengaduanBtn.Font = new Font("Product Sans", 10.2F);
             daftarPengaduanBtn.Location = new Point(12, 232);
             daftarPengaduanBtn.Name = "daftarPengaduanBtn";
             daftarPengaduanBtn.Size = new Size(200, 40);
@@ -166,7 +172,7 @@
             dashboardBtn.BackColor = SystemColors.Control;
             dashboardBtn.FlatAppearance.BorderSize = 0;
             dashboardBtn.FlatStyle = FlatStyle.Flat;
-            dashboardBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dashboardBtn.Font = new Font("Product Sans", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dashboardBtn.Location = new Point(12, 186);
             dashboardBtn.Name = "dashboardBtn";
             dashboardBtn.Size = new Size(200, 40);
@@ -220,30 +226,30 @@
             // labelLapTamu
             // 
             labelLapTamu.AutoSize = true;
-            labelLapTamu.Font = new Font("Segoe UI", 12F);
+            labelLapTamu.Font = new Font("Product Sans", 12F);
             labelLapTamu.Location = new Point(10, 122);
             labelLapTamu.Name = "labelLapTamu";
-            labelLapTamu.Size = new Size(134, 28);
+            labelLapTamu.Size = new Size(133, 25);
             labelLapTamu.TabIndex = 2;
             labelLapTamu.Text = "Laporan Tamu";
             // 
             // counterTamu
             // 
             counterTamu.AutoSize = true;
-            counterTamu.Font = new Font("Segoe UI", 35F);
+            counterTamu.Font = new Font("Product Sans", 35F);
             counterTamu.Location = new Point(29, 40);
             counterTamu.Name = "counterTamu";
-            counterTamu.Size = new Size(161, 78);
+            counterTamu.Size = new Size(169, 75);
             counterTamu.TabIndex = 1;
             counterTamu.Text = "1000";
             // 
             // labelLapTamuTextTotal
             // 
             labelLapTamuTextTotal.AutoSize = true;
-            labelLapTamuTextTotal.Font = new Font("Segoe UI", 12F);
+            labelLapTamuTextTotal.Font = new Font("Product Sans", 12F);
             labelLapTamuTextTotal.Location = new Point(10, 10);
             labelLapTamuTextTotal.Name = "labelLapTamuTextTotal";
-            labelLapTamuTextTotal.Size = new Size(54, 28);
+            labelLapTamuTextTotal.Size = new Size(53, 25);
             labelLapTamuTextTotal.TabIndex = 0;
             labelLapTamuTextTotal.Text = "Total";
             // 
@@ -261,30 +267,30 @@
             // labelFasilitas
             // 
             labelFasilitas.AutoSize = true;
-            labelFasilitas.Font = new Font("Segoe UI", 12F);
+            labelFasilitas.Font = new Font("Product Sans", 12F);
             labelFasilitas.Location = new Point(10, 122);
             labelFasilitas.Name = "labelFasilitas";
-            labelFasilitas.Size = new Size(79, 28);
+            labelFasilitas.Size = new Size(79, 25);
             labelFasilitas.TabIndex = 2;
             labelFasilitas.Text = "Fasilitas";
             // 
             // counterFasilitas
             // 
             counterFasilitas.AutoSize = true;
-            counterFasilitas.Font = new Font("Segoe UI", 35F);
+            counterFasilitas.Font = new Font("Product Sans", 35F);
             counterFasilitas.Location = new Point(29, 40);
             counterFasilitas.Name = "counterFasilitas";
-            counterFasilitas.Size = new Size(161, 78);
+            counterFasilitas.Size = new Size(169, 75);
             counterFasilitas.TabIndex = 1;
             counterFasilitas.Text = "1000";
             // 
             // labelFasilitasTextTotal
             // 
             labelFasilitasTextTotal.AutoSize = true;
-            labelFasilitasTextTotal.Font = new Font("Segoe UI", 12F);
+            labelFasilitasTextTotal.Font = new Font("Product Sans", 12F);
             labelFasilitasTextTotal.Location = new Point(10, 10);
             labelFasilitasTextTotal.Name = "labelFasilitasTextTotal";
-            labelFasilitasTextTotal.Size = new Size(54, 28);
+            labelFasilitasTextTotal.Size = new Size(53, 25);
             labelFasilitasTextTotal.TabIndex = 0;
             labelFasilitasTextTotal.Text = "Total";
             // 
@@ -302,30 +308,30 @@
             // labelKeamanan
             // 
             labelKeamanan.AutoSize = true;
-            labelKeamanan.Font = new Font("Segoe UI", 12F);
+            labelKeamanan.Font = new Font("Product Sans", 12F);
             labelKeamanan.Location = new Point(10, 122);
             labelKeamanan.Name = "labelKeamanan";
-            labelKeamanan.Size = new Size(103, 28);
+            labelKeamanan.Size = new Size(104, 25);
             labelKeamanan.TabIndex = 2;
             labelKeamanan.Text = "Keamanan";
             // 
             // counterKeamanan
             // 
             counterKeamanan.AutoSize = true;
-            counterKeamanan.Font = new Font("Segoe UI", 35F);
+            counterKeamanan.Font = new Font("Product Sans", 35F);
             counterKeamanan.Location = new Point(29, 40);
             counterKeamanan.Name = "counterKeamanan";
-            counterKeamanan.Size = new Size(161, 78);
+            counterKeamanan.Size = new Size(169, 75);
             counterKeamanan.TabIndex = 1;
             counterKeamanan.Text = "1000";
             // 
             // labelKeamananTextTotal
             // 
             labelKeamananTextTotal.AutoSize = true;
-            labelKeamananTextTotal.Font = new Font("Segoe UI", 12F);
+            labelKeamananTextTotal.Font = new Font("Product Sans", 12F);
             labelKeamananTextTotal.Location = new Point(10, 10);
             labelKeamananTextTotal.Name = "labelKeamananTextTotal";
-            labelKeamananTextTotal.Size = new Size(54, 28);
+            labelKeamananTextTotal.Size = new Size(53, 25);
             labelKeamananTextTotal.TabIndex = 0;
             labelKeamananTextTotal.Text = "Total";
             // 
@@ -343,30 +349,30 @@
             // labelKebersihan
             // 
             labelKebersihan.AutoSize = true;
-            labelKebersihan.Font = new Font("Segoe UI", 12F);
+            labelKebersihan.Font = new Font("Product Sans", 12F);
             labelKebersihan.Location = new Point(10, 122);
             labelKebersihan.Name = "labelKebersihan";
-            labelKebersihan.Size = new Size(108, 28);
+            labelKebersihan.Size = new Size(110, 25);
             labelKebersihan.TabIndex = 2;
             labelKebersihan.Text = "Kebersihan";
             // 
             // counterKebersihan
             // 
             counterKebersihan.AutoSize = true;
-            counterKebersihan.Font = new Font("Segoe UI", 35F);
+            counterKebersihan.Font = new Font("Product Sans", 35F);
             counterKebersihan.Location = new Point(29, 40);
             counterKebersihan.Name = "counterKebersihan";
-            counterKebersihan.Size = new Size(161, 78);
+            counterKebersihan.Size = new Size(169, 75);
             counterKebersihan.TabIndex = 1;
             counterKebersihan.Text = "1000";
             // 
             // labelKebersihanTextTotal
             // 
             labelKebersihanTextTotal.AutoSize = true;
-            labelKebersihanTextTotal.Font = new Font("Segoe UI", 12F);
+            labelKebersihanTextTotal.Font = new Font("Product Sans", 12F);
             labelKebersihanTextTotal.Location = new Point(10, 10);
             labelKebersihanTextTotal.Name = "labelKebersihanTextTotal";
-            labelKebersihanTextTotal.Size = new Size(54, 28);
+            labelKebersihanTextTotal.Size = new Size(53, 25);
             labelKebersihanTextTotal.TabIndex = 0;
             labelKebersihanTextTotal.Text = "Total";
             // 
@@ -379,25 +385,42 @@
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(948, 468);
             panelContent.TabIndex = 5;
+            this.panelContent.Controls.Add(this.chartPengaduan);
             // 
             // labelTextPengaduanTerbaru
             // 
             labelTextPengaduanTerbaru.AutoSize = true;
-            labelTextPengaduanTerbaru.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTextPengaduanTerbaru.Location = new Point(44, 13);
+            labelTextPengaduanTerbaru.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextPengaduanTerbaru.Location = new Point(49, 290);
             labelTextPengaduanTerbaru.Name = "labelTextPengaduanTerbaru";
-            labelTextPengaduanTerbaru.Size = new Size(194, 28);
+            labelTextPengaduanTerbaru.Size = new Size(187, 25);
             labelTextPengaduanTerbaru.TabIndex = 1;
             labelTextPengaduanTerbaru.Text = "Pengaduan Terbaru";
             // 
             // dataPengaduanTerbaruGridView
             // 
             dataPengaduanTerbaruGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataPengaduanTerbaruGridView.Location = new Point(49, 54);
+            dataPengaduanTerbaruGridView.Location = new Point(49, 339);
             dataPengaduanTerbaruGridView.Name = "dataPengaduanTerbaruGridView";
             dataPengaduanTerbaruGridView.RowHeadersWidth = 51;
-            dataPengaduanTerbaruGridView.Size = new Size(851, 290);
+            dataPengaduanTerbaruGridView.Size = new Size(851, 107);
             dataPengaduanTerbaruGridView.TabIndex = 0;
+            // 
+            // chartPengaduan
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartPengaduan.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartPengaduan.Legends.Add(legend1);
+            this.chartPengaduan.Location = new System.Drawing.Point(49, 27);
+            this.chartPengaduan.Name = "chartPengaduan";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Pengaduan";
+            this.chartPengaduan.Series.Add(series1);
+            this.chartPengaduan.Size = new System.Drawing.Size(425, 250);
+            this.chartPengaduan.TabIndex = 2;
+            this.chartPengaduan.Text = "chart1";
             // 
             // Dashboard
             // 
@@ -423,8 +446,9 @@
             panelContent.ResumeLayout(false);
             panelContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataPengaduanTerbaruGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPengaduan)).BeginInit();
             ResumeLayout(false);
-
+            ((System.ComponentModel.ISupportInitialize)(this.chartPengaduan)).EndInit();
         }
 
         #endregion
@@ -457,6 +481,7 @@
         private Panel panelContent;
         private Label labelTextPengaduanTerbaru;
         private DataGridView dataPengaduanTerbaruGridView;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPengaduan;
         private Button button1;
     }
 }
