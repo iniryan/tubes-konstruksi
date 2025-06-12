@@ -30,6 +30,7 @@ namespace App.Forms
             this.Load += PengaduanFasilitasForm_Load;
             buttonSimpanFasilitas.Click += buttonSimpan_Click;
             buttonClearFormFasilitas.Click += buttonClearForm_Click;
+            
             dataGridViewDataFasilitas.SelectionChanged += DataGridViewDataFasilitas_SelectionChanged;
             dataGridViewDataFasilitas.RowPostPaint += DataGridViewDataFasilitas_RowPostPaint;
         }
@@ -53,7 +54,7 @@ namespace App.Forms
             var headerStyle = dataGridViewDataFasilitas.ColumnHeadersDefaultCellStyle;
             headerStyle.BackColor = Color.Navy;
             headerStyle.ForeColor = Color.White;
-            headerStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            headerStyle.Font = new Font("Product Sans", 10, FontStyle.Bold);
             headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewDataFasilitas.TopLeftHeaderCell.Style.ApplyStyle(headerStyle);
         }
@@ -208,7 +209,7 @@ namespace App.Forms
             if (dataGridViewDataFasilitas.Rows[e.RowIndex].Selected) return;
 
             string symbol = "▶";
-            using (Font font = new Font("Segoe UI", 10, FontStyle.Bold))
+            using (Font font = new Font("Product Sans", 10, FontStyle.Bold))
             using (SolidBrush brush = new SolidBrush(Color.Gray))
             {
                 SizeF stringSize = e.Graphics.MeasureString(symbol, font);

@@ -55,7 +55,7 @@
             // 
             buttonSimpanFasilitas.BackColor = SystemColors.Highlight;
             buttonSimpanFasilitas.FlatStyle = FlatStyle.Flat;
-            buttonSimpanFasilitas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonSimpanFasilitas.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             buttonSimpanFasilitas.ForeColor = SystemColors.Control;
             buttonSimpanFasilitas.Location = new Point(29, 476);
             buttonSimpanFasilitas.Name = "buttonSimpanFasilitas";
@@ -104,7 +104,7 @@
             // labelTextForm
             // 
             labelTextForm.AutoSize = true;
-            labelTextForm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextForm.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextForm.Location = new Point(21, 14);
             labelTextForm.Name = "labelTextForm";
             labelTextForm.Size = new Size(251, 28);
@@ -150,7 +150,7 @@
             // 
             buttonClearFormFasilitas.BackColor = SystemColors.Info;
             buttonClearFormFasilitas.FlatStyle = FlatStyle.Flat;
-            buttonClearFormFasilitas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonClearFormFasilitas.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             buttonClearFormFasilitas.ForeColor = SystemColors.ActiveCaptionText;
             buttonClearFormFasilitas.Location = new Point(348, 476);
             buttonClearFormFasilitas.Name = "buttonClearFormFasilitas";
@@ -164,7 +164,7 @@
             // 
             buttonHapusFasilitas.BackColor = Color.Firebrick;
             buttonHapusFasilitas.FlatStyle = FlatStyle.Flat;
-            buttonHapusFasilitas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonHapusFasilitas.Font = new Font("Product Sans", 9F, FontStyle.Bold);
             buttonHapusFasilitas.ForeColor = SystemColors.Control;
             buttonHapusFasilitas.Location = new Point(126, 476);
             buttonHapusFasilitas.Name = "buttonHapusFasilitas";
@@ -177,7 +177,7 @@
             // labelTextDaftarPengaduan
             // 
             labelTextDaftarPengaduan.AutoSize = true;
-            labelTextDaftarPengaduan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextDaftarPengaduan.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextDaftarPengaduan.Location = new Point(21, 14);
             labelTextDaftarPengaduan.Name = "labelTextDaftarPengaduan";
             labelTextDaftarPengaduan.Size = new Size(264, 28);
