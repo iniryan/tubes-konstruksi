@@ -39,8 +39,8 @@ namespace App.Forms
             pengaduanKebersihan.Visible = false;
             pengaduanKebersihan.Dock = DockStyle.Fill;
             panelContentPengaduan.Controls.Add(pengaduanKebersihan);
-            
-            pengaduanFasilitas = new PengaduanFasilitasForm();
+
+            pengaduanFasilitas = new PengaduanFasilitasForm(_currentUser);
             pengaduanFasilitas.Dock = DockStyle.Fill;
             pengaduanFasilitas.Visible = false;
             panelContentPengaduan.Controls.Add(pengaduanFasilitas);
@@ -63,7 +63,7 @@ namespace App.Forms
         {
             ShowSelectedPanel();
         }
-        
+
         private void ShowSelectedPanel()
         {
             if (currentControl != null)
@@ -84,8 +84,7 @@ namespace App.Forms
                     // currentControl = pengaduanKeamanan;
                     break;
                 case "Fasilitas":
-                    // TODO: Tampilkan UserControl untuk Fasilitas
-                     pengaduanFasilitas.Visible = true;
+                    pengaduanFasilitas.Visible = true;
                     currentControl = pengaduanFasilitas;
                     break;
             }

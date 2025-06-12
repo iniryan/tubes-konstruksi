@@ -1,26 +1,14 @@
 [
   {
-    "Id": "143049ec-d5a0-4ba6-bfd0-b1d7c4a7c0b6",
+    "Id": "646d1dbd-bfc0-40e8-ac15-c025b4440fb0",
     "Detail": {
-      "PrioritasPengaduan": 0,
-      "Kategori": "Sampah",
-      "NamaPelapor": "Lukman",
-      "Lokasi": "Jl. Gading",
-      "Deskripsi": "Banyak sampah"
+      "PrioritasPengaduan": 2,
+      "Kategori": "Saluran Air",
+      "NamaPelapor": "Jono",
+      "Lokasi": "Got Gg. A01",
+      "Deskripsi": "Tersumbat bolo"
     },
     "Status": 0,
-    "TanggalDibuat": "2025-06-11T21:13:30.9719706+07:00"
-  },
-  {
-    "Id": "f98d79d2-13c8-4d25-8cd6-27b3313b47f7",
-    "Detail": {
-      "PrioritasPengaduan": 1,
-      "Kategori": "WC Umum",
-      "NamaPelapor": "Dini",
-      "Lokasi": "Toilet Kampus",
-      "Deskripsi": "Banyak banget tisu berserakan di toilet, jadi kotor"
-    },
-    "Status": 0,
-    "TanggalDibuat": "2025-06-11T21:15:30.2238376+07:00"
+    "TanggalDibuat": "2025-06-12T17:40:47.4463172+07:00"
   }
 ]

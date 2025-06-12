@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "2d4edc27-4841-4c1b-9790-079ce1ae78a9",
+    "Detail": {
+      "PrioritasPengaduan": 0,
+      "JenisFasilitas": "Lapangan",
+      "NamaPelapor": "adi",
+      "Lokasi": "rusak",
+      "Deskripsi": "abcsd"
+    },
+    "Status": 0,
+    "TanggalDibuat": "2025-06-12T18:20:11.6269531+07:00"
+  },
+  {
+    "Id": "97b0dd67-4261-43ae-81a6-19ab004eeb86",
+    "Detail": {
+      "PrioritasPengaduan": 0,
+      "JenisFasilitas": "Jalan Lingkungan",
+      "NamaPelapor": "ryan",
+      "Lokasi": "dad",
+      "Deskripsi": "ada"
+    },
+    "Status": 0,
+    "TanggalDibuat": "2025-06-12T18:20:59.2048472+07:00"
+  }
+]

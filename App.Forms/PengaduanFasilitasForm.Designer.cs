@@ -28,42 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonSimpan = new Button();
+            buttonSimpanFasilitas = new Button();
             labelTextDeskripsiPengaduan = new Label();
             labelTextLokasi = new Label();
-            labelTextKategori = new Label();
+            labelTextFasilitas = new Label();
             labelTextPrioritas = new Label();
-            labelTextFormKebersihan = new Label();
+            labelTextForm = new Label();
             comboBoxJenisFasilitas = new ComboBox();
             richTextBoxDeskripsi = new RichTextBox();
             textBoxLokasi = new TextBox();
             comboBoxPrioritas = new ComboBox();
-            buttonClearForm = new Button();
-            buttonHapus = new Button();
+            buttonClearFormFasilitas = new Button();
+            buttonHapusFasilitas = new Button();
             labelTextDaftarPengaduan = new Label();
-            dataGridViewDataKebersihan = new DataGridView();
+            dataGridViewDataFasilitas = new DataGridView();
             panelContentPengaduan = new Panel();
             panelFormKebersihan = new Panel();
             panelMenuPengaduan = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewDataKebersihan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewDataFasilitas).BeginInit();
             panelContentPengaduan.SuspendLayout();
             panelFormKebersihan.SuspendLayout();
             panelMenuPengaduan.SuspendLayout();
             SuspendLayout();
             // 
-            // buttonSimpan
+            // buttonSimpanFasilitas
             // 
-            buttonSimpan.BackColor = SystemColors.Highlight;
-            buttonSimpan.FlatStyle = FlatStyle.Flat;
-            buttonSimpan.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            buttonSimpan.ForeColor = SystemColors.Control;
-            buttonSimpan.Location = new Point(29, 476);
-            buttonSimpan.Name = "buttonSimpan";
-            buttonSimpan.Size = new Size(360, 40);
-            buttonSimpan.TabIndex = 13;
-            buttonSimpan.Text = "Simpan Data";
-            buttonSimpan.UseVisualStyleBackColor = false;
-            buttonSimpan.Click += buttonSimpan_Click;
+            buttonSimpanFasilitas.BackColor = SystemColors.Highlight;
+            buttonSimpanFasilitas.FlatStyle = FlatStyle.Flat;
+            buttonSimpanFasilitas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonSimpanFasilitas.ForeColor = SystemColors.Control;
+            buttonSimpanFasilitas.Location = new Point(29, 476);
+            buttonSimpanFasilitas.Name = "buttonSimpanFasilitas";
+            buttonSimpanFasilitas.Size = new Size(360, 40);
+            buttonSimpanFasilitas.TabIndex = 13;
+            buttonSimpanFasilitas.Text = "Simpan Data";
+            buttonSimpanFasilitas.UseVisualStyleBackColor = false;
+            buttonSimpanFasilitas.Click += buttonSimpan_Click;
             // 
             // labelTextDeskripsiPengaduan
             // 
@@ -83,14 +83,14 @@
             labelTextLokasi.TabIndex = 11;
             labelTextLokasi.Text = "Lokasi";
             // 
-            // labelTextKategori
+            // labelTextFasilitas
             // 
-            labelTextKategori.AutoSize = true;
-            labelTextKategori.Location = new Point(25, 140);
-            labelTextKategori.Name = "labelTextKategori";
-            labelTextKategori.Size = new Size(95, 20);
-            labelTextKategori.TabIndex = 10;
-            labelTextKategori.Text = "Jenis Fasilitas";
+            labelTextFasilitas.AutoSize = true;
+            labelTextFasilitas.Location = new Point(25, 140);
+            labelTextFasilitas.Name = "labelTextFasilitas";
+            labelTextFasilitas.Size = new Size(95, 20);
+            labelTextFasilitas.TabIndex = 10;
+            labelTextFasilitas.Text = "Jenis Fasilitas";
             // 
             // labelTextPrioritas
             // 
@@ -101,15 +101,15 @@
             labelTextPrioritas.TabIndex = 9;
             labelTextPrioritas.Text = "Pilih Prioritas";
             // 
-            // labelTextFormKebersihan
+            // labelTextForm
             // 
-            labelTextFormKebersihan.AutoSize = true;
-            labelTextFormKebersihan.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTextFormKebersihan.Location = new Point(21, 14);
-            labelTextFormKebersihan.Name = "labelTextFormKebersihan";
-            labelTextFormKebersihan.Size = new Size(251, 28);
-            labelTextFormKebersihan.TabIndex = 8;
-            labelTextFormKebersihan.Text = "Form Pengaduan Fasilitas";
+            labelTextForm.AutoSize = true;
+            labelTextForm.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTextForm.Location = new Point(21, 14);
+            labelTextForm.Name = "labelTextForm";
+            labelTextForm.Size = new Size(251, 28);
+            labelTextForm.TabIndex = 8;
+            labelTextForm.Text = "Form Pengaduan Fasilitas";
             // 
             // comboBoxJenisFasilitas
             // 
@@ -146,33 +146,33 @@
             comboBoxPrioritas.Size = new Size(360, 28);
             comboBoxPrioritas.TabIndex = 4;
             // 
-            // buttonClearForm
+            // buttonClearFormFasilitas
             // 
-            buttonClearForm.BackColor = SystemColors.Info;
-            buttonClearForm.FlatStyle = FlatStyle.Flat;
-            buttonClearForm.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            buttonClearForm.ForeColor = SystemColors.ActiveCaptionText;
-            buttonClearForm.Location = new Point(348, 476);
-            buttonClearForm.Name = "buttonClearForm";
-            buttonClearForm.Size = new Size(164, 40);
-            buttonClearForm.TabIndex = 11;
-            buttonClearForm.Text = "Clear Form";
-            buttonClearForm.UseVisualStyleBackColor = false;
-            buttonClearForm.Click += buttonClearForm_Click;
+            buttonClearFormFasilitas.BackColor = SystemColors.Info;
+            buttonClearFormFasilitas.FlatStyle = FlatStyle.Flat;
+            buttonClearFormFasilitas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonClearFormFasilitas.ForeColor = SystemColors.ActiveCaptionText;
+            buttonClearFormFasilitas.Location = new Point(348, 476);
+            buttonClearFormFasilitas.Name = "buttonClearFormFasilitas";
+            buttonClearFormFasilitas.Size = new Size(164, 40);
+            buttonClearFormFasilitas.TabIndex = 11;
+            buttonClearFormFasilitas.Text = "Clear Form";
+            buttonClearFormFasilitas.UseVisualStyleBackColor = false;
+            buttonClearFormFasilitas.Click += buttonClearForm_Click;
             // 
-            // buttonHapus
+            // buttonHapusFasilitas
             // 
-            buttonHapus.BackColor = Color.Firebrick;
-            buttonHapus.FlatStyle = FlatStyle.Flat;
-            buttonHapus.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            buttonHapus.ForeColor = SystemColors.Control;
-            buttonHapus.Location = new Point(126, 476);
-            buttonHapus.Name = "buttonHapus";
-            buttonHapus.Size = new Size(202, 40);
-            buttonHapus.TabIndex = 10;
-            buttonHapus.Text = "Hapus Data";
-            buttonHapus.UseVisualStyleBackColor = false;
-            buttonHapus.Click += buttonHapus_Click;
+            buttonHapusFasilitas.BackColor = Color.Firebrick;
+            buttonHapusFasilitas.FlatStyle = FlatStyle.Flat;
+            buttonHapusFasilitas.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            buttonHapusFasilitas.ForeColor = SystemColors.Control;
+            buttonHapusFasilitas.Location = new Point(126, 476);
+            buttonHapusFasilitas.Name = "buttonHapusFasilitas";
+            buttonHapusFasilitas.Size = new Size(202, 40);
+            buttonHapusFasilitas.TabIndex = 10;
+            buttonHapusFasilitas.Text = "Hapus Data";
+            buttonHapusFasilitas.UseVisualStyleBackColor = false;
+            buttonHapusFasilitas.Click += buttonHapus_Click;
             // 
             // labelTextDaftarPengaduan
             // 
@@ -184,21 +184,21 @@
             labelTextDaftarPengaduan.TabIndex = 9;
             labelTextDaftarPengaduan.Text = "Daftar Pengaduan Fasilitas";
             // 
-            // dataGridViewDataKebersihan
+            // dataGridViewDataFasilitas
             // 
-            dataGridViewDataKebersihan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewDataKebersihan.Location = new Point(21, 60);
-            dataGridViewDataKebersihan.Name = "dataGridViewDataKebersihan";
-            dataGridViewDataKebersihan.RowHeadersWidth = 51;
-            dataGridViewDataKebersihan.Size = new Size(491, 396);
-            dataGridViewDataKebersihan.TabIndex = 1;
+            dataGridViewDataFasilitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewDataFasilitas.Location = new Point(21, 60);
+            dataGridViewDataFasilitas.Name = "dataGridViewDataFasilitas";
+            dataGridViewDataFasilitas.RowHeadersWidth = 51;
+            dataGridViewDataFasilitas.Size = new Size(491, 396);
+            dataGridViewDataFasilitas.TabIndex = 1;
             // 
             // panelContentPengaduan
             // 
-            panelContentPengaduan.Controls.Add(buttonClearForm);
-            panelContentPengaduan.Controls.Add(buttonHapus);
+            panelContentPengaduan.Controls.Add(buttonClearFormFasilitas);
+            panelContentPengaduan.Controls.Add(buttonHapusFasilitas);
             panelContentPengaduan.Controls.Add(labelTextDaftarPengaduan);
-            panelContentPengaduan.Controls.Add(dataGridViewDataKebersihan);
+            panelContentPengaduan.Controls.Add(dataGridViewDataFasilitas);
             panelContentPengaduan.Controls.Add(panelFormKebersihan);
             panelContentPengaduan.Dock = DockStyle.Bottom;
             panelContentPengaduan.Location = new Point(0, 115);
@@ -208,12 +208,12 @@
             // 
             // panelFormKebersihan
             // 
-            panelFormKebersihan.Controls.Add(buttonSimpan);
+            panelFormKebersihan.Controls.Add(buttonSimpanFasilitas);
             panelFormKebersihan.Controls.Add(labelTextDeskripsiPengaduan);
             panelFormKebersihan.Controls.Add(labelTextLokasi);
-            panelFormKebersihan.Controls.Add(labelTextKategori);
+            panelFormKebersihan.Controls.Add(labelTextFasilitas);
             panelFormKebersihan.Controls.Add(labelTextPrioritas);
-            panelFormKebersihan.Controls.Add(labelTextFormKebersihan);
+            panelFormKebersihan.Controls.Add(labelTextForm);
             panelFormKebersihan.Controls.Add(comboBoxJenisFasilitas);
             panelFormKebersihan.Controls.Add(richTextBoxDeskripsi);
             panelFormKebersihan.Controls.Add(textBoxLokasi);
@@ -237,11 +237,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1182, 673);
             Controls.Add(panelMenuPengaduan);
             Name = "PengaduanFasilitasForm";
-            Text = "PengaduanFasilitasForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridViewDataKebersihan).EndInit();
+            Size = new Size(1182, 673);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewDataFasilitas).EndInit();
             panelContentPengaduan.ResumeLayout(false);
             panelContentPengaduan.PerformLayout();
             panelFormKebersihan.ResumeLayout(false);
@@ -252,20 +251,20 @@
 
         #endregion
 
-        private Button buttonSimpan;
+        private Button buttonSimpanFasilitas;
         private Label labelTextDeskripsiPengaduan;
         private Label labelTextLokasi;
-        private Label labelTextKategori;
+        private Label labelTextFasilitas;
         private Label labelTextPrioritas;
-        private Label labelTextFormKebersihan;
+        private Label labelTextForm;
         private ComboBox comboBoxJenisFasilitas;
         private RichTextBox richTextBoxDeskripsi;
         private TextBox textBoxLokasi;
         private ComboBox comboBoxPrioritas;
-        private Button buttonClearForm;
-        private Button buttonHapus;
+        private Button buttonClearFormFasilitas;
+        private Button buttonHapusFasilitas;
         private Label labelTextDaftarPengaduan;
-        private DataGridView dataGridViewDataKebersihan;
+        private DataGridView dataGridViewDataFasilitas;
         private Panel panelContentPengaduan;
         private Panel panelFormKebersihan;
         private Panel panelMenuPengaduan;

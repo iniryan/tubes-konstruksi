@@ -14,22 +14,24 @@ namespace App.Forms
 {
     public partial class PengaduanFasilitasForm : UserControl
     {
+        private readonly User _currentUser;
         private readonly PengaduanFasilitasService _pengaduanService;
         private string? _selectedPengaduanId = null;
 
         private bool _isClearing = false;
-        public PengaduanFasilitasForm()
+        public PengaduanFasilitasForm(User user)
         {
             InitializeComponent();
+            _currentUser = user;
+
             this.Dock = DockStyle.Fill;
             _pengaduanService = new PengaduanFasilitasService();
 
             this.Load += PengaduanFasilitasForm_Load;
-            buttonSimpan.Click += buttonSimpan_Click;
-            buttonClearForm.Click += buttonClearForm_Click;
-            buttonHapus.Click += buttonHapus_Click;
-            dataGridViewDataKebersihan.SelectionChanged += DataGridViewDataKebersihan_SelectionChanged;
-            dataGridViewDataKebersihan.RowPostPaint += DataGridViewDataKebersihan_RowPostPaint;
+            buttonSimpanFasilitas.Click += buttonSimpan_Click;
+            buttonClearFormFasilitas.Click += buttonClearForm_Click;
+            dataGridViewDataFasilitas.SelectionChanged += DataGridViewDataFasilitas_SelectionChanged;
+            dataGridViewDataFasilitas.RowPostPaint += DataGridViewDataFasilitas_RowPostPaint;
         }
 
         private async void PengaduanFasilitasForm_Load(object? sender, EventArgs e)
@@ -41,19 +43,19 @@ namespace App.Forms
 
         private void SetupDataGridViewStyles()
         {
-            dataGridViewDataKebersihan.RowHeadersVisible = true;
-            dataGridViewDataKebersihan.TopLeftHeaderCell.Value = "Pilih Data";
-            dataGridViewDataKebersihan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewDataKebersihan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewDataKebersihan.AllowUserToAddRows = false;
-            dataGridViewDataKebersihan.AllowUserToDeleteRows = false;
-            dataGridViewDataKebersihan.ReadOnly = true;
-            var headerStyle = dataGridViewDataKebersihan.ColumnHeadersDefaultCellStyle;
+            dataGridViewDataFasilitas.RowHeadersVisible = true;
+            dataGridViewDataFasilitas.TopLeftHeaderCell.Value = "Pilih Data";
+            dataGridViewDataFasilitas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDataFasilitas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewDataFasilitas.AllowUserToAddRows = false;
+            dataGridViewDataFasilitas.AllowUserToDeleteRows = false;
+            dataGridViewDataFasilitas.ReadOnly = true;
+            var headerStyle = dataGridViewDataFasilitas.ColumnHeadersDefaultCellStyle;
             headerStyle.BackColor = Color.Navy;
             headerStyle.ForeColor = Color.White;
             headerStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewDataKebersihan.TopLeftHeaderCell.Style.ApplyStyle(headerStyle);
+            dataGridViewDataFasilitas.TopLeftHeaderCell.Style.ApplyStyle(headerStyle);
         }
 
         private void SetupComboBoxes()
@@ -80,21 +82,21 @@ namespace App.Forms
                 TanggalDibuat = p.TanggalDibuat.ToString("dd/MM/yyyy HH:mm:ss")
             }).ToList();
 
-            dataGridViewDataKebersihan.DataSource = displayData;
-            if (dataGridViewDataKebersihan.Columns["Id"] != null)
+            dataGridViewDataFasilitas.DataSource = displayData;
+            if (dataGridViewDataFasilitas.Columns["Id"] != null)
             {
-                dataGridViewDataKebersihan.Columns["Id"].Visible = false;
+                dataGridViewDataFasilitas.Columns["Id"].Visible = false;
             }
-            dataGridViewDataKebersihan.ClearSelection();
+            dataGridViewDataFasilitas.ClearSelection();
         }
 
-        private void DataGridViewDataKebersihan_SelectionChanged(object? sender, EventArgs e)
+        private void DataGridViewDataFasilitas_SelectionChanged(object? sender, EventArgs e)
         {
             if (_isClearing) return;
 
-            if (dataGridViewDataKebersihan.SelectedRows.Count > 0)
+            if (dataGridViewDataFasilitas.SelectedRows.Count > 0)
             {
-                var selectedRow = dataGridViewDataKebersihan.SelectedRows[0];
+                var selectedRow = dataGridViewDataFasilitas.SelectedRows[0];
                 _selectedPengaduanId = selectedRow.Cells["Id"].Value?.ToString();
 
                 comboBoxPrioritas.SelectedItem = selectedRow.Cells["PrioritasPengaduan"].Value;
@@ -102,8 +104,8 @@ namespace App.Forms
                 textBoxLokasi.Text = selectedRow.Cells["Lokasi"].Value?.ToString() ?? string.Empty;
                 richTextBoxDeskripsi.Text = selectedRow.Cells["Deskripsi"].Value?.ToString() ?? string.Empty;
 
-                labelTextFormKebersihan.Text = "Form Ubah Pengaduan Fasilitas"; //jgn lupa ganti labelnya
-                buttonSimpan.Text = "Ubah Data Pengaduan";
+                labelTextForm.Text = "Form Ubah Pengaduan Fasilitas"; //jgn lupa ganti labelnya
+                buttonSimpanFasilitas.Text = "Ubah Data Pengaduan";
             }
             else
             {
@@ -124,7 +126,7 @@ namespace App.Forms
                 string? jenisFasilitas = comboBoxJenisFasilitas.SelectedItem?.ToString();
                 string lokasi = textBoxLokasi.Text;
                 string deskripsi = richTextBoxDeskripsi.Text;
-                string namaPelapor = "Dhina";
+                string namaPelapor = _currentUser.Name;
 
                 if (string.IsNullOrWhiteSpace(lokasi) || string.IsNullOrWhiteSpace(deskripsi) || string.IsNullOrWhiteSpace(jenisFasilitas))
                 {
@@ -135,12 +137,12 @@ namespace App.Forms
                 // Tambah atau Ubah
                 if (_selectedPengaduanId == null)
                 {
-                    await _pengaduanService.TambahPengaduanAsync(namaPelapor, deskripsi, lokasi, prioritas, jenisFasilitas);
+                    await _pengaduanService.TambahPengaduanAsync(namaPelapor, lokasi, deskripsi, prioritas, jenisFasilitas);
                     MessageBox.Show("Pengaduan berhasil ditambahkan.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    await _pengaduanService.UbahDataPengaduanAsync(_selectedPengaduanId, namaPelapor, deskripsi, lokasi, prioritas, jenisFasilitas);
+                    await _pengaduanService.UbahDataPengaduanAsync(_selectedPengaduanId, namaPelapor, lokasi, deskripsi, prioritas, jenisFasilitas);
                     MessageBox.Show("Pengaduan berhasil diubah.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -194,23 +196,23 @@ namespace App.Forms
             comboBoxPrioritas.SelectedIndex = 0;
             comboBoxJenisFasilitas.SelectedIndex = -1;
 
-            labelTextFormKebersihan.Text = "Form Pengaduan Fasilitas"; //jgn lupa ganti labelnya
-            buttonSimpan.Text = "Simpan Data";
+            labelTextForm.Text = "Form Pengaduan Fasilitas"; //jgn lupa ganti labelnya
+            buttonSimpanFasilitas.Text = "Simpan Data";
 
-            dataGridViewDataKebersihan.ClearSelection();
+            dataGridViewDataFasilitas.ClearSelection();
             _isClearing = false;
         }
 
-        private void DataGridViewDataKebersihan_RowPostPaint(object? sender, DataGridViewRowPostPaintEventArgs e)
+        private void DataGridViewDataFasilitas_RowPostPaint(object? sender, DataGridViewRowPostPaintEventArgs e)
         {
-            if (dataGridViewDataKebersihan.Rows[e.RowIndex].Selected) return;
+            if (dataGridViewDataFasilitas.Rows[e.RowIndex].Selected) return;
 
             string symbol = "▶";
             using (Font font = new Font("Segoe UI", 10, FontStyle.Bold))
             using (SolidBrush brush = new SolidBrush(Color.Gray))
             {
                 SizeF stringSize = e.Graphics.MeasureString(symbol, font);
-                float x = e.RowBounds.Left + (dataGridViewDataKebersihan.RowHeadersWidth - stringSize.Width) / 2;
+                float x = e.RowBounds.Left + (dataGridViewDataFasilitas.RowHeadersWidth - stringSize.Width) / 2;
                 float y = e.RowBounds.Top + (e.RowBounds.Height - stringSize.Height) / 2;
                 e.Graphics.DrawString(symbol, font, brush, x, y);
             }

@@ -16,5 +16,14 @@
     "Role": "civilian",
     "Alamat": "Jl. Sedati",
     "NoTelepon": "083877534252"
+  },
+  {
+    "Id": 3,
+    "Name": "adi",
+    "Username": "adi",
+    "Password": "882faefe28371f8145b880c83c83bc7dd497e251eb6686af30e509a75f35ba44",
+    "Role": "civilian",
+    "Alamat": "adi",
+    "NoTelepon": "0891"
   }
 ]

@@ -71,14 +71,14 @@ namespace App.Core.Services
                 throw new KeyNotFoundException($"Pengaduan dengan ID {id} tidak ditemukan.");
             }
 
-            if(string.IsNullOrWhiteSpace(namaPelapor)) throw new ArgumentException("Nama pelapor tidak boleh kosong.", nameof(namaPelapor));
+            if (string.IsNullOrWhiteSpace(namaPelapor)) throw new ArgumentException("Nama pelapor tidak boleh kosong.", nameof(namaPelapor));
             if (string.IsNullOrWhiteSpace(lokasi)) throw new ArgumentException("Lokasi tidak boleh kosong.", nameof(lokasi));
             if (string.IsNullOrWhiteSpace(deskripsi)) throw new ArgumentException("Deskripsi tidak boleh kosong.", nameof(deskripsi));
             if (string.IsNullOrWhiteSpace(jenisFasilitas)) throw new ArgumentException("Jenis fasilitas tidak boleh kosong.", nameof(jenisFasilitas));
 
             pengaduan.Detail.NamaPelapor = namaPelapor;
-            pengaduan.Detail.Deskripsi = deskripsi;
             pengaduan.Detail.Lokasi = lokasi;
+            pengaduan.Detail.Deskripsi = deskripsi;
             pengaduan.Detail.JenisFasilitas = jenisFasilitas;
             await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
         }

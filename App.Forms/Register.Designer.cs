@@ -122,6 +122,7 @@
             // 
             newPassword.Location = new Point(438, 446);
             newPassword.Name = "newPassword";
+            newPassword.PasswordChar = '*';
             newPassword.Size = new Size(360, 27);
             newPassword.TabIndex = 9;
             // 
@@ -170,7 +171,7 @@
             label7.Size = new Size(136, 20);
             label7.TabIndex = 18;
             label7.Text = "Sudah punya akun?";
-            //
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
