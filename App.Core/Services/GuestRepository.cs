@@ -44,9 +44,16 @@ namespace App.Core.Services
             };
 
             var pengaduanBaru = new Pengaduan<DetailTamu>(Guid.NewGuid().ToString(), detail);
-            semuaPengaduan.Add(pengaduanBaru);
-            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            try
+            {
+                semuaPengaduan.Add(pengaduanBaru);
+                await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            } catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
             return pengaduanBaru;
+                
         }
 
         // READ - Get all
@@ -69,9 +76,15 @@ namespace App.Core.Services
             var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
             if (pengaduan == null)
                 throw new KeyNotFoundException("Pengaduan dengan ID tersebut tidak ditemukan.");
-
-            pengaduan.UbahStatus(statusBaru);
-            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            try
+            {
+                pengaduan.UbahStatus(statusBaru);
+                await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
         }
 
         // --- TAMBAHAN: Metode untuk mencatat waktu keluar secara manual (misal update dari UI) ---
@@ -111,15 +124,21 @@ namespace App.Core.Services
             if (string.IsNullOrWhiteSpace(tujuan)) throw new ArgumentException("Tujuan tidak boleh kosong.", nameof(tujuan));
             if (string.IsNullOrWhiteSpace(pegawaiTujuan)) throw new ArgumentException("Pegawai tujuan tidak boleh kosong.", nameof(pegawaiTujuan));
 
-            pengaduan.Detail.NamaPelapor = namaPelapor;
-            pengaduan.Detail.Lokasi = lokasi;
-            pengaduan.Detail.Deskripsi = deskripsi;
-            pengaduan.Detail.NomorIdentitas = nomorIdentitas;
-            pengaduan.Detail.Tujuan = tujuan;
-            pengaduan.Detail.PegawaiTujuan = pegawaiTujuan;
-            pengaduan.Detail.WaktuKeluar = waktuKeluar; // Update waktu keluar
+            try
+            {
+                pengaduan.Detail.NamaPelapor = namaPelapor;
+                pengaduan.Detail.Lokasi = lokasi;
+                pengaduan.Detail.Deskripsi = deskripsi;
+                pengaduan.Detail.NomorIdentitas = nomorIdentitas;
+                pengaduan.Detail.Tujuan = tujuan;
+                pengaduan.Detail.PegawaiTujuan = pegawaiTujuan;
+                pengaduan.Detail.WaktuKeluar = waktuKeluar; // Update waktu keluar
 
-            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+                await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            } catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
         }
 
         // DELETE

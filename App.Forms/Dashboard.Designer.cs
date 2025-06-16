@@ -68,11 +68,6 @@
             panelContainerKebersihan.SuspendLayout();
             panelContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataPengaduanTerbaruGridView).BeginInit();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chartPengaduan = new System.Windows.Forms.DataVisualization.Charting.Chart();
-
             SuspendLayout();
             // 
             // labelJudul
@@ -385,7 +380,6 @@
             panelContent.Name = "panelContent";
             panelContent.Size = new Size(948, 468);
             panelContent.TabIndex = 5;
-            this.panelContent.Controls.Add(this.chartPengaduan);            // 
             // 
             // labelTextPengaduanTerbaru
             // 
@@ -405,22 +399,6 @@
             dataPengaduanTerbaruGridView.RowHeadersWidth = 51;
             dataPengaduanTerbaruGridView.Size = new Size(851, 107);
             dataPengaduanTerbaruGridView.TabIndex = 0;
-            // 
-            // chartPengaduan
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartPengaduan.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartPengaduan.Legends.Add(legend1);
-            this.chartPengaduan.Location = new System.Drawing.Point(49, 27);
-            this.chartPengaduan.Name = "chartPengaduan";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Pengaduan";
-            this.chartPengaduan.Series.Add(series1);
-            this.chartPengaduan.Size = new System.Drawing.Size(425, 250);
-            this.chartPengaduan.TabIndex = 2;
-            this.chartPengaduan.Text = "chart1";
             // 
             // Dashboard
             // 
@@ -446,9 +424,7 @@
             panelContent.ResumeLayout(false);
             panelContent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataPengaduanTerbaruGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartPengaduan)).BeginInit();
             ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartPengaduan)).EndInit();
         }
 
         #endregion

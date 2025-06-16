@@ -30,8 +30,14 @@ namespace App.Core.Services
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath);
             var detail = new DetailFasilitas(namaPelapor, lokasi, deskripsi, jenisFasilitas);
             var pengaduanBaru = new Pengaduan<DetailFasilitas>(Guid.NewGuid().ToString(), detail);
-            semuaPengaduan.Add(pengaduanBaru);
-            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            try
+            {
+                semuaPengaduan.Add(pengaduanBaru);
+                await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            } catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
             return pengaduanBaru;
         }
 
@@ -57,8 +63,15 @@ namespace App.Core.Services
             {
                 throw new KeyNotFoundException($"Pengaduan dengan ID {id} tidak ditemukan.");
             }
-            pengaduan.UbahStatus(statusBaru);
-            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            try
+            {
+                pengaduan.UbahStatus(statusBaru);
+                await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
         }
 
         // UPDATE - Mengubah detail data sebuah pengaduan
@@ -76,11 +89,18 @@ namespace App.Core.Services
             if (string.IsNullOrWhiteSpace(deskripsi)) throw new ArgumentException("Deskripsi tidak boleh kosong.", nameof(deskripsi));
             if (string.IsNullOrWhiteSpace(jenisFasilitas)) throw new ArgumentException("Jenis fasilitas tidak boleh kosong.", nameof(jenisFasilitas));
 
-            pengaduan.Detail.NamaPelapor = namaPelapor;
-            pengaduan.Detail.Lokasi = lokasi;
-            pengaduan.Detail.Deskripsi = deskripsi;
-            pengaduan.Detail.JenisFasilitas = jenisFasilitas;
-            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            try
+            {
+                pengaduan.Detail.NamaPelapor = namaPelapor;
+                pengaduan.Detail.Lokasi = lokasi;
+                pengaduan.Detail.Deskripsi = deskripsi;
+                pengaduan.Detail.JenisFasilitas = jenisFasilitas;
+                await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
         }
 
         // DELETE
