@@ -107,6 +107,7 @@
             // 
             // dataGridViewDataKebersihan
             // 
+            dataGridViewDataKebersihan.BackgroundColor = SystemColors.Control;
             dataGridViewDataKebersihan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewDataKebersihan.Location = new Point(21, 60);
             dataGridViewDataKebersihan.Name = "dataGridViewDataKebersihan";

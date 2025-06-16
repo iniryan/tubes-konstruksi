@@ -186,6 +186,7 @@
             // 
             // dataGridViewDataFasilitas
             // 
+            dataGridViewDataFasilitas.BackgroundColor = SystemColors.Control;
             dataGridViewDataFasilitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewDataFasilitas.Location = new Point(21, 60);
             dataGridViewDataFasilitas.Name = "dataGridViewDataFasilitas";

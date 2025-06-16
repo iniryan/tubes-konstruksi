@@ -168,5 +168,11 @@ namespace App.Core.Services
 
             return (total, diproses, selesai);
         }
+
+        public async Task<int> HitungTotalTamuAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaTamuAsync();
+            return semuaPengaduan.Count;
+        }
     }
 }

@@ -115,5 +115,11 @@ namespace App.Core.Services
             semuaPengaduan.Remove(pengaduan);
             await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
         }
+
+        public async Task<int> HitungTotalPengaduanAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan.Count;
+        }
     }
 }

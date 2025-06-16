@@ -258,6 +258,7 @@
             // 
             // dataSemuaPengaduanGridView
             // 
+            dataSemuaPengaduanGridView.BackgroundColor = SystemColors.Control;
             dataSemuaPengaduanGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataSemuaPengaduanGridView.Location = new Point(49, 272);
             dataSemuaPengaduanGridView.Name = "dataSemuaPengaduanGridView";

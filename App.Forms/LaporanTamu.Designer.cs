@@ -35,6 +35,8 @@
             labelTextDaftarLaporanTamu = new Label();
             dataGridViewDataLaporanTamu = new DataGridView();
             panelFormTamu = new Panel();
+            dateTimePickerWaktuKeluar = new DateTimePicker();
+            label1 = new Label();
             textPegawai = new TextBox();
             textTujuan = new TextBox();
             textNomorIdentitas = new TextBox();
@@ -45,8 +47,6 @@
             labelTextKategori = new Label();
             labelTextPrioritas = new Label();
             labelTextFormTambahTamu = new Label();
-            label1 = new Label();
-            dateTimePickerWaktuKeluar = new DateTimePicker();
             panelMenuLaporanTamu.SuspendLayout();
             panelContentLaporanTamu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDataLaporanTamu).BeginInit();
@@ -108,12 +108,13 @@
             labelTextDaftarLaporanTamu.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextDaftarLaporanTamu.Location = new Point(21, 14);
             labelTextDaftarLaporanTamu.Name = "labelTextDaftarLaporanTamu";
-            labelTextDaftarLaporanTamu.Size = new Size(212, 28);
+            labelTextDaftarLaporanTamu.Size = new Size(204, 25);
             labelTextDaftarLaporanTamu.TabIndex = 9;
             labelTextDaftarLaporanTamu.Text = "Daftar Laporan Tamu";
             // 
             // dataGridViewDataLaporanTamu
             // 
+            dataGridViewDataLaporanTamu.BackgroundColor = SystemColors.Control;
             dataGridViewDataLaporanTamu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewDataLaporanTamu.Location = new Point(21, 60);
             dataGridViewDataLaporanTamu.Name = "dataGridViewDataLaporanTamu";
@@ -141,6 +142,24 @@
             panelFormTamu.Name = "panelFormTamu";
             panelFormTamu.Size = new Size(417, 673);
             panelFormTamu.TabIndex = 0;
+            // 
+            // dateTimePickerWaktuKeluar
+            // 
+            dateTimePickerWaktuKeluar.Location = new Point(29, 419);
+            dateTimePickerWaktuKeluar.Name = "dateTimePickerWaktuKeluar";
+            dateTimePickerWaktuKeluar.Size = new Size(250, 27);
+            dateTimePickerWaktuKeluar.TabIndex = 19;
+            dateTimePickerWaktuKeluar.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(25, 386);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 20);
+            label1.TabIndex = 18;
+            label1.Text = "Waktu Keluar";
+            label1.Click += label1_Click;
             // 
             // textPegawai
             // 
@@ -227,27 +246,9 @@
             labelTextFormTambahTamu.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextFormTambahTamu.Location = new Point(21, 14);
             labelTextFormTambahTamu.Name = "labelTextFormTambahTamu";
-            labelTextFormTambahTamu.Size = new Size(197, 28);
+            labelTextFormTambahTamu.Size = new Size(191, 25);
             labelTextFormTambahTamu.TabIndex = 8;
             labelTextFormTambahTamu.Text = "Form Tambah Tamu";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(25, 386);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 20);
-            label1.TabIndex = 18;
-            label1.Text = "Waktu Keluar";
-            label1.Click += label1_Click;
-            // 
-            // dateTimePickerWaktuKeluar
-            // 
-            dateTimePickerWaktuKeluar.Location = new Point(29, 419);
-            dateTimePickerWaktuKeluar.Name = "dateTimePickerWaktuKeluar";
-            dateTimePickerWaktuKeluar.Size = new Size(250, 27);
-            dateTimePickerWaktuKeluar.TabIndex = 19;
-            dateTimePickerWaktuKeluar.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // LaporanTamu
             // 
