@@ -34,21 +34,32 @@ namespace App.Forms
                 User user = await _authService.LoginAsync(username, password);
                 MessageBox.Show($"Login berhasil! Selamat datang, {user.Username}.", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.Hide();
-
-                // Redirect based on user role
+                Form nextForm;
                 if (user.Role.ToLower() == "admin")
                 {
-                    var dashboard = new Dashboard(user);
-                    dashboard.ShowDialog();
+                    nextForm = new Dashboard(user);
                 }
-                else if (user.Role.ToLower() == "civilian")
+                else
                 {
-                    var civilianPage = new CivilianPage(user);
-                    civilianPage.ShowDialog();
+                    nextForm = new CivilianPage(user);
                 }
 
-                this.Show();
+                this.Hide();
+                var result = nextForm.ShowDialog();
+                
+                if (result == DialogResult.OK)
+                {
+                    // Clear the login form fields
+                    txtUsername.Clear();
+                    txtPassword.Clear();
+                    txtUsername.Focus();
+                    this.Show();
+                }
+                else
+                {
+                    // If dialog was closed without proper logout (e.g., X button)
+                    this.Close();
+                }
             }
             catch (UnauthorizedAccessException ex)
             {

@@ -367,6 +367,16 @@ namespace App.Forms
                 textBoxNamaPelapor.ReadOnly = true;
                 textBoxNamaPelapor.Enabled = false;
 
+                //ubah posisi y awal lokasi dan deskripsi
+                labelTextLokasi.Location = new Point(labelTextLokasi.Location.X, labelTextLokasi.Location.Y - 42);
+                labelTextDeskripsiPengaduan.Location = new Point(labelTextDeskripsiPengaduan.Location.X, labelTextDeskripsiPengaduan.Location.Y - 42);
+                textBoxLokasi.Location = new Point(textBoxLokasi.Location.X, textBoxLokasi.Location.Y - 42);
+                richTextBoxDeskripsi.Location = new Point(richTextBoxDeskripsi.Location.X, richTextBoxDeskripsi.Location.Y - 42);
+
+                //ubah ukuran tinggi deskripsi
+                richTextBoxDeskripsi.Size = new Size(richTextBoxDeskripsi.Size.Width, 135);
+
+
                 // Hide admin controls
                 if (comboBoxUser != null) comboBoxUser.Visible = false;
                 if (radioExistingUser != null) radioExistingUser.Visible = false;
@@ -381,6 +391,7 @@ namespace App.Forms
                     radioExistingUser.Checked = true;
                 }
                 RadioButton_CheckedChanged(null, EventArgs.Empty);
+
             }
         }
 

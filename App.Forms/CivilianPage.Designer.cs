@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             panelBase = new Panel();
-            panel3 = new Panel();
-            logOutBtn = new Button();
-            dashboardBtn = new Button();
-            panelSidebar = new Panel();
-            label1 = new Label();
-            labelJudul = new Label();
             panelMenu = new Panel();
             labelTextPilihTipe = new Label();
             comboBoxTipePengaduan = new ComboBox();
             labelTextMenuPengaduan = new Label();
             panelContent = new Panel();
+            panel3 = new Panel();
+            logOutBtn = new Button();
+            dashboardBtn = new Button();
+            panelSidebar = new Panel();
+            labelNama = new Label();
+            labelJudul = new Label();
             panelBase.SuspendLayout();
+            panelMenu.SuspendLayout();
             panel3.SuspendLayout();
             panelSidebar.SuspendLayout();
-            panelMenu.SuspendLayout();
             SuspendLayout();
             // 
             // panelBase
@@ -55,72 +55,6 @@
             panelBase.Name = "panelBase";
             panelBase.Size = new Size(948, 673);
             panelBase.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(panelBase);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(234, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(948, 673);
-            panel3.TabIndex = 4;
-            // 
-            // logOutBtn
-            // 
-            logOutBtn.FlatAppearance.BorderSize = 0;
-            logOutBtn.FlatStyle = FlatStyle.Flat;
-            logOutBtn.Font = new Font("Product Sans", 10.2F);
-            logOutBtn.Location = new Point(12, 544);
-            logOutBtn.Name = "logOutBtn";
-            logOutBtn.Size = new Size(200, 40);
-            logOutBtn.TabIndex = 4;
-            logOutBtn.Text = "Log Out";
-            logOutBtn.TextAlign = ContentAlignment.MiddleLeft;
-            logOutBtn.UseVisualStyleBackColor = true;
-            // 
-            // dashboardBtn
-            // 
-            dashboardBtn.BackColor = SystemColors.Control;
-            dashboardBtn.FlatAppearance.BorderSize = 0;
-            dashboardBtn.FlatStyle = FlatStyle.Flat;
-            dashboardBtn.Font = new Font("Product Sans", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dashboardBtn.Location = new Point(12, 186);
-            dashboardBtn.Name = "dashboardBtn";
-            dashboardBtn.Size = new Size(200, 40);
-            dashboardBtn.TabIndex = 0;
-            dashboardBtn.Text = "Pengaduan";
-            dashboardBtn.TextAlign = ContentAlignment.MiddleLeft;
-            dashboardBtn.UseVisualStyleBackColor = false;
-            // 
-            // panelSidebar
-            // 
-            panelSidebar.Controls.Add(label1);
-            panelSidebar.Controls.Add(labelJudul);
-            panelSidebar.Controls.Add(logOutBtn);
-            panelSidebar.Controls.Add(dashboardBtn);
-            panelSidebar.Dock = DockStyle.Left;
-            panelSidebar.Location = new Point(0, 0);
-            panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(234, 673);
-            panelSidebar.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Product Sans", 12F);
-            label1.Location = new Point(12, 104);
-            label1.Name = "label1";
-            label1.Size = new Size(161, 55);
-            label1.TabIndex = 5;
-            label1.Text = "Selamat datang! Santoso";
-            // 
-            // labelJudul
-            // 
-            labelJudul.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelJudul.Location = new Point(12, 23);
-            labelJudul.Name = "labelJudul";
-            labelJudul.Size = new Size(189, 74);
-            labelJudul.TabIndex = 0;
-            labelJudul.Text = "Aplikasi Pengaduan";
             // 
             // panelMenu
             // 
@@ -168,6 +102,74 @@
             panelContent.Size = new Size(948, 564);
             panelContent.TabIndex = 7;
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(panelBase);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(234, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(948, 673);
+            panel3.TabIndex = 4;
+            // 
+            // logOutBtn
+            // 
+            logOutBtn.FlatAppearance.BorderSize = 0;
+            logOutBtn.FlatStyle = FlatStyle.Flat;
+            logOutBtn.Font = new Font("Product Sans", 10.2F);
+            logOutBtn.Location = new Point(12, 544);
+            logOutBtn.Name = "logOutBtn";
+            logOutBtn.Size = new Size(200, 40);
+            logOutBtn.TabIndex = 4;
+            logOutBtn.Text = "Log Out";
+            logOutBtn.TextAlign = ContentAlignment.MiddleLeft;
+            logOutBtn.UseVisualStyleBackColor = true;
+            logOutBtn.Click += logOutBtn_Click;
+            // 
+            // dashboardBtn
+            // 
+            dashboardBtn.BackColor = SystemColors.Control;
+            dashboardBtn.FlatAppearance.BorderSize = 0;
+            dashboardBtn.FlatStyle = FlatStyle.Flat;
+            dashboardBtn.Font = new Font("Product Sans", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dashboardBtn.Location = new Point(12, 186);
+            dashboardBtn.Name = "dashboardBtn";
+            dashboardBtn.Size = new Size(200, 40);
+            dashboardBtn.TabIndex = 0;
+            dashboardBtn.Text = "Pengaduan";
+            dashboardBtn.TextAlign = ContentAlignment.MiddleLeft;
+            dashboardBtn.UseVisualStyleBackColor = false;
+            // 
+            // panelSidebar
+            // 
+            panelSidebar.Controls.Add(labelNama);
+            panelSidebar.Controls.Add(labelJudul);
+            panelSidebar.Controls.Add(logOutBtn);
+            panelSidebar.Controls.Add(dashboardBtn);
+            panelSidebar.Dock = DockStyle.Left;
+            panelSidebar.Location = new Point(0, 0);
+            panelSidebar.Name = "panelSidebar";
+            panelSidebar.Size = new Size(234, 673);
+            panelSidebar.TabIndex = 3;
+            // 
+            // labelNama
+            // 
+            labelNama.Font = new Font("Product Sans", 12F);
+            labelNama.Location = new Point(12, 104);
+            labelNama.Name = "labelNama";
+            labelNama.Size = new Size(161, 55);
+            labelNama.TabIndex = 5;
+            labelNama.Text = "Selamat datang! Santoso";
+            labelNama.Click += label1_Click;
+            // 
+            // labelJudul
+            // 
+            labelJudul.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelJudul.Location = new Point(12, 23);
+            labelJudul.Name = "labelJudul";
+            labelJudul.Size = new Size(189, 74);
+            labelJudul.TabIndex = 0;
+            labelJudul.Text = "Aplikasi Pengaduan";
+            // 
             // CivilianPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -178,10 +180,10 @@
             Name = "CivilianPage";
             Text = "CivilianPage";
             panelBase.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panelSidebar.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();
+            panel3.ResumeLayout(false);
+            panelSidebar.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -192,7 +194,7 @@
         private Button dashboardBtn;
         private Panel panelSidebar;
         private Label labelJudul;
-        private Label label1;
+        private Label labelNama;
         private Panel panelMenu;
         private Label labelTextPilihTipe;
         private ComboBox comboBoxTipePengaduan;

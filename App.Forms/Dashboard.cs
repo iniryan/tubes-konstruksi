@@ -36,6 +36,8 @@ namespace App.Forms
             menuPengaduanForm = new MenuPengaduan(_currentUser);
             lapTamu = new LaporanTamu(_currentUser);
 
+            labelNama.Text = $"Selamat datang, {_currentUser.Name}";
+
             LoadDashboardDataAsync();
         }
         private async void LoadDashboardDataAsync()
@@ -165,7 +167,8 @@ namespace App.Forms
 
         private void logOutBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void buttonTamu_Click(object sender, EventArgs e)

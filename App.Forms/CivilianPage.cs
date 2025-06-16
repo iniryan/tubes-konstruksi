@@ -31,6 +31,8 @@ namespace App.Forms
             InitializePanels();
             SetupComboBox();
             ShowSelectedPanel();
+
+            labelNama.Text = $"Selamat datang, {_currentUser.Name}";
         }
 
         private void InitializePanels()
@@ -88,6 +90,17 @@ namespace App.Forms
                     currentControl = pengaduanFasilitas;
                     break;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logOutBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }
