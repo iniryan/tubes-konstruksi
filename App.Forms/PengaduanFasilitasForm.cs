@@ -138,7 +138,7 @@ namespace App.Forms
                 // Tambah atau Ubah
                 if (_selectedPengaduanId == null)
                 {
-                    await _pengaduanService.TambahPengaduanAsync(namaPelapor, lokasi, deskripsi, prioritas, jenisFasilitas);
+                    await _pengaduanService.TambahPengaduanAsync(_currentUser.Id, namaPelapor, lokasi, deskripsi, prioritas, jenisFasilitas);
                     MessageBox.Show("Pengaduan berhasil ditambahkan.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

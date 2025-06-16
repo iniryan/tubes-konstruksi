@@ -27,6 +27,7 @@ namespace App.Core.Services
 
         // CREATE
         public async Task<Pengaduan<DetailTamu>> TambahTamuAsync(
+            int userId,
             string namaPelapor,
             string lokasi,
             string deskripsi,
@@ -38,7 +39,7 @@ namespace App.Core.Services
         {
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailTamu>>(_filePath);
 
-            var detail = new DetailTamu(namaPelapor, lokasi, deskripsi, nomorIdentitas, tujuan, pegawaiTujuan)
+            var detail = new DetailTamu(userId, namaPelapor, lokasi, deskripsi, nomorIdentitas, tujuan, pegawaiTujuan)
             {
                 WaktuKeluar = waktuKeluar
             };

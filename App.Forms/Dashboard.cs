@@ -65,38 +65,56 @@ namespace App.Forms
 
         private async Task LoadPengaduanChartAsync()
         {
-            if (this.chartPengaduan == null)
+            if (chartPengaduan == null)
             {
-                MessageBox.Show("Chart control is not initialized. Please fix it in the Dashboard designer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chart control is not initialized.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             try
             {
                 Dictionary<StatusPengaduan, int> dataStatus = await _pengaduanKebersihanService.HitungKomposisiStatusAsync();
 
-                Dictionary<string, int> dataStatusStringKeys = dataStatus.ToDictionary(
-                    kvp => kvp.Key.ToString(),
-                    kvp => kvp.Value
-                );
+                var series = chartPengaduan.Series["Pengaduan"];
+                series.Points.Clear();
+                chartPengaduan.Titles.Clear();
 
-                var chart = this.chartPengaduan;
-                var seriesName = "Pengaduan";
+                // Configure chart appearance
+                var title = new System.Windows.Forms.DataVisualization.Charting.Title();
+                title.Font = new Font("Product Sans", 12, FontStyle.Bold);
+                title.Text = "Status Pengaduan";
+                chartPengaduan.Titles.Add(title);
 
-                chart.Series[seriesName].Points.Clear();
-                chart.Titles.Clear();
+                // Configure chart areas
+                var chartArea = chartPengaduan.ChartAreas[0];
+                chartArea.AxisX.Title = "Status";
+                chartArea.AxisY.Title = "Jumlah";
+                chartArea.AxisX.TitleFont = new Font("Product Sans", 10);
+                chartArea.AxisY.TitleFont = new Font("Product Sans", 10);
+                chartArea.AxisX.LabelStyle.Font = new Font("Product Sans", 9);
+                chartArea.AxisY.LabelStyle.Font = new Font("Product Sans", 9);
+                chartArea.AxisX.Interval = 1;
 
-                chart.Titles.Add("Komposisi Status Pengaduan");
-                chart.ChartAreas[0].AxisX.Title = "Status";
-                chart.ChartAreas[0].AxisY.Title = "Jumlah";
-                chart.ChartAreas[0].AxisX.Interval = 1;
-                chart.Series[seriesName].IsValueShownAsLabel = true;
-                chart.Series[seriesName].Font = new Font("Product Sans", 8);
-                chart.Legends[0].Enabled = false;
+                // Configure series
+                series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                series.Font = new Font("Product Sans", 9);
+                series.IsValueShownAsLabel = true;
+                series.LabelFormat = "#,##0";
 
-                foreach (KeyValuePair<string, int> item in dataStatusStringKeys)
+                // Set color palette
+                series.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
+
+                // Add data points
+                foreach (var item in dataStatus)
                 {
-                    chart.Series[seriesName].Points.AddXY(item.Key, item.Value);
+                    int pointIndex = series.Points.AddXY(item.Key.ToString(), item.Value);
+                    var dataPoint = series.Points[pointIndex];
+                    dataPoint.Label = item.Value.ToString("N0");
+                    dataPoint.LabelToolTip = $"{item.Key}: {item.Value:N0}";
                 }
+
+                // Adjust chart position and size if needed
+                chartPengaduan.Visible = true;
             }
             catch (Exception ex)
             {

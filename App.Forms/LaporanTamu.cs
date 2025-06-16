@@ -156,7 +156,7 @@ namespace App.Forms
             {
                 if (_selectedTamuId == null) // Tambah
                 {
-                    await _guestRepository.TambahTamuAsync(nama, lokasi, deskripsi, nomorIdentitas, tujuan, pegawaiTujuan, waktuKeluar);
+                    await _guestRepository.TambahTamuAsync(_currentUser.Id, nama, lokasi, deskripsi, nomorIdentitas, tujuan, pegawaiTujuan, waktuKeluar);
                     MessageBox.Show("Tamu berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else // Edit

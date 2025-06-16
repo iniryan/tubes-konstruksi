@@ -54,7 +54,7 @@
             panelContentPengaduan.Location = new Point(0, 115);
             panelContentPengaduan.Name = "panelContentPengaduan";
             panelContentPengaduan.Size = new Size(948, 558);
-            panelContentPengaduan.TabIndex = 1;
+            panelContentPengaduan.TabIndex = 3;
             // 
             // panelMenu
             // 
@@ -65,7 +65,7 @@
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(948, 116);
-            panelMenu.TabIndex = 0;
+            panelMenu.TabIndex = 2;
             // 
             // labelTextPilihTipe
             // 
@@ -90,7 +90,7 @@
             labelTextMenuPengaduan.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextMenuPengaduan.Location = new Point(42, 11);
             labelTextMenuPengaduan.Name = "labelTextMenuPengaduan";
-            labelTextMenuPengaduan.Size = new Size(176, 28);
+            labelTextMenuPengaduan.Size = new Size(167, 25);
             labelTextMenuPengaduan.TabIndex = 4;
             labelTextMenuPengaduan.Text = "Menu Pengaduan";
             // 
@@ -111,10 +111,10 @@
         #endregion
 
         private Panel panelMenuPengaduan;
+        private Panel panelContentPengaduan;
         private Panel panelMenu;
         private Label labelTextPilihTipe;
         private ComboBox comboBoxTipePengaduan;
         private Label labelTextMenuPengaduan;
-        private Panel panelContentPengaduan;
     }
 }

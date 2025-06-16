@@ -1,5 +1,6 @@
 ﻿using App.Core.Models;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace App.Core.Services
 {
@@ -7,5 +8,6 @@ namespace App.Core.Services
     {
         Task<User> RegisterAsync(string username, string password, string role, string alamat, string notelp, string name);
         Task<User> LoginAsync(string username, string password);
+        Task<List<User>> GetAllUsersAsync();
     }
 }

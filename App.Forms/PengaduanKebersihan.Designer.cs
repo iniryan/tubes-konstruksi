@@ -34,6 +34,9 @@
             labelTextDaftarPengaduan = new Label();
             dataGridViewDataKebersihan = new DataGridView();
             panelFormKebersihan = new Panel();
+            comboBoxUser = new ComboBox();
+            radioNewUser = new RadioButton();
+            radioExistingUser = new RadioButton();
             labelTextLokasi = new Label();
             textBoxLokasi = new TextBox();
             buttonSave = new Button();
@@ -98,7 +101,7 @@
             labelTextDaftarPengaduan.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextDaftarPengaduan.Location = new Point(21, 14);
             labelTextDaftarPengaduan.Name = "labelTextDaftarPengaduan";
-            labelTextDaftarPengaduan.Size = new Size(294, 28);
+            labelTextDaftarPengaduan.Size = new Size(282, 25);
             labelTextDaftarPengaduan.TabIndex = 9;
             labelTextDaftarPengaduan.Text = "Daftar Pengaduan Kebersihan";
             // 
@@ -113,6 +116,9 @@
             // 
             // panelFormKebersihan
             // 
+            panelFormKebersihan.Controls.Add(comboBoxUser);
+            panelFormKebersihan.Controls.Add(radioNewUser);
+            panelFormKebersihan.Controls.Add(radioExistingUser);
             panelFormKebersihan.Controls.Add(labelTextLokasi);
             panelFormKebersihan.Controls.Add(textBoxLokasi);
             panelFormKebersihan.Controls.Add(buttonSave);
@@ -131,10 +137,41 @@
             panelFormKebersihan.Size = new Size(417, 558);
             panelFormKebersihan.TabIndex = 0;
             // 
+            // comboBoxUser
+            // 
+            comboBoxUser.FlatStyle = FlatStyle.Flat;
+            comboBoxUser.FormattingEnabled = true;
+            comboBoxUser.Location = new Point(29, 225);
+            comboBoxUser.Name = "comboBoxUser";
+            comboBoxUser.Size = new Size(160, 28);
+            comboBoxUser.TabIndex = 18;
+            // 
+            // radioNewUser
+            // 
+            radioNewUser.AutoSize = true;
+            radioNewUser.Location = new Point(231, 217);
+            radioNewUser.Name = "radioNewUser";
+            radioNewUser.Size = new Size(142, 24);
+            radioNewUser.TabIndex = 17;
+            radioNewUser.TabStop = true;
+            radioNewUser.Text = "Input Nama Baru";
+            radioNewUser.UseVisualStyleBackColor = true;
+            // 
+            // radioExistingUser
+            // 
+            radioExistingUser.AutoSize = true;
+            radioExistingUser.Location = new Point(231, 183);
+            radioExistingUser.Name = "radioExistingUser";
+            radioExistingUser.Size = new Size(158, 24);
+            radioExistingUser.TabIndex = 16;
+            radioExistingUser.TabStop = true;
+            radioExistingUser.Text = "Pilih User yang Ada";
+            radioExistingUser.UseVisualStyleBackColor = true;
+            // 
             // labelTextLokasi
             // 
             labelTextLokasi.AutoSize = true;
-            labelTextLokasi.Location = new Point(29, 222);
+            labelTextLokasi.Location = new Point(29, 267);
             labelTextLokasi.Name = "labelTextLokasi";
             labelTextLokasi.Size = new Size(50, 20);
             labelTextLokasi.TabIndex = 15;
@@ -143,7 +180,8 @@
             // textBoxLokasi
             // 
             textBoxLokasi.BorderStyle = BorderStyle.None;
-            textBoxLokasi.Location = new Point(29, 258);
+            textBoxLokasi.Font = new Font("Segoe UI", 9F);
+            textBoxLokasi.Location = new Point(29, 303);
             textBoxLokasi.Name = "textBoxLokasi";
             textBoxLokasi.Size = new Size(360, 20);
             textBoxLokasi.TabIndex = 14;
@@ -165,7 +203,7 @@
             // labelTextDeskripsiPengaduan
             // 
             labelTextDeskripsiPengaduan.AutoSize = true;
-            labelTextDeskripsiPengaduan.Location = new Point(25, 300);
+            labelTextDeskripsiPengaduan.Location = new Point(25, 339);
             labelTextDeskripsiPengaduan.Name = "labelTextDeskripsiPengaduan";
             labelTextDeskripsiPengaduan.Size = new Size(146, 20);
             labelTextDeskripsiPengaduan.TabIndex = 12;
@@ -204,7 +242,7 @@
             labelTextFormKebersihan.Font = new Font("Product Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTextFormKebersihan.Location = new Point(21, 14);
             labelTextFormKebersihan.Name = "labelTextFormKebersihan";
-            labelTextFormKebersihan.Size = new Size(281, 28);
+            labelTextFormKebersihan.Size = new Size(272, 25);
             labelTextFormKebersihan.TabIndex = 8;
             labelTextFormKebersihan.Text = "Form Pengaduan Kebersihan";
             // 
@@ -220,18 +258,20 @@
             // richTextBoxDeskripsi
             // 
             richTextBoxDeskripsi.BorderStyle = BorderStyle.None;
-            richTextBoxDeskripsi.Location = new Point(29, 336);
+            richTextBoxDeskripsi.Font = new Font("Segoe UI", 9F);
+            richTextBoxDeskripsi.Location = new Point(29, 375);
             richTextBoxDeskripsi.Name = "richTextBoxDeskripsi";
-            richTextBoxDeskripsi.Size = new Size(360, 120);
+            richTextBoxDeskripsi.Size = new Size(360, 89);
             richTextBoxDeskripsi.TabIndex = 6;
             richTextBoxDeskripsi.Text = "";
             // 
             // textBoxNamaPelapor
             // 
             textBoxNamaPelapor.BorderStyle = BorderStyle.None;
+            textBoxNamaPelapor.Font = new Font("Segoe UI", 9F);
             textBoxNamaPelapor.Location = new Point(29, 183);
             textBoxNamaPelapor.Name = "textBoxNamaPelapor";
-            textBoxNamaPelapor.Size = new Size(360, 20);
+            textBoxNamaPelapor.Size = new Size(160, 20);
             textBoxNamaPelapor.TabIndex = 5;
             // 
             // comboBoxPrioritas
@@ -289,5 +329,8 @@
         private Button buttonDelete;
         private Label labelTextLokasi;
         private TextBox textBoxLokasi;
+        private RadioButton radioNewUser;
+        private RadioButton radioExistingUser;
+        private ComboBox comboBoxUser;
     }
 }

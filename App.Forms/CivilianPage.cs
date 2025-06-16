@@ -7,14 +7,87 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using App.Core.Models;
+using App.Forms;
 
 namespace App.Forms
 {
     public partial class CivilianPage : Form
     {
-        public CivilianPage()
+        private readonly User _currentUser;
+        private Control currentControl;
+        private PengaduanKebersihan pengaduanKebersihan;
+        private PengaduanFasilitasForm pengaduanFasilitas;
+
+        public Panel GetPanel()
+        {
+            return panelBase;
+        }
+
+        public CivilianPage(User user)
         {
             InitializeComponent();
+            _currentUser = user;
+            InitializePanels();
+            SetupComboBox();
+            ShowSelectedPanel();
+        }
+
+        private void InitializePanels()
+        {
+            pengaduanKebersihan = new PengaduanKebersihan(_currentUser);
+            pengaduanKebersihan.Visible = false;
+            pengaduanKebersihan.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(pengaduanKebersihan);
+
+            pengaduanFasilitas = new PengaduanFasilitasForm(_currentUser);
+            pengaduanFasilitas.Dock = DockStyle.Fill;
+            pengaduanFasilitas.Visible = false;
+            panelContent.Controls.Add(pengaduanFasilitas);
+        }
+
+        private void SetupComboBox()
+        {
+            comboBoxTipePengaduan.Items.Add("Kebersihan");
+            comboBoxTipePengaduan.Items.Add("Keamanan");
+            comboBoxTipePengaduan.Items.Add("Fasilitas");
+
+            comboBoxTipePengaduan.SelectedIndex = 0;
+
+            comboBoxTipePengaduan.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboBoxTipePengaduan.SelectedIndexChanged += ComboBoxTipePengaduan_SelectedIndexChanged;
+        }
+
+        private void ComboBoxTipePengaduan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowSelectedPanel();
+        }
+
+        private void ShowSelectedPanel()
+        {
+            if (currentControl != null)
+            {
+                currentControl.Visible = false;
+            }
+
+            if (comboBoxTipePengaduan.SelectedItem == null) return;
+
+            switch (comboBoxTipePengaduan.SelectedItem.ToString())
+            {
+                case "Kebersihan":
+                    pengaduanKebersihan.Visible = true;
+                    currentControl = pengaduanKebersihan;
+                    break;
+                case "Keamanan":
+                    // pengaduanKeamanan.Visible = true;
+                    // currentControl = pengaduanKeamanan;
+                    break;
+                case "Fasilitas":
+                    pengaduanFasilitas.Visible = true;
+                    currentControl = pengaduanFasilitas;
+                    break;
+            }
         }
     }
 }

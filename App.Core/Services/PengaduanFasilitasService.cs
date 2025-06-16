@@ -24,11 +24,11 @@ namespace App.Core.Services
         }
 
         // CREATE
-        public async Task<Pengaduan<DetailFasilitas>> TambahPengaduanAsync(string namaPelapor, string lokasi,
+        public async Task<Pengaduan<DetailFasilitas>> TambahPengaduanAsync(int userId, string namaPelapor, string lokasi,
             string deskripsi, Prioritas prioritas, string jenisFasilitas)
         {
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath);
-            var detail = new DetailFasilitas(namaPelapor, lokasi, deskripsi, jenisFasilitas);
+            var detail = new DetailFasilitas(userId, namaPelapor, lokasi, deskripsi, jenisFasilitas);
             var pengaduanBaru = new Pengaduan<DetailFasilitas>(Guid.NewGuid().ToString(), detail);
             try
             {

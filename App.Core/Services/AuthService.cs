@@ -76,6 +76,11 @@ namespace App.Core.Services
             return user;
         }
 
+        public async Task<List<User>> GetAllUsersAsync()
+        {
+            return await JsonUtils.ReadDataAsync<User>(_filePath);
+        }
+
         private string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())

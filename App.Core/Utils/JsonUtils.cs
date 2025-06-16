@@ -11,7 +11,8 @@ namespace App.Core.Utils
         private static readonly JsonSerializerOptions _options = new JsonSerializerOptions
         {
             WriteIndented = true,
-            PropertyNameCaseInsensitive = true
+            PropertyNameCaseInsensitive = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         };
 
         public static async Task<List<T>> ReadDataAsync<T>(string filePath)

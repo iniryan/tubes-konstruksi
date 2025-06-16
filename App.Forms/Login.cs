@@ -35,8 +35,19 @@ namespace App.Forms
                 MessageBox.Show($"Login berhasil! Selamat datang, {user.Username}.", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
-                var dashboard = new Dashboard(user);
-                dashboard.ShowDialog();
+
+                // Redirect based on user role
+                if (user.Role.ToLower() == "admin")
+                {
+                    var dashboard = new Dashboard(user);
+                    dashboard.ShowDialog();
+                }
+                else if (user.Role.ToLower() == "civilian")
+                {
+                    var civilianPage = new CivilianPage(user);
+                    civilianPage.ShowDialog();
+                }
+
                 this.Show();
             }
             catch (UnauthorizedAccessException ex)

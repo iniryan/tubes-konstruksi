@@ -1,14 +1,54 @@
 [
   {
-    "Id": "d09f52ba-abc0-42a9-96ae-58cbdd99f09f",
-    "Detail": {
-      "PrioritasPengaduan": 0,
-      "Kategori": "WC Umum",
-      "NamaPelapor": "John",
-      "Lokasi": "Kampung ABC",
-      "Deskripsi": "WC Mampet, tolong segera diperbaiki sebelum muncul musibah!"
+    "id": "b90f719d-a1c8-4e86-8fbc-b15655e22398",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Saluran Air",
+      "userId": 3,
+      "namaPelapor": "ADI SAPUTRA",
+      "lokasi": "Jl. Ngagel No. 10",
+      "deskripsi": "Saluran air tersumbat di komplek saya, mohon segera diperbaiki."
     },
-    "Status": 0,
-    "TanggalDibuat": "2025-06-12T19:38:45.9943604+07:00"
+    "status": 0,
+    "tanggalDibuat": "2025-06-16T11:11:42.2657583+07:00"
+  },
+  {
+    "id": "b90f719d-a1c8-4e86-8fbc-b15655e22399",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Lingkungan",
+      "userId": 2,
+      "namaPelapor": "RYAN ADI",
+      "lokasi": "Jl. Sedati No. 5",
+      "deskripsi": "Tumpukan sampah di sekitar area perumahan, mohon segera dibersihkan."
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-16T11:11:42.2657583+07:00"
+  },
+  {
+    "id": "63ab402e-98c7-462c-b488-729b984a3c4c",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "WC Umum",
+      "userId": 3,
+      "namaPelapor": "ADI SAPUTRA",
+      "lokasi": "Jl. Ngagel No. 10",
+      "deskripsi": "WC umum di komplek kotor dan bau, mohon segera dibersihkan."
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-16T12:28:58.1850147+07:00"
+  },
+  {
+    "id": "d82dd820-3313-4a02-9210-c05dde38ee76",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Lingkungan",
+      "userId": 6,
+      "namaPelapor": "DAMIAN PRASETYO",
+      "lokasi": "Jl. Sedati No. 8",
+      "deskripsi": "Tumpukan sampah di sekitar area perumahan, mohon segera dibersihkan."
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-16T12:41:44.493828+07:00"
   }
 ]

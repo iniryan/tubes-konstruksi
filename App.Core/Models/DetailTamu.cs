@@ -11,8 +11,8 @@ namespace App.Core.Models
         public DateTime WaktuDatang { get; set; } = DateTime.Now;
         public DateTime? WaktuKeluar { get; set; }
 
-        public DetailTamu(string namaPelapor, string lokasi, string deskripsi, string nomorIdentitas, string tujuan, string pegawaiTujuan, DateTime? waktuKeluar = null)
-            : base(namaPelapor, lokasi, deskripsi)
+        public DetailTamu(int userId, string namaPelapor, string lokasi, string deskripsi, string nomorIdentitas, string tujuan, string pegawaiTujuan, DateTime? waktuKeluar = null)
+            : base(userId, namaPelapor, lokasi, deskripsi)
         {
             NomorIdentitas = nomorIdentitas;
             Tujuan = tujuan;

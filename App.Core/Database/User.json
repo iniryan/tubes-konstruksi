@@ -1,29 +1,56 @@
 [
   {
-    "Id": 1,
-    "Name": "Ahmad Zufar",
-    "Username": "zufar",
-    "Password": "8e10ed93d53d1ff2a41538d9bb670c207a2dffc7e365e6d0661d449186a3629e",
-    "Role": "civilian",
-    "Alamat": "Jl. Ngagel",
-    "NoTelepon": "089110108811"
+    "id": 1,
+    "name": "AHMAD ZUFAR",
+    "username": "zufar",
+    "password": "8e10ed93d53d1ff2a41538d9bb670c207a2dffc7e365e6d0661d449186a3629e",
+    "role": "civilian",
+    "alamat": "Jl. Ngagel",
+    "noTelepon": "089110108811"
   },
   {
-    "Id": 2,
-    "Name": "ryan",
-    "Username": "ryan",
-    "Password": "6c374c117dca49b96eed7baa82ece9ff6b7d61e6c540e0a00e8848d79e4246ca",
-    "Role": "civilian",
-    "Alamat": "Jl. Sedati",
-    "NoTelepon": "083877534252"
+    "id": 2,
+    "name": "RYAN ADI",
+    "username": "ryan",
+    "password": "6c374c117dca49b96eed7baa82ece9ff6b7d61e6c540e0a00e8848d79e4246ca",
+    "role": "admin",
+    "alamat": "Jl. Sedati",
+    "noTelepon": "083877534252"
   },
   {
-    "Id": 3,
-    "Name": "adi",
-    "Username": "adi",
-    "Password": "882faefe28371f8145b880c83c83bc7dd497e251eb6686af30e509a75f35ba44",
-    "Role": "civilian",
-    "Alamat": "adi",
-    "NoTelepon": "0891"
+    "id": 3,
+    "name": "ADI SAPUTRA",
+    "username": "adi",
+    "password": "882faefe28371f8145b880c83c83bc7dd497e251eb6686af30e509a75f35ba44",
+    "role": "civilian",
+    "alamat": "adi",
+    "noTelepon": "0891"
+  },
+  {
+    "id": 4,
+    "name": "JOKO SUSILO",
+    "username": "joko",
+    "password": "0a4876bfdd20e5c864b07ac70ac1ac03c6db9a1907722fd51785d6197d92931c",
+    "role": "civilian",
+    "alamat": "-",
+    "noTelepon": "-"
+  },
+  {
+    "id": 5,
+    "name": "DENIS BUDI",
+    "username": "denis",
+    "password": "b4bf566ca903a794a72121a7f1f2e00475a0cbace3977c3a743924c8a02e6614",
+    "role": "civilian",
+    "alamat": "-",
+    "noTelepon": "-"
+  },
+  {
+    "id": 6,
+    "name": "DAMIAN PRASETYO",
+    "username": "damian",
+    "password": "6c15c5bf902dff4e0d3d42d0c73c98a2a96ddad52332e81a1028a9390d249d13",
+    "role": "civilian",
+    "alamat": "-",
+    "noTelepon": "-"
   }
 ]
