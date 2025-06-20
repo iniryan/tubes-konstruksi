@@ -9,39 +9,36 @@ namespace App.Tests.Tests
         [Fact]
         public void Should_Create_DetailKeamanan_With_Valid_Data()
         {
-            var detail = new DetailKeamanan(1, "Budi", "Jl. Merdeka No. 5", "Pencurian sepeda motor", "Pencurian", "Tinggi");
+            var detail = new DetailKeamanan(1, "Budi", "Jl. Merdeka No. 5", "Pencurian sepeda motor", "014", "Pencurian");
 
             Assert.Equal(1, detail.UserId);
             Assert.Equal("Budi", detail.NamaPelapor);
             Assert.Equal("Jl. Merdeka No. 5", detail.Lokasi);
             Assert.Equal("Pencurian sepeda motor", detail.Deskripsi);
+            Assert.Equal("014", detail.RT);
             Assert.Equal("Pencurian", detail.JenisKejadian);
-            Assert.Equal("Tinggi", detail.TingkatUrgensitas);
         }
-
         [Fact]
         public void Should_Throw_Exception_When_UserId_Is_Invalid()
         {
             var ex = Assert.Throws<ArgumentException>(() =>
-                new DetailKeamanan(0, "Budi", "Lokasi", "Deskripsi", "Pencurian", "Tinggi"));
+                new DetailKeamanan(0, "Budi", "Lokasi", "Deskripsi", "001", "Pencurian"));
 
             Assert.Equal("User ID harus lebih besar dari 0. (Parameter 'userId')", ex.Message);
         }
-
         [Fact]
-        public void Should_Throw_Exception_When_TingkatUrgensitas_Is_Empty()
+        public void Should_Throw_Exception_When_RT_Is_Empty()
         {
             var ex = Assert.Throws<ArgumentException>(() =>
-                new DetailKeamanan(1, "Budi", "Lokasi", "Deskripsi", "Pencurian", ""));
+                new DetailKeamanan(1, "Budi", "Lokasi", "Deskripsi", "", "Pencurian"));
 
-            Assert.Equal("Tingkat urgensitas harus diisi. (Parameter 'tingkatUrgensitas')", ex.Message);
+            Assert.Equal("RT harus diisi. (Parameter 'rt')", ex.Message);
         }
-
         [Fact]
         public void Should_Throw_Exception_When_JenisKejadian_Is_Empty()
         {
             var ex = Assert.Throws<ArgumentException>(() =>
-                new DetailKeamanan(1, "Budi", "Lokasi", "Deskripsi", "", "Tinggi"));
+                new DetailKeamanan(1, "Budi", "Lokasi", "Deskripsi", "001", ""));
 
             Assert.Equal("Jenis kejadian harus diisi. (Parameter 'jenisKejadian')", ex.Message);
         }

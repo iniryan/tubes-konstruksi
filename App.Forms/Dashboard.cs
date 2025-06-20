@@ -15,20 +15,17 @@ namespace App.Forms
         private DaftarPengaduan daftarPengaduanForm;
         private MenuPengaduan menuPengaduanForm;
         private LaporanTamu lapTamu;
-        private Pengguna penggunaForm;
-        private readonly User _currentUser;
+        private Pengguna penggunaForm; private readonly User _currentUser;
         private readonly PengaduanKebersihanService _pengaduanKebersihanService;
-        // private readonly PengaduanKeamananService _pengaduanKeamananService;
+        private readonly PengaduanKeamananService _pengaduanKeamananService;
         private readonly PengaduanFasilitasService _pengaduanFasilitasService;
         private readonly GuestRepository _tamuService;
 
         public Dashboard(User user)
         {
             InitializeComponent();
-            _currentUser = user;
-
-            _pengaduanKebersihanService = new PengaduanKebersihanService();
-            // _pengaduanKeamananService = new PengaduanKeamananService();
+            _currentUser = user; _pengaduanKebersihanService = new PengaduanKebersihanService();
+            _pengaduanKeamananService = new PengaduanKeamananService();
             _pengaduanFasilitasService = new PengaduanFasilitasService();
             _tamuService = new GuestRepository();
 
@@ -65,8 +62,8 @@ namespace App.Forms
                 var tasks = new[]
                 {
                     _pengaduanKebersihanService.HitungTotalPengaduanAsync(),
+                    _pengaduanKeamananService.HitungTotalPengaduanAsync(),
                     _pengaduanFasilitasService.HitungTotalPengaduanAsync(),
-                    // _pengaduanKeamananService.HitungTotalPengaduanAsync(),
                     _tamuService.HitungTotalTamuAsync()
                 };
 
@@ -75,9 +72,9 @@ namespace App.Forms
                 this.Invoke((MethodInvoker)delegate
                 {
                     counterKebersihan.Text = results[0].ToString("N0");
-                    counterFasilitas.Text = results[1].ToString("N0");
-                    counterTamu.Text = results[2].ToString("N0");
-                    // counterKeamanan.Text = results[2].ToString("N0");
+                    counterKeamanan.Text = results[1].ToString("N0");
+                    counterFasilitas.Text = results[2].ToString("N0");
+                    counterTamu.Text = results[3].ToString("N0");
                 });
             }
             catch (Exception ex)
@@ -142,19 +139,16 @@ namespace App.Forms
         private async Task LoadRecentPengaduanAsync()
         {
             try
-            {
-                // Get all pengaduan
+            {                // Get all pengaduan
                 var kebersihanTask = _pengaduanKebersihanService.AmbilSemuaPengaduanAsync();
+                var keamananTask = _pengaduanKeamananService.AmbilSemuaPengaduanAsync();
                 var fasilitasTask = _pengaduanFasilitasService.AmbilSemuaPengaduanAsync();
-                // var keamananTask = _pengaduanKeamananService.AmbilSemuaPengaduanAsync();
                 var tamuTask = _tamuService.AmbilSemuaTamuAsync();
 
-                await Task.WhenAll(kebersihanTask, fasilitasTask, /*keamananTask,*/ tamuTask);
+                await Task.WhenAll(kebersihanTask, keamananTask, fasilitasTask, tamuTask);
 
                 // Gabungkan semua pengaduan ke dalam satu list
-                var allComplaints = new List<object>();
-
-                // pengaduan Kebersihan
+                var allComplaints = new List<object>();                // pengaduan Kebersihan
                 allComplaints.AddRange(kebersihanTask.Result.Select(p => new
                 {
                     Id = p.Id,
@@ -162,6 +156,17 @@ namespace App.Forms
                     Pelapor = p.Detail.NamaPelapor,
                     Status = p.Status,
                     Kategori = p.Detail.Kategori,
+                    TanggalDibuat = p.TanggalDibuat
+                }));
+
+                // pengaduan Keamanan
+                allComplaints.AddRange(keamananTask.Result.Select(p => new
+                {
+                    Id = p.Id,
+                    Jenis = "Keamanan",
+                    Pelapor = p.Detail.NamaPelapor,
+                    Status = p.Status,
+                    Kategori = p.Detail.JenisKejadian,
                     TanggalDibuat = p.TanggalDibuat
                 }));
 
@@ -175,17 +180,6 @@ namespace App.Forms
                     Kategori = p.Detail.JenisFasilitas,
                     TanggalDibuat = p.TanggalDibuat
                 }));
-
-                // pengaduan Keamanan
-                // allComplaints.AddRange(keamananTask.Result.Select(p => new
-                // {
-                //     Id = p.Id,
-                //     Jenis = "Keamanan",
-                //     Pelapor = p.Detail.NamaPelapor,
-                //     Status = p.Status,
-                //     Kategori = p.Detail.Kategori,
-                //     TanggalDibuat = p.TanggalDibuat
-                // }));
 
                 // pengaduan Tamu
                 allComplaints.AddRange(tamuTask.Result.Select(t => new

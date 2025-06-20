@@ -18,6 +18,7 @@ namespace App.Forms
         private Control currentControl;
         private PengaduanKebersihan pengaduanKebersihan;
         private PengaduanFasilitasForm pengaduanFasilitas;
+        private PengaduanKeamananForm pengaduanKeamanan;
 
         public Panel GetPanel()
         {
@@ -34,13 +35,17 @@ namespace App.Forms
 
             labelNama.Text = $"Selamat datang, {_currentUser.Name}";
         }
-
         private void InitializePanels()
         {
             pengaduanKebersihan = new PengaduanKebersihan(_currentUser);
             pengaduanKebersihan.Visible = false;
             pengaduanKebersihan.Dock = DockStyle.Fill;
             panelContent.Controls.Add(pengaduanKebersihan);
+
+            pengaduanKeamanan = new PengaduanKeamananForm(_currentUser);
+            pengaduanKeamanan.Visible = false;
+            pengaduanKeamanan.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(pengaduanKeamanan);
 
             pengaduanFasilitas = new PengaduanFasilitasForm(_currentUser);
             pengaduanFasilitas.Dock = DockStyle.Fill;
@@ -73,17 +78,15 @@ namespace App.Forms
                 currentControl.Visible = false;
             }
 
-            if (comboBoxTipePengaduan.SelectedItem == null) return;
-
-            switch (comboBoxTipePengaduan.SelectedItem.ToString())
+            if (comboBoxTipePengaduan.SelectedItem == null) return; switch (comboBoxTipePengaduan.SelectedItem.ToString())
             {
                 case "Kebersihan":
                     pengaduanKebersihan.Visible = true;
                     currentControl = pengaduanKebersihan;
                     break;
                 case "Keamanan":
-                    // pengaduanKeamanan.Visible = true;
-                    // currentControl = pengaduanKeamanan;
+                    pengaduanKeamanan.Visible = true;
+                    currentControl = pengaduanKeamanan;
                     break;
                 case "Fasilitas":
                     pengaduanFasilitas.Visible = true;
