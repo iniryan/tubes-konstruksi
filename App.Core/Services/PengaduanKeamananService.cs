@@ -18,8 +18,7 @@ namespace App.Core.Services
             { "Lokasi", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 200 },
             { "Deskripsi", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 500 },
             { "RT", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 10 },
-            { "JenisKejadian", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 100 },
-            { "TingkatUrgensitas", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 50 }
+            { "JenisKejadian", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 100 }
         };
 
         private static readonly Dictionary<string, Action<DetailKeamanan, string>> _fieldSetters = new()
@@ -29,7 +28,6 @@ namespace App.Core.Services
             { "Deskripsi", (detail, value) => detail.Deskripsi = value },
             { "RT", (detail, value) => detail.RT = value },
             { "JenisKejadian", (detail, value) => detail.JenisKejadian = value },
-            { "TingkatUrgensitas", (detail, value) => detail.TingkatUrgensitas = value }
         };
 
         private static readonly Dictionary<string, Func<DetailKeamanan, string>> _fieldGetters = new()
@@ -38,8 +36,7 @@ namespace App.Core.Services
             { "Lokasi", detail => detail.Lokasi },
             { "Deskripsi", detail => detail.Deskripsi },
             { "RT", detail => detail.RT },
-            { "JenisKejadian", detail => detail.JenisKejadian },
-            { "TingkatUrgensitas", detail => detail.TingkatUrgensitas }
+            { "JenisKejadian", detail => detail.JenisKejadian }
         };
 
         public PengaduanKeamananService()
@@ -99,8 +96,7 @@ namespace App.Core.Services
             string lokasi,
             string deskripsi,
             string rt,
-            string jenisKejadian,
-            string tingkatUrgensitas)
+            string jenisKejadian)
         {
             // table-driven
             var fieldsToValidate = new Dictionary<string, string>
@@ -109,14 +105,13 @@ namespace App.Core.Services
                 { "Lokasi", lokasi },
                 { "RT", rt },
                 { "Deskripsi", deskripsi },
-                { "JenisKejadian", jenisKejadian },
-                { "TingkatUrgensitas", tingkatUrgensitas }
+                { "JenisKejadian", jenisKejadian }
             };
 
             ValidateFields(fieldsToValidate);
 
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailKeamanan>>(_filePath);
-            var detail = new DetailKeamanan(userId, namaPelapor, lokasi, deskripsi, rt, jenisKejadian, tingkatUrgensitas);
+            var detail = new DetailKeamanan(userId, namaPelapor, lokasi, deskripsi, rt, jenisKejadian);
             var pengaduanBaru = new Pengaduan<DetailKeamanan>(Guid.NewGuid().ToString(), detail);
 
             try
@@ -139,8 +134,7 @@ namespace App.Core.Services
             string lokasi,
             string deskripsi,
             string rt,
-            string jenisKejadian,
-            string tingkatUrgensitas)
+            string jenisKejadian)
         {
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailKeamanan>>(_filePath);
             var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
@@ -156,7 +150,6 @@ namespace App.Core.Services
                 { "Deskripsi", deskripsi },
                 { "RT", rt },
                 { "JenisKejadian", jenisKejadian },
-                { "TingkatUrgensitas", tingkatUrgensitas }
             };
 
             ValidateFields(fieldsToValidate);

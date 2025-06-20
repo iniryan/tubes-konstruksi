@@ -13,9 +13,7 @@ namespace App.Benchmark.PerformanceTests
     public class PengaduanKeamananPerformanceTests
     {
         private PengaduanKeamananService _service = null!;
-        private List<string> _ids = null!;
-
-        [GlobalSetup]
+        private List<string> _ids = null!; [GlobalSetup]
         public async Task Setup()
         {
             _service = new PengaduanKeamananService();
@@ -26,14 +24,14 @@ namespace App.Benchmark.PerformanceTests
                 string pelapor = "Pelapor Keamanan " + i;
                 string deskripsi = "Deskripsi keamanan " + i;
                 string lokasi = "Lokasi Keamanan " + i;
+                string rt = "00" + (i % 100).ToString();
                 string jenisInsiden = (i % 3 == 0) ? "Pencurian" : (i % 3 == 1) ? "Gangguan" : "Akses Tidak Sah";
-                var pengaduan = await _service.TambahPengaduanAsync(1, pelapor, lokasi, deskripsi, jenisInsiden, "Sedang");
+                var pengaduan = await _service.TambahPengaduanAsync(1, pelapor, lokasi, deskripsi, rt, jenisInsiden);
                 _ids.Add(pengaduan.Id);
             }
 
             Console.WriteLine("Keamanan Setup completed. Total Pengaduan: " + _ids.Count);
         }
-
         [Benchmark]
         public async Task TambahPengaduanKeamanan_Performance()
         {
@@ -42,8 +40,9 @@ namespace App.Benchmark.PerformanceTests
                 string pelapor = "Pelapor Benchmark Keamanan " + i;
                 string deskripsi = "Deskripsi benchmark keamanan " + i;
                 string lokasi = "Lokasi Benchmark Keamanan " + i;
+                string rt = "B" + (i % 50).ToString("D2");
                 string jenisInsiden = (i % 4 == 0) ? "Pencurian" : (i % 4 == 1) ? "Gangguan" : (i % 4 == 2) ? "Akses Tidak Sah" : "Vandalisme";
-                await _service.TambahPengaduanAsync(1, pelapor, lokasi, deskripsi, jenisInsiden, "Rendah");
+                await _service.TambahPengaduanAsync(1, pelapor, lokasi, deskripsi, rt, jenisInsiden);
             }
         }
 
@@ -55,7 +54,6 @@ namespace App.Benchmark.PerformanceTests
                 var pengaduan = await _service.AmbilPengaduanByIdAsync(id);
             }
         }
-
         [Benchmark]
         public async Task UpdatePengaduanKeamanan_Performance()
         {
@@ -63,7 +61,7 @@ namespace App.Benchmark.PerformanceTests
             {
                 try
                 {
-                    await _service.UbahDataPengaduanAsync(id, 1, "Pelapor Update Keamanan", "Lokasi Update", "Deskripsi Update", "Pencurian", "Tinggi");
+                    await _service.UbahDataPengaduanAsync(id, 1, "Pelapor Update Keamanan", "Lokasi Update", "Deskripsi Update", "U01", "Pencurian");
                 }
                 catch (Exception ex)
                 {

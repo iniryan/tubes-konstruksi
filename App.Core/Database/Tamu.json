@@ -2510,5 +2510,37 @@
     },
     "status": 2,
     "tanggalDibuat": "2025-06-20T13:16:20.0608587+07:00"
+  },
+  {
+    "id": "e23ee8a8-d90e-4944-80ec-54351d6d801b",
+    "detail": {
+      "nomorIdentitas": "121212786817",
+      "tujuan": "sas",
+      "pegawaiTujuan": "as",
+      "waktuDatang": "2025-06-20T21:47:29.8557204+07:00",
+      "waktuKeluar": "2025-06-20T21:47:11.7131529+07:00",
+      "userId": 2,
+      "namaPelapor": "sa",
+      "lokasi": "Lobi Utama",
+      "deskripsi": "Kunjungan ke as untuk sas"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T21:47:29.8557313+07:00"
+  },
+  {
+    "id": "b06dd8d6-cc79-4703-b88f-e6ad69a01b84",
+    "detail": {
+      "nomorIdentitas": "1231312",
+      "tujuan": "123",
+      "pegawaiTujuan": "sd",
+      "waktuDatang": "2025-06-20T21:49:36.820922+07:00",
+      "waktuKeluar": "2025-06-20T21:49:30.2576058+07:00",
+      "userId": 11,
+      "namaPelapor": "asd",
+      "lokasi": "Lobi Utama",
+      "deskripsi": "Kunjungan ke sd untuk 123"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T21:49:36.8209332+07:00"
   }
 ]
