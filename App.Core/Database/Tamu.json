@@ -2542,5 +2542,437 @@
     },
     "status": 0,
     "tanggalDibuat": "2025-06-20T21:49:36.8209332+07:00"
+  },
+  {
+    "id": "ad67c181-9654-4ed8-ada5-e6c3e59a1c80",
+    "detail": {
+      "nomorIdentitas": "2222222222",
+      "tujuan": "Testing",
+      "pegawaiTujuan": "Test Manager",
+      "waktuDatang": "2025-06-20T22:38:30.412333+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Guest Test",
+      "lokasi": "Reception",
+      "deskripsi": "Test visit"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.4123473+07:00"
+  },
+  {
+    "id": "7736f898-afa7-4d0a-8a23-cf59a9263da2",
+    "detail": {
+      "nomorIdentitas": "9999999999",
+      "tujuan": "Purpose",
+      "pegawaiTujuan": "Employee",
+      "waktuDatang": "2025-06-20T22:38:30.5710983+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Total Test",
+      "lokasi": "Location",
+      "deskripsi": "Description"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.5711189+07:00"
+  },
+  {
+    "id": "b7e35332-c974-457f-82b1-4d6369e976ed",
+    "detail": {
+      "nomorIdentitas": "9876543210",
+      "tujuan": "Konsultasi",
+      "pegawaiTujuan": "HR Manager",
+      "waktuDatang": "2025-06-20T22:38:30.650011+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Jane Visitor",
+      "lokasi": "Reception",
+      "deskripsi": "Kunjungan kerja"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.650027+07:00"
+  },
+  {
+    "id": "80be01b6-acdf-4dd7-a241-77b2dba5bf84",
+    "detail": {
+      "nomorIdentitas": "1234567890123456",
+      "tujuan": "Meeting dengan manager",
+      "pegawaiTujuan": "Manager Sales",
+      "waktuDatang": "2025-06-20T22:38:30.6895604+07:00",
+      "waktuKeluar": "2025-06-21T00:38:30.6565648+07:00",
+      "userId": 1,
+      "namaPelapor": "John Visitor",
+      "lokasi": "Lobby Utama",
+      "deskripsi": "Kunjungan bisnis"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.6895765+07:00"
+  },
+  {
+    "id": "90643633-7cbf-47a3-97cb-d30a408dacd2",
+    "detail": {
+      "nomorIdentitas": "7777777777",
+      "tujuan": "New purpose",
+      "pegawaiTujuan": "New employee",
+      "waktuDatang": "2025-06-20T22:38:30.7348918+07:00",
+      "waktuKeluar": "2025-06-21T01:38:30.740116+07:00",
+      "userId": 1,
+      "namaPelapor": "New Name",
+      "lokasi": "New Location",
+      "deskripsi": "New description"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.7349093+07:00"
+  },
+  {
+    "id": "f9a13283-9ac9-4c1c-baec-101b16f59a06",
+    "detail": {
+      "nomorIdentitas": "2222222222",
+      "tujuan": "Purpose2",
+      "pegawaiTujuan": "Employee2",
+      "waktuDatang": "2025-06-20T22:38:30.8309176+07:00",
+      "waktuKeluar": null,
+      "userId": 2,
+      "namaPelapor": "Count Test 2",
+      "lokasi": "Location2",
+      "deskripsi": "Desc2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:38:30.8309384+07:00"
+  },
+  {
+    "id": "eb16f93e-9526-41c0-81ee-f48a0a616b03",
+    "detail": {
+      "nomorIdentitas": "4444444444",
+      "tujuan": "Meeting",
+      "pegawaiTujuan": "Manager",
+      "waktuDatang": "2025-06-20T22:38:30.9132337+07:00",
+      "waktuKeluar": "2025-06-20T23:38:30.9176092+07:00",
+      "userId": 1,
+      "namaPelapor": "Exit Test",
+      "lokasi": "Office",
+      "deskripsi": "Visit"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.913248+07:00"
+  },
+  {
+    "id": "2257ddaf-ce12-43bd-89e3-9701763cff1b",
+    "detail": {
+      "nomorIdentitas": "5555555555",
+      "tujuan": "Meeting",
+      "pegawaiTujuan": "Manager",
+      "waktuDatang": "2025-06-20T22:38:30.9818833+07:00",
+      "waktuKeluar": "2025-06-20T22:38:31.0049962+07:00",
+      "userId": 1,
+      "namaPelapor": "Auto Exit",
+      "lokasi": "Office",
+      "deskripsi": "Visit"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.9818974+07:00"
+  },
+  {
+    "id": "ce87c37f-da4c-4fdb-a392-cd01e9edad13",
+    "detail": {
+      "nomorIdentitas": "3333333333",
+      "tujuan": "Test",
+      "pegawaiTujuan": "Manager",
+      "waktuDatang": "2025-06-20T22:38:31.0357043+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Status Test",
+      "lokasi": "Lobby",
+      "deskripsi": "Test"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:38:31.0357118+07:00"
+  },
+  {
+    "id": "9bb812c1-f791-427f-b08f-66eb92f3d49e",
+    "detail": {
+      "nomorIdentitas": "1111111111",
+      "tujuan": "Business",
+      "pegawaiTujuan": "Manager1",
+      "waktuDatang": "2025-06-20T22:38:31.0925455+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Guest1",
+      "lokasi": "Lobby",
+      "deskripsi": "Meeting"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:31.0925576+07:00"
+  },
+  {
+    "id": "45c451b4-3788-4048-bd9e-291c410e9be2",
+    "detail": {
+      "nomorIdentitas": "1111111111",
+      "tujuan": "Purpose1",
+      "pegawaiTujuan": "Emp1",
+      "waktuDatang": "2025-06-20T22:38:31.1194823+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Stat Test adb2edad08d54022afc20d618c849fc5",
+      "lokasi": "Loc1",
+      "deskripsi": "Desc1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:31.1194926+07:00"
+  },
+  {
+    "id": "18ef637a-1fcc-45b9-8ed3-4bf03746dd9e",
+    "detail": {
+      "nomorIdentitas": "2222222222",
+      "tujuan": "Purpose2",
+      "pegawaiTujuan": "Emp2",
+      "waktuDatang": "2025-06-20T22:38:31.140661+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Stat Test adb2edad08d54022afc20d618c849fc5",
+      "lokasi": "Loc2",
+      "deskripsi": "Desc2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:38:31.1406719+07:00"
+  },
+  {
+    "id": "61ad01c6-dd59-4f1a-9dca-365cc2e6b6e5",
+    "detail": {
+      "nomorIdentitas": "3333333333",
+      "tujuan": "Purpose3",
+      "pegawaiTujuan": "Emp3",
+      "waktuDatang": "2025-06-20T22:38:31.1588862+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Stat Test adb2edad08d54022afc20d618c849fc5",
+      "lokasi": "Loc3",
+      "deskripsi": "Desc3"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-20T22:38:31.1589053+07:00"
+  },
+  {
+    "id": "5178b540-43d0-4f5b-a6d6-fd21521d6b67",
+    "detail": {
+      "nomorIdentitas": "2222222222",
+      "tujuan": "Testing",
+      "pegawaiTujuan": "Test Manager",
+      "waktuDatang": "2025-06-20T22:41:56.3787646+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Guest Test",
+      "lokasi": "Reception",
+      "deskripsi": "Test visit"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.3787705+07:00"
+  },
+  {
+    "id": "ceb3258a-34ce-436f-9e0d-12b3d1c87223",
+    "detail": {
+      "nomorIdentitas": "9999999999",
+      "tujuan": "Purpose",
+      "pegawaiTujuan": "Employee",
+      "waktuDatang": "2025-06-20T22:41:56.4732533+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Total Test",
+      "lokasi": "Location",
+      "deskripsi": "Description"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.4732654+07:00"
+  },
+  {
+    "id": "95fbe44e-448d-4b8b-94de-4fadf0d38424",
+    "detail": {
+      "nomorIdentitas": "9876543210",
+      "tujuan": "Konsultasi",
+      "pegawaiTujuan": "HR Manager",
+      "waktuDatang": "2025-06-20T22:41:56.5200972+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Jane Visitor",
+      "lokasi": "Reception",
+      "deskripsi": "Kunjungan kerja"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.5201087+07:00"
+  },
+  {
+    "id": "c1674830-ec9e-4401-9821-a76ba3e29d24",
+    "detail": {
+      "nomorIdentitas": "1234567890123456",
+      "tujuan": "Meeting dengan manager",
+      "pegawaiTujuan": "Manager Sales",
+      "waktuDatang": "2025-06-20T22:41:56.548609+07:00",
+      "waktuKeluar": "2025-06-21T00:41:56.52578+07:00",
+      "userId": 1,
+      "namaPelapor": "John Visitor",
+      "lokasi": "Lobby Utama",
+      "deskripsi": "Kunjungan bisnis"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.548619+07:00"
+  },
+  {
+    "id": "583f03da-70e4-48af-b673-67e9bb3d8dc0",
+    "detail": {
+      "nomorIdentitas": "7777777777",
+      "tujuan": "New purpose",
+      "pegawaiTujuan": "New employee",
+      "waktuDatang": "2025-06-20T22:41:56.5758841+07:00",
+      "waktuKeluar": "2025-06-21T01:41:56.5795827+07:00",
+      "userId": 1,
+      "namaPelapor": "New Name",
+      "lokasi": "New Location",
+      "deskripsi": "New description"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.5758907+07:00"
+  },
+  {
+    "id": "741425d2-6332-48e2-a235-c35284de8279",
+    "detail": {
+      "nomorIdentitas": "1111111111",
+      "tujuan": "Purpose1",
+      "pegawaiTujuan": "Employee1",
+      "waktuDatang": "2025-06-20T22:41:56.6362678+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Count Test 1",
+      "lokasi": "Location1",
+      "deskripsi": "Desc1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.6362784+07:00"
+  },
+  {
+    "id": "8bbb9c15-3767-4078-bd53-71b453f8fc19",
+    "detail": {
+      "nomorIdentitas": "2222222222",
+      "tujuan": "Purpose2",
+      "pegawaiTujuan": "Employee2",
+      "waktuDatang": "2025-06-20T22:41:56.6578628+07:00",
+      "waktuKeluar": null,
+      "userId": 2,
+      "namaPelapor": "Count Test 2",
+      "lokasi": "Location2",
+      "deskripsi": "Desc2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:41:56.6578723+07:00"
+  },
+  {
+    "id": "2388df29-9546-4180-8d7a-1aea0ef45a8b",
+    "detail": {
+      "nomorIdentitas": "4444444444",
+      "tujuan": "Meeting",
+      "pegawaiTujuan": "Manager",
+      "waktuDatang": "2025-06-20T22:41:56.7095917+07:00",
+      "waktuKeluar": "2025-06-20T23:41:56.7121014+07:00",
+      "userId": 1,
+      "namaPelapor": "Exit Test",
+      "lokasi": "Office",
+      "deskripsi": "Visit"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.7096022+07:00"
+  },
+  {
+    "id": "68fe4126-77db-475f-9012-685c7d23c248",
+    "detail": {
+      "nomorIdentitas": "5555555555",
+      "tujuan": "Meeting",
+      "pegawaiTujuan": "Manager",
+      "waktuDatang": "2025-06-20T22:41:56.75824+07:00",
+      "waktuKeluar": "2025-06-20T22:41:56.7773557+07:00",
+      "userId": 1,
+      "namaPelapor": "Auto Exit",
+      "lokasi": "Office",
+      "deskripsi": "Visit"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.7582501+07:00"
+  },
+  {
+    "id": "691f3536-3026-46ab-9ef8-29d3c7976d5b",
+    "detail": {
+      "nomorIdentitas": "3333333333",
+      "tujuan": "Test",
+      "pegawaiTujuan": "Manager",
+      "waktuDatang": "2025-06-20T22:41:56.8040555+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Status Test",
+      "lokasi": "Lobby",
+      "deskripsi": "Test"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:41:56.8040655+07:00"
+  },
+  {
+    "id": "f7da3fd3-2957-44d4-8c23-1e0c2dc63cd2",
+    "detail": {
+      "nomorIdentitas": "1111111111",
+      "tujuan": "Business",
+      "pegawaiTujuan": "Manager1",
+      "waktuDatang": "2025-06-20T22:41:56.8577771+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Guest1",
+      "lokasi": "Lobby",
+      "deskripsi": "Meeting"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.8577868+07:00"
+  },
+  {
+    "id": "e9737f83-3c37-46a6-83a9-6a041c1e6599",
+    "detail": {
+      "nomorIdentitas": "1111111111",
+      "tujuan": "Purpose1",
+      "pegawaiTujuan": "Emp1",
+      "waktuDatang": "2025-06-20T22:41:56.8835216+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Stat Test a0faa45d356b47e4b1467590fa4dcaaa",
+      "lokasi": "Loc1",
+      "deskripsi": "Desc1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.8835303+07:00"
+  },
+  {
+    "id": "479f9f24-b93f-4de1-829f-2206c10620c3",
+    "detail": {
+      "nomorIdentitas": "2222222222",
+      "tujuan": "Purpose2",
+      "pegawaiTujuan": "Emp2",
+      "waktuDatang": "2025-06-20T22:41:56.9037514+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Stat Test a0faa45d356b47e4b1467590fa4dcaaa",
+      "lokasi": "Loc2",
+      "deskripsi": "Desc2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:41:56.9037637+07:00"
+  },
+  {
+    "id": "2e894742-717f-40ba-ac46-004d882bdb3d",
+    "detail": {
+      "nomorIdentitas": "3333333333",
+      "tujuan": "Purpose3",
+      "pegawaiTujuan": "Emp3",
+      "waktuDatang": "2025-06-20T22:41:56.9218504+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Stat Test a0faa45d356b47e4b1467590fa4dcaaa",
+      "lokasi": "Loc3",
+      "deskripsi": "Desc3"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-20T22:41:56.9218593+07:00"
   }
 ]

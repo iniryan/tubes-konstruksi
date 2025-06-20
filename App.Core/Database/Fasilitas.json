@@ -1545,5 +1545,187 @@
     },
     "status": 0,
     "tanggalDibuat": "2025-06-20T13:16:19.6356014+07:00"
+  },
+  {
+    "id": "1b2949ce-64d5-4ba9-ab31-e6f57083c260",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "AC",
+      "userId": 2,
+      "namaPelapor": "Budi",
+      "lokasi": "Ruang 2",
+      "deskripsi": "AC mati total"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.4096341+07:00"
+  },
+  {
+    "id": "693c4ebc-a187-46e2-ab3c-a0ceb468116c",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "AC",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Ruang 101",
+      "deskripsi": "AC tidak dingin"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.4981431+07:00"
+  },
+  {
+    "id": "1dac1f3b-371c-4a2a-8a8a-ebd438968c27",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "Toilet",
+      "userId": 1,
+      "namaPelapor": "Test1",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.5342505+07:00"
+  },
+  {
+    "id": "33db7b47-ad7a-4b54-8da6-afcc40452294",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "Toilet",
+      "userId": 2,
+      "namaPelapor": "Test2",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:38:30.5707224+07:00"
+  },
+  {
+    "id": "ec305d4d-d8fb-4681-a446-688b7bb3b1c1",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "Proyektor",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Lab",
+      "deskripsi": "Proyektor tidak menyala"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:38:30.7144747+07:00"
+  },
+  {
+    "id": "f81a9ff0-01a9-4819-94f8-9b5164d4c57b",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "jenisFasilitas": "Lampu",
+      "userId": 1,
+      "namaPelapor": "Test",
+      "lokasi": "Test Area",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.8875123+07:00"
+  },
+  {
+    "id": "c50cf948-802f-40a2-91c4-bd18c7b3ecba",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "AC",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Ruang 1",
+      "deskripsi": "AC rusak"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:38:30.9242572+07:00"
+  },
+  {
+    "id": "24bc3796-ebb1-468e-9117-039f5010a6e0",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "AC",
+      "userId": 2,
+      "namaPelapor": "Budi",
+      "lokasi": "Ruang 2",
+      "deskripsi": "AC mati total"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.3772814+07:00"
+  },
+  {
+    "id": "503ce1ef-f190-4b96-814c-3a07a64dea7b",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "AC",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Ruang 101",
+      "deskripsi": "AC tidak dingin"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.4376561+07:00"
+  },
+  {
+    "id": "2360b600-b7d3-4bd5-ac0e-abee46842821",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "Toilet",
+      "userId": 1,
+      "namaPelapor": "Test1",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.4576778+07:00"
+  },
+  {
+    "id": "ceaea343-ea9c-4d2f-84f4-7c9886938b78",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "Toilet",
+      "userId": 2,
+      "namaPelapor": "Test2",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:41:56.4779443+07:00"
+  },
+  {
+    "id": "6cd801c9-01f2-4700-aeb7-38d55d999196",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "Proyektor",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Lab",
+      "deskripsi": "Proyektor tidak menyala"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T22:41:56.5634368+07:00"
+  },
+  {
+    "id": "90f56c16-91f0-429e-bcbf-aad51c54e78c",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "jenisFasilitas": "Lampu",
+      "userId": 1,
+      "namaPelapor": "Test",
+      "lokasi": "Test Area",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.6764091+07:00"
+  },
+  {
+    "id": "f4cca659-0845-4d0d-9f86-59930703d061",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "AC",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Ruang 1",
+      "deskripsi": "AC rusak"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T22:41:56.7040799+07:00"
   }
 ]

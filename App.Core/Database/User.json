@@ -1429,5 +1429,185 @@
     "role": "User",
     "alamat": "Alamat",
     "noTelepon": "123"
+  },
+  {
+    "id": 160,
+    "name": "Test User",
+    "username": "testuser_dd14a6e0ea0a47b2a549c62b5e8796b6",
+    "password": "7e6e0c3079a08c5cc6036789b57e951f65f82383913ba1a49ae992544f1b4b6e",
+    "role": "Admin",
+    "alamat": "Jl. Test No. 1",
+    "noTelepon": "08123456789"
+  },
+  {
+    "id": 161,
+    "name": "User One",
+    "username": "user1_1b7936794c2746ed9720ee999ab7cf6a",
+    "password": "e6c3da5b206634d7f3f3586d747ffdb36b5c675757b380c6a5fe5c570c714349",
+    "role": "User",
+    "alamat": "Alamat1",
+    "noTelepon": "111"
+  },
+  {
+    "id": 162,
+    "name": "User Two",
+    "username": "user2_d7d0e50034184d6082b87d9dbab5bac9",
+    "password": "1ba3d16e9881959f8c9a9762854f72c6e6321cdd44358a10a4e939033117eab9",
+    "role": "User",
+    "alamat": "Alamat2",
+    "noTelepon": "222"
+  },
+  {
+    "id": 163,
+    "name": "User One",
+    "username": "user1_0028f803b7b541539d2e8c431bd81f35",
+    "password": "e6c3da5b206634d7f3f3586d747ffdb36b5c675757b380c6a5fe5c570c714349",
+    "role": "User",
+    "alamat": "Alamat1",
+    "noTelepon": "111"
+  },
+  {
+    "id": 164,
+    "name": "User Two",
+    "username": "user2_78cd696e13c3475aa8152e858351a5f5",
+    "password": "1ba3d16e9881959f8c9a9762854f72c6e6321cdd44358a10a4e939033117eab9",
+    "role": "Admin",
+    "alamat": "Alamat2",
+    "noTelepon": "222"
+  },
+  {
+    "id": 165,
+    "name": "Test User",
+    "username": "testuser_85587dcb593d4b1ca3db2456292a1a11",
+    "password": "405f42005704da932ea8a4ad1f1e8c26e751af0316caa1e7e4bef4af4e2d93fe",
+    "role": "User",
+    "alamat": "Alamat",
+    "noTelepon": "123"
+  },
+  {
+    "id": 166,
+    "name": "Test User",
+    "username": "TestUser_981c71506991480e9c41f46d6821aad8",
+    "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+    "role": "User",
+    "alamat": "Alamat",
+    "noTelepon": "123"
+  },
+  {
+    "id": 167,
+    "name": "Name1",
+    "username": "duplicateuser_1cfa1ba05816475da124d8df8875f6c5",
+    "password": "0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e",
+    "role": "User",
+    "alamat": "Alamat1",
+    "noTelepon": "123"
+  },
+  {
+    "id": 168,
+    "name": "Login User",
+    "username": "loginuser_67a39a3109324882bd5c65fe83e613c0",
+    "password": "0f17957b2907dcf206339e4d5c19f294cd1187de35dd2dc52d39c0b42ac44fd7",
+    "role": "User",
+    "alamat": "Alamat",
+    "noTelepon": "123"
+  },
+  {
+    "id": 169,
+    "name": "Test User",
+    "username": "TestUser_f87e3ed8b5bb4befbb12779f4f98c751",
+    "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+    "role": "User",
+    "alamat": "Alamat",
+    "noTelepon": "123"
+  },
+  {
+    "id": 170,
+    "name": "Test User",
+    "username": "testuser_471ba1bee33842c2abc3ce3df8f385dc",
+    "password": "7e6e0c3079a08c5cc6036789b57e951f65f82383913ba1a49ae992544f1b4b6e",
+    "role": "Admin",
+    "alamat": "Jl. Test No. 1",
+    "noTelepon": "08123456789"
+  },
+  {
+    "id": 171,
+    "name": "User One",
+    "username": "user1_3fb00c16c082403aa7dba0d659db1ac9",
+    "password": "e6c3da5b206634d7f3f3586d747ffdb36b5c675757b380c6a5fe5c570c714349",
+    "role": "User",
+    "alamat": "Alamat1",
+    "noTelepon": "111"
+  },
+  {
+    "id": 172,
+    "name": "User Two",
+    "username": "user2_f2f14f0222e542049ed5e93d8f15c136",
+    "password": "1ba3d16e9881959f8c9a9762854f72c6e6321cdd44358a10a4e939033117eab9",
+    "role": "User",
+    "alamat": "Alamat2",
+    "noTelepon": "222"
+  },
+  {
+    "id": 173,
+    "name": "User One",
+    "username": "user1_b4740b3bd5b0417c924a71b2bafb89b3",
+    "password": "e6c3da5b206634d7f3f3586d747ffdb36b5c675757b380c6a5fe5c570c714349",
+    "role": "User",
+    "alamat": "Alamat1",
+    "noTelepon": "111"
+  },
+  {
+    "id": 174,
+    "name": "User Two",
+    "username": "user2_dedaaac9bf554fb387c539b72a792c3d",
+    "password": "1ba3d16e9881959f8c9a9762854f72c6e6321cdd44358a10a4e939033117eab9",
+    "role": "Admin",
+    "alamat": "Alamat2",
+    "noTelepon": "222"
+  },
+  {
+    "id": 175,
+    "name": "Test User",
+    "username": "testuser_00385f8fe4dc42d7a39c7bcdc954a488",
+    "password": "405f42005704da932ea8a4ad1f1e8c26e751af0316caa1e7e4bef4af4e2d93fe",
+    "role": "User",
+    "alamat": "Alamat",
+    "noTelepon": "123"
+  },
+  {
+    "id": 176,
+    "name": "Test User",
+    "username": "TestUser_2a17974dd0c34375a4d2c2b8e20f75eb",
+    "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+    "role": "User",
+    "alamat": "Alamat",
+    "noTelepon": "123"
+  },
+  {
+    "id": 177,
+    "name": "Name1",
+    "username": "duplicateuser_ddce6c80d0e94e5ea9d0e6e77bd9d400",
+    "password": "0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e",
+    "role": "User",
+    "alamat": "Alamat1",
+    "noTelepon": "123"
+  },
+  {
+    "id": 178,
+    "name": "Login User",
+    "username": "loginuser_4c5eeba8935c4c5f9ce0752cdfe8ed2f",
+    "password": "0f17957b2907dcf206339e4d5c19f294cd1187de35dd2dc52d39c0b42ac44fd7",
+    "role": "User",
+    "alamat": "Alamat",
+    "noTelepon": "123"
+  },
+  {
+    "id": 179,
+    "name": "Test User",
+    "username": "TestUser_77ad509d8eb145cd8c947ce647af27d5",
+    "password": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+    "role": "User",
+    "alamat": "Alamat",
+    "noTelepon": "123"
   }
 ]
