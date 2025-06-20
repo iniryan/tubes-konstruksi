@@ -34,7 +34,6 @@ namespace App.Forms
             dataGridViewDataLaporanTamu.SelectionChanged += dataGridViewDataLaporanTamu_SelectionChanged;
             dataGridViewDataLaporanTamu.RowPostPaint += dataGridViewDataLaporanTamu_RowPostPaint;
             buttonClear.Click += buttonClear_Click;
-            //buttonDelete.Click += buttonDelete_Click;
         }
 
         private async void LaporanTamu_Load(object sender, EventArgs e)
@@ -42,7 +41,6 @@ namespace App.Forms
             SetupDataGridViewStyles();
             await LoadDataAsync();
         }
-
         private void SetupDataGridViewStyles()
         {
             dataGridViewDataLaporanTamu.RowHeadersVisible = true;
@@ -54,12 +52,9 @@ namespace App.Forms
             dataGridViewDataLaporanTamu.AllowUserToDeleteRows = false;
             dataGridViewDataLaporanTamu.ReadOnly = true;
 
-            var headerStyle = dataGridViewDataLaporanTamu.ColumnHeadersDefaultCellStyle;
-            headerStyle.BackColor = Color.Navy;
-            headerStyle.ForeColor = Color.White;
-            headerStyle.Font = new Font("Product Sans", 10, FontStyle.Bold);
-            headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            ApplyDataGridViewStyling(dataGridViewDataLaporanTamu);
 
+            var headerStyle = dataGridViewDataLaporanTamu.ColumnHeadersDefaultCellStyle;
             dataGridViewDataLaporanTamu.TopLeftHeaderCell.Style.ApplyStyle(headerStyle);
         }
 
@@ -77,7 +72,6 @@ namespace App.Forms
                 e.Graphics.DrawString(symbol, font, brush, x, y);
             }
         }
-
         private async Task LoadDataAsync()
         {
             var data = await _guestRepository.AmbilSemuaTamuAsync();
@@ -95,6 +89,9 @@ namespace App.Forms
             }).ToList();
 
             dataGridViewDataLaporanTamu.DataSource = displayData;
+
+            ApplyDataGridViewStyling(dataGridViewDataLaporanTamu);
+
             if (dataGridViewDataLaporanTamu.Columns.Contains("Id"))
                 dataGridViewDataLaporanTamu.Columns["Id"].Visible = false;
         }
@@ -128,7 +125,9 @@ namespace App.Forms
                     labelTextFormTambahTamu.Text = "Ubah Data Tamu";
                     buttonSave.Text = "Ubah Data";
                 }
-            } else {
+            }
+            else
+            {
                 ClearForm();
             }
         }
@@ -219,7 +218,6 @@ namespace App.Forms
         }
         private void dataGridViewDataLaporanTamu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Optional: Isi form jika baris diklik
             if (e.RowIndex >= 0)
             {
                 var row = dataGridViewDataLaporanTamu.Rows[e.RowIndex];
@@ -228,7 +226,6 @@ namespace App.Forms
                 textTujuan.Text = row.Cells["Tujuan"].Value?.ToString();
                 textPegawai.Text = row.Cells["PegawaiTujuan"].Value?.ToString();
 
-                // Set date picker untuk waktu keluar
                 if (row.Cells["WaktuKeluar"].Value is DateTime waktuKeluar)
                 {
                     dateTimePickerWaktuKeluar.Value = waktuKeluar;
@@ -245,18 +242,36 @@ namespace App.Forms
         }
         private void labelTextLokasi_Click(object sender, EventArgs e)
         {
-            // Kosongkan atau tambahkan logika jika diperlukan
+            //
         }
         private void label1_Click(object sender, EventArgs e)
         {
-            // Kosongkan atau tambahkan logika jika diperlukan
+            //
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            // Kosongkan atau tambahkan logika jika diperlukan
+            //
         }
+        private void ApplyDataGridViewStyling(DataGridView dataGridView)
+        {
+            dataGridView.RowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
 
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219);
+            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Product Sans", 10, FontStyle.Bold);
+            dataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.EnableHeadersVisualStyles = false;
 
+            dataGridView.DefaultCellStyle.Font = new Font("Product Sans", 9);
+            dataGridView.DefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridView.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            dataGridView.GridColor = Color.FromArgb(200, 200, 200);
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView.BackgroundColor = SystemColors.Control;
+        }
 
     }
 }
