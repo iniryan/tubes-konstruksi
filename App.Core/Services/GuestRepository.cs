@@ -12,6 +12,36 @@ namespace App.Core.Services
     {
         private readonly string _filePath;
 
+        private static readonly Dictionary<string, Func<string, bool>> _validationRules = new()
+        {
+            { "NamaPelapor", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 100 },
+            { "Lokasi", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 200 },
+            { "Deskripsi", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 500 },
+            { "NomorIdentitas", value => !string.IsNullOrWhiteSpace(value) && value.Length >= 5 && value.Length <= 20 },
+            { "Tujuan", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 200 },
+            { "PegawaiTujuan", value => !string.IsNullOrWhiteSpace(value) && value.Length <= 100 }
+        };
+
+        private static readonly Dictionary<string, Action<DetailTamu, string>> _fieldSetters = new()
+        {
+            { "NamaPelapor", (detail, value) => detail.NamaPelapor = value },
+            { "Lokasi", (detail, value) => detail.Lokasi = value },
+            { "Deskripsi", (detail, value) => detail.Deskripsi = value },
+            { "NomorIdentitas", (detail, value) => detail.NomorIdentitas = value },
+            { "Tujuan", (detail, value) => detail.Tujuan = value },
+            { "PegawaiTujuan", (detail, value) => detail.PegawaiTujuan = value }
+        };
+
+        private static readonly Dictionary<string, Func<DetailTamu, string>> _fieldGetters = new()
+        {
+            { "NamaPelapor", detail => detail.NamaPelapor },
+            { "Lokasi", detail => detail.Lokasi },
+            { "Deskripsi", detail => detail.Deskripsi },
+            { "NomorIdentitas", detail => detail.NomorIdentitas },
+            { "Tujuan", detail => detail.Tujuan },
+            { "PegawaiTujuan", detail => detail.PegawaiTujuan }
+        };
+
         public GuestRepository()
         {
             string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -34,9 +64,22 @@ namespace App.Core.Services
             string nomorIdentitas,
             string tujuan,
             string pegawaiTujuan,
-            DateTime? waktuKeluar // Tambahan parameter waktu keluar
+            DateTime? waktuKeluar
         )
         {
+            // table-driven
+            var fieldsToValidate = new Dictionary<string, string>
+            {
+                { "NamaPelapor", namaPelapor },
+                { "Lokasi", lokasi },
+                { "Deskripsi", deskripsi },
+                { "NomorIdentitas", nomorIdentitas },
+                { "Tujuan", tujuan },
+                { "PegawaiTujuan", pegawaiTujuan }
+            };
+
+            ValidateFields(fieldsToValidate);
+
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailTamu>>(_filePath);
 
             var detail = new DetailTamu(userId, namaPelapor, lokasi, deskripsi, nomorIdentitas, tujuan, pegawaiTujuan)
@@ -49,12 +92,13 @@ namespace App.Core.Services
             {
                 semuaPengaduan.Add(pengaduanBaru);
                 await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine($"Error: {e.Message}");
             }
             return pengaduanBaru;
-                
+
         }
 
         // READ - Get all
@@ -76,19 +120,28 @@ namespace App.Core.Services
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailTamu>>(_filePath);
             var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
             if (pengaduan == null)
+            {
                 throw new KeyNotFoundException("Pengaduan dengan ID tersebut tidak ditemukan.");
-            try
-            {
-                pengaduan.UbahStatus(statusBaru);
-                await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
             }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Error: {e.Message}");
-            }
+            pengaduan.UbahStatus(statusBaru);
+            await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
         }
 
-        // --- TAMBAHAN: Metode untuk mencatat waktu keluar secara manual (misal update dari UI) ---
+        public async Task<Dictionary<StatusPengaduan, int>> HitungKomposisiStatusAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaTamuAsync();
+            return semuaPengaduan
+                .GroupBy(p => p.Status)
+                .ToDictionary(g => g.Key, g => g.Count());
+        }
+
+        public async Task<int> HitungTotalPengaduanAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaTamuAsync();
+            return semuaPengaduan.Count;
+        }
+
+        // UPDATE - Atur waktu keluar
         public async Task AturWaktuKeluarAsync(string id, DateTime? waktuKeluar = null)
         {
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailTamu>>(_filePath);
@@ -109,7 +162,7 @@ namespace App.Core.Services
             string nomorIdentitas,
             string tujuan,
             string pegawaiTujuan,
-            DateTime? waktuKeluar // Tambahan parameter waktu keluar
+            DateTime? waktuKeluar
         )
         {
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailTamu>>(_filePath);
@@ -117,26 +170,27 @@ namespace App.Core.Services
             if (pengaduan == null)
                 throw new KeyNotFoundException("Pengaduan dengan ID tersebut tidak ditemukan untuk diubah.");
 
-            // Validasi input
-            if (string.IsNullOrWhiteSpace(namaPelapor)) throw new ArgumentException("Nama pelapor tidak boleh kosong.", nameof(namaPelapor));
-            if (string.IsNullOrWhiteSpace(lokasi)) throw new ArgumentException("Lokasi tidak boleh kosong.", nameof(lokasi));
-            if (string.IsNullOrWhiteSpace(deskripsi)) throw new ArgumentException("Deskripsi tidak boleh kosong.", nameof(deskripsi));
-            if (string.IsNullOrWhiteSpace(nomorIdentitas)) throw new ArgumentException("Nomor identitas tidak boleh kosong.", nameof(nomorIdentitas));
-            if (string.IsNullOrWhiteSpace(tujuan)) throw new ArgumentException("Tujuan tidak boleh kosong.", nameof(tujuan));
-            if (string.IsNullOrWhiteSpace(pegawaiTujuan)) throw new ArgumentException("Pegawai tujuan tidak boleh kosong.", nameof(pegawaiTujuan));
+            var fieldsToValidate = new Dictionary<string, string>
+            {
+                { "NamaPelapor", namaPelapor },
+                { "Lokasi", lokasi },
+                { "Deskripsi", deskripsi },
+                { "NomorIdentitas", nomorIdentitas },
+                { "Tujuan", tujuan },
+                { "PegawaiTujuan", pegawaiTujuan }
+            };
+
+            ValidateFields(fieldsToValidate);
 
             try
             {
-                pengaduan.Detail.NamaPelapor = namaPelapor;
-                pengaduan.Detail.Lokasi = lokasi;
-                pengaduan.Detail.Deskripsi = deskripsi;
-                pengaduan.Detail.NomorIdentitas = nomorIdentitas;
-                pengaduan.Detail.Tujuan = tujuan;
-                pengaduan.Detail.PegawaiTujuan = pegawaiTujuan;
-                pengaduan.Detail.WaktuKeluar = waktuKeluar; // Update waktu keluar
+                // Update fields using table-driven mapping
+                UpdateDetailFields(pengaduan.Detail, fieldsToValidate);
+                pengaduan.Detail.WaktuKeluar = waktuKeluar;
 
                 await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine($"Error: {e.Message}");
             }
@@ -173,6 +227,51 @@ namespace App.Core.Services
         {
             var semuaPengaduan = await AmbilSemuaTamuAsync();
             return semuaPengaduan.Count;
+        }
+
+        // Table-driven validation method
+        private void ValidateFields(Dictionary<string, string> fields)
+        {
+            var errors = new List<string>();
+
+            foreach (var field in fields)
+            {
+                if (_validationRules.TryGetValue(field.Key, out var rule))
+                {
+                    if (!rule(field.Value))
+                    {
+                        errors.Add($"Field '{field.Key}' tidak valid: '{field.Value}'");
+                    }
+                }
+            }
+
+            if (errors.Count > 0)
+            {
+                throw new ArgumentException($"Validasi gagal: {string.Join(", ", errors)}");
+            }
+        }
+
+        // Table-driven field update method
+        private void UpdateDetailFields(DetailTamu detail, Dictionary<string, string> fields)
+        {
+            foreach (var field in fields)
+            {
+                if (_fieldSetters.TryGetValue(field.Key, out var setter))
+                {
+                    setter(detail, field.Value);
+                }
+            }
+        }
+
+        // Table-driven field getter method
+        public Dictionary<string, string> GetDetailFields(DetailTamu detail)
+        {
+            var result = new Dictionary<string, string>();
+            foreach (var getter in _fieldGetters)
+            {
+                result[getter.Key] = getter.Value(detail);
+            }
+            return result;
         }
     }
 }
