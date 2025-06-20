@@ -10,11 +10,13 @@ namespace App.Core.Utils
     public class Validator
     {
         private readonly List<string> _allowedTypes;
-        private readonly int _maxLength;
-
-        public Validator()
+        private readonly int _maxLength; public Validator()
         {
-            var config = JsonNode.Parse(File.ReadAllText("config.json"));
+            string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string solutionDirectory = Path.GetFullPath(Path.Combine(exeDirectory, "..", "..", "..", ".."));
+            string configPath = Path.Combine(solutionDirectory, "App.Core", "Database", "config.json");
+
+            var config = JsonNode.Parse(File.ReadAllText(configPath));
             _allowedTypes = config["AllowedTypes"].AsArray().Select(t => t.ToString()).ToList();
             _maxLength = config["MaxDescriptionLength"].GetValue<int>();
         }
@@ -24,11 +26,9 @@ namespace App.Core.Utils
             if (detail == null)
                 throw new ArgumentNullException(nameof(detail), "Detail pengaduan tidak boleh null.");
 
-            // 1. Validasi jenis fasilitas berdasarkan daftar yang diizinkan dari config
             if (!_allowedTypes.Contains(detail.JenisFasilitas))
                 throw new ArgumentException($"Jenis fasilitas '{detail.JenisFasilitas}' tidak valid.");
 
-            // 2. Validasi panjang deskripsi berdasarkan batas maksimal dari config
             if (detail.Deskripsi.Length > _maxLength)
                 throw new ArgumentException($"Deskripsi terlalu panjang. Maksimal {_maxLength} karakter.");
         }

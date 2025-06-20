@@ -45,6 +45,11 @@
             panelContentPengaduan = new Panel();
             panelFormFasilitas = new Panel();
             panelMenuPengaduan = new Panel();
+            comboBoxUser = new ComboBox();
+            radioNewUser = new RadioButton();
+            radioExistingUser = new RadioButton();
+            labelTextNamaPelapor = new Label();
+            textBoxNamaPelapor = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDataFasilitas).BeginInit();
             panelContentPengaduan.SuspendLayout();
             panelFormFasilitas.SuspendLayout();
@@ -95,7 +100,7 @@
             // labelTextPrioritas
             // 
             labelTextPrioritas.AutoSize = true;
-            labelTextPrioritas.Location = new Point(25, 60);
+            labelTextPrioritas.Location = new Point(201, 220);
             labelTextPrioritas.Name = "labelTextPrioritas";
             labelTextPrioritas.Size = new Size(95, 20);
             labelTextPrioritas.TabIndex = 9;
@@ -134,16 +139,16 @@
             textBoxLokasi.BorderStyle = BorderStyle.None;
             textBoxLokasi.Location = new Point(29, 256);
             textBoxLokasi.Name = "textBoxLokasi";
-            textBoxLokasi.Size = new Size(360, 20);
+            textBoxLokasi.Size = new Size(160, 20);
             textBoxLokasi.TabIndex = 5;
             // 
             // comboBoxPrioritas
             // 
             comboBoxPrioritas.FlatStyle = FlatStyle.Flat;
             comboBoxPrioritas.FormattingEnabled = true;
-            comboBoxPrioritas.Location = new Point(29, 96);
+            comboBoxPrioritas.Location = new Point(205, 256);
             comboBoxPrioritas.Name = "comboBoxPrioritas";
-            comboBoxPrioritas.Size = new Size(360, 28);
+            comboBoxPrioritas.Size = new Size(184, 28);
             comboBoxPrioritas.TabIndex = 4;
             // 
             // buttonClearFormFasilitas
@@ -210,10 +215,15 @@
             // 
             // panelFormFasilitas
             // 
+            panelFormFasilitas.Controls.Add(comboBoxUser);
             panelFormFasilitas.Controls.Add(buttonSimpanFasilitas);
+            panelFormFasilitas.Controls.Add(radioNewUser);
             panelFormFasilitas.Controls.Add(labelTextDeskripsiPengaduan);
+            panelFormFasilitas.Controls.Add(textBoxNamaPelapor);
             panelFormFasilitas.Controls.Add(labelTextLokasi);
+            panelFormFasilitas.Controls.Add(radioExistingUser);
             panelFormFasilitas.Controls.Add(labelTextFasilitas);
+            panelFormFasilitas.Controls.Add(labelTextNamaPelapor);
             panelFormFasilitas.Controls.Add(labelTextPrioritas);
             panelFormFasilitas.Controls.Add(labelTextForm);
             panelFormFasilitas.Controls.Add(comboBoxJenisFasilitas);
@@ -234,6 +244,55 @@
             panelMenuPengaduan.Name = "panelMenuPengaduan";
             panelMenuPengaduan.Size = new Size(948, 673);
             panelMenuPengaduan.TabIndex = 11;
+            // 
+            // comboBoxUser
+            // 
+            comboBoxUser.FlatStyle = FlatStyle.Flat;
+            comboBoxUser.FormattingEnabled = true;
+            comboBoxUser.Location = new Point(29, 97);
+            comboBoxUser.Name = "comboBoxUser";
+            comboBoxUser.Size = new Size(160, 28);
+            comboBoxUser.TabIndex = 23;
+            // 
+            // radioNewUser
+            // 
+            radioNewUser.AutoSize = true;
+            radioNewUser.Location = new Point(231, 132);
+            radioNewUser.Name = "radioNewUser";
+            radioNewUser.Size = new Size(142, 24);
+            radioNewUser.TabIndex = 22;
+            radioNewUser.TabStop = true;
+            radioNewUser.Text = "Input Nama Baru";
+            radioNewUser.UseVisualStyleBackColor = true;
+            // 
+            // radioExistingUser
+            // 
+            radioExistingUser.AutoSize = true;
+            radioExistingUser.Location = new Point(231, 98);
+            radioExistingUser.Name = "radioExistingUser";
+            radioExistingUser.Size = new Size(158, 24);
+            radioExistingUser.TabIndex = 21;
+            radioExistingUser.TabStop = true;
+            radioExistingUser.Text = "Pilih User yang Ada";
+            radioExistingUser.UseVisualStyleBackColor = true;
+            // 
+            // labelTextNamaPelapor
+            // 
+            labelTextNamaPelapor.AutoSize = true;
+            labelTextNamaPelapor.Location = new Point(29, 62);
+            labelTextNamaPelapor.Name = "labelTextNamaPelapor";
+            labelTextNamaPelapor.Size = new Size(103, 20);
+            labelTextNamaPelapor.TabIndex = 20;
+            labelTextNamaPelapor.Text = "Nama Pelapor";
+            // 
+            // textBoxNamaPelapor
+            // 
+            textBoxNamaPelapor.BorderStyle = BorderStyle.None;
+            textBoxNamaPelapor.Font = new Font("Segoe UI", 9F);
+            textBoxNamaPelapor.Location = new Point(29, 98);
+            textBoxNamaPelapor.Name = "textBoxNamaPelapor";
+            textBoxNamaPelapor.Size = new Size(160, 20);
+            textBoxNamaPelapor.TabIndex = 19;
             // 
             // PengaduanFasilitasForm
             // 
@@ -270,5 +329,10 @@
         private Panel panelContentPengaduan;
         private Panel panelFormFasilitas;
         private Panel panelMenuPengaduan;
+        private ComboBox comboBoxUser;
+        private RadioButton radioNewUser;
+        private TextBox textBoxNamaPelapor;
+        private RadioButton radioExistingUser;
+        private Label labelTextNamaPelapor;
     }
 }

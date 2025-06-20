@@ -11,6 +11,7 @@ namespace App.Core.Services
     public class PengaduanFasilitasService
     {
         private readonly string _filePath;
+        private readonly Validator _validator;
         public PengaduanFasilitasService()
         {
             string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -21,20 +22,25 @@ namespace App.Core.Services
             {
                 Directory.CreateDirectory(directoryPath);
             }
-        }
 
-        // CREATE
+            _validator = new Validator();
+        }        // CREATE
         public async Task<Pengaduan<DetailFasilitas>> TambahPengaduanAsync(int userId, string namaPelapor, string lokasi,
             string deskripsi, Prioritas prioritas, string jenisFasilitas)
         {
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath);
-            var detail = new DetailFasilitas(userId, namaPelapor, lokasi, deskripsi, jenisFasilitas);
+            var detail = new DetailFasilitas(userId, namaPelapor, lokasi, deskripsi, prioritas, jenisFasilitas);
+
+            // Validate the detail before adding
+            _validator.Validate(detail);
+
             var pengaduanBaru = new Pengaduan<DetailFasilitas>(Guid.NewGuid().ToString(), detail);
             try
             {
                 semuaPengaduan.Add(pengaduanBaru);
                 await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine($"Error: {e.Message}");
             }
@@ -75,7 +81,7 @@ namespace App.Core.Services
         }
 
         // UPDATE - Mengubah detail data sebuah pengaduan
-        public async Task UbahDataPengaduanAsync(string id, string namaPelapor, string deskripsi, string lokasi, Prioritas prioritas, string jenisFasilitas)
+        public async Task UbahDataPengaduanAsync(string id, int userId, string namaPelapor, string lokasi, string deskripsi, Prioritas prioritas, string jenisFasilitas)
         {
             var semuaPengaduan = await JsonUtils.ReadDataAsync<Pengaduan<DetailFasilitas>>(_filePath);
             var pengaduan = semuaPengaduan.FirstOrDefault(p => p.Id == id);
@@ -83,7 +89,6 @@ namespace App.Core.Services
             {
                 throw new KeyNotFoundException($"Pengaduan dengan ID {id} tidak ditemukan.");
             }
-
             if (string.IsNullOrWhiteSpace(namaPelapor)) throw new ArgumentException("Nama pelapor tidak boleh kosong.", nameof(namaPelapor));
             if (string.IsNullOrWhiteSpace(lokasi)) throw new ArgumentException("Lokasi tidak boleh kosong.", nameof(lokasi));
             if (string.IsNullOrWhiteSpace(deskripsi)) throw new ArgumentException("Deskripsi tidak boleh kosong.", nameof(deskripsi));
@@ -91,10 +96,16 @@ namespace App.Core.Services
 
             try
             {
+                pengaduan.Detail.UserId = userId;
                 pengaduan.Detail.NamaPelapor = namaPelapor;
                 pengaduan.Detail.Lokasi = lokasi;
                 pengaduan.Detail.Deskripsi = deskripsi;
+                pengaduan.Detail.PrioritasPengaduan = prioritas;
                 pengaduan.Detail.JenisFasilitas = jenisFasilitas;
+
+                // Validate the updated detail
+                _validator.Validate(pengaduan.Detail);
+
                 await JsonUtils.WriteDataAsync(_filePath, semuaPengaduan);
             }
             catch (Exception e)
@@ -120,6 +131,14 @@ namespace App.Core.Services
         {
             var semuaPengaduan = await AmbilSemuaPengaduanAsync();
             return semuaPengaduan.Count;
+        }
+
+        public async Task<Dictionary<StatusPengaduan, int>> HitungKomposisiStatusAsync()
+        {
+            var semuaPengaduan = await AmbilSemuaPengaduanAsync();
+            return semuaPengaduan
+                .GroupBy(p => p.Status)
+                .ToDictionary(g => g.Key, g => g.Count());
         }
     }
 }
