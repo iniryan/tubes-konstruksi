@@ -15,6 +15,7 @@ namespace App.Forms
         private DaftarPengaduan daftarPengaduanForm;
         private MenuPengaduan menuPengaduanForm;
         private LaporanTamu lapTamu;
+        private Pengguna penggunaForm;
         private readonly User _currentUser;
         private readonly PengaduanKebersihanService _pengaduanKebersihanService;
         // private readonly PengaduanKeamananService _pengaduanKeamananService;
@@ -34,14 +35,17 @@ namespace App.Forms
             daftarPengaduanBtn.Click += daftarPengaduanBtn_Click;
             dashboardBtn.Click += dashboardBtn_Click;
             menuPengaduanBtn.Click += menuPengaduanBtn_Click;
+            menuPenggunaBtn.Click += menuPenggunaBtn_Click;
             logOutBtn.Click += logOutBtn_Click;
 
             daftarPengaduanForm = new DaftarPengaduan(_currentUser);
             menuPengaduanForm = new MenuPengaduan(_currentUser);
             lapTamu = new LaporanTamu(_currentUser);
+            penggunaForm = new Pengguna(_currentUser);
 
             labelNama.Text = $"Selamat datang, {_currentUser.Name}";
-            dataPengaduanTerbaruGridView.BackgroundColor = SystemColors.Control;
+
+            ApplyDataGridViewStyling(dataPengaduanTerbaruGridView);
 
             LoadDashboardDataAsync();
         }
@@ -58,7 +62,6 @@ namespace App.Forms
         {
             try
             {
-                // Load all counters in parallel
                 var tasks = new[]
                 {
                     _pengaduanKebersihanService.HitungTotalPengaduanAsync(),
@@ -69,7 +72,6 @@ namespace App.Forms
 
                 var results = await Task.WhenAll(tasks);
 
-                // Update UI on the main thread
                 this.Invoke((MethodInvoker)delegate
                 {
                     counterKebersihan.Text = results[0].ToString("N0");
@@ -100,13 +102,11 @@ namespace App.Forms
                 series.Points.Clear();
                 chartPengaduan.Titles.Clear();
 
-                // Configure chart appearance
                 var title = new System.Windows.Forms.DataVisualization.Charting.Title();
                 title.Font = new Font("Product Sans", 12, FontStyle.Bold);
                 title.Text = "Status Pengaduan";
                 chartPengaduan.Titles.Add(title);
 
-                // Configure chart areas
                 var chartArea = chartPengaduan.ChartAreas[0];
                 chartArea.AxisX.Title = "Status";
                 chartArea.AxisY.Title = "Jumlah";
@@ -116,16 +116,13 @@ namespace App.Forms
                 chartArea.AxisY.LabelStyle.Font = new Font("Product Sans", 9);
                 chartArea.AxisX.Interval = 1;
 
-                // Configure series
                 series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
                 series.Font = new Font("Product Sans", 9);
                 series.IsValueShownAsLabel = true;
                 series.LabelFormat = "#,##0";
 
-                // Set color palette
                 series.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
 
-                // Add data points
                 foreach (var item in dataStatus)
                 {
                     int pointIndex = series.Points.AddXY(item.Key.ToString(), item.Value);
@@ -134,7 +131,6 @@ namespace App.Forms
                     dataPoint.LabelToolTip = $"{item.Key}: {item.Value:N0}";
                 }
 
-                // Adjust chart position and size if needed
                 chartPengaduan.Visible = true;
             }
             catch (Exception ex)
@@ -147,7 +143,7 @@ namespace App.Forms
         {
             try
             {
-                // Get all types of complaints
+                // Get all pengaduan
                 var kebersihanTask = _pengaduanKebersihanService.AmbilSemuaPengaduanAsync();
                 var fasilitasTask = _pengaduanFasilitasService.AmbilSemuaPengaduanAsync();
                 // var keamananTask = _pengaduanKeamananService.AmbilSemuaPengaduanAsync();
@@ -155,10 +151,10 @@ namespace App.Forms
 
                 await Task.WhenAll(kebersihanTask, fasilitasTask, /*keamananTask,*/ tamuTask);
 
-                // Combine all complaints into one list
+                // Gabungkan semua pengaduan ke dalam satu list
                 var allComplaints = new List<object>();
-                
-                // Add Kebersihan complaints
+
+                // pengaduan Kebersihan
                 allComplaints.AddRange(kebersihanTask.Result.Select(p => new
                 {
                     Id = p.Id,
@@ -169,7 +165,7 @@ namespace App.Forms
                     TanggalDibuat = p.TanggalDibuat
                 }));
 
-                // Add Fasilitas complaints
+                // pengaduan Fasilitas
                 allComplaints.AddRange(fasilitasTask.Result.Select(p => new
                 {
                     Id = p.Id,
@@ -180,7 +176,7 @@ namespace App.Forms
                     TanggalDibuat = p.TanggalDibuat
                 }));
 
-                // Add Keamanan complaints
+                // pengaduan Keamanan
                 // allComplaints.AddRange(keamananTask.Result.Select(p => new
                 // {
                 //     Id = p.Id,
@@ -191,7 +187,7 @@ namespace App.Forms
                 //     TanggalDibuat = p.TanggalDibuat
                 // }));
 
-                // Add Tamu reports
+                // pengaduan Tamu
                 allComplaints.AddRange(tamuTask.Result.Select(t => new
                 {
                     Id = t.Id,
@@ -202,27 +198,24 @@ namespace App.Forms
                     TanggalDibuat = t.TanggalDibuat
                 }));
 
-                // Get 5 most recent complaints
+                // 5 pengaduan terbaru
                 var recentComplaints = allComplaints
                     .OrderByDescending(c => ((dynamic)c).TanggalDibuat)
                     .Take(5)
                     .ToList();
 
-                // Update the DataGridView on the UI thread
                 this.Invoke((MethodInvoker)delegate
                 {
                     dataPengaduanTerbaruGridView.DataSource = recentComplaints;
-                    
-                    // Configure the grid appearance
+
                     dataPengaduanTerbaruGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     dataPengaduanTerbaruGridView.Columns["Id"].Visible = false;
-                    
+
                     if (dataPengaduanTerbaruGridView.Columns["TanggalDibuat"] != null)
                     {
                         dataPengaduanTerbaruGridView.Columns["TanggalDibuat"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
                     }
 
-                    // Set column headers
                     foreach (DataGridViewColumn col in dataPengaduanTerbaruGridView.Columns)
                     {
                         col.HeaderText = col.Name switch
@@ -242,7 +235,6 @@ namespace App.Forms
                 MessageBox.Show($"Gagal memuat data pengaduan terbaru: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void daftarPengaduanBtn_Click(object sender, EventArgs e)
         {
             panelBase.Controls.Clear();
@@ -253,8 +245,8 @@ namespace App.Forms
             dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             buttonTamu.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            menuPenggunaBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
         }
-
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             panelBase.Controls.Clear();
@@ -264,6 +256,7 @@ namespace App.Forms
             daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             buttonTamu.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            menuPenggunaBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
         }
 
         private void RestoreDashboardPanel()
@@ -271,7 +264,6 @@ namespace App.Forms
             panelBase.Controls.Add(panelCounter);
             panelBase.Controls.Add(panelContent);
         }
-
         private void menuPengaduanBtn_Click(object sender, EventArgs e)
         {
             panelBase.Controls.Clear();
@@ -282,6 +274,7 @@ namespace App.Forms
             daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             buttonTamu.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            menuPenggunaBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
         }
 
         private void logOutBtn_Click(object sender, EventArgs e)
@@ -300,6 +293,51 @@ namespace App.Forms
             menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
             dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            menuPenggunaBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+        }
+
+        private void menuPenggunaBtn_Click(object sender, EventArgs e)
+        {
+            panelBase.Controls.Clear();
+            panelBase.Controls.Add(penggunaForm.GetPanel());
+            penggunaForm.GetPanel().Dock = DockStyle.Fill;
+
+            // Refresh data setiap kali menu pengguna dibuka
+            penggunaForm.RefreshData();
+
+            menuPenggunaBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Bold);
+            menuPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            daftarPengaduanBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            dashboardBtn.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+            buttonTamu.Font = new Font("Product Sans", 10.2f, FontStyle.Regular);
+        }
+
+        private void ApplyDataGridViewStyling(DataGridView dataGridView)
+        {
+            dataGridView.AutoGenerateColumns = true;
+            dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.MultiSelect = false;
+            dataGridView.ReadOnly = true;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+
+            dataGridView.RowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
+
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219);
+            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Product Sans", 10, FontStyle.Bold);
+            dataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.EnableHeadersVisualStyles = false;
+
+            dataGridView.DefaultCellStyle.Font = new Font("Product Sans", 9);
+            dataGridView.DefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridView.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            dataGridView.GridColor = Color.FromArgb(200, 200, 200);
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView.BackgroundColor = SystemColors.Control;
         }
     }
 }

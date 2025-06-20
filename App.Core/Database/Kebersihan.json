@@ -26,19 +26,6 @@
     "tanggalDibuat": "2025-06-16T11:11:42.2657583+07:00"
   },
   {
-    "id": "63ab402e-98c7-462c-b488-729b984a3c4c",
-    "detail": {
-      "prioritasPengaduan": 0,
-      "kategori": "WC Umum",
-      "userId": 3,
-      "namaPelapor": "ADI SAPUTRA",
-      "lokasi": "Jl. Ngagel No. 10",
-      "deskripsi": "WC umum di komplek kotor dan bau, mohon segera dibersihkan."
-    },
-    "status": 0,
-    "tanggalDibuat": "2025-06-16T12:28:58.1850147+07:00"
-  },
-  {
     "id": "d82dd820-3313-4a02-9210-c05dde38ee76",
     "detail": {
       "prioritasPengaduan": 0,
@@ -50,5 +37,3060 @@
     },
     "status": 0,
     "tanggalDibuat": "2025-06-16T12:41:44.493828+07:00"
+  },
+  {
+    "id": "8c862053-e070-44c0-a96b-e1db228e72a4",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Lingkungan",
+      "userId": 1,
+      "namaPelapor": "AHMAD ZUFAR",
+      "lokasi": "Jl. Ngagel Mulyo No. 100",
+      "deskripsi": "Tumpukan sampah di sekitar area perumahan, mohon segera dibersihkan."
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-16T17:26:57.4097162+07:00"
+  },
+  {
+    "id": "5f31c14a-8590-49a4-bb6a-9dcd591c3af9",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Saluran Air",
+      "userId": 7,
+      "namaPelapor": "JOHN DOE",
+      "lokasi": "Jl. Pahlawan No. 20",
+      "deskripsi": "Saluran air tersumbat di sekitar area perumahan, mohon segera diperbaiki."
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-16T17:42:57.3273949+07:00"
+  },
+  {
+    "id": "bdc9fb8e-b3bc-470a-bffc-1b0a89e46b5d",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "WC Umum",
+      "userId": 10,
+      "namaPelapor": "DIMAS AGUNG",
+      "lokasi": "Jl. Sidoarjo 10",
+      "deskripsi": "WC umum di Jl. Sidoarjo 10 kotor dan bau, mohon segera dibersihkan."
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-16T18:05:21.5386824+07:00"
+  },
+  {
+    "id": "d66f5c1c-7be4-42c5-8603-b393ccf70bfa",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Saluran Air",
+      "userId": 13,
+      "namaPelapor": "WIRA",
+      "lokasi": "Jl. Surabaya No. 15",
+      "deskripsi": "Saluran air tersumbat di sekitar area perumahan, mohon segera diperbaiki."
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-17T15:33:30.5483638+07:00"
+  },
+  {
+    "id": "967aaa77-9449-4f8b-839a-65e2fc7821f8",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Saluran Air",
+      "userId": 7,
+      "namaPelapor": "JOHN DOE",
+      "lokasi": "Jl. Pahlawan No. 20",
+      "deskripsi": "Saluran air tersumbat di sekitar area perumahan, mohon segera diperbaiki."
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T20:36:12.8649706+07:00"
+  },
+  {
+    "id": "6e9ce0b9-9669-4413-a661-9ebfa2a6507d",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Saluran Air",
+      "userId": 14,
+      "namaPelapor": "SMITH JAT",
+      "lokasi": "Jl. Kebon Jeruk No. 30",
+      "deskripsi": "Saluran air tersumbat di sekitar area perumahan, mohon segera diperbaiki."
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T20:36:36.5275527+07:00"
+  },
+  {
+    "id": "72f42118-c3a7-467d-b545-9fa1099b54f6",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 16,
+      "namaPelapor": "JAMES RICJ",
+      "lokasi": "Jl. Menteng No. 50",
+      "deskripsi": "Tumpukan sampah di sekitar area perumahan, mohon segera dibersihkan."
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T21:26:35.2719083+07:00"
+  },
+  {
+    "id": "f45c2637-7201-466d-8d52-37aac8738e82",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 19,
+      "namaPelapor": "DINI",
+      "lokasi": "Jl. Cempaka No. 25",
+      "deskripsi": "Tumpukan sampah di sekitar area perumahan, mohon segera dibersihkan."
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T21:58:15.3968815+07:00"
+  },
+  {
+    "id": "673b782b-304a-4625-be30-213f7ba828a0",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.172266+07:00"
+  },
+  {
+    "id": "92da939f-edca-4e4f-8127-cbcbe3270274",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.2337823+07:00"
+  },
+  {
+    "id": "34898c6b-fe4b-4d58-bd92-adad9b5fd645",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.2702458+07:00"
+  },
+  {
+    "id": "5832e53e-a99b-4d09-9883-7eb18b5fed6e",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.2726929+07:00"
+  },
+  {
+    "id": "33344b99-d9d1-449d-a481-34505456fcf7",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.2994796+07:00"
+  },
+  {
+    "id": "8477d1d4-8ab3-480b-95ed-0f74b99f4330",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.3157919+07:00"
+  },
+  {
+    "id": "18309594-a9ae-43ca-9525-3e1a1274cb6d",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.320128+07:00"
+  },
+  {
+    "id": "3aa11b9c-6c19-44d6-a769-90193d1162c5",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.3330839+07:00"
+  },
+  {
+    "id": "e14baec2-ad63-47a7-b99c-3ae12ffa07de",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:07:48.3595802+07:00"
+  },
+  {
+    "id": "16163b39-6776-4aba-9761-0664d1082eba",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:07:48.3883134+07:00"
+  },
+  {
+    "id": "596fc0bf-f75f-4145-9189-01e0ff9d52fc",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.4131052+07:00"
+  },
+  {
+    "id": "e64eb47e-44c6-456c-98c6-58161cb953d3",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:07:48.4247375+07:00"
+  },
+  {
+    "id": "711a203d-0794-4d8e-bb68-896956ca6414",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.4567889+07:00"
+  },
+  {
+    "id": "ce13981a-d132-4de4-b5a1-aec12a3be053",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:07:48.4788631+07:00"
+  },
+  {
+    "id": "719920d0-9f5b-447c-b5cd-7f966e6f22b2",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:07:48.4798489+07:00"
+  },
+  {
+    "id": "499d1786-41e2-4997-ac2a-944e0717b42a",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:07:48.5106211+07:00"
+  },
+  {
+    "id": "9b945dc7-8016-4717-b634-057b362e666f",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:12.9591843+07:00"
+  },
+  {
+    "id": "081eed2c-b1a5-4f65-8138-d14a08d3fb1c",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.0143433+07:00"
+  },
+  {
+    "id": "c2c37438-45f0-4ea2-833b-37483fa17f38",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.0602238+07:00"
+  },
+  {
+    "id": "ac4b4f8b-3751-480a-880a-406f4b0254b5",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.0620306+07:00"
+  },
+  {
+    "id": "733dcbe2-e62b-44e8-b0bf-9c10048fa784",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.0819417+07:00"
+  },
+  {
+    "id": "5c58b7cf-8c86-4a3d-b126-80e8545d142b",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.0955522+07:00"
+  },
+  {
+    "id": "d1070162-5a61-4816-abb2-c678725aa818",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.0981724+07:00"
+  },
+  {
+    "id": "a353ff60-8e19-4d00-9283-518b3bdf2adf",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.104409+07:00"
+  },
+  {
+    "id": "cbd55743-714f-4f61-8cce-c758af61dcf5",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:08:13.1252905+07:00"
+  },
+  {
+    "id": "86c20ecc-468b-4189-a776-e0ff6216fe3c",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:08:13.1481098+07:00"
+  },
+  {
+    "id": "237de11d-091e-4ee0-800b-dec3f24065dd",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.1710768+07:00"
+  },
+  {
+    "id": "ab1023ab-a396-45e2-9efb-5d51c2588f3d",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:08:13.1825663+07:00"
+  },
+  {
+    "id": "18ecb89e-913b-4931-8ba8-2a979c9767e7",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.2106452+07:00"
+  },
+  {
+    "id": "5b8f2cd8-af6e-430b-9ac5-e96bd2d75692",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:08:13.2301023+07:00"
+  },
+  {
+    "id": "bd54a32a-d401-4dff-b5a6-e679c2fa1172",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:08:13.2311281+07:00"
+  },
+  {
+    "id": "0092ce33-b74b-460c-b8d5-b0b4c33de608",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:08:13.2594392+07:00"
+  },
+  {
+    "id": "a6536352-511b-4283-8002-147c258217b7",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.4278649+07:00"
+  },
+  {
+    "id": "1f4e9359-750e-4d30-ab6d-ad226462df4b",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.4807805+07:00"
+  },
+  {
+    "id": "683d728f-76dd-4ca5-8ff4-6f02567d5920",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.5282708+07:00"
+  },
+  {
+    "id": "12391bd6-6271-4314-86b4-85250fada139",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.5301401+07:00"
+  },
+  {
+    "id": "b29f2cb5-dc00-4b8a-9808-b155c7282928",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.5517822+07:00"
+  },
+  {
+    "id": "64e9d532-6378-45b0-a4ae-e648e22d4373",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.5657296+07:00"
+  },
+  {
+    "id": "7fb3d4d0-55d5-4a83-91e5-116a6129f5df",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.5694405+07:00"
+  },
+  {
+    "id": "82b3c6c1-66d7-41aa-bdc4-8b50c5dd1bfc",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.578756+07:00"
+  },
+  {
+    "id": "143ed945-dd4d-4cd9-8f57-97ff3c196c83",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:09:13.6060315+07:00"
+  },
+  {
+    "id": "9b5dddc6-c28f-4481-ae36-5234feb62193",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:09:13.6286283+07:00"
+  },
+  {
+    "id": "68fca633-64c2-4a08-a80e-a5185ed0f285",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.6527488+07:00"
+  },
+  {
+    "id": "ab4b532a-eee3-4e32-8c6f-8c5f22448c2a",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:09:13.6622532+07:00"
+  },
+  {
+    "id": "9a215809-0992-46a4-ade0-454d120b210b",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.6913086+07:00"
+  },
+  {
+    "id": "7cdc7f08-fe8d-4063-a2b9-810c4e256a8b",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:13.7114206+07:00"
+  },
+  {
+    "id": "8b4d4d65-e8e7-4e08-b589-34e8d4f8b672",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:09:13.7125115+07:00"
+  },
+  {
+    "id": "fc4b6e7d-cc1c-4959-a937-d567bb9938b8",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:09:13.7410991+07:00"
+  },
+  {
+    "id": "f64f4b53-4a67-4fd2-978f-07ef4c59d24c",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.1926844+07:00"
+  },
+  {
+    "id": "319daa64-5221-46e0-84ff-501c28ba15ce",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.24229+07:00"
+  },
+  {
+    "id": "0b95907e-e477-4088-8d41-4b80b28a1c1c",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.2892961+07:00"
+  },
+  {
+    "id": "1b0a8ae0-161f-4e71-bbf7-67efddd37113",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.2914717+07:00"
+  },
+  {
+    "id": "599f2478-6ecb-4cfc-8295-e8013787212d",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.3130939+07:00"
+  },
+  {
+    "id": "79d9d06f-071e-4f86-96e3-ba4b1433b7ac",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.3264856+07:00"
+  },
+  {
+    "id": "33c2458b-a8a0-4c50-93ce-566bd2515db2",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.3297372+07:00"
+  },
+  {
+    "id": "11457415-8b57-497a-bfa2-a2489451c669",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.3385841+07:00"
+  },
+  {
+    "id": "5de83cc2-0f76-4bba-a9ed-ed479a23ed84",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:09:31.3592195+07:00"
+  },
+  {
+    "id": "05edf064-cddf-4df5-8006-f7999005e74d",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:09:31.3823324+07:00"
+  },
+  {
+    "id": "2df5d3d9-e424-48f9-a3c1-28020b9865f9",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.4040246+07:00"
+  },
+  {
+    "id": "c82c4db3-cc65-4ddc-9845-373f6c28de11",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:09:31.4128936+07:00"
+  },
+  {
+    "id": "f46c4b63-7ae4-43db-aa72-4988b1799d27",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.4420789+07:00"
+  },
+  {
+    "id": "90154f13-3c1a-41a6-b83c-f850b04f9e08",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:09:31.4637136+07:00"
+  },
+  {
+    "id": "95283c23-b762-4d90-99c8-152b8d263562",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:09:31.4654312+07:00"
+  },
+  {
+    "id": "e8d52e5b-80a5-4cc4-9173-0c2f525e9b0a",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:09:31.4954603+07:00"
+  },
+  {
+    "id": "d0743050-5b23-47b5-b3ab-c6488a9900f3",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.426973+07:00"
+  },
+  {
+    "id": "ffeaaedc-4189-410d-9a67-fa6e1f10f006",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.5086202+07:00"
+  },
+  {
+    "id": "d3359f93-6771-449e-b7ce-f515268c4c91",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.5891317+07:00"
+  },
+  {
+    "id": "4e485bb7-2b09-4e46-99a8-a2e6f136052d",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.5945514+07:00"
+  },
+  {
+    "id": "af679ffa-6b6f-437f-a9cd-3ebf918a7724",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.6319772+07:00"
+  },
+  {
+    "id": "bb5a6d79-1dd7-4b92-84ac-bf76a8d05211",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.6558522+07:00"
+  },
+  {
+    "id": "235c6c0e-f475-4207-94fd-4e22e6680237",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.6635572+07:00"
+  },
+  {
+    "id": "4c14a46a-c446-4578-903e-d38122d51204",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.680951+07:00"
+  },
+  {
+    "id": "6eed0ff5-f300-4654-9e56-87a9b44e917a",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:14:01.7231788+07:00"
+  },
+  {
+    "id": "2bb08106-8bf6-4322-882a-aac978aa0e2e",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:14:01.7744468+07:00"
+  },
+  {
+    "id": "20270bc9-83a7-4aa0-8293-0a1886092311",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.820352+07:00"
+  },
+  {
+    "id": "50d3dac6-9c96-43fa-9bf7-7328f756b159",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:14:01.8432458+07:00"
+  },
+  {
+    "id": "e02c3ff7-c0d2-4c30-baae-5d788ac3bb66",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.9079262+07:00"
+  },
+  {
+    "id": "7ef99467-f788-44ff-b262-2150b9d9a061",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:01.9444541+07:00"
+  },
+  {
+    "id": "a65c36c9-48ee-42c1-aff2-322c16f4c439",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:14:01.9472859+07:00"
+  },
+  {
+    "id": "64ce2654-d0d7-4abe-89f7-9ddb02130bdf",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:14:01.9971657+07:00"
+  },
+  {
+    "id": "4454ee58-82ed-471b-99a6-374054b0fdfc",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:40.969304+07:00"
+  },
+  {
+    "id": "c9e3d01e-fb87-4f20-b0a5-9feeb7a44f56",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.0673078+07:00"
+  },
+  {
+    "id": "814d8fc8-0bcc-4e58-9c82-d5c683e7e5d1",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.1736849+07:00"
+  },
+  {
+    "id": "8aa02a10-735f-4b48-8cd1-0aa726380669",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.1806412+07:00"
+  },
+  {
+    "id": "83932bd3-64c7-4e5a-889e-3d9f7e31a2e9",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.2342373+07:00"
+  },
+  {
+    "id": "93c70355-b9a6-4849-a537-0fc776d46feb",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.272628+07:00"
+  },
+  {
+    "id": "9bab3c44-cfee-41fb-b4a0-db9a84ac567d",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.2829557+07:00"
+  },
+  {
+    "id": "8195f74e-9fea-47b0-b807-c0f069e75a90",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.3043525+07:00"
+  },
+  {
+    "id": "fa83fc8a-cfba-4382-8f2d-43606f81a587",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:14:41.355172+07:00"
+  },
+  {
+    "id": "9e155811-8a50-4153-ae29-9ff381ea4f5d",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:14:41.4035033+07:00"
+  },
+  {
+    "id": "15f28603-b666-47db-b332-dcdca82045d5",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.4433452+07:00"
+  },
+  {
+    "id": "8e331cdd-33b4-4cf7-a785-177ef4dbdd9c",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:14:41.4616149+07:00"
+  },
+  {
+    "id": "9f4c7209-8e43-4fc4-847e-cc652e8ad513",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.5131946+07:00"
+  },
+  {
+    "id": "01ee422b-395b-4af2-b8ea-8c4b529a01fc",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:14:41.5445641+07:00"
+  },
+  {
+    "id": "b3e1f223-4bd2-4ca4-aaf7-7b6e8ae77dee",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:14:41.5472312+07:00"
+  },
+  {
+    "id": "9ac6278a-54e8-45da-9392-0a8c7d01a447",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:14:41.5892483+07:00"
+  },
+  {
+    "id": "8c9b4f01-fe7a-4aca-872e-caa7453b5ab6",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.3948686+07:00"
+  },
+  {
+    "id": "b9c3fa63-744b-486c-ad92-9458567c017a",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.5122434+07:00"
+  },
+  {
+    "id": "40cb6bb1-0d4c-4928-8f00-cbc654ec0b1a",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.6106482+07:00"
+  },
+  {
+    "id": "a9930058-2818-413d-8d28-6575ce156c13",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.6164816+07:00"
+  },
+  {
+    "id": "4fa2944d-8f55-4960-88f5-1ef119301939",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.6624983+07:00"
+  },
+  {
+    "id": "f1076d1c-cfb3-4922-bf63-9c0a0d22d2c3",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.6925881+07:00"
+  },
+  {
+    "id": "9e050b58-7c09-44da-a968-1d371385fa22",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.7017369+07:00"
+  },
+  {
+    "id": "329c7dea-d9b3-4247-a95d-94b872f99191",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.7174208+07:00"
+  },
+  {
+    "id": "a1c95458-d941-427d-8a01-081f5fb24456",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:16:00.7596007+07:00"
+  },
+  {
+    "id": "042cfe3a-7fad-4041-9c56-666aeebd1c17",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:16:00.8145338+07:00"
+  },
+  {
+    "id": "526bd77b-34bf-448f-93cd-2e7da21e7b62",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.8572667+07:00"
+  },
+  {
+    "id": "cbe12877-578d-4c63-8557-11ee4f2f9795",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:16:00.8760603+07:00"
+  },
+  {
+    "id": "7573da61-1669-4d82-a46c-74e03b12257b",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.9236696+07:00"
+  },
+  {
+    "id": "bd8f0e2a-4da1-4740-9119-6f04b27b43ad",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:00.9576913+07:00"
+  },
+  {
+    "id": "590b8986-bdb3-4687-a14e-2a00765b14c6",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:16:00.9609514+07:00"
+  },
+  {
+    "id": "f899cda2-d177-4213-8396-3845be15e4d4",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:16:01.0068661+07:00"
+  },
+  {
+    "id": "f5332ffe-7f25-4414-a67b-4f05a6a6924a",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.2344018+07:00"
+  },
+  {
+    "id": "7560f71b-fa3b-4b3b-a564-96603ac52aaf",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.3321977+07:00"
+  },
+  {
+    "id": "3a14a5ac-878e-414f-abc2-3e1d0ba1299e",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.427278+07:00"
+  },
+  {
+    "id": "866cda2c-869e-4f31-a774-b59234804ac3",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.4338396+07:00"
+  },
+  {
+    "id": "84d6a313-6ebc-4c34-920e-d73f41825dcb",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.4810344+07:00"
+  },
+  {
+    "id": "0cfe76ec-3314-4b52-9268-3c91948a51e5",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.5100595+07:00"
+  },
+  {
+    "id": "3ae5a679-54ac-4d2a-8aa0-9bad79d30e3e",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.5187848+07:00"
+  },
+  {
+    "id": "207f2600-0b08-495d-aee5-44c725143d42",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.5360099+07:00"
+  },
+  {
+    "id": "53fa2859-ff74-43ae-8deb-d9fce20f7142",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:16:32.5822437+07:00"
+  },
+  {
+    "id": "057437a6-ddbd-40af-a6ee-524ea227f17a",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:16:32.6346624+07:00"
+  },
+  {
+    "id": "2aa4c5ee-d9df-4a69-ba0a-b4c0a9f77153",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.678154+07:00"
+  },
+  {
+    "id": "2919d8aa-4372-4b28-b195-31ee500109ab",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:16:32.698234+07:00"
+  },
+  {
+    "id": "1a8f3b7b-8894-4f4a-8f73-a56c166df4a2",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.7479593+07:00"
+  },
+  {
+    "id": "ed07c7be-7763-4ed0-aa7b-66a712948271",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:16:32.7836421+07:00"
+  },
+  {
+    "id": "c458cb67-b53c-428b-a08b-2ca39dc1fde4",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:16:32.7867545+07:00"
+  },
+  {
+    "id": "3fce3da4-70df-4bde-831b-41dee638b376",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:16:32.8365064+07:00"
+  },
+  {
+    "id": "473dbf03-583c-4bfb-b586-5a93e46c95f0",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:17.8531518+07:00"
+  },
+  {
+    "id": "6aa940cd-8972-434f-a87e-8e998b1f3e6d",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:17.9309556+07:00"
+  },
+  {
+    "id": "c65e29c1-d3f3-4948-b725-eb6fc1dbaabf",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:18.0035639+07:00"
+  },
+  {
+    "id": "0df65d25-3924-41f9-868a-a73a1ec509b8",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:18.0090186+07:00"
+  },
+  {
+    "id": "fd8185c2-f639-4e5a-a9ff-a76c1615d40c",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:18.0462213+07:00"
+  },
+  {
+    "id": "b07b331c-8ab2-4c43-b526-cd6706c3f4c7",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:18.0676988+07:00"
+  },
+  {
+    "id": "f0f60d4a-9539-4958-9637-a71d89036b37",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:18.0753303+07:00"
+  },
+  {
+    "id": "ef20af17-c860-47cd-aeab-a5fa48e4ad40",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:18.0969687+07:00"
+  },
+  {
+    "id": "fef035f8-f0df-4cdd-9a9f-ff75ead66602",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:17:18.1289908+07:00"
+  },
+  {
+    "id": "3851320a-9c08-4115-9250-533c1ab6e0bc",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:17:18.1693022+07:00"
+  },
+  {
+    "id": "91bcf468-ffb9-40ae-9f22-53f30e86b487",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:18.2024624+07:00"
+  },
+  {
+    "id": "0f281d38-6f2a-4118-8f2c-ad7704ae1eb4",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:17:18.2184749+07:00"
+  },
+  {
+    "id": "b7bf27b1-3e22-41fa-bcc8-f8630af7bd8e",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:18.2622929+07:00"
+  },
+  {
+    "id": "0a26c466-d698-4f65-9e5c-c943db4241ac",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:17:18.2927914+07:00"
+  },
+  {
+    "id": "17250446-de40-486b-9de0-7faf8fbf0c86",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:17:18.2957121+07:00"
+  },
+  {
+    "id": "0506a177-d446-4ee2-9354-a6b796553a59",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:17:18.3345741+07:00"
+  },
+  {
+    "id": "8d372d69-c633-4306-97f1-c47cd5dd2b2a",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.2951234+07:00"
+  },
+  {
+    "id": "21b688c2-43d5-4200-a022-74b6880d344d",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.4142944+07:00"
+  },
+  {
+    "id": "0c053e78-6c7e-4255-b8ed-a6e11941495d",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.5268122+07:00"
+  },
+  {
+    "id": "7a39e272-41b1-4ad3-8c0f-b30fe7473886",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.5351132+07:00"
+  },
+  {
+    "id": "ccf74345-2991-47e5-90ff-ac5f573670a3",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.6055559+07:00"
+  },
+  {
+    "id": "f9f82a0e-72b7-4953-9cfe-4698b1916fbe",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.633854+07:00"
+  },
+  {
+    "id": "16acc09d-7c6e-4f2b-b80f-e51789e9892b",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.6437122+07:00"
+  },
+  {
+    "id": "b3fe6efb-5213-4672-b09a-460c0e1711eb",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.6678407+07:00"
+  },
+  {
+    "id": "2444719c-b6ff-4e92-b2d5-67eed526375e",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:18:39.708419+07:00"
+  },
+  {
+    "id": "8bae9417-1da6-4ac5-9cb0-7e427f27d7cd",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:18:39.7574873+07:00"
+  },
+  {
+    "id": "4f262405-af1a-42f9-91e0-9493d580f432",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.8006256+07:00"
+  },
+  {
+    "id": "13442da0-95df-4b66-802a-9186efacf406",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:18:39.8218708+07:00"
+  },
+  {
+    "id": "21231f40-b7b2-4c74-a819-9971247c2de9",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.8731063+07:00"
+  },
+  {
+    "id": "70293924-5f31-458f-9ecd-020c0cec54d1",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:18:39.9078089+07:00"
+  },
+  {
+    "id": "9f921507-6761-4299-b2b4-c7a9ddb3a167",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:18:39.9116033+07:00"
+  },
+  {
+    "id": "8c34c910-3ce3-4ad1-bd31-57df70e4304a",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:18:39.958009+07:00"
+  },
+  {
+    "id": "52f7fbea-1229-4ff3-af70-83dc54312d47",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:14.9921309+07:00"
+  },
+  {
+    "id": "a311a951-9ee6-4db6-bfe5-1683cac5f441",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.1088105+07:00"
+  },
+  {
+    "id": "24013c7e-a6b2-4b91-8e9a-5e95dc861600",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.2490823+07:00"
+  },
+  {
+    "id": "95a5387c-3426-4724-abc6-d6094ff24014",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.2594336+07:00"
+  },
+  {
+    "id": "4f19ec26-28b9-4c26-adff-5ccb17b7a80a",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.3418191+07:00"
+  },
+  {
+    "id": "a12e14b7-ebdc-4f59-a239-761cf7e7277d",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.3801278+07:00"
+  },
+  {
+    "id": "8b70555c-40b1-438f-adb0-523cbec9ac4e",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.3950224+07:00"
+  },
+  {
+    "id": "d3d4daa2-3f59-4267-8754-792b2cb9828d",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.4202347+07:00"
+  },
+  {
+    "id": "0f5874ad-f7ca-43be-b4d2-ad08cf87c1b6",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:20:15.4760333+07:00"
+  },
+  {
+    "id": "39b448a9-ee55-4f66-84e8-672e8dbfa1d6",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:20:15.5403545+07:00"
+  },
+  {
+    "id": "43fb574c-bb8b-45eb-8b1b-77e6dc5f1173",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.5948622+07:00"
+  },
+  {
+    "id": "48301508-2bc9-403d-bb79-883964d70114",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:20:15.6215264+07:00"
+  },
+  {
+    "id": "a56c20ad-106a-484c-babf-7664fdbed945",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.6870548+07:00"
+  },
+  {
+    "id": "511a42c1-9039-4162-9bba-d3bf3d84ec62",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:15.7391231+07:00"
+  },
+  {
+    "id": "9432a625-c34f-4c8f-b4b2-c9450a63db75",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:20:15.7446923+07:00"
+  },
+  {
+    "id": "d83a3217-2bdc-4d60-a0a4-dcb69d76a373",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:20:15.8159476+07:00"
+  },
+  {
+    "id": "b826107e-5a9e-4b6e-9ea3-404cdf2a0eaf",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:40.9788332+07:00"
+  },
+  {
+    "id": "00671a96-44de-4216-89c1-5b9dc84e8e1b",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.0662038+07:00"
+  },
+  {
+    "id": "3e9bbfb7-70fe-4a8c-b623-ebe2c89d76d2",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.1624912+07:00"
+  },
+  {
+    "id": "2fa23efa-7012-44f4-9262-636cc854236e",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.1805653+07:00"
+  },
+  {
+    "id": "11f5c122-d3b0-4b1a-b236-6c8b5eb9cb70",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.2133531+07:00"
+  },
+  {
+    "id": "d7c8f756-1668-4473-9934-9ba2c9dfee98",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.2421725+07:00"
+  },
+  {
+    "id": "c5295334-5924-4f52-a05d-ba9c346eb72e",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.2512589+07:00"
+  },
+  {
+    "id": "d9893dd5-795d-46b3-8fb3-6c9eb104970d",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.2725605+07:00"
+  },
+  {
+    "id": "71ccb656-8e2a-44ed-8d68-07facd6c4518",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:20:41.3155815+07:00"
+  },
+  {
+    "id": "2dec96ff-9cb6-45ae-9b88-d9aa8c9ff485",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:20:41.3634162+07:00"
+  },
+  {
+    "id": "aa00659b-2a27-472a-a40c-617b7d104545",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.4059079+07:00"
+  },
+  {
+    "id": "9ca60159-f58f-496c-804a-55b33c0e0f95",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:20:41.4254781+07:00"
+  },
+  {
+    "id": "6288c4f2-1f10-4d7b-9b9e-7bd24b77cb68",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.4794413+07:00"
+  },
+  {
+    "id": "2ae53e13-f3f4-46e8-96f1-28df01b3e2f3",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:20:41.5175143+07:00"
+  },
+  {
+    "id": "44d7e8e7-36a1-4a1b-a25f-097fbe6912e4",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:20:41.5215611+07:00"
+  },
+  {
+    "id": "cc7ea491-cbc4-4d7c-941a-670cba7d6920",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:20:41.5693232+07:00"
+  },
+  {
+    "id": "0960b584-d285-4b08-8f36-116e269474e9",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.5982481+07:00"
+  },
+  {
+    "id": "951f8660-e302-4090-b344-918c56addd82",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.6659185+07:00"
+  },
+  {
+    "id": "576e24d4-a609-450d-b7e0-96ae335d40b1",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.7277538+07:00"
+  },
+  {
+    "id": "079f4e3d-23b1-4c18-8663-8eebaae33ee3",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.7331424+07:00"
+  },
+  {
+    "id": "1f7d7bb5-276a-456f-bd6a-92c1ca558184",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.7652164+07:00"
+  },
+  {
+    "id": "137cb463-be32-4f96-b872-415dc51b159f",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.7831385+07:00"
+  },
+  {
+    "id": "e683666f-c90d-4095-b87f-02740faef085",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.7896057+07:00"
+  },
+  {
+    "id": "cf0510bc-1e93-4d44-9ab8-1fd8f9571479",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.8043935+07:00"
+  },
+  {
+    "id": "9f25ec20-2962-4167-83bd-34fd6edf50d1",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-19T23:32:45.8327053+07:00"
+  },
+  {
+    "id": "11001676-cb47-4b29-a25c-eef13aa526d2",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:32:45.8668777+07:00"
+  },
+  {
+    "id": "c4993423-5774-4ba8-aa99-5d64d12a1ad7",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.8966827+07:00"
+  },
+  {
+    "id": "6dcf8199-4c46-4b89-a558-19a5b49dd995",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-19T23:32:45.9118835+07:00"
+  },
+  {
+    "id": "da8c2566-b949-4a5f-87cc-9ed9c581664b",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.951093+07:00"
+  },
+  {
+    "id": "381deb31-d6e9-417d-a6d6-185e528f10d4",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:32:45.9797037+07:00"
+  },
+  {
+    "id": "ea83e554-c4e7-40a3-acf2-9da9759d53f5",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:32:45.9826048+07:00"
+  },
+  {
+    "id": "7130bad6-17f2-43fe-8d06-5e2d33555494",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-19T23:32:46.0159236+07:00"
+  },
+  {
+    "id": "e4dab380-fa4e-493b-bb48-44e0303b4975",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "John Doe",
+      "lokasi": "Ruang A",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:34:58.8809535+07:00"
+  },
+  {
+    "id": "754684f3-7236-44e4-a804-33c07931812a",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "John Doe",
+      "lokasi": "Ruang A",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:35:35.4210574+07:00"
+  },
+  {
+    "id": "eac5cefe-643d-4b52-ae37-2d22c0c9ed30",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "John Doe",
+      "lokasi": "Ruang A",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-19T23:38:59.7959181+07:00"
+  },
+  {
+    "id": "5673b66b-6693-4985-8142-d9e4e3baf031",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:04.6436272+07:00"
+  },
+  {
+    "id": "0c18319f-7d14-499a-8592-7df3235ad490",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:04.7891315+07:00"
+  },
+  {
+    "id": "35a2a803-a1e4-435a-86cb-c4666f724930",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 1",
+      "deskripsi": "Sampah tidak diangkut"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:04.8545411+07:00"
+  },
+  {
+    "id": "dd16b4be-bc68-47d6-820d-bb6f84e0e233",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lobby",
+      "deskripsi": "Tumpukan sampah"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:04.8664694+07:00"
+  },
+  {
+    "id": "dafae38e-0679-4021-8b9f-058cf93617f9",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Koridor 2",
+      "deskripsi": "Sampah menumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:04.8878685+07:00"
+  },
+  {
+    "id": "802d930e-a270-434e-bfe1-55e94413cd1f",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:04.9077482+07:00"
+  },
+  {
+    "id": "45aaecfe-c0fb-491d-bd7b-1e66eda6aa95",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Deskripsi A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:04.9135604+07:00"
+  },
+  {
+    "id": "0d647f3d-5fe6-4895-8aa4-662904bd9806",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Deskripsi B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:04.9266241+07:00"
+  },
+  {
+    "id": "d6d4470f-5c15-4ffc-b3e7-5f663f513c3d",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Tempat Sampah",
+      "deskripsi": "Pengaduan tidak relevan"
+    },
+    "status": 3,
+    "tanggalDibuat": "2025-06-20T00:20:04.9536685+07:00"
+  },
+  {
+    "id": "dad8aece-eba1-4bcd-84ea-bcff744ecb5d",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Halaman",
+      "deskripsi": "Sampah berserakan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T00:20:04.988975+07:00"
+  },
+  {
+    "id": "fcca402c-624f-41f4-bc78-e4508617fa2a",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Test",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:05.0203909+07:00"
+  },
+  {
+    "id": "c9ab1e7e-034a-4598-884b-7d19a1697ae7",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Lorong",
+      "deskripsi": "Sampah belum diangkut"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-20T00:20:05.0334252+07:00"
+  },
+  {
+    "id": "1fbd4eaf-91fd-4b8a-8fb3-51969bdb4325",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Koridor 4",
+      "deskripsi": "Sampah bertumpuk"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:05.069054+07:00"
+  },
+  {
+    "id": "88869f2a-f91f-4d26-8575-e620adce4b59",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T00:20:05.0961573+07:00"
+  },
+  {
+    "id": "b55d6ce1-ae8c-47bb-9225-f6feaad5a05a",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 2,
+      "namaPelapor": "Sari",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T00:20:05.0995356+07:00"
+  },
+  {
+    "id": "7e1ba28d-db9c-4701-b945-e345c95b936a",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "kategori": "Sampah",
+      "userId": 1,
+      "namaPelapor": "Joko",
+      "lokasi": "Area Belakang",
+      "deskripsi": "Sampah banyak"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T00:20:05.1341836+07:00"
   }
 ]

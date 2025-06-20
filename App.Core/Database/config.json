@@ -1,4 +1,4 @@
 {
-  "AllowedTypes": [ "Lampu Jalan", "Jalan Berlubang", "Taman Bermain" ],
+  "AllowedTypes": [ "Lampu Jalan", "Jalan Lingkungan", "Taman Bermain", "Lapangan" ],
   "MaxDescriptionLength": 200
 }

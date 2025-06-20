@@ -1,5 +1,6 @@
 ﻿using App.Core.Models;
 using App.Core.Services;
+using Azure.Identity;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace App.Forms
         private readonly User _currentUser;
         private readonly PengaduanKebersihanService _pengaduanService;
         private readonly IAuthService _authService;
+        private readonly UserCreationService _userCreationService;
         private string? _selectedPengaduanId = null;
         private bool _isClearing = false;
 
@@ -21,6 +23,7 @@ namespace App.Forms
             InitializeComponent();
             _currentUser = user;
             _authService = new AuthService();
+            _userCreationService = new UserCreationService(_authService);
             _pengaduanService = new PengaduanKebersihanService();
 
             this.Dock = DockStyle.Fill;
@@ -49,16 +52,12 @@ namespace App.Forms
             SetupDataGridViewStyles();
             SetupComboBoxes();
 
-            // Set up name and controls first
             SetupNamaPelapor();
 
-            // Then load users (for admin only)
             await LoadUsersAsync();
 
-            // Finally load the data
             await LoadDataAsync();
         }
-
         private void SetupDataGridViewStyles()
         {
             dataGridViewDataKebersihan.RowHeadersVisible = true;
@@ -70,12 +69,9 @@ namespace App.Forms
             dataGridViewDataKebersihan.AllowUserToDeleteRows = false;
             dataGridViewDataKebersihan.ReadOnly = true;
 
-            var headerStyle = dataGridViewDataKebersihan.ColumnHeadersDefaultCellStyle;
-            headerStyle.BackColor = Color.Navy;
-            headerStyle.ForeColor = Color.White;
-            headerStyle.Font = new Font("Product Sans", 10, FontStyle.Bold);
-            headerStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            ApplyDataGridViewStyling(dataGridViewDataKebersihan);
 
+            var headerStyle = dataGridViewDataKebersihan.ColumnHeadersDefaultCellStyle;
             dataGridViewDataKebersihan.TopLeftHeaderCell.Style.ApplyStyle(headerStyle);
         }
 
@@ -93,7 +89,6 @@ namespace App.Forms
         {
             var data = await _pengaduanService.AmbilSemuaPengaduanAsync();
 
-            // Filter data if user is civilian
             if (_currentUser.Role.ToLower() == "civilian")
             {
                 data = data.Where(p => p.Detail.UserId == _currentUser.Id).ToList();
@@ -211,9 +206,21 @@ namespace App.Forms
                         {
                             try
                             {
-                                var newUser = await CreateNewUserAsync(namaPelapor);
+                                var newUser = await _userCreationService.CreateNewUserAsync(namaPelapor);
                                 userId = newUser.Id;
+                                string usernames = newUser.Username;
+                                string passwords = usernames + "123";
 
+
+                                var message = $"User baru telah dibuat!\n\n" +
+                                     $"Nama: {namaPelapor}\n" +
+                                     $"Username: {usernames}\n" +
+                                     $"Password: {passwords}\n\n" +
+                                     $"PENTING: Mohon catat atau salin informasi ini!\n" +
+                                     $"User dapat mengganti password setelah login pertama.";
+
+
+                                MessageBox.Show(message, "User Baru Dibuat", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 await LoadUsersAsync();
                             }
                             catch (Exception ex)
@@ -289,7 +296,6 @@ namespace App.Forms
 
             _selectedPengaduanId = null;
 
-            // Only clear nama pelapor if admin
             if (_currentUser.Role.ToLower() == "admin")
             {
                 textBoxNamaPelapor.Clear();
@@ -362,29 +368,23 @@ namespace App.Forms
         {
             if (_currentUser.Role.ToLower() == "civilian")
             {
-                // For civilian
                 textBoxNamaPelapor.Text = _currentUser.Name;
                 textBoxNamaPelapor.ReadOnly = true;
                 textBoxNamaPelapor.Enabled = false;
 
-                //ubah posisi y awal lokasi dan deskripsi
                 labelTextLokasi.Location = new Point(labelTextLokasi.Location.X, labelTextLokasi.Location.Y - 42);
                 labelTextDeskripsiPengaduan.Location = new Point(labelTextDeskripsiPengaduan.Location.X, labelTextDeskripsiPengaduan.Location.Y - 42);
                 textBoxLokasi.Location = new Point(textBoxLokasi.Location.X, textBoxLokasi.Location.Y - 42);
                 richTextBoxDeskripsi.Location = new Point(richTextBoxDeskripsi.Location.X, richTextBoxDeskripsi.Location.Y - 42);
 
-                //ubah ukuran tinggi deskripsi
                 richTextBoxDeskripsi.Size = new Size(richTextBoxDeskripsi.Size.Width, 135);
 
-
-                // Hide admin controls
                 if (comboBoxUser != null) comboBoxUser.Visible = false;
                 if (radioExistingUser != null) radioExistingUser.Visible = false;
                 if (radioNewUser != null) radioNewUser.Visible = false;
             }
             else
             {
-                // For admin
                 textBoxNamaPelapor.ReadOnly = true;
                 if (radioExistingUser != null)
                 {
@@ -395,60 +395,29 @@ namespace App.Forms
             }
         }
 
-        private async Task<User> CreateNewUserAsync(string namaPelapor)
+        private void ApplyDataGridViewStyling(DataGridView dataGridView)
         {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(namaPelapor))
-                {
-                    throw new ArgumentException("Nama pelapor tidak boleh kosong.");
-                }
+            // Set alternating row colors for better readability
+            dataGridView.RowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 240, 240);
 
-                if (namaPelapor.Length < 3)
-                {
-                    throw new ArgumentException("Nama pelapor harus minimal 3 karakter.");
-                }
+            // Header styling
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 152, 219);
+            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Product Sans", 10, FontStyle.Bold);
+            dataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView.EnableHeadersVisualStyles = false;
 
-                string username = string.Join("", namaPelapor.ToLower()
-                    .Where(c => char.IsLetterOrDigit(c) || c == ' ')
-                    .ToArray())
-                    .Replace(" ", "");
+            // Row styling
+            dataGridView.DefaultCellStyle.Font = new Font("Product Sans", 9);
+            dataGridView.DefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 128, 185);
+            dataGridView.DefaultCellStyle.SelectionForeColor = Color.White;
 
-                var existingUsers = await _authService.GetAllUsersAsync();
-                if (existingUsers.Any(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase)))
-                {
-                    int counter = 1;
-                    string baseUsername = username;
-                    while (existingUsers.Any(u => u.Username.Equals($"{username}", StringComparison.OrdinalIgnoreCase)))
-                    {
-                        username = $"{baseUsername}{counter}";
-                        counter++;
-                    }
-                }
-
-                string password = username + "123";
-
-                string role = "civilian";
-                string alamat = "-";
-                string notelp = "-";
-
-                User newUser = await _authService.RegisterAsync(username, password, role, alamat, notelp, namaPelapor);
-
-                var message = $"User baru telah dibuat!\n\n" +
-                             $"Nama: {namaPelapor}\n" +
-                             $"Username: {username}\n" +
-                             $"Password: {password}\n\n" +
-                             $"PENTING: Mohon catat atau salin informasi ini!\n" +
-                             $"User dapat mengganti password setelah login pertama.";
-
-                MessageBox.Show(message, "User Baru Dibuat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                return newUser;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Gagal membuat user baru: {ex.Message}");
-            }
+            // Grid lines
+            dataGridView.GridColor = Color.FromArgb(200, 200, 200);
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridView.BackgroundColor = SystemColors.Control;
         }
     }
 }

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace App.Core.Services
@@ -13,17 +14,37 @@ namespace App.Core.Services
     public class AuthService : IAuthService
     {
         private readonly string _filePath;
+        private static readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
+        private const int MaxRetries = 3;
+        private const int RetryDelayMs = 100;
 
         public AuthService()
         {
-            string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string solutionDirectory = Path.GetFullPath(Path.Combine(exeDirectory, "..", "..", "..", ".."));
-            _filePath = Path.Combine(solutionDirectory, "App.Core", "Database", "User.json");
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\.."));
+            _filePath = Path.GetFullPath(Path.Combine(projectDirectory, "App.Core", "Database", "User.json"));
 
-            string? directoryPath = Path.GetDirectoryName(_filePath);
-            if (directoryPath != null)
+            InitializeUserFile().Wait();
+        }
+
+        private async Task InitializeUserFile()
+        {
+            try
             {
-                Directory.CreateDirectory(directoryPath);
+                string? directoryPath = Path.GetDirectoryName(_filePath);
+                if (directoryPath != null)
+                {
+                    Directory.CreateDirectory(directoryPath);
+
+                    if (!File.Exists(_filePath))
+                    {
+                        await JsonUtils.WriteDataAsync(_filePath, new List<User>());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException($"Failed to initialize user file: {ex.Message}");
             }
         }
 
@@ -34,28 +55,49 @@ namespace App.Core.Services
                 throw new ArgumentException("Username, password, and role cannot be empty.");
             }
 
-            var users = await JsonUtils.ReadDataAsync<User>(_filePath);
-
-            if (users.Any(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase)))
+            int retryCount = 0;
+            while (retryCount < MaxRetries)
             {
-                throw new InvalidOperationException("Username already exists.");
+                try
+                {
+                    await _semaphore.WaitAsync();
+                    var users = await JsonUtils.ReadDataAsync<User>(_filePath);
+
+                    if (users.Any(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        throw new InvalidOperationException("Username already exists.");
+                    }
+
+                    var user = new User
+                    {
+                        Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1,
+                        Username = username,
+                        Password = HashPassword(password),
+                        Role = role,
+                        Alamat = alamat,
+                        NoTelepon = notelp,
+                        Name = name,
+                    };
+
+                    users.Add(user);
+                    await JsonUtils.WriteDataAsync(_filePath, users);
+                    return user;
+                }
+                catch (IOException) when (retryCount < MaxRetries - 1)
+                {
+                    retryCount++;
+                    await Task.Delay(RetryDelayMs * retryCount);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Failed to register user: {ex.Message}");
+                }
+                finally
+                {
+                    _semaphore.Release();
+                }
             }
-
-            var user = new User
-            {
-                Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1,
-                Username = username,
-                Password = HashPassword(password),
-                Role = role,
-                Alamat = alamat,
-                NoTelepon = notelp,
-                Name = name,
-            };
-
-            users.Add(user);
-            await JsonUtils.WriteDataAsync(_filePath, users);
-
-            return user;
+            throw new Exception("Failed to register user after multiple attempts");
         }
 
         public async Task<User> LoginAsync(string username, string password)
@@ -65,20 +107,36 @@ namespace App.Core.Services
                 throw new ArgumentException("Username and password cannot be empty.");
             }
 
-            var users = await JsonUtils.ReadDataAsync<User>(_filePath);
-            var user = users.FirstOrDefault(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
-
-            if (user == null || !VerifyPassword(password, user.Password))
+            try
             {
-                throw new UnauthorizedAccessException("Invalid username or password.");
-            }
+                await _semaphore.WaitAsync();
+                var users = await JsonUtils.ReadDataAsync<User>(_filePath);
+                var user = users.FirstOrDefault(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
 
-            return user;
+                if (user == null || !VerifyPassword(password, user.Password))
+                {
+                    throw new UnauthorizedAccessException("Invalid username or password.");
+                }
+
+                return user;
+            }
+            finally
+            {
+                _semaphore.Release();
+            }
         }
 
         public async Task<List<User>> GetAllUsersAsync()
         {
-            return await JsonUtils.ReadDataAsync<User>(_filePath);
+            try
+            {
+                await _semaphore.WaitAsync();
+                return await JsonUtils.ReadDataAsync<User>(_filePath);
+            }
+            finally
+            {
+                _semaphore.Release();
+            }
         }
 
         private string HashPassword(string password)

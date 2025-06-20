@@ -49,7 +49,6 @@ namespace App.Forms
                 
                 if (result == DialogResult.OK)
                 {
-                    // Clear the login form fields
                     txtUsername.Clear();
                     txtPassword.Clear();
                     txtUsername.Focus();
@@ -57,7 +56,6 @@ namespace App.Forms
                 }
                 else
                 {
-                    // If dialog was closed without proper logout (e.g., X button)
                     this.Close();
                 }
             }
@@ -88,29 +86,7 @@ namespace App.Forms
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            //string username = textBox1.Text;
-            //string password = textBox2.Text;
-
-            //if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
-            //{
-            //    MessageBox.Show("Username and password tidak boleh kosong.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            //User? user = AuthService.Login(username, password);
-
-            //if (user != null)
-            //{
-            //    MessageBox.Show($"Login berhasil! Selamat datang, {user.Username}.", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    this.Hide();
-            //    var dashboard = new Dashboard(user);
-            //    dashboard.ShowDialog();
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Username atau password salah.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            
         }
 
         private void registerButton_Click(object sender, EventArgs e)

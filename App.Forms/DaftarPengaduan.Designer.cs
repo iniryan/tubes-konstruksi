@@ -34,27 +34,27 @@
             buttonSelesai = new Button();
             buttonDitolak = new Button();
             buttonDiproses = new Button();
-            panelContainerFasilitas = new Panel();
-            labelFasilitas = new Label();
-            counterFasilitas = new Label();
-            labelFasilitasTextTotal = new Label();
-            panelContainerKeamanan = new Panel();
-            labelKeamanan = new Label();
-            counterKeamanan = new Label();
-            labelKeamananTextTotal = new Label();
-            panelContainerKebersihan = new Panel();
-            labelKebersihan = new Label();
-            counterKebersihan = new Label();
-            labelKebersihanTextTotal = new Label();
+            panelContainerDiproses = new Panel();
+            labelDiproses = new Label();
+            counterDiproses = new Label();
+            labelDiprosesTextTotal = new Label();
+            panelContainerSelesai = new Panel();
+            labelSelesai = new Label();
+            counterSelesai = new Label();
+            labelSelesaiTextTotal = new Label();
+            panelContainerDitolak = new Panel();
+            labelDitolak = new Label();
+            counterDitolak = new Label();
+            labelDitolakTextTotal = new Label();
             labelTextDaftarPengaduan = new Label();
-            dataSemuaPengaduanGridView = new DataGridView();
+            daftarSemuaPengaduan = new DataGridView();
             panelBase.SuspendLayout();
             panelDaftarPengaduan.SuspendLayout();
             panelCounter.SuspendLayout();
-            panelContainerFasilitas.SuspendLayout();
-            panelContainerKeamanan.SuspendLayout();
-            panelContainerKebersihan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataSemuaPengaduanGridView).BeginInit();
+            panelContainerDiproses.SuspendLayout();
+            panelContainerSelesai.SuspendLayout();
+            panelContainerDitolak.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)daftarSemuaPengaduan).BeginInit();
             SuspendLayout();
             // 
             // panelBase
@@ -70,7 +70,7 @@
             // 
             panelDaftarPengaduan.Controls.Add(panelCounter);
             panelDaftarPengaduan.Controls.Add(labelTextDaftarPengaduan);
-            panelDaftarPengaduan.Controls.Add(dataSemuaPengaduanGridView);
+            panelDaftarPengaduan.Controls.Add(daftarSemuaPengaduan);
             panelDaftarPengaduan.Dock = DockStyle.Right;
             panelDaftarPengaduan.Location = new Point(-2, 0);
             panelDaftarPengaduan.Name = "panelDaftarPengaduan";
@@ -82,9 +82,9 @@
             panelCounter.Controls.Add(buttonSelesai);
             panelCounter.Controls.Add(buttonDitolak);
             panelCounter.Controls.Add(buttonDiproses);
-            panelCounter.Controls.Add(panelContainerFasilitas);
-            panelCounter.Controls.Add(panelContainerKeamanan);
-            panelCounter.Controls.Add(panelContainerKebersihan);
+            panelCounter.Controls.Add(panelContainerDiproses);
+            panelCounter.Controls.Add(panelContainerSelesai);
+            panelCounter.Controls.Add(panelContainerDitolak);
             panelCounter.Dock = DockStyle.Top;
             panelCounter.Location = new Point(0, 0);
             panelCounter.Name = "panelCounter";
@@ -122,128 +122,128 @@
             buttonDiproses.UseVisualStyleBackColor = true;
             buttonDiproses.Click += button1_Click;
             // 
-            // panelContainerFasilitas
+            // panelContainerDiproses
             // 
-            panelContainerFasilitas.BorderStyle = BorderStyle.FixedSingle;
-            panelContainerFasilitas.Controls.Add(labelFasilitas);
-            panelContainerFasilitas.Controls.Add(counterFasilitas);
-            panelContainerFasilitas.Controls.Add(labelFasilitasTextTotal);
-            panelContainerFasilitas.Location = new Point(266, 23);
-            panelContainerFasilitas.Name = "panelContainerFasilitas";
-            panelContainerFasilitas.Size = new Size(196, 160);
-            panelContainerFasilitas.TabIndex = 6;
+            panelContainerDiproses.BorderStyle = BorderStyle.FixedSingle;
+            panelContainerDiproses.Controls.Add(labelDiproses);
+            panelContainerDiproses.Controls.Add(counterDiproses);
+            panelContainerDiproses.Controls.Add(labelDiprosesTextTotal);
+            panelContainerDiproses.Location = new Point(266, 23);
+            panelContainerDiproses.Name = "panelContainerDiproses";
+            panelContainerDiproses.Size = new Size(196, 160);
+            panelContainerDiproses.TabIndex = 6;
             // 
-            // labelFasilitas
+            // labelDiproses
             // 
-            labelFasilitas.AutoSize = true;
-            labelFasilitas.Font = new Font("Product Sans", 12F);
-            labelFasilitas.Location = new Point(10, 122);
-            labelFasilitas.Name = "labelFasilitas";
-            labelFasilitas.Size = new Size(87, 25);
-            labelFasilitas.TabIndex = 2;
-            labelFasilitas.Text = "Diproses";
+            labelDiproses.AutoSize = true;
+            labelDiproses.Font = new Font("Product Sans", 12F);
+            labelDiproses.Location = new Point(10, 122);
+            labelDiproses.Name = "labelDiproses";
+            labelDiproses.Size = new Size(87, 25);
+            labelDiproses.TabIndex = 2;
+            labelDiproses.Text = "Diproses";
             // 
-            // counterFasilitas
+            // counterDiproses
             // 
-            counterFasilitas.AutoSize = true;
-            counterFasilitas.Font = new Font("Product Sans", 35F);
-            counterFasilitas.Location = new Point(29, 40);
-            counterFasilitas.Name = "counterFasilitas";
-            counterFasilitas.Size = new Size(169, 75);
-            counterFasilitas.TabIndex = 1;
-            counterFasilitas.Text = "1000";
+            counterDiproses.AutoSize = true;
+            counterDiproses.Font = new Font("Product Sans", 35F);
+            counterDiproses.Location = new Point(29, 40);
+            counterDiproses.Name = "counterDiproses";
+            counterDiproses.Size = new Size(169, 75);
+            counterDiproses.TabIndex = 1;
+            counterDiproses.Text = "1000";
             // 
-            // labelFasilitasTextTotal
+            // labelDiprosesTextTotal
             // 
-            labelFasilitasTextTotal.AutoSize = true;
-            labelFasilitasTextTotal.Font = new Font("Product Sans", 12F);
-            labelFasilitasTextTotal.Location = new Point(10, 10);
-            labelFasilitasTextTotal.Name = "labelFasilitasTextTotal";
-            labelFasilitasTextTotal.Size = new Size(53, 25);
-            labelFasilitasTextTotal.TabIndex = 0;
-            labelFasilitasTextTotal.Text = "Total";
+            labelDiprosesTextTotal.AutoSize = true;
+            labelDiprosesTextTotal.Font = new Font("Product Sans", 12F);
+            labelDiprosesTextTotal.Location = new Point(10, 10);
+            labelDiprosesTextTotal.Name = "labelDiprosesTextTotal";
+            labelDiprosesTextTotal.Size = new Size(53, 25);
+            labelDiprosesTextTotal.TabIndex = 0;
+            labelDiprosesTextTotal.Text = "Total";
             // 
-            // panelContainerKeamanan
+            // panelContainerSelesai
             // 
-            panelContainerKeamanan.BorderStyle = BorderStyle.FixedSingle;
-            panelContainerKeamanan.Controls.Add(labelKeamanan);
-            panelContainerKeamanan.Controls.Add(counterKeamanan);
-            panelContainerKeamanan.Controls.Add(labelKeamananTextTotal);
-            panelContainerKeamanan.Location = new Point(480, 23);
-            panelContainerKeamanan.Name = "panelContainerKeamanan";
-            panelContainerKeamanan.Size = new Size(196, 160);
-            panelContainerKeamanan.TabIndex = 6;
+            panelContainerSelesai.BorderStyle = BorderStyle.FixedSingle;
+            panelContainerSelesai.Controls.Add(labelSelesai);
+            panelContainerSelesai.Controls.Add(counterSelesai);
+            panelContainerSelesai.Controls.Add(labelSelesaiTextTotal);
+            panelContainerSelesai.Location = new Point(480, 23);
+            panelContainerSelesai.Name = "panelContainerSelesai";
+            panelContainerSelesai.Size = new Size(196, 160);
+            panelContainerSelesai.TabIndex = 6;
             // 
-            // labelKeamanan
+            // labelSelesai
             // 
-            labelKeamanan.AutoSize = true;
-            labelKeamanan.Font = new Font("Product Sans", 12F);
-            labelKeamanan.Location = new Point(10, 122);
-            labelKeamanan.Name = "labelKeamanan";
-            labelKeamanan.Size = new Size(72, 25);
-            labelKeamanan.TabIndex = 2;
-            labelKeamanan.Text = "Selesai";
+            labelSelesai.AutoSize = true;
+            labelSelesai.Font = new Font("Product Sans", 12F);
+            labelSelesai.Location = new Point(10, 122);
+            labelSelesai.Name = "labelSelesai";
+            labelSelesai.Size = new Size(72, 25);
+            labelSelesai.TabIndex = 2;
+            labelSelesai.Text = "Selesai";
             // 
-            // counterKeamanan
+            // counterSelesai
             // 
-            counterKeamanan.AutoSize = true;
-            counterKeamanan.Font = new Font("Product Sans", 35F);
-            counterKeamanan.Location = new Point(29, 40);
-            counterKeamanan.Name = "counterKeamanan";
-            counterKeamanan.Size = new Size(169, 75);
-            counterKeamanan.TabIndex = 1;
-            counterKeamanan.Text = "1000";
+            counterSelesai.AutoSize = true;
+            counterSelesai.Font = new Font("Product Sans", 35F);
+            counterSelesai.Location = new Point(29, 40);
+            counterSelesai.Name = "counterSelesai";
+            counterSelesai.Size = new Size(169, 75);
+            counterSelesai.TabIndex = 1;
+            counterSelesai.Text = "1000";
             // 
-            // labelKeamananTextTotal
+            // labelSelesaiTextTotal
             // 
-            labelKeamananTextTotal.AutoSize = true;
-            labelKeamananTextTotal.Font = new Font("Product Sans", 12F);
-            labelKeamananTextTotal.Location = new Point(10, 10);
-            labelKeamananTextTotal.Name = "labelKeamananTextTotal";
-            labelKeamananTextTotal.Size = new Size(53, 25);
-            labelKeamananTextTotal.TabIndex = 0;
-            labelKeamananTextTotal.Text = "Total";
+            labelSelesaiTextTotal.AutoSize = true;
+            labelSelesaiTextTotal.Font = new Font("Product Sans", 12F);
+            labelSelesaiTextTotal.Location = new Point(10, 10);
+            labelSelesaiTextTotal.Name = "labelSelesaiTextTotal";
+            labelSelesaiTextTotal.Size = new Size(53, 25);
+            labelSelesaiTextTotal.TabIndex = 0;
+            labelSelesaiTextTotal.Text = "Total";
             // 
-            // panelContainerKebersihan
+            // panelContainerDitolak
             // 
-            panelContainerKebersihan.BorderStyle = BorderStyle.FixedSingle;
-            panelContainerKebersihan.Controls.Add(labelKebersihan);
-            panelContainerKebersihan.Controls.Add(counterKebersihan);
-            panelContainerKebersihan.Controls.Add(labelKebersihanTextTotal);
-            panelContainerKebersihan.Location = new Point(49, 23);
-            panelContainerKebersihan.Name = "panelContainerKebersihan";
-            panelContainerKebersihan.Size = new Size(196, 160);
-            panelContainerKebersihan.TabIndex = 2;
+            panelContainerDitolak.BorderStyle = BorderStyle.FixedSingle;
+            panelContainerDitolak.Controls.Add(labelDitolak);
+            panelContainerDitolak.Controls.Add(counterDitolak);
+            panelContainerDitolak.Controls.Add(labelDitolakTextTotal);
+            panelContainerDitolak.Location = new Point(49, 23);
+            panelContainerDitolak.Name = "panelContainerDitolak";
+            panelContainerDitolak.Size = new Size(196, 160);
+            panelContainerDitolak.TabIndex = 2;
             // 
-            // labelKebersihan
+            // labelDitolak
             // 
-            labelKebersihan.AutoSize = true;
-            labelKebersihan.Font = new Font("Product Sans", 12F);
-            labelKebersihan.Location = new Point(10, 122);
-            labelKebersihan.Name = "labelKebersihan";
-            labelKebersihan.Size = new Size(72, 25);
-            labelKebersihan.TabIndex = 2;
-            labelKebersihan.Text = "Ditolak";
+            labelDitolak.AutoSize = true;
+            labelDitolak.Font = new Font("Product Sans", 12F);
+            labelDitolak.Location = new Point(10, 122);
+            labelDitolak.Name = "labelDitolak";
+            labelDitolak.Size = new Size(72, 25);
+            labelDitolak.TabIndex = 2;
+            labelDitolak.Text = "Ditolak";
             // 
-            // counterKebersihan
+            // counterDitolak
             // 
-            counterKebersihan.AutoSize = true;
-            counterKebersihan.Font = new Font("Product Sans", 35F);
-            counterKebersihan.Location = new Point(29, 40);
-            counterKebersihan.Name = "counterKebersihan";
-            counterKebersihan.Size = new Size(169, 75);
-            counterKebersihan.TabIndex = 1;
-            counterKebersihan.Text = "1000";
+            counterDitolak.AutoSize = true;
+            counterDitolak.Font = new Font("Product Sans", 35F);
+            counterDitolak.Location = new Point(29, 40);
+            counterDitolak.Name = "counterDitolak";
+            counterDitolak.Size = new Size(169, 75);
+            counterDitolak.TabIndex = 1;
+            counterDitolak.Text = "1000";
             // 
-            // labelKebersihanTextTotal
+            // labelDitolakTextTotal
             // 
-            labelKebersihanTextTotal.AutoSize = true;
-            labelKebersihanTextTotal.Font = new Font("Product Sans", 12F);
-            labelKebersihanTextTotal.Location = new Point(10, 10);
-            labelKebersihanTextTotal.Name = "labelKebersihanTextTotal";
-            labelKebersihanTextTotal.Size = new Size(53, 25);
-            labelKebersihanTextTotal.TabIndex = 0;
-            labelKebersihanTextTotal.Text = "Total";
+            labelDitolakTextTotal.AutoSize = true;
+            labelDitolakTextTotal.Font = new Font("Product Sans", 12F);
+            labelDitolakTextTotal.Location = new Point(10, 10);
+            labelDitolakTextTotal.Name = "labelDitolakTextTotal";
+            labelDitolakTextTotal.Size = new Size(53, 25);
+            labelDitolakTextTotal.TabIndex = 0;
+            labelDitolakTextTotal.Text = "Total";
             // 
             // labelTextDaftarPengaduan
             // 
@@ -256,15 +256,15 @@
             labelTextDaftarPengaduan.Text = "Daftar Semua Pengaduan";
             labelTextDaftarPengaduan.Click += labelTextDaftarPengaduan_Click;
             // 
-            // dataSemuaPengaduanGridView
+            // daftarSemuaPengaduan
             // 
-            dataSemuaPengaduanGridView.BackgroundColor = SystemColors.Control;
-            dataSemuaPengaduanGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataSemuaPengaduanGridView.Location = new Point(49, 272);
-            dataSemuaPengaduanGridView.Name = "dataSemuaPengaduanGridView";
-            dataSemuaPengaduanGridView.RowHeadersWidth = 51;
-            dataSemuaPengaduanGridView.Size = new Size(851, 375);
-            dataSemuaPengaduanGridView.TabIndex = 0;
+            daftarSemuaPengaduan.BackgroundColor = SystemColors.Control;
+            daftarSemuaPengaduan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            daftarSemuaPengaduan.Location = new Point(49, 272);
+            daftarSemuaPengaduan.Name = "daftarSemuaPengaduan";
+            daftarSemuaPengaduan.RowHeadersWidth = 51;
+            daftarSemuaPengaduan.Size = new Size(851, 375);
+            daftarSemuaPengaduan.TabIndex = 0;
             // 
             // DaftarPengaduan
             // 
@@ -273,18 +273,17 @@
             ClientSize = new Size(1182, 673);
             Controls.Add(panelBase);
             Name = "DaftarPengaduan";
-            Text = "DaftarPengaduan";
             panelBase.ResumeLayout(false);
             panelDaftarPengaduan.ResumeLayout(false);
             panelDaftarPengaduan.PerformLayout();
             panelCounter.ResumeLayout(false);
-            panelContainerFasilitas.ResumeLayout(false);
-            panelContainerFasilitas.PerformLayout();
-            panelContainerKeamanan.ResumeLayout(false);
-            panelContainerKeamanan.PerformLayout();
-            panelContainerKebersihan.ResumeLayout(false);
-            panelContainerKebersihan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataSemuaPengaduanGridView).EndInit();
+            panelContainerDiproses.ResumeLayout(false);
+            panelContainerDiproses.PerformLayout();
+            panelContainerSelesai.ResumeLayout(false);
+            panelContainerSelesai.PerformLayout();
+            panelContainerDitolak.ResumeLayout(false);
+            panelContainerDitolak.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)daftarSemuaPengaduan).EndInit();
             ResumeLayout(false);
         }
 
@@ -293,22 +292,22 @@
         private Panel panelBase;
         private Panel panelDaftarPengaduan;
         private Label labelTextDaftarPengaduan;
-        private DataGridView dataSemuaPengaduanGridView;
+        private DataGridView daftarSemuaPengaduan;
         private Panel panelCounter;
         private Button buttonSelesai;
         private Button buttonDitolak;
         private Button buttonDiproses;
-        private Panel panelContainerFasilitas;
-        private Label labelFasilitas;
-        private Label counterFasilitas;
-        private Label labelFasilitasTextTotal;
-        private Panel panelContainerKeamanan;
-        private Label labelKeamanan;
-        private Label counterKeamanan;
-        private Label labelKeamananTextTotal;
-        private Panel panelContainerKebersihan;
-        private Label labelKebersihan;
-        private Label counterKebersihan;
-        private Label labelKebersihanTextTotal;
+        private Panel panelContainerDiproses;
+        private Label labelDiproses;
+        private Label counterDiproses;
+        private Label labelDiprosesTextTotal;
+        private Panel panelContainerSelesai;
+        private Label labelSelesai;
+        private Label counterSelesai;
+        private Label labelSelesaiTextTotal;
+        private Panel panelContainerDitolak;
+        private Label labelDitolak;
+        private Label counterDitolak;
+        private Label labelDitolakTextTotal;
     }
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>App.Benchmark.PerformanceTests.GuestRepositoryPerformanceTests-20250619-234404</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.4351)
+AMD Ryzen 7 5800HS with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 9.0.300
+  [Host]     : .NET 8.0.16 (8.0.1625.21506), X64 RyuJIT AVX2
+  Job-IYLCES : .NET 8.0.16 (8.0.1625.21506), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>IterationCount=5  WarmupCount=2  
+</code></pre>
+
+<table>
+<thead><tr><th>Method                     </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>TambahTamu_Performance</td><td>725.70 ms</td><td>82.045 ms</td><td>21.307 ms</td><td>5000.0000</td><td>2000.0000</td><td>39.99 MB</td>
+</tr><tr><td>CariTamu_Performance</td><td>509.40 ms</td><td>98.437 ms</td><td>25.564 ms</td><td>15000.0000</td><td>10000.0000</td><td>121.49 MB</td>
+</tr><tr><td>UpdateTamu_Performance</td><td>614.44 ms</td><td>28.810 ms</td><td>4.458 ms</td><td>6000.0000</td><td>5000.0000</td><td>47.81 MB</td>
+</tr><tr><td>UbahStatusTamu_Performance</td><td>419.89 ms</td><td>267.125 ms</td><td>69.371 ms</td><td>7000.0000</td><td>6000.0000</td><td>60.24 MB</td>
+</tr><tr><td>AturWaktuKeluar_Performance</td><td>511.95 ms</td><td>154.116 ms</td><td>40.023 ms</td><td>5000.0000</td><td>3000.0000</td><td>47.67 MB</td>
+</tr><tr><td>HitungStatistikTamu_Performance</td><td>20.01 ms</td><td>5.010 ms</td><td>1.301 ms</td><td>1031.2500</td><td>968.7500</td><td>8.35 MB</td>
+</tr><tr><td>TableDrivenOperations_Performance</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using App.Core.Models;
+using Xunit;
 
 namespace App.Tests.Tests
 {
@@ -12,18 +13,19 @@ namespace App.Tests.Tests
         [Fact]
         public void Should_Create_Pengaduan_With_Valid_Inputs()
         {
-            var detail = "Sampah menumpuk di koridor";
-            var pengaduan = new Pengaduan<string>("1", detail);
+            var detail = new DetailKebersihan(1, "Joko", "Koridor 1", "Sampah menumpuk di koridor", Prioritas.Tinggi, "Sampah");
+            var pengaduan = new Pengaduan<DetailKebersihan>("1", detail);
 
             Assert.Equal("1", pengaduan.Id);
             Assert.Equal(detail, pengaduan.Detail);
             Assert.Equal(StatusPengaduan.Dibuat, pengaduan.Status);
+            Assert.True(pengaduan.TanggalDibuat <= DateTime.Now);
         }
-
         [Fact]
         public void Should_Proses_Pengaduan_From_Dibuat_To_Diproses()
         {
-            var pengaduan = new Pengaduan<string>("2", "Sampah tidak terangkut");
+            var detail = new DetailKebersihan(1, "Sari", "Koridor 2", "Sampah tidak terangkut", Prioritas.Sedang, "Sampah");
+            var pengaduan = new Pengaduan<DetailKebersihan>("2", detail);
 
             pengaduan.UbahStatus(StatusPengaduan.Diproses);
 
@@ -33,7 +35,8 @@ namespace App.Tests.Tests
         [Fact]
         public void Should_Throw_Exception_When_Proses_Without_Dibuat_Status()
         {
-            var pengaduan = new Pengaduan<string>("3", "Masalah di jalan");
+            var detail = new DetailKebersihan(1, "Budi", "Jalan", "Masalah di jalan", Prioritas.Rendah, "Infrastruktur");
+            var pengaduan = new Pengaduan<DetailKebersihan>("3", detail);
             pengaduan.UbahStatus(StatusPengaduan.Diproses);
 
             var exception = Assert.Throws<InvalidOperationException>(() => pengaduan.UbahStatus(StatusPengaduan.Diproses));
@@ -43,7 +46,8 @@ namespace App.Tests.Tests
         [Fact]
         public void Should_Selesai_Pengaduan_From_Diproses_To_Selesai()
         {
-            var pengaduan = new Pengaduan<string>("4", "Lampu jalan mati");
+            var detail = new DetailKebersihan(1, "Ana", "Jalan Utama", "Lampu jalan mati", Prioritas.Tinggi, "Fasilitas");
+            var pengaduan = new Pengaduan<DetailKebersihan>("4", detail);
             pengaduan.UbahStatus(StatusPengaduan.Diproses);
 
             pengaduan.UbahStatus(StatusPengaduan.Selesai);
@@ -54,7 +58,8 @@ namespace App.Tests.Tests
         [Fact]
         public void Should_Throw_Exception_When_Selesai_Without_Diproses_Status()
         {
-            var pengaduan = new Pengaduan<string>("5", "Jalan berlubang");
+            var detail = new DetailKebersihan(1, "Rina", "Jalan", "Jalan berlubang", Prioritas.Sedang, "Infrastruktur");
+            var pengaduan = new Pengaduan<DetailKebersihan>("5", detail);
 
             var exception = Assert.Throws<InvalidOperationException>(() => pengaduan.UbahStatus(StatusPengaduan.Selesai));
             Assert.Equal("Transisi dari Dibuat ke Selesai tidak valid.", exception.Message);
@@ -63,7 +68,8 @@ namespace App.Tests.Tests
         [Fact]
         public void Should_Tolak_Pengaduan_From_Dibuat_To_Ditolak()
         {
-            var pengaduan = new Pengaduan<string>("6", "Kebersihan kurang");
+            var detail = new DetailKebersihan(1, "Dedi", "Area Umum", "Kebersihan kurang", Prioritas.Rendah, "Sampah");
+            var pengaduan = new Pengaduan<DetailKebersihan>("6", detail);
 
             pengaduan.UbahStatus(StatusPengaduan.Ditolak);
 
@@ -73,7 +79,8 @@ namespace App.Tests.Tests
         [Fact]
         public void Should_Throw_Exception_When_Tolak_Without_Dibuat_Status()
         {
-            var pengaduan = new Pengaduan<string>("7", "Fasilitas rusak");
+            var detail = new DetailKebersihan(1, "Toni", "Gedung", "Fasilitas rusak", Prioritas.Tinggi, "Fasilitas");
+            var pengaduan = new Pengaduan<DetailKebersihan>("7", detail);
             pengaduan.UbahStatus(StatusPengaduan.Diproses);
 
             var exception = Assert.Throws<InvalidOperationException>(() => pengaduan.UbahStatus(StatusPengaduan.Ditolak));
