@@ -1844,5 +1844,135 @@
     },
     "status": 0,
     "tanggalDibuat": "2025-06-20T00:20:04.9632649+07:00"
+  },
+  {
+    "id": "f07ecbc9-601d-4a6d-a9c1-0ab3006f8b98",
+    "detail": {
+      "jenisKejadian": "Pencurian",
+      "tingkatUrgensitas": "Tinggi",
+      "userId": 1,
+      "namaPelapor": "User1",
+      "lokasi": "Lokasi A",
+      "deskripsi": "Kejahatan A"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.1234859+07:00"
+  },
+  {
+    "id": "0cc53beb-bf15-490e-b894-c9258549e95e",
+    "detail": {
+      "jenisKejadian": "Perampokan",
+      "tingkatUrgensitas": "Rendah",
+      "userId": 2,
+      "namaPelapor": "User2",
+      "lokasi": "Lokasi B",
+      "deskripsi": "Kejahatan B"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.1749167+07:00"
+  },
+  {
+    "id": "84a6a5bc-f34f-4a27-bdcc-68a7730ee0d1",
+    "detail": {
+      "jenisKejadian": "Kejahatan",
+      "tingkatUrgensitas": "Tinggi",
+      "userId": 1,
+      "namaPelapor": "Toni",
+      "lokasi": "Mall",
+      "deskripsi": "Kejahatan jalanan"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T13:16:19.2187654+07:00"
+  },
+  {
+    "id": "6dcfd357-af95-4850-8568-987af2cee077",
+    "detail": {
+      "jenisKejadian": "Pencurian",
+      "tingkatUrgensitas": "Tinggi",
+      "userId": 1,
+      "namaPelapor": "User1",
+      "lokasi": "Area 1",
+      "deskripsi": "Kejahatan 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.3306771+07:00"
+  },
+  {
+    "id": "88126b6d-236f-4c23-9d44-588005825a80",
+    "detail": {
+      "jenisKejadian": "Perampokan",
+      "tingkatUrgensitas": "Sedang",
+      "userId": 2,
+      "namaPelapor": "User2",
+      "lokasi": "Area 2",
+      "deskripsi": "Kejahatan 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T13:16:19.3706937+07:00"
+  },
+  {
+    "id": "41b39048-50ca-48cb-b56b-a5512051da9d",
+    "detail": {
+      "jenisKejadian": "Copet",
+      "tingkatUrgensitas": "Sedang",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Pasar",
+      "deskripsi": "Copet"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.4573574+07:00"
+  },
+  {
+    "id": "bd54745c-a50c-4bb1-a122-b9774501abf4",
+    "detail": {
+      "jenisKejadian": "Pencurian",
+      "tingkatUrgensitas": "Tinggi",
+      "userId": 1,
+      "namaPelapor": "User",
+      "lokasi": "Lokasi",
+      "deskripsi": "Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.5093851+07:00"
+  },
+  {
+    "id": "22a1c412-d84b-4904-afec-c4478c035e61",
+    "detail": {
+      "jenisKejadian": "Pencurian",
+      "tingkatUrgensitas": "Tinggi",
+      "userId": 1,
+      "namaPelapor": "Budi",
+      "lokasi": "Jl. Merdeka No. 5",
+      "deskripsi": "Pencurian sepeda motor"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.5448734+07:00"
+  },
+  {
+    "id": "d9cfd40c-4f76-4eac-94b1-dd746bc1907c",
+    "detail": {
+      "jenisKejadian": "Perampokan",
+      "tingkatUrgensitas": "Sangat Tinggi",
+      "userId": 1,
+      "namaPelapor": "Budi",
+      "lokasi": "Jl. Sudirman",
+      "deskripsi": "Perampokan"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.5843109+07:00"
+  },
+  {
+    "id": "20b63fbc-48b2-4866-9e3a-f7654cb1d833",
+    "detail": {
+      "jenisKejadian": "Test",
+      "tingkatUrgensitas": "Rendah",
+      "userId": 1,
+      "namaPelapor": "Test User",
+      "lokasi": "Test Area",
+      "deskripsi": "Test Kejahatan"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.6396885+07:00"
   }
 ]

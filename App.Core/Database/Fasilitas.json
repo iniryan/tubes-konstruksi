@@ -52,19 +52,6 @@
     "tanggalDibuat": "2025-06-16T17:44:24.5549608+07:00"
   },
   {
-    "id": "d8b86d06-e6d4-4c04-9f27-0181c395b898",
-    "detail": {
-      "prioritasPengaduan": 0,
-      "jenisFasilitas": "Lampu Jalan",
-      "userId": 12,
-      "namaPelapor": "FAUZI",
-      "lokasi": "Ngagel",
-      "deskripsi": "Lampu jalan di Jl. Ngagel sering mati, perlu perbaikan segera."
-    },
-    "status": 3,
-    "tanggalDibuat": "2025-06-17T15:30:36.7261932+07:00"
-  },
-  {
     "id": "19354cb2-272f-433d-9717-2c22be7e3374",
     "detail": {
       "prioritasPengaduan": 0,
@@ -102,19 +89,6 @@
     },
     "status": 0,
     "tanggalDibuat": "2025-06-19T21:27:40.5574499+07:00"
-  },
-  {
-    "id": "0d9a54ac-0fa6-4f69-ac5d-4c0f864e238b",
-    "detail": {
-      "prioritasPengaduan": 1,
-      "jenisFasilitas": "Lapangan",
-      "userId": 18,
-      "namaPelapor": "LOKI",
-      "lokasi": "Jl. Merdeka",
-      "deskripsi": "Lapangan Sepak Bola di Jl. Merdeka perlu perbaikan rumput dan pagar."
-    },
-    "status": 0,
-    "tanggalDibuat": "2025-06-19T21:57:51.6222566+07:00"
   },
   {
     "id": "98b861a9-f0b3-4061-95a0-ea37cf177aa1",
@@ -1441,5 +1415,135 @@
     },
     "status": 0,
     "tanggalDibuat": "2025-06-20T00:20:04.9873752+07:00"
+  },
+  {
+    "id": "89ea5225-9ddf-48fb-a252-3e83d6894f53",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "Jalan Lingkungan",
+      "userId": 146,
+      "namaPelapor": "DIMAS SAPUTRA",
+      "lokasi": "Jl. Sukodono ",
+      "deskripsi": "Jalan di sukodono berlubang ketika malam hari dan berbahaya"
+    },
+    "status": 2,
+    "tanggalDibuat": "2025-06-20T12:48:10.847512+07:00"
+  },
+  {
+    "id": "7e39977c-0227-4fed-8191-fa524ce47625",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "Taman Bermain",
+      "userId": 4,
+      "namaPelapor": "JOKO SUSILO",
+      "lokasi": "Taman Bermain Sukacita",
+      "deskripsi": "Salah satu ayunan rusak, mohon segera diperbaiki sebab berbahaya bagi anak-anak yang sedang main\n\nserta tambahkan pengaman"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T12:58:24.4147985+07:00"
+  },
+  {
+    "id": "28eacdee-2941-4772-be48-8715fc79866d",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "Lampu Jalan",
+      "userId": 8,
+      "namaPelapor": "SAMUEL WIDODO",
+      "lokasi": "Jl. Bumi",
+      "deskripsi": "Lampu jalan redup, bahaya saat malam, perlu segera diperbaiki"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:14:41.1072603+07:00"
+  },
+  {
+    "id": "5d57c08c-447f-4fe9-9f7d-05af226a7a72",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "AC",
+      "userId": 2,
+      "namaPelapor": "Budi",
+      "lokasi": "Ruang 2",
+      "deskripsi": "AC mati total"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.0836966+07:00"
+  },
+  {
+    "id": "2b28358a-ce61-46a4-add1-08694a593d5b",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "AC",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Ruang 101",
+      "deskripsi": "AC tidak dingin"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.1965356+07:00"
+  },
+  {
+    "id": "07b68d91-9f6d-48e1-b1ef-ad234968d48a",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "Toilet",
+      "userId": 1,
+      "namaPelapor": "Test1",
+      "lokasi": "Area 1",
+      "deskripsi": "Deskripsi 1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.2375444+07:00"
+  },
+  {
+    "id": "bba7357f-2d2b-49a3-ae51-852d50ca1d36",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "Toilet",
+      "userId": 2,
+      "namaPelapor": "Test2",
+      "lokasi": "Area 2",
+      "deskripsi": "Deskripsi 2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T13:16:19.2757163+07:00"
+  },
+  {
+    "id": "0c9f12e4-6a0f-427b-b2a6-18af5e54904d",
+    "detail": {
+      "prioritasPengaduan": 1,
+      "jenisFasilitas": "Proyektor",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Lab",
+      "deskripsi": "Proyektor tidak menyala"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T13:16:19.4078812+07:00"
+  },
+  {
+    "id": "73f89c03-36ee-417f-a89f-f96d9b54133a",
+    "detail": {
+      "prioritasPengaduan": 0,
+      "jenisFasilitas": "Lampu",
+      "userId": 1,
+      "namaPelapor": "Test",
+      "lokasi": "Test Area",
+      "deskripsi": "Test Deskripsi"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.5887003+07:00"
+  },
+  {
+    "id": "507fa815-f0ed-44f7-8eb2-8964efb4a599",
+    "detail": {
+      "prioritasPengaduan": 2,
+      "jenisFasilitas": "AC",
+      "userId": 1,
+      "namaPelapor": "Sari",
+      "lokasi": "Ruang 1",
+      "deskripsi": "AC rusak"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.6356014+07:00"
   }
 ]

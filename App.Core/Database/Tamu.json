@@ -2224,22 +2224,6 @@
     "tanggalDibuat": "2025-06-20T00:20:05.0203456+07:00"
   },
   {
-    "id": "0e7e1082-0181-4519-9c71-f9dcd8a92dbf",
-    "detail": {
-      "nomorIdentitas": "3333333333",
-      "tujuan": "Test",
-      "pegawaiTujuan": "Manager",
-      "waktuDatang": "2025-06-20T00:20:05.0459499+07:00",
-      "waktuKeluar": null,
-      "userId": 1,
-      "namaPelapor": "Status Test",
-      "lokasi": "Lobby",
-      "deskripsi": "Test"
-    },
-    "status": 1,
-    "tanggalDibuat": "2025-06-20T00:20:05.0459582+07:00"
-  },
-  {
     "id": "2b838297-68e0-4f9a-a710-7ce64285a9db",
     "detail": {
       "nomorIdentitas": "1111111111",
@@ -2288,19 +2272,243 @@
     "tanggalDibuat": "2025-06-20T00:20:05.1009542+07:00"
   },
   {
-    "id": "13c81da2-438b-4bd1-ab97-c9372ac14e21",
+    "id": "cb418728-e149-46c5-a489-47be4b04ef11",
+    "detail": {
+      "nomorIdentitas": "12983812988",
+      "tujuan": "mengurus pengaduan keamanan",
+      "pegawaiTujuan": "AHMAD ZUFAR",
+      "waktuDatang": "2025-06-20T13:11:13.6929423+07:00",
+      "waktuKeluar": "2025-06-20T13:10:30.5073976+07:00",
+      "userId": 2,
+      "namaPelapor": "HERI",
+      "lokasi": "Lobi Utama",
+      "deskripsi": "Kunjungan ke AHMAD ZUFAR untuk mengurus pengaduan keamanan"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:11:13.6929567+07:00"
+  },
+  {
+    "id": "be929e28-cddf-42cd-9081-ccef1484b0f6",
+    "detail": {
+      "nomorIdentitas": "2222222222",
+      "tujuan": "Testing",
+      "pegawaiTujuan": "Test Manager",
+      "waktuDatang": "2025-06-20T13:16:19.0904157+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Guest Test",
+      "lokasi": "Reception",
+      "deskripsi": "Test visit"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.0904311+07:00"
+  },
+  {
+    "id": "be0f2dec-625c-4a86-8ff4-49ea1e06a167",
+    "detail": {
+      "nomorIdentitas": "9999999999",
+      "tujuan": "Purpose",
+      "pegawaiTujuan": "Employee",
+      "waktuDatang": "2025-06-20T13:16:19.2725268+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Total Test",
+      "lokasi": "Location",
+      "deskripsi": "Description"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.2725632+07:00"
+  },
+  {
+    "id": "ce167352-2cbc-4dce-8909-907fb1dc07b3",
+    "detail": {
+      "nomorIdentitas": "9876543210",
+      "tujuan": "Konsultasi",
+      "pegawaiTujuan": "HR Manager",
+      "waktuDatang": "2025-06-20T13:16:19.3435218+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Jane Visitor",
+      "lokasi": "Reception",
+      "deskripsi": "Kunjungan kerja"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.3435387+07:00"
+  },
+  {
+    "id": "3d5c6ad5-07b0-428d-ac62-7512b7015abc",
+    "detail": {
+      "nomorIdentitas": "1234567890123456",
+      "tujuan": "Meeting dengan manager",
+      "pegawaiTujuan": "Manager Sales",
+      "waktuDatang": "2025-06-20T13:16:19.3823111+07:00",
+      "waktuKeluar": "2025-06-20T15:16:19.3497413+07:00",
+      "userId": 1,
+      "namaPelapor": "John Visitor",
+      "lokasi": "Lobby Utama",
+      "deskripsi": "Kunjungan bisnis"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.3823273+07:00"
+  },
+  {
+    "id": "fd524257-6673-4d0f-a3f9-c927277a7dea",
+    "detail": {
+      "nomorIdentitas": "7777777777",
+      "tujuan": "New purpose",
+      "pegawaiTujuan": "New employee",
+      "waktuDatang": "2025-06-20T13:16:19.4249275+07:00",
+      "waktuKeluar": "2025-06-20T16:16:19.4300773+07:00",
+      "userId": 1,
+      "namaPelapor": "New Name",
+      "lokasi": "New Location",
+      "deskripsi": "New description"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.4249474+07:00"
+  },
+  {
+    "id": "4bb21e28-bb11-4c21-aa42-f2555b47e49d",
+    "detail": {
+      "nomorIdentitas": "1111111111",
+      "tujuan": "Purpose1",
+      "pegawaiTujuan": "Employee1",
+      "waktuDatang": "2025-06-20T13:16:19.524372+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Count Test 1",
+      "lokasi": "Location1",
+      "deskripsi": "Desc1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.5243886+07:00"
+  },
+  {
+    "id": "2b3cd6e8-ac13-4906-a440-d1607b5bf24f",
+    "detail": {
+      "nomorIdentitas": "2222222222",
+      "tujuan": "Purpose2",
+      "pegawaiTujuan": "Employee2",
+      "waktuDatang": "2025-06-20T13:16:19.5614402+07:00",
+      "waktuKeluar": null,
+      "userId": 2,
+      "namaPelapor": "Count Test 2",
+      "lokasi": "Location2",
+      "deskripsi": "Desc2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T13:16:19.5614576+07:00"
+  },
+  {
+    "id": "dd63cec2-aea5-43b5-89cb-4964bc049d02",
+    "detail": {
+      "nomorIdentitas": "4444444444",
+      "tujuan": "Meeting",
+      "pegawaiTujuan": "Manager",
+      "waktuDatang": "2025-06-20T13:16:19.6503682+07:00",
+      "waktuKeluar": "2025-06-20T14:16:19.653611+07:00",
+      "userId": 1,
+      "namaPelapor": "Exit Test",
+      "lokasi": "Office",
+      "deskripsi": "Visit"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.6503948+07:00"
+  },
+  {
+    "id": "d53f42d4-c429-4026-943f-65e518dbf6cd",
+    "detail": {
+      "nomorIdentitas": "5555555555",
+      "tujuan": "Meeting",
+      "pegawaiTujuan": "Manager",
+      "waktuDatang": "2025-06-20T13:16:19.7321799+07:00",
+      "waktuKeluar": "2025-06-20T13:16:19.7648913+07:00",
+      "userId": 1,
+      "namaPelapor": "Auto Exit",
+      "lokasi": "Office",
+      "deskripsi": "Visit"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.7321967+07:00"
+  },
+  {
+    "id": "ae447824-660d-4a1b-9400-769d0c4452de",
+    "detail": {
+      "nomorIdentitas": "3333333333",
+      "tujuan": "Test",
+      "pegawaiTujuan": "Manager",
+      "waktuDatang": "2025-06-20T13:16:19.8090293+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Status Test",
+      "lokasi": "Lobby",
+      "deskripsi": "Test"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T13:16:19.8090394+07:00"
+  },
+  {
+    "id": "df0d0070-2319-4f84-b0cf-a2a56e78df47",
+    "detail": {
+      "nomorIdentitas": "1111111111",
+      "tujuan": "Business",
+      "pegawaiTujuan": "Manager1",
+      "waktuDatang": "2025-06-20T13:16:19.9046296+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Guest1",
+      "lokasi": "Lobby",
+      "deskripsi": "Meeting"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.9046468+07:00"
+  },
+  {
+    "id": "470ea4d3-88a8-4f28-97f4-7887659a2d1e",
+    "detail": {
+      "nomorIdentitas": "1111111111",
+      "tujuan": "Purpose1",
+      "pegawaiTujuan": "Emp1",
+      "waktuDatang": "2025-06-20T13:16:19.9726253+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Stat Test 6fd1ab6aeb8f4ec694b94fd254438652",
+      "lokasi": "Loc1",
+      "deskripsi": "Desc1"
+    },
+    "status": 0,
+    "tanggalDibuat": "2025-06-20T13:16:19.9726442+07:00"
+  },
+  {
+    "id": "69c12322-64b1-44ca-9218-767d6ec0d572",
+    "detail": {
+      "nomorIdentitas": "2222222222",
+      "tujuan": "Purpose2",
+      "pegawaiTujuan": "Emp2",
+      "waktuDatang": "2025-06-20T13:16:20.0131679+07:00",
+      "waktuKeluar": null,
+      "userId": 1,
+      "namaPelapor": "Stat Test 6fd1ab6aeb8f4ec694b94fd254438652",
+      "lokasi": "Loc2",
+      "deskripsi": "Desc2"
+    },
+    "status": 1,
+    "tanggalDibuat": "2025-06-20T13:16:20.0131881+07:00"
+  },
+  {
+    "id": "acbf51f0-7e0b-47ad-81a0-d18cb2f0cf70",
     "detail": {
       "nomorIdentitas": "3333333333",
       "tujuan": "Purpose3",
       "pegawaiTujuan": "Emp3",
-      "waktuDatang": "2025-06-20T00:20:05.1120886+07:00",
+      "waktuDatang": "2025-06-20T13:16:20.0608377+07:00",
       "waktuKeluar": null,
       "userId": 1,
-      "namaPelapor": "Stat Test 475f8ede610e40f093d165325ec4f4f5",
+      "namaPelapor": "Stat Test 6fd1ab6aeb8f4ec694b94fd254438652",
       "lokasi": "Loc3",
       "deskripsi": "Desc3"
     },
     "status": 2,
-    "tanggalDibuat": "2025-06-20T00:20:05.1120961+07:00"
+    "tanggalDibuat": "2025-06-20T13:16:20.0608587+07:00"
   }
 ]
